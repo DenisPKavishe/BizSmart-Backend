@@ -1,0 +1,1040 @@
+INFO 2026-05-17 05:26:48,907 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:26:48,907 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:28:29,999 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:28:29,999 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:28:31,088 logging_utils [User: Anonymous] [Path: /api/v1/auth/login/] Login successful: admin@bizsmart.com
+INFO 2026-05-17 05:28:31,088 logging_utils [User: Anonymous] [Path: /api/v1/auth/login/] Login successful: admin@bizsmart.com
+INFO 2026-05-17 05:28:31,097 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.10s
+INFO 2026-05-17 05:28:31,097 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.10s
+INFO 2026-05-17 05:28:31,099 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 05:28:31,099 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 05:31:05,620 autoreload /Users/j/Desktop/BizSMART/Backend/core/models.py changed, reloading.
+INFO 2026-05-17 05:31:05,620 autoreload /Users/j/Desktop/BizSMART/Backend/core/models.py changed, reloading.
+INFO 2026-05-17 05:31:10,063 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:31:10,063 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:31:58,305 autoreload /Users/j/Desktop/BizSMART/Backend/core/logging_utils.py changed, reloading.
+INFO 2026-05-17 05:31:58,305 autoreload /Users/j/Desktop/BizSMART/Backend/core/logging_utils.py changed, reloading.
+INFO 2026-05-17 05:32:00,436 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:32:00,436 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:32:25,901 autoreload /Users/j/Desktop/BizSMART/Backend/core/middleware.py changed, reloading.
+INFO 2026-05-17 05:32:25,901 autoreload /Users/j/Desktop/BizSMART/Backend/core/middleware.py changed, reloading.
+INFO 2026-05-17 05:32:27,103 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:32:27,103 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:32:54,586 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 05:32:54,586 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 05:32:55,627 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:32:55,627 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:34:00,579 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 05:34:00,579 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 05:34:02,604 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:34:02,604 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:34:49,310 autoreload /Users/j/Desktop/BizSMART/Backend/core/admin.py changed, reloading.
+INFO 2026-05-17 05:34:49,310 autoreload /Users/j/Desktop/BizSMART/Backend/core/admin.py changed, reloading.
+INFO 2026-05-17 05:34:51,065 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:34:51,065 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:36:01,764 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 05:36:01,764 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 05:36:03,551 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:36:03,551 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:39:00,846 autoreload /Users/j/Desktop/BizSMART/Backend/core/serializers.py changed, reloading.
+INFO 2026-05-17 05:39:00,846 autoreload /Users/j/Desktop/BizSMART/Backend/core/serializers.py changed, reloading.
+INFO 2026-05-17 05:39:03,225 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:39:03,225 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:41:23,161 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 05:41:23,161 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 05:41:24,431 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:41:24,431 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:43:05,889 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:05,889 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:06,057 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.17s
+INFO 2026-05-17 05:43:06,057 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.17s
+INFO 2026-05-17 05:43:06,058 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:43:06,058 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:43:06,171 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:43:06,171 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:43:06,232 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:43:06,232 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:43:06,249 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:43:06,249 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:43:06,255 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:43:06,255 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:43:06,290 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:43:06,290 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:43:06,292 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:43:06,292 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:43:06,345 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:43:06,345 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:43:06,696 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:06,696 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:06,756 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:43:06,756 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:43:06,803 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.11s
+INFO 2026-05-17 05:43:06,803 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.11s
+INFO 2026-05-17 05:43:06,805 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:43:06,805 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:43:25,129 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:25,129 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:25,139 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:43:25,139 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:43:25,141 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:43:25,141 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:43:25,216 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:43:25,218 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:43:25,218 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:43:25,231 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:43:25,216 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:43:25,231 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:43:25,281 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:43:25,281 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:43:25,417 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:43:25,417 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:43:25,455 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:43:25,485 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:43:25,455 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:43:25,485 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:43:25,684 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:25,684 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:25,745 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:43:25,745 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:43:25,795 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.11s
+INFO 2026-05-17 05:43:25,795 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.11s
+INFO 2026-05-17 05:43:25,798 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:43:25,798 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:43:54,825 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:54,825 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:54,832 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:43:54,832 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:43:54,833 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:43:54,833 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:43:54,932 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:43:54,932 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:43:54,980 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:43:54,980 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:43:55,004 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:43:55,004 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:43:55,033 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:43:55,033 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:43:55,043 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:43:55,043 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:43:55,103 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:43:55,103 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:43:55,132 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:43:55,132 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:43:55,305 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:55,305 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:55,365 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:43:55,365 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:43:55,403 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 05:43:55,403 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 05:43:55,404 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:43:55,404 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:43:58,522 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:58,522 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:58,532 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:43:58,532 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:43:58,534 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:43:58,534 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:43:58,805 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:58,805 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:43:58,911 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.11s
+INFO 2026-05-17 05:43:58,911 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.11s
+INFO 2026-05-17 05:43:58,913 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:43:58,913 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:44:00,433 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:00,433 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:00,440 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:44:00,440 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:44:00,442 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:44:00,442 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:44:00,676 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:00,676 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:00,799 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.12s
+INFO 2026-05-17 05:44:00,799 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.12s
+INFO 2026-05-17 05:44:00,801 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:44:00,801 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:44:01,864 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:01,864 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:01,870 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:44:01,870 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 05:44:01,871 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:44:01,871 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:44:02,050 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:02,050 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:02,192 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.14s
+INFO 2026-05-17 05:44:02,192 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.14s
+INFO 2026-05-17 05:44:02,197 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:44:02,197 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:44:31,267 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:44:31,267 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:44:37,638 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:37,638 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:37,797 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.16s
+INFO 2026-05-17 05:44:37,797 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.16s
+INFO 2026-05-17 05:44:37,800 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:44:37,800 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:44:38,026 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:38,026 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:38,058 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.03s
+INFO 2026-05-17 05:44:38,058 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.03s
+INFO 2026-05-17 05:44:38,059 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:44:38,059 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:44:44,048 middleware → GET / | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:44,048 middleware → GET / | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:44,362 middleware ← GET / | Status: 404 | Duration: 0.31s
+INFO 2026-05-17 05:44:44,362 middleware ← GET / | Status: 404 | Duration: 0.31s
+WARNING 2026-05-17 05:44:44,366 basehttp "GET / HTTP/1.1" 404 3141
+WARNING 2026-05-17 05:44:44,366 basehttp "GET / HTTP/1.1" 404 3141
+INFO 2026-05-17 05:44:44,423 middleware → GET /favicon.ico | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:44,423 middleware → GET /favicon.ico | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:44,446 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.02s
+INFO 2026-05-17 05:44:44,446 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.02s
+WARNING 2026-05-17 05:44:44,455 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+WARNING 2026-05-17 05:44:44,455 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+INFO 2026-05-17 05:44:49,715 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:49,715 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:49,775 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.06s
+INFO 2026-05-17 05:44:49,775 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.06s
+INFO 2026-05-17 05:44:49,778 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:44:49,778 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:44:49,975 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:49,975 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:44:50,066 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.09s
+INFO 2026-05-17 05:44:50,066 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.09s
+INFO 2026-05-17 05:44:50,068 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:44:50,068 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:45:01,263 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:45:01,263 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:45:01,396 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.13s
+INFO 2026-05-17 05:45:01,396 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.13s
+INFO 2026-05-17 05:45:01,437 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:45:01,437 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:50:16,559 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 05:50:16,559 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 05:50:18,472 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:50:18,472 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:52:20,843 autoreload /Users/j/Desktop/BizSMART/Backend/core/serializers.py changed, reloading.
+INFO 2026-05-17 05:52:20,843 autoreload /Users/j/Desktop/BizSMART/Backend/core/serializers.py changed, reloading.
+INFO 2026-05-17 05:52:22,410 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:52:22,410 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:52:37,669 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:52:37,669 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:52:37,824 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.16s
+INFO 2026-05-17 05:52:37,824 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.16s
+INFO 2026-05-17 05:52:37,826 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:52:37,826 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:52:37,933 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:52:37,933 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:52:37,956 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:52:37,956 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:52:37,989 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:52:37,989 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:52:37,990 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:52:37,990 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:52:38,008 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:52:38,008 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:52:38,044 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:52:38,044 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:52:38,113 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:52:38,113 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:52:38,441 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:52:38,441 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:52:38,467 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:52:38,467 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:52:38,516 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.07s
+INFO 2026-05-17 05:52:38,516 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.07s
+INFO 2026-05-17 05:52:38,518 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:52:38,518 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:52:55,107 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:52:55,107 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:55:21,784 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 05:55:21,784 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 05:55:23,401 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:55:23,401 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:55:40,221 middleware → GET /admin/core/user/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:55:40,221 middleware → GET /admin/core/user/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:55:40,526 middleware ← GET /admin/core/user/ | Status: 200 | Duration: 0.32s
+INFO 2026-05-17 05:55:40,526 middleware ← GET /admin/core/user/ | Status: 200 | Duration: 0.32s
+INFO 2026-05-17 05:55:40,528 basehttp "GET /admin/core/user/ HTTP/1.1" 200 21880
+INFO 2026-05-17 05:55:40,528 basehttp "GET /admin/core/user/ HTTP/1.1" 200 21880
+INFO 2026-05-17 05:55:40,639 middleware → GET /admin/jsi18n/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:55:40,639 middleware → GET /admin/jsi18n/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:55:40,651 middleware ← GET /admin/jsi18n/ | Status: 200 | Duration: 0.03s
+INFO 2026-05-17 05:55:40,651 middleware ← GET /admin/jsi18n/ | Status: 200 | Duration: 0.03s
+INFO 2026-05-17 05:55:40,663 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 05:55:40,663 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 05:55:40,927 middleware → GET /favicon.ico | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:55:40,927 middleware → GET /favicon.ico | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:55:41,037 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.12s
+INFO 2026-05-17 05:55:41,037 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.12s
+WARNING 2026-05-17 05:55:41,041 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+WARNING 2026-05-17 05:55:41,041 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+INFO 2026-05-17 05:55:59,720 middleware → GET / | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:55:59,720 middleware → GET / | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:55:59,826 middleware ← GET / | Status: 404 | Duration: 0.13s
+INFO 2026-05-17 05:55:59,826 middleware ← GET / | Status: 404 | Duration: 0.13s
+WARNING 2026-05-17 05:55:59,829 basehttp "GET / HTTP/1.1" 404 3141
+WARNING 2026-05-17 05:55:59,829 basehttp "GET / HTTP/1.1" 404 3141
+INFO 2026-05-17 05:56:15,448 middleware → GET /api/docs | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:56:15,448 middleware → GET /api/docs | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:56:15,459 middleware ← GET /api/docs | Status: 404 | Duration: 0.02s
+INFO 2026-05-17 05:56:15,459 middleware ← GET /api/docs | Status: 404 | Duration: 0.02s
+INFO 2026-05-17 05:56:15,462 basehttp "GET /api/docs HTTP/1.1" 301 0
+INFO 2026-05-17 05:56:15,462 basehttp "GET /api/docs HTTP/1.1" 301 0
+INFO 2026-05-17 05:56:15,472 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:56:15,472 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:56:15,492 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.02s
+INFO 2026-05-17 05:56:15,492 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.02s
+INFO 2026-05-17 05:56:15,493 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:56:15,493 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 05:56:15,570 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:56:15,570 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 05:56:15,606 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:56:15,606 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 05:56:15,628 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:56:15,628 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 05:56:15,629 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:56:15,629 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 05:56:15,713 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:56:15,713 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 05:56:15,733 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:56:15,733 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 05:56:15,743 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:56:15,743 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 05:56:16,119 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:56:16,119 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 05:56:16,211 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.11s
+INFO 2026-05-17 05:56:16,211 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.11s
+INFO 2026-05-17 05:56:16,214 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:56:16,214 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 580
+INFO 2026-05-17 05:56:16,217 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:56:16,217 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 05:57:12,396 middleware → GET /api/swagger.json/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:57:12,396 middleware → GET /api/swagger.json/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 05:57:12,410 middleware ← GET /api/swagger.json/ | Status: 404 | Duration: 0.01s
+INFO 2026-05-17 05:57:12,410 middleware ← GET /api/swagger.json/ | Status: 404 | Duration: 0.01s
+WARNING 2026-05-17 05:57:12,411 basehttp "GET /api/swagger.json/ HTTP/1.1" 404 3210
+WARNING 2026-05-17 05:57:12,411 basehttp "GET /api/swagger.json/ HTTP/1.1" 404 3210
+INFO 2026-05-17 05:59:20,322 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 05:59:20,322 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 05:59:21,642 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:59:21,642 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:59:56,979 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 05:59:56,979 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:00:24,569 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:00:24,569 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:00:24,726 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.17s
+INFO 2026-05-17 06:00:24,726 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.17s
+INFO 2026-05-17 06:00:24,727 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:00:24,727 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:00:24,806 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 06:00:24,806 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 06:00:24,834 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 06:00:24,834 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 06:00:24,856 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 06:00:24,856 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 06:00:24,866 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 06:00:24,866 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 06:00:24,875 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 06:00:24,875 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 06:00:24,902 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 06:00:24,902 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 06:00:24,962 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 06:00:24,962 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 06:00:25,361 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:00:25,361 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:00:25,421 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 06:00:25,421 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 06:00:25,426 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:00:25,426 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:00:25,428 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 06:00:25,428 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 06:00:54,439 middleware → GET /api/redocs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:00:54,439 middleware → GET /api/redocs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:00:54,513 middleware ← GET /api/redocs/ | Status: 404 | Duration: 0.08s
+INFO 2026-05-17 06:00:54,513 middleware ← GET /api/redocs/ | Status: 404 | Duration: 0.08s
+WARNING 2026-05-17 06:00:54,515 basehttp "GET /api/redocs/ HTTP/1.1" 404 3192
+WARNING 2026-05-17 06:00:54,515 basehttp "GET /api/redocs/ HTTP/1.1" 404 3192
+INFO 2026-05-17 06:00:54,612 middleware → GET /favicon.ico | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:00:54,612 middleware → GET /favicon.ico | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:00:54,645 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.05s
+INFO 2026-05-17 06:00:54,645 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.05s
+WARNING 2026-05-17 06:00:54,648 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+WARNING 2026-05-17 06:00:54,648 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+INFO 2026-05-17 06:01:02,545 middleware → GET /api/redoc/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:01:02,545 middleware → GET /api/redoc/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:01:02,558 middleware ← GET /api/redoc/ | Status: 200 | Duration: 0.02s
+INFO 2026-05-17 06:01:02,558 middleware ← GET /api/redoc/ | Status: 200 | Duration: 0.02s
+INFO 2026-05-17 06:01:02,563 basehttp "GET /api/redoc/ HTTP/1.1" 200 929
+INFO 2026-05-17 06:01:02,563 basehttp "GET /api/redoc/ HTTP/1.1" 200 929
+INFO 2026-05-17 06:01:02,623 basehttp "GET /static/drf-yasg/redoc-init.js HTTP/1.1" 200 2566
+INFO 2026-05-17 06:01:02,623 basehttp "GET /static/drf-yasg/redoc-init.js HTTP/1.1" 200 2566
+INFO 2026-05-17 06:01:02,728 basehttp "GET /static/drf-yasg/redoc/redoc.min.js HTTP/1.1" 200 1042511
+INFO 2026-05-17 06:01:02,728 basehttp "GET /static/drf-yasg/redoc/redoc.min.js HTTP/1.1" 200 1042511
+INFO 2026-05-17 06:01:02,971 basehttp "GET /static/drf-yasg/redoc/redoc-logo.png HTTP/1.1" 200 4969
+INFO 2026-05-17 06:01:02,971 basehttp "GET /static/drf-yasg/redoc/redoc-logo.png HTTP/1.1" 200 4969
+INFO 2026-05-17 06:01:02,980 middleware → GET /api/redoc/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:01:02,980 middleware → GET /api/redoc/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:01:03,018 middleware ← GET /api/redoc/ | Status: 200 | Duration: 0.06s
+INFO 2026-05-17 06:01:03,018 middleware ← GET /api/redoc/ | Status: 200 | Duration: 0.06s
+INFO 2026-05-17 06:01:03,019 basehttp "GET /api/redoc/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:01:03,019 basehttp "GET /api/redoc/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:03:40,208 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:03:40,208 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:03:51,226 middleware → GET /api/redoc/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:03:51,226 middleware → GET /api/redoc/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:03:51,316 middleware ← GET /api/redoc/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 06:03:51,316 middleware ← GET /api/redoc/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 06:03:51,318 basehttp "GET /api/redoc/ HTTP/1.1" 200 929
+INFO 2026-05-17 06:03:51,318 basehttp "GET /api/redoc/ HTTP/1.1" 200 929
+INFO 2026-05-17 06:03:51,557 middleware → GET /api/redoc/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:03:51,557 middleware → GET /api/redoc/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:03:51,595 middleware ← GET /api/redoc/ | Status: 200 | Duration: 0.05s
+INFO 2026-05-17 06:03:51,595 middleware ← GET /api/redoc/ | Status: 200 | Duration: 0.05s
+INFO 2026-05-17 06:03:51,597 basehttp "GET /api/redoc/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:03:51,597 basehttp "GET /api/redoc/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:04:00,085 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:04:00,085 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:04:00,112 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.04s
+INFO 2026-05-17 06:04:00,112 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.04s
+INFO 2026-05-17 06:04:00,115 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:04:00,115 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:04:00,377 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:04:00,377 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:04:00,448 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.09s
+INFO 2026-05-17 06:04:00,448 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.09s
+INFO 2026-05-17 06:04:00,453 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:04:00,453 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:08:42,309 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 06:08:42,309 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 06:08:43,769 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:08:43,769 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:09:11,426 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:09:11,426 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:09:11,513 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 06:09:11,513 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 06:09:11,516 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:09:11,516 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:09:12,024 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:09:12,024 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:09:12,059 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.05s
+INFO 2026-05-17 06:09:12,059 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.05s
+INFO 2026-05-17 06:09:12,062 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:09:12,062 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:11:47,437 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 06:11:47,437 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 06:11:49,584 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:11:49,584 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:12:18,724 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:12:18,724 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:12:20,779 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:12:20,779 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:13:10,912 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:13:10,912 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:13:20,377 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:20,377 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:20,535 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.17s
+INFO 2026-05-17 06:13:20,535 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.17s
+INFO 2026-05-17 06:13:20,537 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:13:20,537 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:13:20,636 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 06:13:20,636 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 06:13:20,669 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 06:13:20,669 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 06:13:20,683 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 06:13:20,683 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 06:13:20,699 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 06:13:20,699 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 06:13:20,707 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 06:13:20,707 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 06:13:20,781 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 06:13:20,781 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 06:13:20,878 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 06:13:20,878 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 06:13:21,271 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:21,271 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:21,336 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.09s
+INFO 2026-05-17 06:13:21,336 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.09s
+INFO 2026-05-17 06:13:21,342 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:13:21,342 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:13:21,383 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 06:13:21,383 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 06:13:42,275 middleware → GET /api/v1/financials/transactions/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:42,275 middleware → GET /api/v1/financials/transactions/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:42,277 middleware ← GET /api/v1/financials/transactions/ | Status: 401 | Duration: 0.01s
+INFO 2026-05-17 06:13:42,277 middleware ← GET /api/v1/financials/transactions/ | Status: 401 | Duration: 0.01s
+WARNING 2026-05-17 06:13:42,284 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 401 58
+WARNING 2026-05-17 06:13:42,284 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 401 58
+INFO 2026-05-17 06:13:42,386 middleware → GET /favicon.ico | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:42,386 middleware → GET /favicon.ico | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:42,492 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.12s
+INFO 2026-05-17 06:13:42,492 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.12s
+WARNING 2026-05-17 06:13:42,494 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+WARNING 2026-05-17 06:13:42,494 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+INFO 2026-05-17 06:13:56,481 middleware → GET /api/v1/financials | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:56,481 middleware → GET /api/v1/financials | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:13:56,519 middleware ← GET /api/v1/financials | Status: 404 | Duration: 0.05s
+INFO 2026-05-17 06:13:56,519 middleware ← GET /api/v1/financials | Status: 404 | Duration: 0.05s
+WARNING 2026-05-17 06:13:56,521 basehttp "GET /api/v1/financials HTTP/1.1" 404 3210
+WARNING 2026-05-17 06:13:56,521 basehttp "GET /api/v1/financials HTTP/1.1" 404 3210
+INFO 2026-05-17 06:14:05,260 middleware → GET /api/v1/financials/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:14:05,260 middleware → GET /api/v1/financials/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:14:05,274 middleware ← GET /api/v1/financials/ | Status: 404 | Duration: 0.02s
+INFO 2026-05-17 06:14:05,274 middleware ← GET /api/v1/financials/ | Status: 404 | Duration: 0.02s
+WARNING 2026-05-17 06:14:05,277 basehttp "GET /api/v1/financials/ HTTP/1.1" 404 5526
+WARNING 2026-05-17 06:14:05,277 basehttp "GET /api/v1/financials/ HTTP/1.1" 404 5526
+INFO 2026-05-17 06:14:24,665 middleware → GET /api/v1/financials/loans/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:14:24,665 middleware → GET /api/v1/financials/loans/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:14:24,668 middleware ← GET /api/v1/financials/loans/ | Status: 401 | Duration: 0.01s
+INFO 2026-05-17 06:14:24,668 middleware ← GET /api/v1/financials/loans/ | Status: 401 | Duration: 0.01s
+WARNING 2026-05-17 06:14:24,671 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+WARNING 2026-05-17 06:14:24,671 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+INFO 2026-05-17 06:14:48,583 middleware → GET /api/v1/financials/loans/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:14:48,583 middleware → GET /api/v1/financials/loans/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:14:48,584 middleware ← GET /api/v1/financials/loans/ | Status: 401 | Duration: 0.01s
+INFO 2026-05-17 06:14:48,584 middleware ← GET /api/v1/financials/loans/ | Status: 401 | Duration: 0.01s
+WARNING 2026-05-17 06:14:48,586 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+WARNING 2026-05-17 06:14:48,586 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+INFO 2026-05-17 06:15:09,494 middleware → GET / | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:15:09,494 middleware → GET / | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:15:09,509 middleware ← GET / | Status: 404 | Duration: 0.02s
+INFO 2026-05-17 06:15:09,509 middleware ← GET / | Status: 404 | Duration: 0.02s
+WARNING 2026-05-17 06:15:09,512 basehttp "GET / HTTP/1.1" 404 3141
+WARNING 2026-05-17 06:15:09,512 basehttp "GET / HTTP/1.1" 404 3141
+INFO 2026-05-17 06:15:21,589 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:15:21,589 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:15:21,594 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 06:15:21,594 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.01s
+INFO 2026-05-17 06:15:21,597 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:15:21,597 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:15:22,254 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:15:22,254 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-05-17 06:15:22,329 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 06:15:22,329 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-05-17 06:15:22,331 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:15:22,331 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:18:28,750 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 06:18:28,750 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-05-17 06:18:29,911 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.16s
+INFO 2026-05-17 06:18:29,911 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.16s
+INFO 2026-05-17 06:18:29,913 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 06:18:29,913 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 06:21:54,107 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 06:21:54,107 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 06:21:55,951 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:21:55,951 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:22:02,675 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:22:02,675 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:22:02,964 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+INFO 2026-05-17 06:22:02,964 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 633
+WARNING 2026-05-17 06:22:07,759 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+WARNING 2026-05-17 06:22:07,759 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+INFO 2026-05-17 06:25:27,304 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 06:25:27,304 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 06:25:28,947 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:25:28,947 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:25:55,983 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:25:55,983 autoreload Watching for file changes with StatReloader
+WARNING 2026-05-17 06:26:03,129 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+WARNING 2026-05-17 06:26:03,129 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+INFO 2026-05-17 06:26:11,997 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:26:11,997 basehttp "GET /api/docs/ HTTP/1.1" 200 1610
+INFO 2026-05-17 06:26:12,329 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 916
+INFO 2026-05-17 06:26:12,329 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 916
+WARNING 2026-05-17 06:26:52,960 basehttp "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 06:26:52,960 basehttp "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+INFO 2026-05-17 06:28:11,728 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 06:28:11,728 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 06:28:13,631 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:28:13,631 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:28:34,498 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 06:28:34,498 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 06:28:34,581 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 06:28:34,581 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 06:28:34,601 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 06:28:34,601 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 06:28:34,642 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 06:28:34,642 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 06:28:34,656 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 06:28:34,656 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 06:28:34,682 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 06:28:34,682 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 06:28:34,699 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 06:28:34,699 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 06:28:34,705 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 06:28:34,705 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 06:28:35,158 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 06:28:35,158 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 06:28:35,215 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 06:28:35,215 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 06:29:11,729 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 06:29:11,729 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 06:29:12,439 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 06:29:12,439 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 06:32:56,072 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:32:56,072 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:32:57,506 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:32:57,506 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:33:42,670 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:33:42,670 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:33:43,677 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:33:43,677 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:34:16,661 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 06:34:16,661 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 06:34:17,597 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:34:17,597 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:34:40,999 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 06:34:40,999 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 06:34:41,498 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 06:34:41,498 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+WARNING 2026-05-17 06:35:30,318 basehttp "GET /api/v1/auth/public-test/ HTTP/1.1" 401 58
+WARNING 2026-05-17 06:35:30,318 basehttp "GET /api/v1/auth/public-test/ HTTP/1.1" 401 58
+WARNING 2026-05-17 06:35:30,689 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+WARNING 2026-05-17 06:35:30,689 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+INFO 2026-05-17 06:38:27,305 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:38:27,305 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:38:28,483 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:38:28,483 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:38:55,391 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:38:55,391 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 06:38:56,201 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:38:56,201 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 06:39:04,699 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 06:39:04,699 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 06:39:05,172 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 06:39:05,172 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 06:39:12,570 basehttp "GET /api/v1/auth/public-test/ HTTP/1.1" 200 47
+INFO 2026-05-17 06:39:12,570 basehttp "GET /api/v1/auth/public-test/ HTTP/1.1" 200 47
+INFO 2026-05-17 08:39:07,966 autoreload /Users/j/Desktop/BizSMART/Backend/core/permissions.py changed, reloading.
+INFO 2026-05-17 08:39:07,966 autoreload /Users/j/Desktop/BizSMART/Backend/core/permissions.py changed, reloading.
+INFO 2026-05-17 08:39:09,394 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:39:09,394 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:39:29,534 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:39:29,534 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:39:29,655 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:39:29,655 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:39:29,709 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:39:29,709 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:39:29,742 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:39:29,742 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:39:29,758 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:39:29,758 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:39:29,770 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:39:29,770 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:39:29,803 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:39:29,803 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:39:29,816 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:39:29,816 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:39:30,290 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:39:30,290 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:39:30,301 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 08:39:30,301 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 912
+INFO 2026-05-17 08:51:01,528 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:51:01,528 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:51:03,050 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:51:03,050 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:51:12,333 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:51:12,333 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:51:12,510 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:51:12,510 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:51:12,529 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:51:12,529 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:51:12,557 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:51:12,557 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:51:12,590 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:51:12,590 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:51:12,595 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:51:12,595 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:51:12,638 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:51:12,638 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:51:12,650 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:51:12,650 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:51:13,134 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:51:13,134 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:51:13,141 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:51:13,141 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:51:29,903 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:51:29,903 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:51:31,159 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:51:31,159 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:51:51,455 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:51:51,455 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:51:51,506 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:51:51,506 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:51:51,567 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:51:51,567 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:51:51,603 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:51:51,603 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:51:51,609 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:51:51,609 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:51:51,642 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:51:51,642 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:51:51,663 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:51:51,663 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:51:51,723 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:51:51,723 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:51:51,916 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:51:51,916 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:51:51,960 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:51:51,960 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:52:20,968 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:52:20,968 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:52:23,083 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:52:23,083 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:52:29,797 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:52:29,797 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:52:29,863 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:52:29,863 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:52:29,867 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:52:29,867 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:52:29,894 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:52:29,894 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:52:29,916 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:52:29,916 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:52:29,963 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:52:29,963 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:52:29,978 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:52:29,978 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:52:30,007 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:52:30,007 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:52:30,204 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:52:30,204 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:52:30,263 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:52:30,263 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:52:46,697 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:52:46,697 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:52:47,563 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:52:47,563 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:52:56,341 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:52:56,341 basehttp "GET /api/docs/ HTTP/1.1" 200 1608
+INFO 2026-05-17 08:52:56,408 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:52:56,408 basehttp "GET /static/drf-yasg/style.css HTTP/1.1" 200 1047
+INFO 2026-05-17 08:52:56,425 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:52:56,425 basehttp "GET /static/drf-yasg/insQ.min.js HTTP/1.1" 200 2093
+INFO 2026-05-17 08:52:56,438 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:52:56,438 basehttp "GET /static/drf-yasg/swagger-ui-init.js HTTP/1.1" 200 15480
+INFO 2026-05-17 08:52:56,468 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:52:56,468 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui.css HTTP/1.1" 200 145206
+INFO 2026-05-17 08:52:56,500 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:52:56,500 basehttp "GET /static/drf-yasg/immutable.min.js HTTP/1.1" 200 56904
+INFO 2026-05-17 08:52:56,516 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:52:56,516 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js HTTP/1.1" 200 322863
+INFO 2026-05-17 08:52:56,666 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:52:56,666 basehttp "GET /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js HTTP/1.1" 200 1046583
+INFO 2026-05-17 08:52:56,835 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:52:56,835 basehttp "GET /static/drf-yasg/swagger-ui-dist/favicon-32x32.png HTTP/1.1" 200 628
+INFO 2026-05-17 08:52:56,885 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:52:56,885 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:53:28,239 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:53:28,239 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 08:53:30,761 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:53:30,761 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:55:55,665 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:55:55,665 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 08:56:02,256 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+INFO 2026-05-17 08:56:02,256 basehttp "GET /api/docs/?format=openapi HTTP/1.1" 200 739
+WARNING 2026-05-17 08:56:03,110 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+WARNING 2026-05-17 08:56:03,110 basehttp "GET /favicon.ico HTTP/1.1" 404 3192
+INFO 2026-05-17 09:00:01,486 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:00:01,486 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:00:03,287 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:00:03,287 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:00:58,443 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:00:58,443 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:00:59,902 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:00:59,902 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:01:25,328 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:01:25,328 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:01:26,812 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:01:26,812 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:03:47,423 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:03:47,423 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:03:49,431 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:03:49,431 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:04:13,770 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 09:04:13,770 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-05-17 09:04:15,063 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:04:15,063 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:04:21,475 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:04:21,475 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:04:27,616 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 09:04:27,616 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 09:04:30,374 basehttp "GET /api/schema/ HTTP/1.1" 200 320737
+INFO 2026-05-17 09:04:30,374 basehttp "GET /api/schema/ HTTP/1.1" 200 320737
+WARNING 2026-05-17 09:04:59,765 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 76
+WARNING 2026-05-17 09:04:59,765 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 76
+WARNING 2026-05-17 09:11:01,678 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+WARNING 2026-05-17 09:11:01,678 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 401 58
+WARNING 2026-05-17 09:11:36,899 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 401 58
+WARNING 2026-05-17 09:11:36,899 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 401 58
+INFO 2026-05-17 09:16:30,982 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 09:16:30,982 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 09:16:32,516 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:16:32,516 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:16:46,317 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 09:16:46,317 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 09:16:48,386 basehttp "GET /api/schema/ HTTP/1.1" 200 330953
+INFO 2026-05-17 09:16:48,386 basehttp "GET /api/schema/ HTTP/1.1" 200 330953
+INFO 2026-05-17 09:17:35,819 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 09:17:35,819 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+WARNING 2026-05-17 09:18:12,767 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 401 107
+WARNING 2026-05-17 09:18:12,767 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 401 107
+WARNING 2026-05-17 09:18:37,019 basehttp "GET /api/v1/bi/executive/ HTTP/1.1" 401 107
+WARNING 2026-05-17 09:18:37,019 basehttp "GET /api/v1/bi/executive/ HTTP/1.1" 401 107
+INFO 2026-05-17 09:21:30,490 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:21:30,490 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:21:32,404 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:21:32,404 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:22:31,238 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 09:22:31,238 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 09:22:32,512 basehttp "GET /api/schema/ HTTP/1.1" 200 313078
+INFO 2026-05-17 09:22:32,512 basehttp "GET /api/schema/ HTTP/1.1" 200 313078
+INFO 2026-05-17 09:23:21,974 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 09:23:21,974 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+WARNING 2026-05-17 09:24:08,881 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 401 107
+WARNING 2026-05-17 09:24:08,881 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 401 107
+INFO 2026-05-17 09:26:29,753 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 553
+INFO 2026-05-17 09:26:29,753 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 553
+INFO 2026-05-17 09:26:53,515 basehttp "GET /api/v1/hr/salaries/ HTTP/1.1" 200 665
+INFO 2026-05-17 09:26:53,515 basehttp "GET /api/v1/hr/salaries/ HTTP/1.1" 200 665
+INFO 2026-05-17 09:27:35,704 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 678
+INFO 2026-05-17 09:27:35,704 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 678
+INFO 2026-05-17 09:29:02,512 basehttp "POST /api/v1/sales/customers/ HTTP/1.1" 201 231
+INFO 2026-05-17 09:29:02,512 basehttp "POST /api/v1/sales/customers/ HTTP/1.1" 201 231
+INFO 2026-05-17 09:36:00,737 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:36:00,737 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:36:02,906 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:36:02,906 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:40:35,936 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:40:35,936 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 09:40:37,551 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 09:40:37,551 autoreload Watching for file changes with StatReloader
+WARNING 2026-05-17 11:10:00,110 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 401 183
+WARNING 2026-05-17 11:10:00,110 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 401 183
+INFO 2026-05-17 11:10:52,088 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 11:10:52,088 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 11:10:54,354 basehttp "GET /api/schema/ HTTP/1.1" 200 313078
+INFO 2026-05-17 11:10:54,354 basehttp "GET /api/schema/ HTTP/1.1" 200 313078
+INFO 2026-05-17 11:11:49,441 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 11:11:49,441 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 11:12:25,921 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 697
+INFO 2026-05-17 11:12:25,921 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 697
+INFO 2026-05-17 11:12:50,013 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 910
+INFO 2026-05-17 11:12:50,013 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 910
+INFO 2026-05-17 11:13:14,503 basehttp "GET /api/v1/sales/customers/2/ HTTP/1.1" 200 198
+INFO 2026-05-17 11:13:14,503 basehttp "GET /api/v1/sales/customers/2/ HTTP/1.1" 200 198
+WARNING 2026-05-17 11:14:40,406 basehttp "PATCH /api/v1/sales/customers/2/ HTTP/1.1" 400 108
+WARNING 2026-05-17 11:14:40,406 basehttp "PATCH /api/v1/sales/customers/2/ HTTP/1.1" 400 108
+INFO 2026-05-17 11:15:51,189 basehttp "DELETE /api/v1/sales/customers/2/ HTTP/1.1" 200 43
+INFO 2026-05-17 11:15:51,189 basehttp "DELETE /api/v1/sales/customers/2/ HTTP/1.1" 200 43
+WARNING 2026-05-17 11:16:11,593 basehttp "GET /api/v1/sales/customers/2/ HTTP/1.1" 404 49
+WARNING 2026-05-17 11:16:11,593 basehttp "GET /api/v1/sales/customers/2/ HTTP/1.1" 404 49
+WARNING 2026-05-17 11:19:54,276 basehttp "POST /api/v1/sales/sales/process/ HTTP/1.1" 400 41
+WARNING 2026-05-17 11:19:54,276 basehttp "POST /api/v1/sales/sales/process/ HTTP/1.1" 400 41
+INFO 2026-05-17 11:20:28,818 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 244
+INFO 2026-05-17 11:20:28,818 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 244
+INFO 2026-05-17 11:21:30,785 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 11:21:30,785 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 11:21:49,708 basehttp "GET /api/v1/auth/public-test/ HTTP/1.1" 200 47
+INFO 2026-05-17 11:21:49,708 basehttp "GET /api/v1/auth/public-test/ HTTP/1.1" 200 47
+WARNING 2026-05-17 11:23:11,090 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 400 111
+WARNING 2026-05-17 11:23:11,090 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 400 111
+INFO 2026-05-17 11:24:20,371 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 797
+INFO 2026-05-17 11:24:20,371 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 797
+INFO 2026-05-17 11:25:02,490 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 11:25:02,490 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 11:25:07,364 basehttp "GET /api/schema/ HTTP/1.1" 200 313078
+INFO 2026-05-17 11:25:07,364 basehttp "GET /api/schema/ HTTP/1.1" 200 313078
+INFO 2026-05-17 11:25:33,766 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 265
+INFO 2026-05-17 11:25:33,766 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 265
+INFO 2026-05-17 11:40:21,398 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 11:40:21,398 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 11:40:23,090 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:40:23,090 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:46:34,653 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 11:46:34,653 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 11:46:37,123 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:46:37,123 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:49:00,926 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 11:49:00,926 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 11:49:02,849 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:49:02,849 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:49:33,421 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 11:49:33,421 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 11:49:36,047 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:49:36,047 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:53:28,885 autoreload /Users/j/Desktop/BizSMART/Backend/core/email_service.py changed, reloading.
+INFO 2026-05-17 11:53:28,885 autoreload /Users/j/Desktop/BizSMART/Backend/core/email_service.py changed, reloading.
+INFO 2026-05-17 11:53:31,362 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:53:31,362 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:53:49,681 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 11:53:49,681 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-05-17 11:53:51,422 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:53:51,422 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:54:29,159 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 11:54:29,159 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-05-17 11:54:30,771 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 11:54:30,771 autoreload Watching for file changes with StatReloader
+INFO 2026-05-17 12:12:31,232 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 12:12:31,232 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 12:12:33,163 basehttp "GET /api/schema/ HTTP/1.1" 200 317008
+INFO 2026-05-17 12:12:33,163 basehttp "GET /api/schema/ HTTP/1.1" 200 317008
+INFO 2026-05-17 12:13:06,057 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 12:13:06,057 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 12:15:20,834 email_service Email notifications disabled. Would send: Welcome to BizSmart, Hesler@bizsmart! to ['kavishedenis55@gmail.com']
+INFO 2026-05-17 12:15:20,842 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 806
+INFO 2026-05-17 12:15:20,842 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 806
+WARNING 2026-05-17 12:16:52,757 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 400 50
+WARNING 2026-05-17 12:16:52,757 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 400 50
+INFO 2026-05-17 12:17:33,208 email_service Email notifications disabled. Would send: Welcome to BizSmart, testuser! to ['zooperk2g@gmail.com']
+INFO 2026-05-17 12:17:33,211 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 719
+INFO 2026-05-17 12:17:33,211 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 719
+INFO 2026-05-17 12:25:08,045 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:25:08,045 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:25:08,114 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4187
+INFO 2026-05-17 12:25:08,114 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4187
+INFO 2026-05-17 12:25:08,224 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,224 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,230 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,233 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,239 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,233 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,242 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,230 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,239 basehttp "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,242 basehttp "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,258 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,258 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,263 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:08,263 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+WARNING 2026-05-17 12:25:08,471 basehttp "GET /favicon.ico HTTP/1.1" 404 3304
+WARNING 2026-05-17 12:25:08,471 basehttp "GET /favicon.ico HTTP/1.1" 404 3304
+INFO 2026-05-17 12:25:19,338 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:25:19,338 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:25:19,422 basehttp "GET /admin/ HTTP/1.1" 200 21639
+INFO 2026-05-17 12:25:19,422 basehttp "GET /admin/ HTTP/1.1" 200 21639
+INFO 2026-05-17 12:25:19,502 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:19,502 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:19,509 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:19,509 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:19,514 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:19,515 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:19,515 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:19,514 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,297 basehttp "GET /admin/core/user/ HTTP/1.1" 200 23729
+INFO 2026-05-17 12:25:39,297 basehttp "GET /admin/core/user/ HTTP/1.1" 200 23729
+INFO 2026-05-17 12:25:39,366 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,366 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,373 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,373 basehttp "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,381 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,381 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,385 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,385 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,389 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,389 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,437 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,437 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,403 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:25:39,403 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:25:39,459 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,459 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,390 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,407 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,407 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,390 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,415 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,415 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,480 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,477 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2026-05-17 12:25:39,480 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,486 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,486 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,477 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2026-05-17 12:25:39,489 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,489 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:39,491 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2026-05-17 12:25:39,491 basehttp "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2026-05-17 12:25:50,427 basehttp "GET /admin/core/user/5/change/ HTTP/1.1" 200 42372
+INFO 2026-05-17 12:25:50,427 basehttp "GET /admin/core/user/5/change/ HTTP/1.1" 200 42372
+INFO 2026-05-17 12:25:50,544 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,544 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,554 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2026-05-17 12:25:50,555 basehttp "GET /static/admin/js/collapse.js HTTP/1.1" 200 1803
+INFO 2026-05-17 12:25:50,559 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15292
+INFO 2026-05-17 12:25:50,554 basehttp "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2026-05-17 12:25:50,555 basehttp "GET /static/admin/js/collapse.js HTTP/1.1" 200 1803
+INFO 2026-05-17 12:25:50,559 basehttp "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15292
+INFO 2026-05-17 12:25:50,581 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,581 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,586 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,593 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:25:50,599 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,599 basehttp "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,586 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,593 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:25:50,618 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,618 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2026-05-17 12:25:50,843 basehttp "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2026-05-17 12:25:50,843 basehttp "GET /static/admin/img/icon-unknown-alt.svg HTTP/1.1" 200 655
+INFO 2026-05-17 12:25:50,844 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2026-05-17 12:25:50,844 basehttp "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2026-05-17 12:25:50,857 basehttp "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2026-05-17 12:25:50,857 basehttp "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2026-05-17 12:25:54,403 basehttp "GET /admin/core/user/5/delete/ HTTP/1.1" 200 16358
+INFO 2026-05-17 12:25:54,403 basehttp "GET /admin/core/user/5/delete/ HTTP/1.1" 200 16358
+INFO 2026-05-17 12:25:54,466 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2026-05-17 12:25:54,466 basehttp "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2026-05-17 12:25:56,323 basehttp "POST /admin/core/user/5/delete/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:25:56,323 basehttp "POST /admin/core/user/5/delete/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:25:56,394 basehttp "GET /admin/core/user/ HTTP/1.1" 200 23350
+INFO 2026-05-17 12:25:56,394 basehttp "GET /admin/core/user/ HTTP/1.1" 200 23350
+INFO 2026-05-17 12:25:56,453 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:25:56,453 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:27:00,115 email_service Email notifications disabled. Would send: Welcome to BizSmart, testuser! to ['zooperk2g@gmail.com']
+INFO 2026-05-17 12:27:00,119 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 719
+INFO 2026-05-17 12:27:00,119 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 719
+INFO 2026-05-17 12:28:47,450 basehttp "GET /admin/core/user/3/change/ HTTP/1.1" 200 42368
+INFO 2026-05-17 12:28:47,450 basehttp "GET /admin/core/user/3/change/ HTTP/1.1" 200 42368
+INFO 2026-05-17 12:28:47,564 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:28:47,564 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:28:50,142 basehttp "GET /admin/core/user/3/delete/ HTTP/1.1" 200 16346
+INFO 2026-05-17 12:28:50,142 basehttp "GET /admin/core/user/3/delete/ HTTP/1.1" 200 16346
+INFO 2026-05-17 12:28:51,664 basehttp "POST /admin/core/user/3/delete/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:28:51,664 basehttp "POST /admin/core/user/3/delete/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:28:51,743 basehttp "GET /admin/core/user/ HTTP/1.1" 200 23244
+INFO 2026-05-17 12:28:51,743 basehttp "GET /admin/core/user/ HTTP/1.1" 200 23244
+INFO 2026-05-17 12:28:51,798 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:28:51,798 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:29:00,075 basehttp "GET /admin/core/user/6/change/ HTTP/1.1" 200 42372
+INFO 2026-05-17 12:29:00,075 basehttp "GET /admin/core/user/6/change/ HTTP/1.1" 200 42372
+INFO 2026-05-17 12:29:00,130 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:29:00,130 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:29:04,429 basehttp "GET /admin/core/user/6/delete/ HTTP/1.1" 200 16358
+INFO 2026-05-17 12:29:04,429 basehttp "GET /admin/core/user/6/delete/ HTTP/1.1" 200 16358
+INFO 2026-05-17 12:29:06,002 basehttp "POST /admin/core/user/6/delete/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:29:06,002 basehttp "POST /admin/core/user/6/delete/ HTTP/1.1" 302 0
+INFO 2026-05-17 12:29:06,073 basehttp "GET /admin/core/user/ HTTP/1.1" 200 22703
+INFO 2026-05-17 12:29:06,073 basehttp "GET /admin/core/user/ HTTP/1.1" 200 22703
+INFO 2026-05-17 12:29:06,221 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-17 12:29:06,221 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2026-05-17 12:29:43,052 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+WARNING 2026-05-17 12:29:43,052 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+WARNING 2026-05-17 12:29:57,092 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+WARNING 2026-05-17 12:29:57,092 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+INFO 2026-05-17 12:30:15,309 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 12:30:15,309 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-17 12:30:17,288 basehttp "GET /api/schema/ HTTP/1.1" 200 317008
+INFO 2026-05-17 12:30:17,288 basehttp "GET /api/schema/ HTTP/1.1" 200 317008
+INFO 2026-05-17 12:30:31,676 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 12:30:31,676 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 12:31:03,560 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 12:31:03,560 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+WARNING 2026-05-17 12:33:16,554 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 400 121
+WARNING 2026-05-17 12:33:16,554 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 400 121
+WARNING 2026-05-17 12:33:51,631 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 400 54
+WARNING 2026-05-17 12:33:51,631 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 400 54
+INFO 2026-05-17 12:34:01,917 email_service Email notifications disabled. Would send: Welcome to BizSmart, heaven@bizsmart! to ['heavenlightlaizer941@gmail.com']
+INFO 2026-05-17 12:34:01,921 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 813
+INFO 2026-05-17 12:34:01,921 basehttp "POST /api/v1/auth/register/ HTTP/1.1" 201 813
+INFO 2026-05-17 12:43:36,491 basehttp "GET /api/v1/bi/forecast/ HTTP/1.1" 200 1834
+INFO 2026-05-17 12:43:36,491 basehttp "GET /api/v1/bi/forecast/ HTTP/1.1" 200 1834

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .alert-box { border: 1px solid #e74c3c; background: #fff5f5; padding: 20px; margin: 20px; }
+        .product-list { margin: 20px 0; }
+        .product { padding: 10px; border-bottom: 1px solid #ddd; }
+        .stock-low { color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="alert-box">
+        <h2>⚠️ Low Stock Alert</h2>
+        <p>The following products are running low on stock:</p>
+        
+        <div class="product-list">
+            {% for product in products %}
+            <div class="product">
+                <strong>{{ product.name }}</strong><br>
+                SKU: {{ product.sku }}<br>
+                Current Stock: <span class="stock-low">{{ product.quantity_on_hand }}</span><br>
+                Reorder Level: {{ product.reorder_level }}
+            </div>
+            {% endfor %}
+        </div>
+        
+        <p>Please reorder these items to avoid stockouts.</p>
+    </div>
+</body>
+</html>

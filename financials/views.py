@@ -1,0 +1,514 @@
+from rest_framework import generics, permissions, status
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from django.db import models as django_models
+from django.db.models import Sum, Q, F
+from django.utils import timezone
+from datetime import timedelta
+from decimal import Decimal
+from core.models import Business
+from .models import Transaction, Invoice, InvoiceItem, Loan, PettyCash, CashFlowForecast
+from .serializers import (
+    TransactionSerializer, InvoiceSerializer, LoanSerializer,
+    PettyCashSerializer, CashFlowForecastSerializer
+)
+from .tax_calculator import TaxCalculator
+from .permissions import (
+    CanViewFinancials, CanEditFinancials, CanViewInvoices,
+    CanCreateInvoices, CanViewLoans, CanViewPettyCash,
+    CanExportReports, IsAuditorReadOnly
+)
+
+
+# ==================== TRANSACTIONS ====================
+class TransactionListCreateView(generics.ListCreateAPIView):
+    """
+    List all transactions or create a new transaction.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Create: Owner, Accountant only
+    """
+    serializer_class = TransactionSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewFinancials()]
+        else:
+            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Transaction.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return Transaction.objects.filter(business=self.request.user.business)
+        return Transaction.objects.none()
+    
+    def perform_create(self, serializer):
+        serializer.save(
+            business=self.request.user.business,
+            created_by=self.request.user
+        )
+
+
+class TransactionDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a transaction.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Update/Delete: Owner, Accountant only
+    """
+    serializer_class = TransactionSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewFinancials()]
+        else:
+            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Transaction.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return Transaction.objects.filter(business=self.request.user.business)
+        return Transaction.objects.none()
+
+
+# ==================== INVOICES ====================
+class InvoiceListCreateView(generics.ListCreateAPIView):
+    """
+    List all invoices or create a new invoice.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Create: Owner, Manager, Accountant
+    """
+    serializer_class = InvoiceSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewInvoices()]
+        else:
+            return [permissions.IsAuthenticated(), CanCreateInvoices(), IsAuditorReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Invoice.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return Invoice.objects.filter(business=self.request.user.business)
+        return Invoice.objects.none()
+    
+    def perform_create(self, serializer):
+        serializer.save(
+            business=self.request.user.business,
+            created_by=self.request.user
+        )
+
+
+class InvoiceDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete an invoice.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Update/Delete: Owner, Accountant only
+    """
+    serializer_class = InvoiceSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewInvoices()]
+        else:
+            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Invoice.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return Invoice.objects.filter(business=self.request.user.business)
+        return Invoice.objects.none()
+
+
+class RecordPaymentView(APIView):
+    """
+    Record a payment against an invoice.
+    
+    Access: Owner, Manager, Accountant
+    """
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanCreateInvoices(), IsAuditorReadOnly()]
+    
+    def post(self, request, pk):
+        self.check_permissions(request)
+        
+        try:
+            invoice = Invoice.objects.get(pk=pk, business=request.user.business)
+            amount = Decimal(request.data.get('amount', 0))
+            
+            invoice.amount_paid += amount
+            if invoice.amount_paid >= invoice.total_amount:
+                invoice.status = 'paid'
+                invoice.payment_date = timezone.now().date()
+            else:
+                invoice.status = 'sent'
+            
+            invoice.save()
+            
+            Transaction.objects.create(
+                business=request.user.business,
+                created_by=request.user,
+                type='income',
+                cost_type='non_cost',
+                category='sales',
+                amount=amount,
+                description=f'Payment for invoice {invoice.invoice_number}',
+                transaction_date=timezone.now().date()
+            )
+            
+            return Response({'message': 'Payment recorded successfully'})
+        except Invoice.DoesNotExist:
+            return Response({'error': 'Invoice not found'}, status=404)
+
+
+# ==================== LOANS ====================
+class LoanListCreateView(generics.ListCreateAPIView):
+    """
+    List all loans or create a new loan.
+    
+    - View: Owner, Accountant, Auditor
+    - Create: Owner, Accountant only
+    """
+    serializer_class = LoanSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewLoans()]
+        else:
+            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Loan.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return Loan.objects.filter(business=self.request.user.business)
+        return Loan.objects.none()
+    
+    def perform_create(self, serializer):
+        serializer.save(
+            business=self.request.user.business,
+            created_by=self.request.user
+        )
+
+
+class LoanDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a loan.
+    
+    - View: Owner, Accountant, Auditor
+    - Update/Delete: Owner, Accountant only
+    """
+    serializer_class = LoanSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewLoans()]
+        else:
+            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Loan.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return Loan.objects.filter(business=self.request.user.business)
+        return Loan.objects.none()
+
+
+# ==================== PETTY CASH ====================
+class PettyCashListCreateView(generics.ListCreateAPIView):
+    """
+    List all petty cash entries or create a new one.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Create: Owner, Manager, Accountant
+    """
+    serializer_class = PettyCashSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewPettyCash()]
+        else:
+            return [permissions.IsAuthenticated(), CanCreateInvoices(), IsAuditorReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return PettyCash.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return PettyCash.objects.filter(business=self.request.user.business)
+        return PettyCash.objects.none()
+    
+    def perform_create(self, serializer):
+        serializer.save(
+            business=self.request.user.business,
+            created_by=self.request.user
+        )
+
+
+class PettyCashDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a petty cash entry.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Update/Delete: Owner, Accountant only
+    """
+    serializer_class = PettyCashSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewPettyCash()]
+        else:
+            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return PettyCash.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return PettyCash.objects.filter(business=self.request.user.business)
+        return PettyCash.objects.none()
+
+
+# ==================== CASH FLOW FORECAST ====================
+class CashFlowForecastView(APIView):
+    """
+    Get cash flow forecast for next 30 days.
+    
+    Access: Owner, Manager, Accountant, Auditor
+    """
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanViewFinancials()]
+    
+    def get(self, request):
+        self.check_permissions(request)
+        
+        if getattr(self, 'swagger_fake_view', False):
+            return Response({'message': 'Schema generation'})
+        
+        user = request.user
+        business = user.business
+        
+        if not business:
+            return Response({'error': 'No business associated with this user'}, status=400)
+        
+        today = timezone.now().date()
+        last_30_days = today - timedelta(days=30)
+        
+        avg_daily_income = Transaction.objects.filter(
+            business=business, type='income', transaction_date__gte=last_30_days
+        ).aggregate(Sum('amount'))['amount__sum'] or 0
+        avg_daily_income = avg_daily_income / 30 if avg_daily_income > 0 else 0
+        
+        avg_daily_expense = Transaction.objects.filter(
+            business=business, type='expense', transaction_date__gte=last_30_days
+        ).aggregate(Sum('amount'))['amount__sum'] or 0
+        avg_daily_expense = avg_daily_expense / 30 if avg_daily_expense > 0 else 0
+        
+        current_balance = Transaction.objects.filter(business=business).aggregate(
+            income=Sum('amount', filter=django_models.Q(type='income')),
+            expense=Sum('amount', filter=django_models.Q(type='expense'))
+        )
+        balance = (current_balance['income'] or 0) - (current_balance['expense'] or 0)
+        
+        forecast = []
+        for i in range(1, 31):
+            balance += avg_daily_income - avg_daily_expense
+            forecast.append({
+                'day': i,
+                'date': (today + timedelta(days=i)).isoformat(),
+                'projected_balance': round(balance, 2)
+            })
+        
+        warning = None
+        min_balance = min(f['projected_balance'] for f in forecast)
+        if min_balance < 0:
+            warning = f'Cash shortage predicted in {next(i for i,f in enumerate(forecast) if f["projected_balance"] < 0) + 1} days'
+        
+        return Response({
+            'current_balance': round(balance, 2),
+            'avg_daily_income': round(avg_daily_income, 2),
+            'avg_daily_expense': round(avg_daily_expense, 2),
+            'forecast_30_days': forecast,
+            'warning': warning
+        })
+
+
+# ==================== FINANCIAL DASHBOARD ====================
+class CompleteFinancialDashboardView(APIView):
+    """
+    Get complete financial dashboard with all metrics.
+    
+    Access: Owner, Manager, Accountant, Auditor
+    """
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanViewFinancials()]
+    
+    def get(self, request):
+        self.check_permissions(request)
+        
+        if getattr(self, 'swagger_fake_view', False):
+            return Response({'message': 'Schema generation'})
+        
+        user = request.user
+        business = user.business
+        
+        if not business:
+            return Response({'error': 'No business associated with this user'}, status=400)
+        
+        today = timezone.now().date()
+        current_month = today.month
+        current_year = today.year
+        
+        total_revenue = Transaction.objects.filter(
+            business=business, type='income',
+            transaction_date__month=current_month,
+            transaction_date__year=current_year
+        ).aggregate(Sum('amount'))['amount__sum'] or 0
+        
+        total_expenses = Transaction.objects.filter(
+            business=business, type='expense',
+            transaction_date__month=current_month,
+            transaction_date__year=current_year
+        ).aggregate(Sum('amount'))['amount__sum'] or 0
+        
+        direct_costs = Transaction.objects.filter(
+            business=business, type='expense', cost_type='direct',
+            transaction_date__month=current_month,
+            transaction_date__year=current_year
+        ).aggregate(Sum('amount'))['amount__sum'] or 0
+        
+        variable_costs = Transaction.objects.filter(
+            business=business, type='expense', cost_type='variable',
+            transaction_date__month=current_month,
+            transaction_date__year=current_year
+        ).aggregate(Sum('amount'))['amount__sum'] or 0
+        
+        fixed_costs = Transaction.objects.filter(
+            business=business, type='expense', cost_type='fixed',
+            transaction_date__month=current_month,
+            transaction_date__year=current_year
+        ).aggregate(Sum('amount'))['amount__sum'] or 0
+        
+        gross_profit = total_revenue - direct_costs
+        gross_margin = (gross_profit / total_revenue * 100) if total_revenue > 0 else 0
+        net_profit = total_revenue - total_expenses
+        net_margin = (net_profit / total_revenue * 100) if total_revenue > 0 else 0
+        
+        estimated_vat = TaxCalculator.calculate_vat(total_revenue)
+        estimated_income_tax = TaxCalculator.calculate_income_tax(net_profit * 12)
+        
+        total_invoices = Invoice.objects.filter(business=business).count()
+        paid_invoices = Invoice.objects.filter(business=business, status='paid').count()
+        overdue_invoices = Invoice.objects.filter(business=business, status='overdue').count()
+        total_outstanding = Invoice.objects.filter(business=business).aggregate(
+            total=django_models.Sum('total_amount') - django_models.Sum('amount_paid')
+        )['total'] or 0
+        
+        active_loans = Loan.objects.filter(business=business, status='active')
+        total_loan_balance = sum(loan.balance_remaining for loan in active_loans)
+        next_payment = active_loans.order_by('next_payment_date').first()
+        
+        recent = Transaction.objects.filter(business=business)[:10]
+        
+        return Response({
+            'business_name': business.name,
+            'business_city': business.get_city_display(),
+            'summary': {
+                'total_revenue': round(total_revenue, 2),
+                'total_expenses': round(total_expenses, 2),
+                'net_profit': round(net_profit, 2),
+                'net_margin': round(net_margin, 1)
+            },
+            'costs': {
+                'direct_costs': round(direct_costs, 2),
+                'variable_costs': round(variable_costs, 2),
+                'fixed_costs': round(fixed_costs, 2),
+                'gross_profit': round(gross_profit, 2),
+                'gross_margin': round(gross_margin, 1)
+            },
+            'taxes': {
+                'estimated_vat': round(estimated_vat, 2),
+                'estimated_income_tax': round(estimated_income_tax, 2),
+                'vat_rate': '18%'
+            },
+            'invoices': {
+                'total': total_invoices,
+                'paid': paid_invoices,
+                'overdue': overdue_invoices,
+                'total_outstanding': round(total_outstanding, 2)
+            },
+            'loans': {
+                'active_loans': active_loans.count(),
+                'total_balance': round(total_loan_balance, 2),
+                'next_payment_date': next_payment.next_payment_date if next_payment else None,
+                'next_payment_amount': float(next_payment.monthly_payment) if next_payment else None
+            },
+            'recent_transactions': TransactionSerializer(recent, many=True).data
+        })
+
+
+# ==================== EXPORT REPORTS ====================
+from django.http import HttpResponse
+import csv
+import json
+
+class ExportFinancialReportView(APIView):
+    """
+    Export financial reports as CSV or JSON.
+    
+    Access: Owner, Accountant only
+    """
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanExportReports(), IsAuditorReadOnly()]
+    
+    def get(self, request):
+        self.check_permissions(request)
+        
+        if getattr(self, 'swagger_fake_view', False):
+            return Response({'message': 'Schema generation'})
+        
+        business = request.user.business
+        format_type = request.query_params.get('format', 'csv')
+        start_date = request.query_params.get('start_date')
+        end_date = request.query_params.get('end_date')
+        
+        if not business:
+            return Response({'error': 'No business associated'}, status=400)
+        
+        transactions = Transaction.objects.filter(business=business)
+        if start_date:
+            transactions = transactions.filter(transaction_date__gte=start_date)
+        if end_date:
+            transactions = transactions.filter(transaction_date__lte=end_date)
+        
+        if format_type == 'csv':
+            response = HttpResponse(content_type='text/csv')
+            response['Content-Disposition'] = 'attachment; filename="financial_report.csv"'
+            
+            writer = csv.writer(response)
+            writer.writerow(['Date', 'Type', 'Cost Type', 'Category', 'Amount', 'Description'])
+            
+            for t in transactions:
+                writer.writerow([t.transaction_date, t.type, t.cost_type, t.category, t.amount, t.description])
+            
+            return response
+        
+        elif format_type == 'json':
+            data = TransactionSerializer(transactions, many=True).data
+            return Response(data)

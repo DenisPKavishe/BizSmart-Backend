@@ -1,0 +1,1164 @@
+INFO 2026-05-17 04:51:23,586 autoreload 21270 4517240320 Watching for file changes with StatReloader
+INFO 2026-05-17 04:51:23,586 autoreload 21270 4517240320 Watching for file changes with StatReloader
+ERROR 2026-05-17 05:00:10,448 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,448 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,513 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,513 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,586 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,586 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,655 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,655 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,719 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,719 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,788 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,788 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,853 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,853 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,916 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,916 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,981 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:10,981 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,040 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,040 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,158 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,158 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,220 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,220 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,284 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,284 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,346 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,346 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,401 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,401 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,470 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,470 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,535 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,535 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,599 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,599 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,668 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,668 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,742 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:11,742 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,022 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,022 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,164 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,164 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,301 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,301 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,360 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,360 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,423 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,423 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,479 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,479 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,530 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,530 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,583 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,583 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,635 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:00:12,635 log 21349 4439973376 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:03:05,530 log 21412 4593171968 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-05-17 05:03:05,530 log 21412 4593171968 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+WARNING 2026-05-17 05:05:35,177 log 21438 4354039296 Unauthorized: /api/v1/auth/login/
+WARNING 2026-05-17 05:05:35,177 log 21438 4354039296 Unauthorized: /api/v1/auth/login/
+INFO 2026-05-17 05:06:26,874 basehttp 21270 123145536745472 "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 05:06:26,874 basehttp 21270 123145536745472 "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+WARNING 2026-05-17 05:07:18,421 log 21464 4566728192 Unauthorized: /api/v1/auth/login/
+WARNING 2026-05-17 05:07:18,421 log 21464 4566728192 Unauthorized: /api/v1/auth/login/
+INFO 2026-05-17 05:12:53,315 basehttp 21270 123145536745472 "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 05:12:53,315 basehttp 21270 123145536745472 "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-05-17 05:12:53,335 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,335 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,357 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,357 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,377 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,377 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,392 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,392 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,408 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,408 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,441 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,441 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,458 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,458 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,476 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,476 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,494 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,494 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,510 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,510 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,524 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,524 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,541 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,541 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,558 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,558 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,579 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,579 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,597 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,597 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,613 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,613 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,628 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,628 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,645 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,645 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,662 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,662 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,694 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,694 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,709 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,709 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,724 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,724 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,741 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,741 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,755 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,755 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,772 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,772 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,789 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,789 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,805 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,805 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,822 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,822 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,839 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,839 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,856 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,856 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,874 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,874 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,893 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,893 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,910 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:53,910 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,003 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,003 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,022 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,022 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,038 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,038 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,054 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,054 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,071 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,071 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,086 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,086 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,101 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,101 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,115 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,115 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,130 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,130 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,145 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,145 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,160 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,160 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,187 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,187 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,201 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,201 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,216 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,216 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,230 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,230 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,244 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,244 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,260 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,260 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,276 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,276 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,294 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,294 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,312 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,312 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,332 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,332 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,351 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,351 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,370 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,370 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,389 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,389 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,406 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,406 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,439 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,439 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,459 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,459 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,473 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,473 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,489 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,489 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,505 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,505 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,520 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,520 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,536 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,536 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,551 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,551 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,568 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,568 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,582 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,582 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,598 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,598 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,612 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,612 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,626 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,626 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,642 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,642 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,656 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,656 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,671 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,671 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,699 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,699 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,713 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,713 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,727 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,727 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,742 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,742 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,757 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,757 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,772 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,772 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,787 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,787 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,801 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,801 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,817 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,817 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,832 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,832 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,848 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,848 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,862 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,862 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,969 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,969 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,988 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:54,988 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,005 basehttp 21270 123145587113984 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,005 basehttp 21270 123145587113984 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,023 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,023 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,043 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,043 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,055 basehttp 21270 123145587113984 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,055 basehttp 21270 123145587113984 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,074 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,074 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,097 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,097 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,118 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,118 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,150 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,150 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,197 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,197 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,218 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,218 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,235 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,235 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,252 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,252 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,269 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,269 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,292 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,292 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,308 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,308 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,327 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,327 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,344 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,344 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,364 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,364 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,379 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,379 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,393 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,393 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,409 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,409 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,424 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,424 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,450 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,450 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,465 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,465 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,481 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,481 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,495 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,495 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,511 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,511 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,527 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,527 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,542 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,542 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,558 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,558 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,573 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,573 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,588 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,588 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,605 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,605 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,620 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,620 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,634 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,634 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,649 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,649 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,664 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,664 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,692 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,692 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,707 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,707 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,723 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,723 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,738 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,738 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,754 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,754 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,770 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,770 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,784 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,784 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,799 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,799 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,815 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,815 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,829 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,829 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,846 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,846 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,862 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,862 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,878 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,878 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,896 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,896 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,910 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,910 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,926 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,926 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,953 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,953 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,971 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,971 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,985 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:55,985 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,002 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,002 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,020 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,020 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,035 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,035 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,049 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,049 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,064 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,064 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,078 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,078 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,095 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,095 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,112 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,112 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,130 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,130 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,145 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,145 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,161 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,161 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,183 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,183 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,209 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,209 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,224 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,224 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,239 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,239 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,254 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,254 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,272 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,272 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,288 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,288 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,306 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,306 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,323 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,323 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,341 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,341 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,357 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,357 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,375 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,375 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,399 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,399 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,416 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,416 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,445 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,445 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,463 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,463 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,480 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,480 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,498 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,498 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,518 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,518 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,534 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,534 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,550 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,550 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,568 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,568 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,584 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,584 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,599 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,599 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,615 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,615 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,630 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,630 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,647 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,647 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,662 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,662 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,677 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,677 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,709 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,709 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,725 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,725 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,740 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,740 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,755 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,755 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,772 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,772 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,786 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,786 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,802 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,802 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,819 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,819 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,833 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,833 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,847 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,847 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,862 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,862 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,879 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,879 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,894 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,894 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,909 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,909 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,924 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,924 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,951 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-05-17 05:12:56,951 basehttp 21270 123145570324480 "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+WARNING 2026-05-17 05:12:56,965 log 21270 123145553534976 Too Many Requests: /api/v1/auth/profile/
+WARNING 2026-05-17 05:12:56,965 log 21270 123145553534976 Too Many Requests: /api/v1/auth/profile/
+WARNING 2026-05-17 05:12:56,967 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 429 69
+WARNING 2026-05-17 05:12:56,967 basehttp 21270 123145553534976 "GET /api/v1/auth/profile/ HTTP/1.1" 429 69
+WARNING 2026-05-17 05:12:57,000 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,000 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,001 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,001 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,011 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,011 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,012 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,012 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,026 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,026 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,027 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,027 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,044 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,044 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,045 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,045 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,064 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,064 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,065 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,065 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,074 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,074 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,075 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,075 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,084 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,084 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,085 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,085 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,095 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,095 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,096 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,096 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,106 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,106 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,107 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,107 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,115 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,115 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,116 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,116 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,127 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,127 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,128 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,128 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,152 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,152 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,154 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,154 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,164 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,164 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,165 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,165 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,174 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,174 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,175 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,175 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,199 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,199 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,200 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,200 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,210 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,210 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,211 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,211 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,220 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,220 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,220 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,220 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,228 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,228 log 21270 123145553534976 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,229 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,229 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,238 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,238 log 21270 123145570324480 Method Not Allowed: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,239 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,239 basehttp 21270 123145570324480 "GET /api/v1/auth/login/ HTTP/1.1" 405 40
+WARNING 2026-05-17 05:12:57,247 log 21270 123145553534976 Too Many Requests: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,247 log 21270 123145553534976 Too Many Requests: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,248 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 429 69
+WARNING 2026-05-17 05:12:57,248 basehttp 21270 123145553534976 "GET /api/v1/auth/login/ HTTP/1.1" 429 69
+WARNING 2026-05-17 05:12:57,259 log 21270 123145570324480 Too Many Requests: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,259 log 21270 123145570324480 Too Many Requests: /api/v1/auth/login/
+WARNING 2026-05-17 05:12:57,260 basehttp 21270 123145570324480 "POST /api/v1/auth/login/ HTTP/1.1" 429 69
+WARNING 2026-05-17 05:12:57,260 basehttp 21270 123145570324480 "POST /api/v1/auth/login/ HTTP/1.1" 429 69
+INFO 2026-05-17 05:21:11,655 autoreload 21270 4517240320 /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 05:21:11,655 autoreload 21270 4517240320 /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 05:21:13,894 autoreload 21647 4461170176 Watching for file changes with StatReloader
+INFO 2026-05-17 05:21:13,894 autoreload 21647 4461170176 Watching for file changes with StatReloader
+INFO 2026-05-17 05:23:04,330 autoreload 21647 4461170176 /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-05-17 05:23:04,330 autoreload 21647 4461170176 /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
