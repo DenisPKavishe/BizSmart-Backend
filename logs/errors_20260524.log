@@ -1,0 +1,144 @@
+ERROR 2026-05-24 09:40:21,285 log Internal Server Error: /api/v1/hr/salaries/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/hr/views.py", line 221, in create
+    employee = Employee.objects.get(id=data['employee_id'], business=business)
+KeyError: 'employee_id'
+ERROR 2026-05-24 09:40:21,321 basehttp "POST /api/v1/hr/salaries/ HTTP/1.1" 500 104971
+ERROR 2026-05-24 09:40:44,710 log Internal Server Error: /api/v1/hr/salaries/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/hr/views.py", line 221, in create
+    employee = Employee.objects.get(id=data['employee_id'], business=business)
+KeyError: 'employee_id'
+ERROR 2026-05-24 09:40:44,713 basehttp "POST /api/v1/hr/salaries/ HTTP/1.1" 500 104971
+ERROR 2026-05-24 09:41:31,378 log Internal Server Error: /api/v1/hr/salaries/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/hr/views.py", line 221, in create
+    employee = Employee.objects.get(id=data['employee_id'], business=business)
+KeyError: 'employee_id'
+ERROR 2026-05-24 09:41:31,380 basehttp "POST /api/v1/hr/salaries/ HTTP/1.1" 500 104971
+ERROR 2026-05-24 09:46:51,804 log Internal Server Error: /api/v1/hr/salaries/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/hr/views.py", line 221, in create
+    employee = Employee.objects.get(id=data['employee_id'], business=business)
+KeyError: 'employee_id'
+ERROR 2026-05-24 09:46:51,821 basehttp "POST /api/v1/hr/salaries/ HTTP/1.1" 500 20700
+ERROR 2026-05-24 09:47:01,159 log Internal Server Error: /api/v1/hr/salaries/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/hr/views.py", line 221, in create
+    employee = Employee.objects.get(id=data['employee_id'], business=business)
+KeyError: 'employee_id'
+ERROR 2026-05-24 09:47:01,160 basehttp "POST /api/v1/hr/salaries/ HTTP/1.1" 500 20700
+ERROR 2026-05-24 09:47:56,254 log Internal Server Error: /api/v1/hr/salaries/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/hr/views.py", line 221, in create
+    employee = Employee.objects.get(id=data['employee_id'], business=business)
+KeyError: 'employee_id'
+ERROR 2026-05-24 09:47:56,256 basehttp "POST /api/v1/hr/salaries/ HTTP/1.1" 500 20700
