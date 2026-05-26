@@ -632,108 +632,233 @@ class SaleReceiptView(APIView):
 
 
 # ==================== RETURNS ====================
+# ==================== RETURNS ====================
+
 class ReturnListCreateView(generics.ListCreateAPIView):
     """
     List all returns or create a new return.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Create: Owner, Manager only
+
+    GET:
+    - Owner
+    - Manager
+    - Accountant
+    - Auditor
+    - Cashier
+
+    POST:
+    - Owner
+    - Manager
+    - Cashier
     """
+
     serializer_class = ReturnSerializer
-    
+
     def get_permissions(self):
+
+        # VIEW RETURNS
+
         if self.request.method == 'GET':
-            return [permissions.IsAuthenticated(), CanViewSalesReports(), IsAuditorSalesReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
-    
+            return [
+                permissions.IsAuthenticated(),
+                CanViewSalesReports(),
+                IsAuditorSalesReadOnly()
+            ]
+
+        # CREATE RETURN
+
+        return [
+            permissions.IsAuthenticated(),
+            CanProcessReturn(),
+            IsAuditorSalesReadOnly()
+        ]
+
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
+
+        if getattr(
+            self,
+            'swagger_fake_view',
+            False
+        ):
             return Return.objects.none()
-        return Return.objects.filter(business=self.request.user.business)
-    
+
+        return Return.objects.filter(
+            business=self.request.user.business
+        )
+
     def perform_create(self, serializer):
+
         serializer.save(
             business=self.request.user.business,
             created_by=self.request.user
         )
 
 
-class ReturnDetailView(generics.RetrieveUpdateDestroyAPIView):
+class ReturnDetailView(
+    generics.RetrieveUpdateDestroyAPIView
+):
     """
     Retrieve, update or delete a return.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Update/Delete: Owner, Manager only
     """
-    serializer_class = ReturnSerializer
-    
-    def get_permissions(self):
-        if self.request.method == 'GET':
-            return [permissions.IsAuthenticated(), CanViewSalesReports(), IsAuditorSalesReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
-    
-    def get_queryset(self):
-        return Return.objects.filter(business=self.request.user.business)
 
+    serializer_class = ReturnSerializer
+
+    def get_permissions(self):
+
+        # VIEW RETURN
+
+        if self.request.method == 'GET':
+            return [
+                permissions.IsAuthenticated(),
+                CanViewSalesReports(),
+                IsAuditorSalesReadOnly()
+            ]
+
+        # UPDATE / DELETE
+
+        return [
+            permissions.IsAuthenticated(),
+            CanProcessReturn(),
+            IsAuditorSalesReadOnly()
+        ]
+
+    def get_queryset(self):
+
+        return Return.objects.filter(
+            business=self.request.user.business
+        )
 
 class ProcessReturnView(APIView):
     """
     Process a return/refund.
-    
-    Access: Owner, Manager only
+
+    Access:
+    - Owner
+    - Manager
+    - Cashier
     """
-    
+
     def get_permissions(self):
-        return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
-    
+        return [
+            permissions.IsAuthenticated(),
+            CanProcessReturn(),
+            IsAuditorSalesReadOnly()
+        ]
+
     @swagger_auto_schema(
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,
             required=['sale_id'],
             properties={
-                'sale_id': openapi.Schema(type=openapi.TYPE_INTEGER, description='ID of the sale'),
-                'sale_item_id': openapi.Schema(type=openapi.TYPE_INTEGER, description='ID of specific item to return'),
-                'quantity': openapi.Schema(type=openapi.TYPE_INTEGER, description='Quantity to return'),
-                'reason': openapi.Schema(type=openapi.TYPE_STRING, description='Reason for return'),
-                'notes': openapi.Schema(type=openapi.TYPE_STRING, description='Additional notes'),
+                'sale_id': openapi.Schema(
+                    type=openapi.TYPE_INTEGER,
+                    description='ID of the sale'
+                ),
+
+                'sale_item_id': openapi.Schema(
+                    type=openapi.TYPE_INTEGER,
+                    description='ID of specific item to return'
+                ),
+
+                'quantity': openapi.Schema(
+                    type=openapi.TYPE_INTEGER,
+                    description='Quantity to return'
+                ),
+
+                'reason': openapi.Schema(
+                    type=openapi.TYPE_STRING,
+                    description='Reason for return'
+                ),
+
+                'notes': openapi.Schema(
+                    type=openapi.TYPE_STRING,
+                    description='Additional notes'
+                ),
             }
         ),
-        responses={201: 'Return processed successfully'}
+
+        responses={
+            201: 'Return processed successfully'
+        }
     )
+
     @transaction.atomic
     def post(self, request):
+
         self.check_permissions(request)
-        
+
         sale_id = request.data.get('sale_id')
-        sale_item_id = request.data.get('sale_item_id')
-        quantity = int(request.data.get('quantity', 0))
-        reason = request.data.get('reason', 'customer_request')
-        notes = request.data.get('notes', '')
-        
+
+        sale_item_id = request.data.get(
+            'sale_item_id'
+        )
+
+        quantity = int(
+            request.data.get(
+                'quantity',
+                0
+            )
+        )
+
+        reason = request.data.get(
+            'reason',
+            'customer_request'
+        )
+
+        notes = request.data.get(
+            'notes',
+            ''
+        )
+
         try:
-            sale = Sale.objects.get(id=sale_id, business=request.user.business)
+            sale = Sale.objects.get(
+                id=sale_id,
+                business=request.user.business
+            )
+
         except Sale.DoesNotExist:
-            return Response({'error': 'Sale not found'}, status=404)
-        
+            return Response(
+                {'error': 'Sale not found'},
+                status=404
+            )
+
         if sale.status == 'refunded':
-            return Response({'error': 'Sale already refunded'}, status=400)
-        
+            return Response(
+                {'error': 'Sale already refunded'},
+                status=400
+            )
+
         if sale_item_id:
+
             try:
-                sale_item = SaleItem.objects.get(id=sale_item_id, sale=sale)
+                sale_item = SaleItem.objects.get(
+                    id=sale_item_id,
+                    sale=sale
+                )
+
             except SaleItem.DoesNotExist:
-                return Response({'error': 'Sale item not found'}, status=404)
+                return Response(
+                    {'error': 'Sale item not found'},
+                    status=404
+                )
+
         else:
             sale_item = sale.items.first()
             quantity = sale_item.quantity
-        
+
         if quantity > sale_item.quantity:
-            return Response({'error': 'Return quantity exceeds sold quantity'}, status=400)
-        
-        refund_amount = (sale_item.unit_price * quantity) - sale_item.discount_amount
-        
+
+            return Response(
+                {
+                    'error':
+                    'Return quantity exceeds sold quantity'
+                },
+                status=400
+            )
+
+        refund_amount = (
+            sale_item.unit_price * quantity
+        ) - sale_item.discount_amount
+
         return_obj = Return.objects.create(
             business=request.user.business,
             sale=sale,
@@ -744,28 +869,40 @@ class ProcessReturnView(APIView):
             notes=notes,
             created_by=request.user
         )
-        
-        # Return stock to inventory
+
+        # RETURN STOCK TO INVENTORY
+
         from inventory.models import StockMovement
-        
+
         product = sale_item.product
+
         product.quantity_on_hand += quantity
-        product.total_investment = product.buying_price * product.quantity_on_hand
+
+        product.total_investment = (
+            product.buying_price *
+            product.quantity_on_hand
+        )
+
         product.save()
-        
+
         StockMovement.objects.create(
             business=request.user.business,
             product=product,
             quantity=quantity,
             movement_type='RETURN_IN',
             unit_cost=product.buying_price,
-            total_cost=product.buying_price * quantity,
+            total_cost=(
+                product.buying_price *
+                quantity
+            ),
             reference_id=sale.invoice_number,
             reference_type='return',
             notes=f"Return from sale {sale.invoice_number}",
             created_by=request.user
         )
-        
+
+        # CREATE FINANCIAL TRANSACTION
+
         Transaction.objects.create(
             business=request.user.business,
             created_by=request.user,
@@ -776,16 +913,33 @@ class ProcessReturnView(APIView):
             description=f"Refund for {sale.invoice_number}",
             transaction_date=timezone.now().date()
         )
-        
-        if sale_item.quantity == quantity and sale.items.count() == 1:
+
+        # UPDATE SALE STATUS
+
+        if (
+            sale_item.quantity == quantity
+            and
+            sale.items.count() == 1
+        ):
             sale.status = 'refunded'
             sale.save()
-        
-        return Response({
-            'message': 'Return processed successfully',
-            'return': ReturnSerializer(return_obj).data,
-            'refund_amount': float(refund_amount)
-        }, status=status.HTTP_201_CREATED)
+
+        return Response(
+            {
+                'message':
+                'Return processed successfully',
+
+                'return':
+                ReturnSerializer(
+                    return_obj
+                ).data,
+
+                'refund_amount':
+                float(refund_amount)
+            },
+
+            status=status.HTTP_201_CREATED
+        )
 
 
 # ==================== SALES REPORTS ====================
