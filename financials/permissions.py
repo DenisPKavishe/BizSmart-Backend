@@ -119,3 +119,61 @@ class IsAuditorReadOnly(permissions.BasePermission):
             return request.method in permissions.SAFE_METHODS
         
         return True
+    
+
+
+# financials/permissions.py - Add these new permission classes
+
+class CanViewBudgets(permissions.BasePermission):
+    """Owner, Manager, Accountant, Auditor can view budgets"""
+    
+    def has_permission(self, request, view):
+        if getattr(view, 'swagger_fake_view', False):
+            return True
+        
+        if not request.user.is_authenticated:
+            return False
+        
+        if not request.user.role:
+            return False
+        
+        allowed_roles = ['owner', 'general_manager', 'accountant', 'auditor']
+        
+        return request.user.role.name in allowed_roles
+
+
+class CanManageBudgets(permissions.BasePermission):
+    """Only Owner and Accountant can create/edit/delete budgets"""
+    
+    def has_permission(self, request, view):
+        if getattr(view, 'swagger_fake_view', False):
+            return True
+        
+        if not request.user.is_authenticated:
+            return False
+        
+        if not request.user.role:
+            return False
+        
+        allowed_roles = ['owner', 'accountant']
+        
+        return request.user.role.name in allowed_roles
+
+
+class IsAuditorBudgetReadOnly(permissions.BasePermission):
+    """Auditor can only view budgets, not modify"""
+    
+    def has_permission(self, request, view):
+        if getattr(view, 'swagger_fake_view', False):
+            return True
+        
+        if not request.user.is_authenticated:
+            return False
+        
+        if not request.user.role:
+            return True
+        
+        if request.user.role.name == 'auditor':
+            return request.method in permissions.SAFE_METHODS
+        
+        return True

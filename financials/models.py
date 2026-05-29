@@ -218,3 +218,89 @@ class CashFlowForecast(models.Model):
     opening_balance = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     closing_balance = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+
+    # financials/models.py - Add these new models after your existing PettyCash model
+
+class Budget(models.Model):
+    """
+    Budget model for financial planning.
+    Tracks planned income and expenses for specific periods.
+    """
+    PERIOD_CHOICES = [
+        ('monthly', 'Monthly'),
+        ('quarterly', 'Quarterly'),
+        ('yearly', 'Yearly'),
+    ]
+    
+    STATUS_CHOICES = [
+        ('draft', 'Draft'),
+        ('active', 'Active'),
+        ('archived', 'Archived'),
+    ]
+    
+    business = models.ForeignKey(
+        Business,
+        on_delete=models.CASCADE,
+        related_name='budgets'
+    )
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.SET_NULL,
+        null=True,
+        related_name='created_budgets'
+    )
+    name = models.CharField(max_length=100, help_text="e.g., 'May 2024 Budget', 'Q2 2024 Budget'")
+    period = models.CharField(max_length=20, choices=PERIOD_CHOICES)
+    year = models.IntegerField()
+    month = models.IntegerField(null=True, blank=True, help_text="1-12 for monthly budgets")
+    quarter = models.IntegerField(null=True, blank=True, help_text="1-4 for quarterly budgets")
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')
+    notes = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['-year', '-month', '-quarter']
+        unique_together = ['business', 'period', 'year', 'month', 'quarter']
+    
+    def __str__(self):
+        if self.period == 'monthly':
+            month_names = ['January', 'February', 'March', 'April', 'May', 'June',
+                          'July', 'August', 'September', 'October', 'November', 'December']
+            return f"{self.name} - {month_names[self.month - 1]} {self.year}"
+        elif self.period == 'quarterly':
+            return f"{self.name} - Q{self.quarter} {self.year}"
+        return f"{self.name} - {self.year}"
+
+
+class BudgetItem(models.Model):
+    """
+    Individual line items within a budget.
+    Each item represents planned amount for a specific category.
+    """
+    TYPE_CHOICES = [
+        ('income', 'Income'),
+        ('expense', 'Expense'),
+    ]
+    
+    budget = models.ForeignKey(
+        Budget,
+        on_delete=models.CASCADE,
+        related_name='items'
+    )
+    category = models.CharField(max_length=50)  # Matches Transaction.CATEGORY_CHOICES
+    category_name = models.CharField(max_length=100)
+    type = models.CharField(max_length=10, choices=TYPE_CHOICES)
+    planned_amount = models.DecimalField(max_digits=15, decimal_places=2, default=0)
+    notes = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['type', 'category_name']
+        unique_together = ['budget', 'category']
+    
+    def __str__(self):
+        return f"{self.budget.name} - {self.category_name}: {self.planned_amount}"

@@ -1,0 +1,28 @@
+INFO 2026-05-29 09:36:42,320 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 09:36:42,320 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:01:22,960 basehttp "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:22,960 basehttp "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+WARNING 2026-05-29 10:01:23,015 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+WARNING 2026-05-29 10:01:23,015 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+INFO 2026-05-29 10:01:23,022 basehttp "OPTIONS /api/v1/auth/refresh/ HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:23,022 basehttp "OPTIONS /api/v1/auth/refresh/ HTTP/1.1" 200 0
+WARNING 2026-05-29 10:01:23,066 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 401 58
+WARNING 2026-05-29 10:01:23,066 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 401 58
+INFO 2026-05-29 10:01:41,830 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 10:01:41,830 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 10:01:47,862 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:47,862 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:47,880 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:47,880 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:47,886 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:47,886 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:47,889 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:47,889 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 10:01:48,046 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 10:01:48,046 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 10:01:48,067 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 10:01:48,067 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 10:01:48,272 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 10:01:48,272 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 10:01:48,307 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 10:01:48,307 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592

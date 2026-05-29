@@ -1,6 +1,13 @@
 from django.urls import path
 from .views import (
     # Transactions
+    BudgetDetailView,
+    BudgetItemDetailView,
+    BudgetItemListCreateView,
+    BudgetListCreateView,
+    BudgetSummaryView,
+    BudgetVsActualView,
+    CopyBudgetView,
     TransactionListCreateView,
     TransactionDetailView,
     # Invoices
@@ -34,6 +41,14 @@ urlpatterns = [
     # Loans
     path('loans/', LoanListCreateView.as_view(), name='loans'),
     path('loans/<int:pk>/', LoanDetailView.as_view(), name='loan-detail'),
+
+    path('budgets/', BudgetListCreateView.as_view(), name='budget-list'),
+    path('budgets/<int:pk>/', BudgetDetailView.as_view(), name='budget-detail'),
+    path('budgets/<int:pk>/items/', BudgetItemListCreateView.as_view(), name='budget-items'),
+    path('budgets/<int:pk>/items/<int:item_pk>/', BudgetItemDetailView.as_view(), name='budget-item-detail'),
+    path('budgets/<int:pk>/vs-actual/', BudgetVsActualView.as_view(), name='budget-vs-actual'),
+    path('budgets/<int:pk>/copy/', CopyBudgetView.as_view(), name='budget-copy'),
+    path('budgets/summary/', BudgetSummaryView.as_view(), name='budget-summary'),
     
     # Petty Cash (Full CRUD)
     path('petty-cash/', PettyCashListCreateView.as_view(), name='petty-cash'),

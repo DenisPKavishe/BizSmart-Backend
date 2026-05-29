@@ -7,16 +7,17 @@ from django.utils import timezone
 from datetime import timedelta
 from decimal import Decimal
 from core.models import Business
-from .models import Transaction, Invoice, InvoiceItem, Loan, PettyCash, CashFlowForecast
+from .models import Transaction, Invoice, InvoiceItem, Loan, PettyCash, CashFlowForecast,Budget, BudgetItem, Transaction
 from .serializers import (
     TransactionSerializer, InvoiceSerializer, LoanSerializer,
-    PettyCashSerializer, CashFlowForecastSerializer
+    PettyCashSerializer, CashFlowForecastSerializer,BudgetSerializer, BudgetItemSerializer, BudgetItemCreateSerializer,
+    BudgetSummarySerializer
 )
 from .tax_calculator import TaxCalculator
 from .permissions import (
     CanViewFinancials, CanEditFinancials, CanViewInvoices,
     CanCreateInvoices, CanViewLoans, CanViewPettyCash,
-    CanExportReports, IsAuditorReadOnly
+    CanExportReports, IsAuditorReadOnly, CanViewBudgets, CanManageBudgets, IsAuditorBudgetReadOnly
 )
 
 
@@ -512,3 +513,305 @@ class ExportFinancialReportView(APIView):
         elif format_type == 'json':
             data = TransactionSerializer(transactions, many=True).data
             return Response(data)
+        
+
+# ==================== BUDGET MANAGEMENT ====================
+
+class BudgetListCreateView(generics.ListCreateAPIView):
+    """
+    List all budgets or create a new budget.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Create: Owner, Accountant only
+    """
+    serializer_class = BudgetSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewBudgets()]
+        else:
+            return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Budget.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            queryset = Budget.objects.filter(business=self.request.user.business)
+            
+            # Filter by period
+            period = self.request.query_params.get('period')
+            if period:
+                queryset = queryset.filter(period=period)
+            
+            # Filter by year
+            year = self.request.query_params.get('year')
+            if year:
+                queryset = queryset.filter(year=year)
+            
+            # Filter by status
+            status = self.request.query_params.get('status')
+            if status:
+                queryset = queryset.filter(status=status)
+            
+            return queryset
+        
+        return Budget.objects.none()
+    
+    def perform_create(self, serializer):
+        serializer.save(
+            business=self.request.user.business,
+            created_by=self.request.user
+        )
+
+
+class BudgetDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a budget.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Update/Delete: Owner, Accountant only
+    """
+    serializer_class = BudgetSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewBudgets()]
+        else:
+            return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return Budget.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return Budget.objects.filter(business=self.request.user.business)
+        return Budget.objects.none()
+
+
+class BudgetItemListCreateView(generics.ListCreateAPIView):
+    """
+    List all items for a budget or create a new budget item.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Create: Owner, Accountant only
+    """
+    serializer_class = BudgetItemCreateSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewBudgets()]
+        else:
+            return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return BudgetItem.objects.none()
+        
+        budget_id = self.kwargs.get('budget_id')
+        if budget_id and self.request.user.is_authenticated:
+            return BudgetItem.objects.filter(budget_id=budget_id, budget__business=self.request.user.business)
+        return BudgetItem.objects.none()
+    
+    def perform_create(self, serializer):
+        budget_id = self.kwargs.get('budget_id')
+        budget = Budget.objects.get(id=budget_id, business=self.request.user.business)
+        serializer.save(budget=budget)
+
+
+class BudgetItemDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Retrieve, update or delete a budget item.
+    
+    - View: Owner, Manager, Accountant, Auditor
+    - Update/Delete: Owner, Accountant only
+    """
+    serializer_class = BudgetItemCreateSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewBudgets()]
+        else:
+            return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return BudgetItem.objects.none()
+        
+        if self.request.user.is_authenticated and self.request.user.business:
+            return BudgetItem.objects.filter(budget__business=self.request.user.business)
+        return BudgetItem.objects.none()
+
+
+class BudgetVsActualView(APIView):
+    """
+    Get budget vs actual comparison with detailed breakdown.
+    
+    Access: Owner, Manager, Accountant, Auditor
+    """
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanViewBudgets()]
+    
+    def get(self, request, pk):
+        self.check_permissions(request)
+        
+        if getattr(self, 'swagger_fake_view', False):
+            return Response({'message': 'Schema generation'})
+        
+        try:
+            budget = Budget.objects.get(pk=pk, business=request.user.business)
+        except Budget.DoesNotExist:
+            return Response({'error': 'Budget not found'}, status=404)
+        
+        # Serialize budget with items (includes actual calculations)
+        serializer = BudgetSerializer(budget, context={'request': request})
+        budget_data = serializer.data
+        
+        # Generate alerts for items exceeding threshold
+        alerts = []
+        for item in budget_data.get('items', []):
+            if item.get('variance_percentage', 0) <= -10:  # 10% under budget
+                alerts.append({
+                    'category': item['category'],
+                    'category_name': item['category_name'],
+                    'type': item['type'],
+                    'planned_amount': item['planned_amount'],
+                    'actual_amount': item['actual_amount'],
+                    'percentage': abs(item['variance_percentage']),
+                    'severity': 'warning' if abs(item['variance_percentage']) < 20 else 'critical',
+                    'message': f"{item['category_name']} is {abs(item['variance_percentage']):.1f}% {'below' if item['variance'] < 0 else 'above'} budget"
+                })
+            elif item.get('variance_percentage', 0) >= 10:  # 10% over budget
+                alerts.append({
+                    'category': item['category'],
+                    'category_name': item['category_name'],
+                    'type': item['type'],
+                    'planned_amount': item['planned_amount'],
+                    'actual_amount': item['actual_amount'],
+                    'percentage': item['variance_percentage'],
+                    'severity': 'warning' if item['variance_percentage'] < 20 else 'critical',
+                    'message': f"{item['category_name']} is {item['variance_percentage']:.1f}% above budget"
+                })
+        
+        return Response({
+            'budget': budget_data,
+            'alerts': alerts,
+            'overall_status': {
+                'profit_variance': budget_data['actual_profit'] - budget_data['planned_profit'],
+                'profit_variance_percentage': ((budget_data['actual_profit'] - budget_data['planned_profit']) / budget_data['planned_profit'] * 100) if budget_data['planned_profit'] > 0 else 0,
+                'is_on_track': budget_data['actual_profit'] >= budget_data['planned_profit']
+            }
+        })
+
+
+class CopyBudgetView(APIView):
+    """
+    Copy an existing budget to a new period.
+    
+    Access: Owner, Accountant only
+    """
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanManageBudgets()]
+    
+    def post(self, request, pk):
+        self.check_permissions(request)
+        
+        try:
+            source_budget = Budget.objects.get(pk=pk, business=request.user.business)
+        except Budget.DoesNotExist:
+            return Response({'error': 'Source budget not found'}, status=404)
+        
+        # Get target period data
+        target_name = request.data.get('name')
+        target_year = request.data.get('year')
+        target_month = request.data.get('month')
+        target_quarter = request.data.get('quarter')
+        target_period = request.data.get('period', source_budget.period)
+        
+        if not target_year:
+            return Response({'error': 'Target year is required'}, status=400)
+        
+        # Create new budget
+        new_budget = Budget.objects.create(
+            business=request.user.business,
+            created_by=request.user,
+            name=target_name or f"{source_budget.name} (Copy)",
+            period=target_period,
+            year=target_year,
+            month=target_month,
+            quarter=target_quarter,
+            status='draft',
+            notes=f"Copied from {source_budget.name}"
+        )
+        
+        # Copy all budget items
+        for item in source_budget.items.all():
+            BudgetItem.objects.create(
+                budget=new_budget,
+                category=item.category,
+                category_name=item.category_name,
+                type=item.type,
+                planned_amount=item.planned_amount,
+                notes=f"Copied from {source_budget.name}"
+            )
+        
+        serializer = BudgetSerializer(new_budget, context={'request': request})
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class BudgetSummaryView(APIView):
+    """
+    Get budget summary across multiple periods.
+    
+    Access: Owner, Manager, Accountant, Auditor
+    """
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanViewBudgets()]
+    
+    def get(self, request):
+        self.check_permissions(request)
+        
+        year = request.query_params.get('year')
+        period = request.query_params.get('period', 'monthly')
+        
+        if not year:
+            year = timezone.now().year
+        
+        budgets = Budget.objects.filter(
+            business=request.user.business,
+            period=period,
+            year=year,
+            status='active'
+        )
+        
+        summary_data = []
+        for budget in budgets:
+            serializer = BudgetSerializer(budget, context={'request': request})
+            data = serializer.data
+            summary_data.append({
+                'period': budget.month or budget.quarter or year,
+                'period_name': budget.name,
+                'total_planned_income': data['total_planned_income'],
+                'total_actual_income': data['total_actual_income'],
+                'total_planned_expenses': data['total_planned_expenses'],
+                'total_actual_expenses': data['total_actual_expenses'],
+                'planned_profit': data['planned_profit'],
+                'actual_profit': data['actual_profit'],
+                'variance': data['actual_profit'] - data['planned_profit'],
+                'variance_percentage': ((data['actual_profit'] - data['planned_profit']) / data['planned_profit'] * 100) if data['planned_profit'] > 0 else 0
+            })
+        
+        return Response({
+            'year': year,
+            'period_type': period,
+            'summary': summary_data,
+            'total_planned_income': sum(s['total_planned_income'] for s in summary_data),
+            'total_actual_income': sum(s['total_actual_income'] for s in summary_data),
+            'total_planned_expenses': sum(s['total_planned_expenses'] for s in summary_data),
+            'total_actual_expenses': sum(s['total_actual_expenses'] for s in summary_data),
+            'total_planned_profit': sum(s['planned_profit'] for s in summary_data),
+            'total_actual_profit': sum(s['actual_profit'] for s in summary_data)
+        })        
