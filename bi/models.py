@@ -1,3 +1,5 @@
+# bi/models.py
+
 from django.db import models
 from django.conf import settings
 from core.models import Business
@@ -9,12 +11,17 @@ class BIReportCache(models.Model):
     report_type = models.CharField(max_length=50)  # kpi, trends, forecast, etc.
     period_start = models.DateField()
     period_end = models.DateField()
+    parameters = models.JSONField(default=dict, blank=True)  # Store query parameters
     data = models.JSONField()  # Stored JSON data
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     class Meta:
-        unique_together = ['business', 'report_type', 'period_start', 'period_end']
+        unique_together = ['business', 'report_type', 'period_start', 'period_end', 'parameters']
+        indexes = [
+            models.Index(fields=['business', 'report_type', '-updated_at']),
+            models.Index(fields=['business', '-created_at']),
+        ]
     
     def __str__(self):
         return f"{self.business.name} - {self.report_type}"
@@ -46,11 +53,16 @@ class BusinessInsight(models.Model):
     recommendation = models.TextField(blank=True)
     metric_value = models.DecimalField(max_digits=15, decimal_places=2, null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    is_read = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateField(null=True, blank=True)
     
-    def __str__(self):
-        return f"{self.business.name} - {self.title}"
-    
     class Meta:
         ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['business', 'is_active', '-created_at']),
+            models.Index(fields=['business', 'is_read']),
+        ]
+    
+    def __str__(self):
+        return f"{self.business.name} - {self.title}"

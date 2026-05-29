@@ -1,91 +1,113 @@
+# hr/views.py
+
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.db import transaction
-from django.db.models import Sum, Count, Q, F
+from django.db.models import Sum, Count, Q, F, Prefetch
 from django.utils import timezone
+from django.core.paginator import Paginator
 from datetime import datetime, timedelta
 from decimal import Decimal
 
 from core.models import Business, User, Role
 from sales.models import Sale
 from financials.models import Transaction
-from .models import Department, Employee, Salary, Payroll, PayrollItem
+from .models import Department, Employee, Salary, Payroll, PayrollItem, LeaveType, LeaveRequest
 from .serializers import (
     DepartmentSerializer, EmployeeSerializer, CreateEmployeeSerializer,
     SalarySerializer, PayrollSerializer, PayrollItemSerializer,
-    ProcessPayrollSerializer, SalesByEmployeeReportSerializer
+    ProcessPayrollSerializer, SalesByEmployeeReportSerializer,
+    LeaveTypeSerializer, LeaveRequestSerializer
 )
 from .permissions import (
     CanViewHR, CanManageEmployees, CanViewSalaries, CanManageSalaries,
-    CanProcessPayroll, CanViewHRReports, IsAuditorHRReadOnly
+    CanProcessPayroll, CanViewHRReports, IsAuditorHRReadOnly, CanManageLeave
 )
+
+
+# ==================== HELPER FUNCTIONS ====================
+def generate_employee_number(business_id):
+    """Generate unique employee number with lock to prevent race condition"""
+    from django.db import transaction as db_transaction
+    
+    with db_transaction.atomic():
+        last_employee = Employee.objects.select_for_update().filter(
+            business_id=business_id
+        ).order_by('-id').first()
+        
+        if last_employee and last_employee.employee_number:
+            parts = last_employee.employee_number.split('-')
+            if len(parts) == 3:
+                try:
+                    last_num = int(parts[2])
+                    new_num = last_num + 1
+                except ValueError:
+                    new_num = 1
+            else:
+                new_num = 1
+        else:
+            new_num = 1
+        
+        return f"EMP-{business_id}-{new_num:04d}"
 
 
 # ==================== DEPARTMENTS ====================
 class DepartmentListCreateView(generics.ListCreateAPIView):
-    """
-    List all departments or create a new department.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Create/Edit: Owner, Accountant only
-    """
     serializer_class = DepartmentSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewHR(), IsAuditorHRReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageEmployees(), IsAuditorHRReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageEmployees(), IsAuditorHRReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Department.objects.none()
-        return Department.objects.filter(business=self.request.user.business)
+        return Department.objects.filter(business=self.request.user.business, is_active=True)
     
     def perform_create(self, serializer):
         serializer.save(business=self.request.user.business)
 
 
 class DepartmentDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a department.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Update/Delete: Owner, Accountant only
-    """
     serializer_class = DepartmentSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewHR(), IsAuditorHRReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageEmployees(), IsAuditorHRReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageEmployees(), IsAuditorHRReadOnly()]
     
     def get_queryset(self):
         return Department.objects.filter(business=self.request.user.business)
+    
+    def destroy(self, request, *args, **kwargs):
+        department = self.get_object()
+        if department.employees.filter(is_active=True).exists():
+            return Response({
+                'error': f'Cannot delete department with active employees'
+            }, status=400)
+        department.is_active = False
+        department.save()
+        return Response({'message': 'Department deactivated successfully'})
 
 
 # ==================== EMPLOYEES ====================
 class EmployeeListCreateView(generics.ListCreateAPIView):
-    """
-    List all employees or create a new employee.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Create: Owner, Accountant only
-    """
     serializer_class = EmployeeSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewHR(), IsAuditorHRReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageEmployees(), IsAuditorHRReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageEmployees(), IsAuditorHRReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Employee.objects.none()
-        return Employee.objects.filter(business=self.request.user.business)
+        # Optimized with select_related
+        return Employee.objects.filter(
+            business=self.request.user.business
+        ).select_related('department', 'role', 'user')
     
     def create(self, request, *args, **kwargs):
         self.check_permissions(request)
@@ -97,15 +119,13 @@ class EmployeeListCreateView(generics.ListCreateAPIView):
         data = serializer.validated_data
         business = request.user.business
         
-        # Get or create employee number
-        employee_count = Employee.objects.filter(business=business).count() + 1
-        employee_number = f"EMP-{business.id}-{employee_count:04d}"
+        # Generate employee number (fixed race condition)
+        employee_number = generate_employee_number(business.id)
         
-        # Get department and role
         department = None
         if data.get('department_id'):
             try:
-                department = Department.objects.get(id=data['department_id'], business=business)
+                department = Department.objects.get(id=data['department_id'], business=business, is_active=True)
             except Department.DoesNotExist:
                 return Response({'error': 'Department not found'}, status=404)
         
@@ -116,7 +136,6 @@ class EmployeeListCreateView(generics.ListCreateAPIView):
             except Role.DoesNotExist:
                 return Response({'error': 'Role not found'}, status=404)
         
-        # Create employee
         employee = Employee.objects.create(
             business=business,
             employee_number=employee_number,
@@ -139,7 +158,6 @@ class EmployeeListCreateView(generics.ListCreateAPIView):
             is_active=True
         )
         
-        # Create user account
         password = data.get('password', None)
         user, created_password = employee.create_user_account(password)
         
@@ -155,67 +173,60 @@ class EmployeeListCreateView(generics.ListCreateAPIView):
 
 
 class EmployeeDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete an employee.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Update: Owner, Accountant only
-    - Delete: Owner, Accountant only (deactivates)
-    """
     serializer_class = EmployeeSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewHR(), IsAuditorHRReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageEmployees(), IsAuditorHRReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageEmployees(), IsAuditorHRReadOnly()]
     
     def get_queryset(self):
         return Employee.objects.filter(business=self.request.user.business)
     
     def destroy(self, request, *args, **kwargs):
-        self.check_permissions(request)
-        
+        """Soft delete - deactivate instead of delete"""
         employee = self.get_object()
-        # Deactivate instead of delete
-        employee.is_active = False
-        employee.termination_date = timezone.now().date()
-        employee.save()
-        
-        # Deactivate user if exists
-        if employee.user:
-            employee.user.is_active = False
-            employee.user.save()
-        
+        reason = request.data.get('reason', '')
+        employee.deactivate(reason)
         return Response({'message': 'Employee deactivated successfully'})
 
 
 # ==================== SALARIES ====================
 class SalaryListCreateView(generics.ListCreateAPIView):
-    """
-    List all salaries or create a new salary.
-    
-    - View: Owner, Accountant, Auditor
-    - Create: Owner, Accountant only
-    """
     serializer_class = SalarySerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewSalaries(), IsAuditorHRReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageSalaries(), IsAuditorHRReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageSalaries(), IsAuditorHRReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Salary.objects.none()
-        return Salary.objects.filter(employee__business=self.request.user.business)
+        return Salary.objects.filter(employee__business=self.request.user.business).select_related('employee')
     
     def create(self, request, *args, **kwargs):
         self.check_permissions(request)
         
         data = request.data
         business = request.user.business
+        
+        # Check for duplicate salary month
+        effective_date = data.get('effective_date')
+        if effective_date:
+            from datetime import datetime
+            eff_date = datetime.strptime(effective_date, '%Y-%m-%d').date()
+            
+            existing = Salary.objects.filter(
+                employee_id=data['employee_id'],
+                effective_date__year=eff_date.year,
+                effective_date__month=eff_date.month
+            ).exists()
+            
+            if existing:
+                return Response({
+                    'error': 'Salary already exists for this employee for this month'
+                }, status=400)
         
         try:
             employee = Employee.objects.get(id=data['employee_id'], business=business)
@@ -245,19 +256,12 @@ class SalaryListCreateView(generics.ListCreateAPIView):
 
 
 class SalaryDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a salary.
-    
-    - View: Owner, Accountant, Auditor
-    - Update/Delete: Owner, Accountant only
-    """
     serializer_class = SalarySerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewSalaries(), IsAuditorHRReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageSalaries(), IsAuditorHRReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageSalaries(), IsAuditorHRReadOnly()]
     
     def get_queryset(self):
         return Salary.objects.filter(employee__business=self.request.user.business)
@@ -265,12 +269,6 @@ class SalaryDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 # ==================== PAYROLL ====================
 class PayrollListCreateView(generics.ListAPIView):
-    """
-    List all payrolls.
-    
-    - View: Owner, Accountant, Auditor
-    - Create: Use /process/ endpoint
-    """
     serializer_class = PayrollSerializer
     
     def get_permissions(self):
@@ -279,7 +277,7 @@ class PayrollListCreateView(generics.ListAPIView):
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Payroll.objects.none()
-        return Payroll.objects.filter(business=self.request.user.business)
+        return Payroll.objects.filter(business=self.request.user.business).prefetch_related('items', 'items__employee')
     
     def create(self, request, *args, **kwargs):
         return Response({
@@ -288,11 +286,6 @@ class PayrollListCreateView(generics.ListAPIView):
 
 
 class PayrollDetailView(generics.RetrieveAPIView):
-    """
-    Retrieve payroll details.
-    
-    Access: Owner, Accountant, Auditor
-    """
     serializer_class = PayrollSerializer
     
     def get_permissions(self):
@@ -303,12 +296,6 @@ class PayrollDetailView(generics.RetrieveAPIView):
 
 
 class ProcessPayrollView(APIView):
-    """
-    Process monthly payroll.
-    
-    Access: Owner, Accountant only
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanProcessPayroll(), IsAuditorHRReadOnly()]
     
@@ -326,23 +313,20 @@ class ProcessPayrollView(APIView):
         year = data['year']
         include_commission = data.get('include_commission', True)
         
-        # Check if payroll already exists
         if Payroll.objects.filter(business=business, month=month, year=year).exists():
             return Response({
                 'error': f'Payroll for {month}/{year} already exists'
             }, status=status.HTTP_400_BAD_REQUEST)
         
-        # Get active employees
         employees = Employee.objects.filter(
             business=business,
             is_active=True,
             hire_date__lte=datetime(year, month, 1)
-        )
+        ).select_related('user')
         
         if not employees.exists():
             return Response({'error': 'No active employees found'}, status=400)
         
-        # Create payroll header
         payroll = Payroll.objects.create(
             business=business,
             month=month,
@@ -351,7 +335,6 @@ class ProcessPayrollView(APIView):
             status='processed'
         )
         
-        # Get date range for sales
         start_date = datetime(year, month, 1).date()
         if month == 12:
             end_date = datetime(year + 1, 1, 1).date() - timedelta(days=1)
@@ -364,8 +347,22 @@ class ProcessPayrollView(APIView):
         total_deductions = Decimal('0')
         total_net = Decimal('0')
         
+        # Optimized: Prefetch sales for all employees at once
+        employee_ids = list(employees.values_list('id', flat=True))
+        sales_data = Sale.objects.filter(
+            business=business,
+            employee_id__in=employee_ids,
+            sale_date__date__gte=start_date,
+            sale_date__date__lte=end_date,
+            status='completed'
+        ).values('employee_id').annotate(
+            total_sales=Sum('total_amount'),
+            transaction_count=Count('id')
+        )
+        
+        sales_dict = {item['employee_id']: item for item in sales_data}
+        
         for employee in employees:
-            # Get current salary
             current_salary = employee.salaries.filter(
                 effective_date__lte=start_date
             ).order_by('-effective_date').first()
@@ -373,28 +370,17 @@ class ProcessPayrollView(APIView):
             if not current_salary:
                 continue
             
-            # Calculate sales for this employee
-            employee_sales = Sale.objects.filter(
-                business=business,
-                employee=employee,
-                sale_date__date__gte=start_date,
-                sale_date__date__lte=end_date,
-                status='completed'
-            )
+            emp_sales = sales_dict.get(employee.id, {})
+            total_sales = emp_sales.get('total_sales', Decimal('0'))
+            transaction_count = emp_sales.get('transaction_count', 0)
             
-            total_sales = employee_sales.aggregate(Sum('total_amount'))['total_amount__sum'] or Decimal('0')
-            transaction_count = employee_sales.count()
-            
-            # Calculate commission
             commission = Decimal('0')
             if include_commission and employee.commission_rate > 0:
                 commission = total_sales * (employee.commission_rate / 100)
             
-            # Calculate gross and net
             gross = current_salary.base_salary + current_salary.total_allowances + commission
             net = gross - current_salary.total_deductions
             
-            # Create payroll item
             PayrollItem.objects.create(
                 payroll=payroll,
                 employee=employee,
@@ -415,7 +401,6 @@ class ProcessPayrollView(APIView):
             total_deductions += current_salary.total_deductions
             total_net += net
         
-        # Update payroll totals
         payroll.total_base_salary = total_base
         payroll.total_allowances = total_allowances
         payroll.total_commission = total_commission
@@ -423,8 +408,7 @@ class ProcessPayrollView(APIView):
         payroll.total_net_salary = total_net
         payroll.save()
         
-        # Create financial transaction
-        transaction = Transaction.objects.create(
+        transaction_obj = Transaction.objects.create(
             business=business,
             created_by=request.user,
             type='expense',
@@ -435,7 +419,7 @@ class ProcessPayrollView(APIView):
             transaction_date=timezone.now().date()
         )
         
-        payroll.transaction = transaction
+        payroll.transaction = transaction_obj
         payroll.save()
         
         return Response({
@@ -453,12 +437,6 @@ class ProcessPayrollView(APIView):
 
 
 class MarkPayrollPaidView(APIView):
-    """
-    Mark payroll as paid.
-    
-    Access: Owner, Accountant only
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanProcessPayroll(), IsAuditorHRReadOnly()]
     
@@ -476,7 +454,6 @@ class MarkPayrollPaidView(APIView):
         payroll.status = 'paid'
         payroll.save()
         
-        # Update transaction paid date if needed
         if payroll.transaction:
             payroll.transaction.transaction_date = timezone.now().date()
             payroll.transaction.save()
@@ -488,12 +465,6 @@ class MarkPayrollPaidView(APIView):
 
 # ==================== REPORTS ====================
 class SalesByEmployeeReportView(APIView):
-    """
-    Report of sales by employee.
-    
-    Access: Owner, Manager, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewHRReports(), IsAuditorHRReadOnly()]
     
@@ -508,27 +479,23 @@ class SalesByEmployeeReportView(APIView):
         end_date = request.query_params.get('end_date')
         employee_id = request.query_params.get('employee_id')
         
-        # Build date filter
         if start_date and end_date:
             date_filter = Q(sale_date__date__gte=start_date, sale_date__date__lte=end_date)
         elif month and year:
             date_filter = Q(sale_date__month=month, sale_date__year=year)
         else:
-            # Default to current month
             today = timezone.now()
             date_filter = Q(sale_date__month=today.month, sale_date__year=today.year)
         
-        # Base query
         sales_query = Sale.objects.filter(
             business=business,
             status='completed',
             employee__isnull=False
-        ).filter(date_filter)
+        ).filter(date_filter).select_related('employee')
         
         if employee_id:
             sales_query = sales_query.filter(employee_id=employee_id)
         
-        # Aggregate by employee
         employee_sales = sales_query.values(
             'employee__id',
             'employee__first_name',
@@ -575,12 +542,6 @@ class SalesByEmployeeReportView(APIView):
 
 
 class TopPerformersReportView(APIView):
-    """
-    Top performing employees by sales.
-    
-    Access: Owner, Manager, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewHRReports(), IsAuditorHRReadOnly()]
     
@@ -620,12 +581,6 @@ class TopPerformersReportView(APIView):
 
 
 class PayrollReportView(APIView):
-    """
-    Get payroll report.
-    
-    Access: Owner, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewSalaries(), IsAuditorHRReadOnly()]
     
@@ -638,13 +593,20 @@ class PayrollReportView(APIView):
         if not year:
             year = timezone.now().year
         
+        # Add pagination
+        page = int(request.query_params.get('page', 1))
+        page_size = int(request.query_params.get('page_size', 12))
+        
         payrolls = Payroll.objects.filter(
             business=business,
             year=year
         ).order_by('month')
         
+        paginator = Paginator(payrolls, page_size)
+        page_obj = paginator.get_page(page)
+        
         monthly_data = []
-        for payroll in payrolls:
+        for payroll in page_obj:
             monthly_data.append({
                 'month': payroll.month,
                 'month_name': datetime(payroll.year, payroll.month, 1).strftime('%B'),
@@ -667,6 +629,89 @@ class PayrollReportView(APIView):
         
         return Response({
             'year': year,
+            'page': page,
+            'total_pages': paginator.num_pages,
+            'total_items': paginator.count,
             'monthly_breakdown': monthly_data,
             'annual_totals': totals
         })
+
+
+# ==================== LEAVE MANAGEMENT (NEW) ====================
+class LeaveTypeListCreateView(generics.ListCreateAPIView):
+    serializer_class = LeaveTypeSerializer
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanManageLeave(), IsAuditorHRReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return LeaveType.objects.none()
+        return LeaveType.objects.filter(business=self.request.user.business, is_active=True)
+    
+    def perform_create(self, serializer):
+        serializer.save(business=self.request.user.business)
+
+
+class LeaveTypeDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = LeaveTypeSerializer
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanManageLeave(), IsAuditorHRReadOnly()]
+    
+    def get_queryset(self):
+        return LeaveType.objects.filter(business=self.request.user.business)
+
+
+class LeaveRequestListCreateView(generics.ListCreateAPIView):
+    serializer_class = LeaveRequestSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewHR(), IsAuditorHRReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageLeave(), IsAuditorHRReadOnly()]
+    
+    def get_queryset(self):
+        if getattr(self, 'swagger_fake_view', False):
+            return LeaveRequest.objects.none()
+        return LeaveRequest.objects.filter(employee__business=self.request.user.business).select_related('employee', 'leave_type')
+    
+    def perform_create(self, serializer):
+        employee_id = self.request.data.get('employee_id')
+        try:
+            employee = Employee.objects.get(id=employee_id, business=self.request.user.business)
+            serializer.save(employee=employee, status='pending')
+        except Employee.DoesNotExist:
+            raise serializers.ValidationError('Employee not found')
+
+
+class LeaveRequestDetailView(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = LeaveRequestSerializer
+    
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [permissions.IsAuthenticated(), CanViewHR(), IsAuditorHRReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageLeave(), IsAuditorHRReadOnly()]
+    
+    def get_queryset(self):
+        return LeaveRequest.objects.filter(employee__business=self.request.user.business)
+
+
+class ApproveLeaveRequestView(APIView):
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanManageLeave(), IsAuditorHRReadOnly()]
+    
+    def post(self, request, pk):
+        self.check_permissions(request)
+        
+        try:
+            leave = LeaveRequest.objects.get(pk=pk, employee__business=request.user.business)
+        except LeaveRequest.DoesNotExist:
+            return Response({'error': 'Leave request not found'}, status=404)
+        
+        leave.status = 'approved'
+        leave.approved_by = request.user
+        leave.approved_date = timezone.now().date()
+        leave.save()
+        
+        return Response({'message': 'Leave request approved successfully'})

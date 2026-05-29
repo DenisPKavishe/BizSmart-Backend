@@ -1,3 +1,5 @@
+# hr/urls.py
+
 from django.urls import path
 from .views import (
     DepartmentListCreateView, DepartmentDetailView,
@@ -5,7 +7,9 @@ from .views import (
     SalaryListCreateView, SalaryDetailView,
     PayrollListCreateView, PayrollDetailView,
     ProcessPayrollView, MarkPayrollPaidView,
-    SalesByEmployeeReportView, TopPerformersReportView, PayrollReportView
+    SalesByEmployeeReportView, TopPerformersReportView, PayrollReportView,
+    LeaveTypeListCreateView, LeaveTypeDetailView,
+    LeaveRequestListCreateView, LeaveRequestDetailView, ApproveLeaveRequestView
 )
 
 urlpatterns = [
@@ -31,4 +35,11 @@ urlpatterns = [
     path('reports/sales-by-employee/', SalesByEmployeeReportView.as_view(), name='sales-by-employee'),
     path('reports/top-performers/', TopPerformersReportView.as_view(), name='top-performers'),
     path('reports/payroll/', PayrollReportView.as_view(), name='payroll-report'),
+    
+    # Leave Management
+    path('leave-types/', LeaveTypeListCreateView.as_view(), name='leave-types'),
+    path('leave-types/<int:pk>/', LeaveTypeDetailView.as_view(), name='leave-type-detail'),
+    path('leave-requests/', LeaveRequestListCreateView.as_view(), name='leave-requests'),
+    path('leave-requests/<int:pk>/', LeaveRequestDetailView.as_view(), name='leave-request-detail'),
+    path('leave-requests/<int:pk>/approve/', ApproveLeaveRequestView.as_view(), name='approve-leave'),
 ]

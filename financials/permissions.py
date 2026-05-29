@@ -1,3 +1,5 @@
+# financials/permissions.py
+
 from rest_framework import permissions
 
 class CanViewFinancials(permissions.BasePermission):
@@ -119,10 +121,7 @@ class IsAuditorReadOnly(permissions.BasePermission):
             return request.method in permissions.SAFE_METHODS
         
         return True
-    
 
-
-# financials/permissions.py - Add these new permission classes
 
 class CanViewBudgets(permissions.BasePermission):
     """Owner, Manager, Accountant, Auditor can view budgets"""

@@ -1,3 +1,5 @@
+# sales/models.py
+
 from django.db import models
 from django.conf import settings
 from core.models import Business
@@ -17,6 +19,9 @@ class Customer(models.Model):
     # Loyalty
     total_spent = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     total_visits = models.IntegerField(default=0)
+    
+    # Soft delete - ADDED
+    is_active = models.BooleanField(default=True)
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

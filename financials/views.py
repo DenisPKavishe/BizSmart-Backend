@@ -1,46 +1,43 @@
+# financials/views.py
+
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.db import transaction
 from django.db import models as django_models
 from django.db.models import Sum, Q, F
 from django.utils import timezone
+from django.core.cache import cache
 from datetime import timedelta
 from decimal import Decimal
 from core.models import Business
-from .models import Transaction, Invoice, InvoiceItem, Loan, PettyCash, CashFlowForecast,Budget, BudgetItem, Transaction
+from .models import Transaction, Invoice, InvoiceItem, Loan, PettyCash, CashFlowForecast, Budget, BudgetItem
 from .serializers import (
     TransactionSerializer, InvoiceSerializer, LoanSerializer,
-    PettyCashSerializer, CashFlowForecastSerializer,BudgetSerializer, BudgetItemSerializer, BudgetItemCreateSerializer,
-    BudgetSummarySerializer
+    PettyCashSerializer, CashFlowForecastSerializer, BudgetSerializer,
+    BudgetItemSerializer, BudgetItemCreateSerializer, BudgetSummarySerializer
 )
 from .tax_calculator import TaxCalculator
 from .permissions import (
     CanViewFinancials, CanEditFinancials, CanViewInvoices,
     CanCreateInvoices, CanViewLoans, CanViewPettyCash,
-    CanExportReports, IsAuditorReadOnly, CanViewBudgets, CanManageBudgets, IsAuditorBudgetReadOnly
+    CanExportReports, IsAuditorReadOnly, CanViewBudgets,
+    CanManageBudgets, IsAuditorBudgetReadOnly
 )
 
 
 # ==================== TRANSACTIONS ====================
 class TransactionListCreateView(generics.ListCreateAPIView):
-    """
-    List all transactions or create a new transaction.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Create: Owner, Accountant only
-    """
     serializer_class = TransactionSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewFinancials()]
-        else:
-            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+        return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Transaction.objects.none()
-        
         if self.request.user.is_authenticated and self.request.user.business:
             return Transaction.objects.filter(business=self.request.user.business)
         return Transaction.objects.none()
@@ -53,24 +50,14 @@ class TransactionListCreateView(generics.ListCreateAPIView):
 
 
 class TransactionDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a transaction.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Update/Delete: Owner, Accountant only
-    """
     serializer_class = TransactionSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewFinancials()]
-        else:
-            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+        return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
     
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
-            return Transaction.objects.none()
-        
         if self.request.user.is_authenticated and self.request.user.business:
             return Transaction.objects.filter(business=self.request.user.business)
         return Transaction.objects.none()
@@ -78,24 +65,16 @@ class TransactionDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 # ==================== INVOICES ====================
 class InvoiceListCreateView(generics.ListCreateAPIView):
-    """
-    List all invoices or create a new invoice.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Create: Owner, Manager, Accountant
-    """
     serializer_class = InvoiceSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewInvoices()]
-        else:
-            return [permissions.IsAuthenticated(), CanCreateInvoices(), IsAuditorReadOnly()]
+        return [permissions.IsAuthenticated(), CanCreateInvoices(), IsAuditorReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Invoice.objects.none()
-        
         if self.request.user.is_authenticated and self.request.user.business:
             return Invoice.objects.filter(business=self.request.user.business)
         return Invoice.objects.none()
@@ -108,39 +87,22 @@ class InvoiceListCreateView(generics.ListCreateAPIView):
 
 
 class InvoiceDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete an invoice.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Update/Delete: Owner, Accountant only
-    """
     serializer_class = InvoiceSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewInvoices()]
-        else:
-            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+        return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
     
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
-            return Invoice.objects.none()
-        
-        if self.request.user.is_authenticated and self.request.user.business:
-            return Invoice.objects.filter(business=self.request.user.business)
-        return Invoice.objects.none()
+        return Invoice.objects.filter(business=self.request.user.business)
 
 
 class RecordPaymentView(APIView):
-    """
-    Record a payment against an invoice.
-    
-    Access: Owner, Manager, Accountant
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanCreateInvoices(), IsAuditorReadOnly()]
     
+    @transaction.atomic
     def post(self, request, pk):
         self.check_permissions(request)
         
@@ -154,7 +116,6 @@ class RecordPaymentView(APIView):
                 invoice.payment_date = timezone.now().date()
             else:
                 invoice.status = 'sent'
-            
             invoice.save()
             
             Transaction.objects.create(
@@ -175,24 +136,16 @@ class RecordPaymentView(APIView):
 
 # ==================== LOANS ====================
 class LoanListCreateView(generics.ListCreateAPIView):
-    """
-    List all loans or create a new loan.
-    
-    - View: Owner, Accountant, Auditor
-    - Create: Owner, Accountant only
-    """
     serializer_class = LoanSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewLoans()]
-        else:
-            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+        return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Loan.objects.none()
-        
         if self.request.user.is_authenticated and self.request.user.business:
             return Loan.objects.filter(business=self.request.user.business)
         return Loan.objects.none()
@@ -205,92 +158,114 @@ class LoanListCreateView(generics.ListCreateAPIView):
 
 
 class LoanDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a loan.
-    
-    - View: Owner, Accountant, Auditor
-    - Update/Delete: Owner, Accountant only
-    """
     serializer_class = LoanSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewLoans()]
-        else:
-            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+        return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
     
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
-            return Loan.objects.none()
+        return Loan.objects.filter(business=self.request.user.business)
+
+
+class LoanPaymentView(APIView):
+    """Record a loan payment (principal + interest)"""
+    
+    def get_permissions(self):
+        return [permissions.IsAuthenticated(), CanEditFinancials()]
+    
+    @transaction.atomic
+    def post(self, request, pk):
+        self.check_permissions(request)
         
-        if self.request.user.is_authenticated and self.request.user.business:
-            return Loan.objects.filter(business=self.request.user.business)
-        return Loan.objects.none()
+        try:
+            loan = Loan.objects.get(pk=pk, business=request.user.business)
+        except Loan.DoesNotExist:
+            return Response({'error': 'Loan not found'}, status=404)
+        
+        amount = Decimal(str(request.data.get('amount', 0)))
+        interest_amount = Decimal(str(request.data.get('interest_amount', 0)))
+        payment_date = request.data.get('payment_date', timezone.now().date())
+        
+        if amount <= 0:
+            return Response({'error': 'Payment amount must be greater than zero'}, status=400)
+        
+        principal_amount = amount - interest_amount
+        
+        if principal_amount > loan.balance_remaining:
+            return Response({
+                'error': f'Principal payment exceeds remaining balance. Remaining: {loan.balance_remaining}'
+            }, status=400)
+        
+        # Record interest as expense
+        if interest_amount > 0:
+            Transaction.objects.create(
+                business=request.user.business,
+                created_by=request.user,
+                type='expense',
+                cost_type='fixed',
+                category='loan_interest',
+                amount=interest_amount,
+                description=f"Interest payment for loan {loan.id} - {loan.lender_name}",
+                transaction_date=payment_date
+            )
+        
+        # Update loan
+        loan.amount_paid += principal_amount
+        loan.save()
+        
+        return Response({
+            'message': 'Loan payment recorded successfully',
+            'loan': LoanSerializer(loan).data,
+            'payment_breakdown': {
+                'total_paid': float(amount),
+                'principal_paid': float(principal_amount),
+                'interest_paid': float(interest_amount),
+                'remaining_balance': float(loan.balance_remaining)
+            }
+        })
 
 
 # ==================== PETTY CASH ====================
 class PettyCashListCreateView(generics.ListCreateAPIView):
-    """
-    List all petty cash entries or create a new one.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Create: Owner, Manager, Accountant
-    """
     serializer_class = PettyCashSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewPettyCash()]
-        else:
-            return [permissions.IsAuthenticated(), CanCreateInvoices(), IsAuditorReadOnly()]
+        return [permissions.IsAuthenticated(), CanCreateInvoices(), IsAuditorReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return PettyCash.objects.none()
-        
         if self.request.user.is_authenticated and self.request.user.business:
             return PettyCash.objects.filter(business=self.request.user.business)
         return PettyCash.objects.none()
     
+    @transaction.atomic
     def perform_create(self, serializer):
         serializer.save(
             business=self.request.user.business,
-            created_by=self.request.user
+            created_by=self.request.user,
+            date=timezone.now().date()
         )
 
 
 class PettyCashDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a petty cash entry.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Update/Delete: Owner, Accountant only
-    """
     serializer_class = PettyCashSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewPettyCash()]
-        else:
-            return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
+        return [permissions.IsAuthenticated(), CanEditFinancials(), IsAuditorReadOnly()]
     
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
-            return PettyCash.objects.none()
-        
-        if self.request.user.is_authenticated and self.request.user.business:
-            return PettyCash.objects.filter(business=self.request.user.business)
-        return PettyCash.objects.none()
+        return PettyCash.objects.filter(business=self.request.user.business)
 
 
 # ==================== CASH FLOW FORECAST ====================
 class CashFlowForecastView(APIView):
-    """
-    Get cash flow forecast for next 30 days.
-    
-    Access: Owner, Manager, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewFinancials()]
     
@@ -320,8 +295,8 @@ class CashFlowForecastView(APIView):
         avg_daily_expense = avg_daily_expense / 30 if avg_daily_expense > 0 else 0
         
         current_balance = Transaction.objects.filter(business=business).aggregate(
-            income=Sum('amount', filter=django_models.Q(type='income')),
-            expense=Sum('amount', filter=django_models.Q(type='expense'))
+            income=Sum('amount', filter=Q(type='income')),
+            expense=Sum('amount', filter=Q(type='expense'))
         )
         balance = (current_balance['income'] or 0) - (current_balance['expense'] or 0)
         
@@ -350,12 +325,6 @@ class CashFlowForecastView(APIView):
 
 # ==================== FINANCIAL DASHBOARD ====================
 class CompleteFinancialDashboardView(APIView):
-    """
-    Get complete financial dashboard with all metrics.
-    
-    Access: Owner, Manager, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewFinancials()]
     
@@ -417,7 +386,7 @@ class CompleteFinancialDashboardView(APIView):
         paid_invoices = Invoice.objects.filter(business=business, status='paid').count()
         overdue_invoices = Invoice.objects.filter(business=business, status='overdue').count()
         total_outstanding = Invoice.objects.filter(business=business).aggregate(
-            total=django_models.Sum('total_amount') - django_models.Sum('amount_paid')
+            total=Sum('total_amount') - Sum('amount_paid')
         )['total'] or 0
         
         active_loans = Loan.objects.filter(business=business, status='active')
@@ -469,12 +438,6 @@ import csv
 import json
 
 class ExportFinancialReportView(APIView):
-    """
-    Export financial reports as CSV or JSON.
-    
-    Access: Owner, Accountant only
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanExportReports(), IsAuditorReadOnly()]
     
@@ -513,24 +476,16 @@ class ExportFinancialReportView(APIView):
         elif format_type == 'json':
             data = TransactionSerializer(transactions, many=True).data
             return Response(data)
-        
+
 
 # ==================== BUDGET MANAGEMENT ====================
-
 class BudgetListCreateView(generics.ListCreateAPIView):
-    """
-    List all budgets or create a new budget.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Create: Owner, Accountant only
-    """
     serializer_class = BudgetSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewBudgets()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
@@ -538,27 +493,39 @@ class BudgetListCreateView(generics.ListCreateAPIView):
         
         if self.request.user.is_authenticated and self.request.user.business:
             queryset = Budget.objects.filter(business=self.request.user.business)
-            
-            # Filter by period
             period = self.request.query_params.get('period')
+            year = self.request.query_params.get('year')
+            status = self.request.query_params.get('status')
             if period:
                 queryset = queryset.filter(period=period)
-            
-            # Filter by year
-            year = self.request.query_params.get('year')
             if year:
                 queryset = queryset.filter(year=year)
-            
-            # Filter by status
-            status = self.request.query_params.get('status')
             if status:
                 queryset = queryset.filter(status=status)
-            
             return queryset
-        
         return Budget.objects.none()
     
+    @transaction.atomic
     def perform_create(self, serializer):
+        data = serializer.validated_data
+        period = data['period']
+        year = data['year']
+        month = data.get('month')
+        quarter = data.get('quarter')
+        
+        duplicate_exists = Budget.objects.filter(
+            business=self.request.user.business,
+            period=period,
+            year=year,
+            month=month if period == 'monthly' else None,
+            quarter=quarter if period == 'quarterly' else None
+        ).exists()
+        
+        if duplicate_exists:
+            raise serializers.ValidationError({
+                'error': 'A budget already exists for this period. Please edit existing budget or choose different period.'
+            })
+        
         serializer.save(
             business=self.request.user.business,
             created_by=self.request.user
@@ -566,48 +533,26 @@ class BudgetListCreateView(generics.ListCreateAPIView):
 
 
 class BudgetDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a budget.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Update/Delete: Owner, Accountant only
-    """
     serializer_class = BudgetSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewBudgets()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
     
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
-            return Budget.objects.none()
-        
-        if self.request.user.is_authenticated and self.request.user.business:
-            return Budget.objects.filter(business=self.request.user.business)
-        return Budget.objects.none()
+        return Budget.objects.filter(business=self.request.user.business)
 
 
 class BudgetItemListCreateView(generics.ListCreateAPIView):
-    """
-    List all items for a budget or create a new budget item.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Create: Owner, Accountant only
-    """
     serializer_class = BudgetItemCreateSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewBudgets()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
     
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
-            return BudgetItem.objects.none()
-        
         budget_id = self.kwargs.get('budget_id')
         if budget_id and self.request.user.is_authenticated:
             return BudgetItem.objects.filter(budget_id=budget_id, budget__business=self.request.user.business)
@@ -620,36 +565,18 @@ class BudgetItemListCreateView(generics.ListCreateAPIView):
 
 
 class BudgetItemDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a budget item.
-    
-    - View: Owner, Manager, Accountant, Auditor
-    - Update/Delete: Owner, Accountant only
-    """
     serializer_class = BudgetItemCreateSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewBudgets()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
     
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
-            return BudgetItem.objects.none()
-        
-        if self.request.user.is_authenticated and self.request.user.business:
-            return BudgetItem.objects.filter(budget__business=self.request.user.business)
-        return BudgetItem.objects.none()
+        return BudgetItem.objects.filter(budget__business=self.request.user.business)
 
 
 class BudgetVsActualView(APIView):
-    """
-    Get budget vs actual comparison with detailed breakdown.
-    
-    Access: Owner, Manager, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewBudgets()]
     
@@ -659,19 +586,23 @@ class BudgetVsActualView(APIView):
         if getattr(self, 'swagger_fake_view', False):
             return Response({'message': 'Schema generation'})
         
+        cache_key = f"budget_vs_actual_{pk}_{request.user.id}"
+        cached_result = cache.get(cache_key)
+        
+        if cached_result:
+            return Response(cached_result)
+        
         try:
-            budget = Budget.objects.get(pk=pk, business=request.user.business)
+            budget = Budget.objects.prefetch_related('items').get(pk=pk, business=request.user.business)
         except Budget.DoesNotExist:
             return Response({'error': 'Budget not found'}, status=404)
         
-        # Serialize budget with items (includes actual calculations)
         serializer = BudgetSerializer(budget, context={'request': request})
         budget_data = serializer.data
         
-        # Generate alerts for items exceeding threshold
         alerts = []
         for item in budget_data.get('items', []):
-            if item.get('variance_percentage', 0) <= -10:  # 10% under budget
+            if abs(item.get('variance_percentage', 0)) >= 10:
                 alerts.append({
                     'category': item['category'],
                     'category_name': item['category_name'],
@@ -679,22 +610,11 @@ class BudgetVsActualView(APIView):
                     'planned_amount': item['planned_amount'],
                     'actual_amount': item['actual_amount'],
                     'percentage': abs(item['variance_percentage']),
-                    'severity': 'warning' if abs(item['variance_percentage']) < 20 else 'critical',
+                    'severity': 'critical' if abs(item['variance_percentage']) >= 20 else 'warning',
                     'message': f"{item['category_name']} is {abs(item['variance_percentage']):.1f}% {'below' if item['variance'] < 0 else 'above'} budget"
                 })
-            elif item.get('variance_percentage', 0) >= 10:  # 10% over budget
-                alerts.append({
-                    'category': item['category'],
-                    'category_name': item['category_name'],
-                    'type': item['type'],
-                    'planned_amount': item['planned_amount'],
-                    'actual_amount': item['actual_amount'],
-                    'percentage': item['variance_percentage'],
-                    'severity': 'warning' if item['variance_percentage'] < 20 else 'critical',
-                    'message': f"{item['category_name']} is {item['variance_percentage']:.1f}% above budget"
-                })
         
-        return Response({
+        response_data = {
             'budget': budget_data,
             'alerts': alerts,
             'overall_status': {
@@ -702,19 +622,18 @@ class BudgetVsActualView(APIView):
                 'profit_variance_percentage': ((budget_data['actual_profit'] - budget_data['planned_profit']) / budget_data['planned_profit'] * 100) if budget_data['planned_profit'] > 0 else 0,
                 'is_on_track': budget_data['actual_profit'] >= budget_data['planned_profit']
             }
-        })
+        }
+        
+        cache.set(cache_key, response_data, 300)
+        
+        return Response(response_data)
 
 
 class CopyBudgetView(APIView):
-    """
-    Copy an existing budget to a new period.
-    
-    Access: Owner, Accountant only
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanManageBudgets()]
     
+    @transaction.atomic
     def post(self, request, pk):
         self.check_permissions(request)
         
@@ -723,7 +642,6 @@ class CopyBudgetView(APIView):
         except Budget.DoesNotExist:
             return Response({'error': 'Source budget not found'}, status=404)
         
-        # Get target period data
         target_name = request.data.get('name')
         target_year = request.data.get('year')
         target_month = request.data.get('month')
@@ -733,7 +651,6 @@ class CopyBudgetView(APIView):
         if not target_year:
             return Response({'error': 'Target year is required'}, status=400)
         
-        # Create new budget
         new_budget = Budget.objects.create(
             business=request.user.business,
             created_by=request.user,
@@ -746,7 +663,6 @@ class CopyBudgetView(APIView):
             notes=f"Copied from {source_budget.name}"
         )
         
-        # Copy all budget items
         for item in source_budget.items.all():
             BudgetItem.objects.create(
                 budget=new_budget,
@@ -762,12 +678,6 @@ class CopyBudgetView(APIView):
 
 
 class BudgetSummaryView(APIView):
-    """
-    Get budget summary across multiple periods.
-    
-    Access: Owner, Manager, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewBudgets()]
     
@@ -814,4 +724,4 @@ class BudgetSummaryView(APIView):
             'total_actual_expenses': sum(s['total_actual_expenses'] for s in summary_data),
             'total_planned_profit': sum(s['planned_profit'] for s in summary_data),
             'total_actual_profit': sum(s['actual_profit'] for s in summary_data)
-        })        
+        })

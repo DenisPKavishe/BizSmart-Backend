@@ -1,3 +1,5 @@
+# sales/permissions.py
+
 from rest_framework import permissions
 
 class CanProcessSale(permissions.BasePermission):
@@ -61,9 +63,7 @@ class CanViewSalesReports(permissions.BasePermission):
 
 
 class CanProcessReturn(permissions.BasePermission):
-    """
-    Owner, Manager and Cashier can process returns
-    """
+    """Owner, Manager and Cashier can process returns"""
 
     def has_permission(self, request, view):
         if not request.user.is_authenticated:
@@ -72,55 +72,12 @@ class CanProcessReturn(permissions.BasePermission):
         if not request.user.role:
             return False
 
-        role_name = (
-            request.user.role.name
-            .lower()
-        )
+        role_name = request.user.role.name.lower()
 
-        allowed_roles = [
-            'owner',
-            'general manager',
-            'cashier',
-            'sales rep',
-        ]
+        allowed_roles = ['owner', 'general manager', 'cashier', 'sales rep']
 
-        return any(
-            role in role_name
-            for role in allowed_roles
-        )
+        return any(role in role_name for role in allowed_roles)
 
-
-class CanViewSalesReports(permissions.BasePermission):
-    """
-    Can view sales reports and returns
-    """
-
-    def has_permission(self, request, view):
-        if not request.user.is_authenticated:
-            return False
-
-        if not request.user.role:
-            return False
-
-        role_name = (
-            request.user.role.name
-            .lower()
-        )
-
-        allowed_roles = [
-            'owner',
-            'general manager',
-            'accountant',
-            'auditor',
-            'viewer',
-            'cashier',
-            'sales rep',
-        ]
-
-        return any(
-            role in role_name
-            for role in allowed_roles
-        )
 
 class CanViewReceipt(permissions.BasePermission):
     """Owner, Manager, Cashier, Accountant, Auditor can view receipts"""

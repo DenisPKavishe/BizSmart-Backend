@@ -1,15 +1,12 @@
+# sales/urls.py
+
 from django.urls import path
 from .views import (
-    # Customers
     CustomerListCreateView, CustomerDetailView,
-    # Sale Items
     SaleItemListCreateView, SaleItemDetailView,
-    # Sales
     SaleListCreateView, SaleDetailView, SalePartialUpdateView,
     ProcessSaleView, SaleReceiptView,
-    # Returns
     ReturnListCreateView, ReturnDetailView, ProcessReturnView,
-    # Reports
     DailySalesReportView, TodaySalesView
 )
 

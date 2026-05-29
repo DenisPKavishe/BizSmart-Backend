@@ -26,3 +26,507 @@ INFO 2026-05-29 10:01:48,272 basehttp "GET /api/v1/sales/sales/?start_date=2026-
 INFO 2026-05-29 10:01:48,272 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
 INFO 2026-05-29 10:01:48,307 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
 INFO 2026-05-29 10:01:48,307 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 10:22:32,584 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/models.py changed, reloading.
+INFO 2026-05-29 10:22:32,584 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/models.py changed, reloading.
+INFO 2026-05-29 10:22:35,693 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:22:35,693 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:22:49,792 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/serializers.py changed, reloading.
+INFO 2026-05-29 10:22:49,792 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/serializers.py changed, reloading.
+INFO 2026-05-29 10:22:51,283 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:22:51,283 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:23:12,715 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/permissions.py changed, reloading.
+INFO 2026-05-29 10:23:12,715 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/permissions.py changed, reloading.
+INFO 2026-05-29 10:23:14,546 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:23:14,546 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:24:34,068 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/views.py changed, reloading.
+INFO 2026-05-29 10:24:34,068 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/views.py changed, reloading.
+INFO 2026-05-29 10:24:35,892 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:24:35,892 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:25:01,837 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/urls.py changed, reloading.
+INFO 2026-05-29 10:25:01,837 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/urls.py changed, reloading.
+INFO 2026-05-29 10:25:03,465 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:25:03,465 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:30:09,169 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/models.py changed, reloading.
+INFO 2026-05-29 10:30:09,169 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/models.py changed, reloading.
+INFO 2026-05-29 10:30:11,339 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:30:11,339 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:32:59,081 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/apps.py changed, reloading.
+INFO 2026-05-29 10:32:59,081 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/apps.py changed, reloading.
+INFO 2026-05-29 10:33:00,566 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:33:00,566 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:33:38,327 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/serializers.py changed, reloading.
+INFO 2026-05-29 10:33:38,327 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/serializers.py changed, reloading.
+INFO 2026-05-29 10:33:40,049 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:33:40,049 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:34:16,291 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/permissions.py changed, reloading.
+INFO 2026-05-29 10:34:16,291 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/permissions.py changed, reloading.
+INFO 2026-05-29 10:34:17,722 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:34:17,722 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:35:39,391 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/views.py changed, reloading.
+INFO 2026-05-29 10:35:39,391 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/views.py changed, reloading.
+INFO 2026-05-29 10:35:41,415 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:35:41,415 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:35:58,379 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/urls.py changed, reloading.
+INFO 2026-05-29 10:35:58,379 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/urls.py changed, reloading.
+INFO 2026-05-29 10:35:59,817 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:35:59,817 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:37:56,007 basehttp "GET /admin/ HTTP/1.1" 200 21418
+INFO 2026-05-29 10:37:56,007 basehttp "GET /admin/ HTTP/1.1" 200 21418
+WARNING 2026-05-29 10:37:56,417 basehttp "GET /favicon.ico HTTP/1.1" 404 3304
+WARNING 2026-05-29 10:37:56,417 basehttp "GET /favicon.ico HTTP/1.1" 404 3304
+INFO 2026-05-29 10:38:04,931 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-29 10:38:04,931 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-05-29 10:38:05,943 basehttp "GET /api/schema/ HTTP/1.1" 200 363406
+INFO 2026-05-29 10:38:05,943 basehttp "GET /api/schema/ HTTP/1.1" 200 363406
+WARNING 2026-05-29 10:38:40,900 basehttp "GET /api/v1/inventory/products/5/print-label/ HTTP/1.1" 401 58
+WARNING 2026-05-29 10:38:40,900 basehttp "GET /api/v1/inventory/products/5/print-label/ HTTP/1.1" 401 58
+INFO 2026-05-29 10:39:10,720 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 10:39:10,720 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+WARNING 2026-05-29 10:39:37,483 basehttp "GET /api/v1/inventory/products/5/print-label/ HTTP/1.1" 404 29
+WARNING 2026-05-29 10:39:37,483 basehttp "GET /api/v1/inventory/products/5/print-label/ HTTP/1.1" 404 29
+INFO 2026-05-29 10:39:50,446 basehttp "GET /admin/ HTTP/1.1" 200 21418
+INFO 2026-05-29 10:39:50,446 basehttp "GET /admin/ HTTP/1.1" 200 21418
+INFO 2026-05-29 10:39:59,360 basehttp "GET /admin/inventory/product/ HTTP/1.1" 200 21915
+INFO 2026-05-29 10:39:59,360 basehttp "GET /admin/inventory/product/ HTTP/1.1" 200 21915
+INFO 2026-05-29 10:39:59,469 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-29 10:39:59,469 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-29 10:40:13,661 basehttp "GET /admin/inventory/product/4/change/ HTTP/1.1" 200 34036
+INFO 2026-05-29 10:40:13,661 basehttp "GET /admin/inventory/product/4/change/ HTTP/1.1" 200 34036
+INFO 2026-05-29 10:40:13,724 basehttp "GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+INFO 2026-05-29 10:40:13,724 basehttp "GET /static/admin/js/collapse.js HTTP/1.1" 304 0
+INFO 2026-05-29 10:40:13,741 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-29 10:40:13,741 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-29 10:40:28,282 basehttp "GET /api/v1/inventory/products/3/print-label/ HTTP/1.1" 200 1589
+INFO 2026-05-29 10:40:28,282 basehttp "GET /api/v1/inventory/products/3/print-label/ HTTP/1.1" 200 1589
+INFO 2026-05-29 10:49:22,283 basehttp "POST /admin/inventory/product/4/change/ HTTP/1.1" 302 0
+INFO 2026-05-29 10:49:22,283 basehttp "POST /admin/inventory/product/4/change/ HTTP/1.1" 302 0
+INFO 2026-05-29 10:49:22,340 basehttp "GET /admin/inventory/product/ HTTP/1.1" 200 22147
+INFO 2026-05-29 10:49:22,340 basehttp "GET /admin/inventory/product/ HTTP/1.1" 200 22147
+INFO 2026-05-29 10:49:22,438 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-29 10:49:22,438 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-29 10:49:36,400 basehttp "GET /admin/inventory/product/add/ HTTP/1.1" 200 33649
+INFO 2026-05-29 10:49:36,400 basehttp "GET /admin/inventory/product/add/ HTTP/1.1" 200 33649
+INFO 2026-05-29 10:49:36,458 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-29 10:49:36,458 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+ERROR 2026-05-29 10:51:35,629 basehttp "POST /admin/inventory/product/add/ HTTP/1.1" 500 158263
+ERROR 2026-05-29 10:51:35,629 basehttp "POST /admin/inventory/product/add/ HTTP/1.1" 500 158263
+INFO 2026-05-29 10:55:02,335 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/barcode_generator.py changed, reloading.
+INFO 2026-05-29 10:55:02,335 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/barcode_generator.py changed, reloading.
+INFO 2026-05-29 10:55:03,969 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:55:03,969 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 10:55:46,567 basehttp "GET /admin/inventory/product/add/ HTTP/1.1" 200 33649
+INFO 2026-05-29 10:55:46,567 basehttp "GET /admin/inventory/product/add/ HTTP/1.1" 200 33649
+INFO 2026-05-29 10:55:53,635 basehttp "POST /admin/inventory/product/add/ HTTP/1.1" 302 0
+INFO 2026-05-29 10:55:53,635 basehttp "POST /admin/inventory/product/add/ HTTP/1.1" 302 0
+INFO 2026-05-29 10:55:53,723 basehttp "GET /admin/inventory/product/ HTTP/1.1" 200 22649
+INFO 2026-05-29 10:55:53,723 basehttp "GET /admin/inventory/product/ HTTP/1.1" 200 22649
+INFO 2026-05-29 10:55:53,796 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-05-29 10:55:53,796 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+WARNING 2026-05-29 10:56:13,264 basehttp "GET /api/v1/inventory/products/4/print-label/ HTTP/1.1" 401 183
+WARNING 2026-05-29 10:56:13,264 basehttp "GET /api/v1/inventory/products/4/print-label/ HTTP/1.1" 401 183
+WARNING 2026-05-29 10:56:26,857 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+WARNING 2026-05-29 10:56:26,857 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+INFO 2026-05-29 10:56:36,422 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 10:56:36,422 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 10:56:53,827 basehttp "GET /api/v1/inventory/products/4/print-label/ HTTP/1.1" 200 1599
+INFO 2026-05-29 10:56:53,827 basehttp "GET /api/v1/inventory/products/4/print-label/ HTTP/1.1" 200 1599
+INFO 2026-05-29 11:00:19,722 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/barcode_generator.py changed, reloading.
+INFO 2026-05-29 11:00:19,722 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/barcode_generator.py changed, reloading.
+INFO 2026-05-29 11:00:21,956 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:00:21,956 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:00:47,824 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/signals.py changed, reloading.
+INFO 2026-05-29 11:00:47,824 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/signals.py changed, reloading.
+INFO 2026-05-29 11:00:49,720 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:00:49,720 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:04:00,665 basehttp "GET /api/v1/inventory/products/4/print-label/ HTTP/1.1" 200 1603
+INFO 2026-05-29 11:04:00,665 basehttp "GET /api/v1/inventory/products/4/print-label/ HTTP/1.1" 200 1603
+INFO 2026-05-29 11:05:46,047 basehttp "GET /api/v1/inventory/products/barcode/6200010000043/ HTTP/1.1" 200 543
+INFO 2026-05-29 11:05:46,047 basehttp "GET /api/v1/inventory/products/barcode/6200010000043/ HTTP/1.1" 200 543
+INFO 2026-05-29 11:12:33,630 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/views.py changed, reloading.
+INFO 2026-05-29 11:12:33,630 autoreload /Users/j/Desktop/BizSMART/Backend/inventory/views.py changed, reloading.
+INFO 2026-05-29 11:12:35,550 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:12:35,550 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:19:31,345 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:19:31,345 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:48:38,683 autoreload /Users/j/Desktop/BizSMART/Backend/financials/models.py changed, reloading.
+INFO 2026-05-29 11:48:38,683 autoreload /Users/j/Desktop/BizSMART/Backend/financials/models.py changed, reloading.
+INFO 2026-05-29 11:48:42,198 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:48:42,198 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:49:11,633 autoreload /Users/j/Desktop/BizSMART/Backend/financials/serializers.py changed, reloading.
+INFO 2026-05-29 11:49:11,633 autoreload /Users/j/Desktop/BizSMART/Backend/financials/serializers.py changed, reloading.
+INFO 2026-05-29 11:49:13,363 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:49:13,363 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:49:27,730 autoreload /Users/j/Desktop/BizSMART/Backend/financials/permissions.py changed, reloading.
+INFO 2026-05-29 11:49:27,730 autoreload /Users/j/Desktop/BizSMART/Backend/financials/permissions.py changed, reloading.
+INFO 2026-05-29 11:49:28,987 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:49:28,987 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:49:54,844 autoreload /Users/j/Desktop/BizSMART/Backend/financials/views.py changed, reloading.
+INFO 2026-05-29 11:49:54,844 autoreload /Users/j/Desktop/BizSMART/Backend/financials/views.py changed, reloading.
+INFO 2026-05-29 11:49:58,381 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:49:58,381 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:50:24,478 autoreload /Users/j/Desktop/BizSMART/Backend/financials/urls.py changed, reloading.
+INFO 2026-05-29 11:50:24,478 autoreload /Users/j/Desktop/BizSMART/Backend/financials/urls.py changed, reloading.
+INFO 2026-05-29 11:50:26,910 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:50:26,910 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:50:53,314 autoreload /Users/j/Desktop/BizSMART/Backend/financials/tax_calculator.py changed, reloading.
+INFO 2026-05-29 11:50:53,314 autoreload /Users/j/Desktop/BizSMART/Backend/financials/tax_calculator.py changed, reloading.
+INFO 2026-05-29 11:50:54,577 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 11:50:54,577 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 15:07:38,938 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 15:07:38,938 autoreload Watching for file changes with StatReloader
+INFO 2026-05-29 15:08:41,213 basehttp "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:41,213 basehttp "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:42,306 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 15:08:42,306 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 15:08:45,382 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:45,382 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:45,399 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:45,399 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:45,406 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:45,406 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:45,434 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:45,434 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:45,467 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:08:45,467 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:08:45,519 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:08:45,519 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:08:45,591 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:08:45,591 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:08:45,615 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:08:45,615 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:08:52,408 basehttp "OPTIONS /api/v1/inventory/products/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:52,408 basehttp "OPTIONS /api/v1/inventory/products/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:52,412 basehttp "OPTIONS /api/v1/sales/customers/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:52,412 basehttp "OPTIONS /api/v1/sales/customers/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:52,432 basehttp "OPTIONS /api/v1/sales/customers/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:52,432 basehttp "OPTIONS /api/v1/sales/customers/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:52,427 basehttp "OPTIONS /api/v1/inventory/products/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:52,427 basehttp "OPTIONS /api/v1/inventory/products/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:08:52,629 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:08:52,629 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:08:52,727 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:08:52,727 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:08:52,770 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:08:52,770 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:08:52,983 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:08:52,983 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:09:31,364 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 15:09:31,364 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 15:09:53,187 basehttp "GET /api/v1/inventory/products/4/print-label/ HTTP/1.1" 200 1603
+INFO 2026-05-29 15:09:53,187 basehttp "GET /api/v1/inventory/products/4/print-label/ HTTP/1.1" 200 1603
+INFO 2026-05-29 15:10:45,672 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 0
+INFO 2026-05-29 15:10:45,672 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 0
+INFO 2026-05-29 15:10:45,701 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 0
+INFO 2026-05-29 15:10:45,701 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 0
+INFO 2026-05-29 15:10:45,754 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 498
+INFO 2026-05-29 15:10:45,754 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 498
+INFO 2026-05-29 15:10:45,812 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 498
+INFO 2026-05-29 15:10:45,812 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 498
+INFO 2026-05-29 15:11:18,986 basehttp "OPTIONS /api/v1/financials/budgets/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:11:18,986 basehttp "OPTIONS /api/v1/financials/budgets/ HTTP/1.1" 200 0
+ERROR 2026-05-29 15:11:19,166 basehttp "POST /api/v1/financials/budgets/ HTTP/1.1" 500 122739
+ERROR 2026-05-29 15:11:19,166 basehttp "POST /api/v1/financials/budgets/ HTTP/1.1" 500 122739
+INFO 2026-05-29 15:11:27,171 basehttp "OPTIONS /api/v1/financials/loans/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-05-29 15:11:27,172 basehttp "OPTIONS /api/v1/financials/loans/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-05-29 15:11:27,172 basehttp "OPTIONS /api/v1/financials/loans/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-05-29 15:11:27,171 basehttp "OPTIONS /api/v1/financials/loans/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-05-29 15:11:27,247 basehttp "GET /api/v1/financials/loans/?page=1&page_size=20 HTTP/1.1" 200 473
+INFO 2026-05-29 15:11:27,247 basehttp "GET /api/v1/financials/loans/?page=1&page_size=20 HTTP/1.1" 200 473
+INFO 2026-05-29 15:11:27,329 basehttp "GET /api/v1/financials/loans/?page=1&page_size=20 HTTP/1.1" 200 473
+INFO 2026-05-29 15:11:27,329 basehttp "GET /api/v1/financials/loans/?page=1&page_size=20 HTTP/1.1" 200 473
+INFO 2026-05-29 15:11:30,064 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:11:30,064 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:11:30,109 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:11:30,109 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:11:30,191 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:11:30,191 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:11:30,213 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:11:30,213 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:17:29,470 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:17:29,470 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:17:29,498 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:17:29,498 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:17:29,613 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:17:29,613 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:17:29,637 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:17:29,637 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:22:44,765 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,765 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,801 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:22:44,801 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:22:44,856 basehttp "OPTIONS /api/v1/bi/profit-loss/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,856 basehttp "OPTIONS /api/v1/bi/profit-loss/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,886 basehttp "OPTIONS /api/v1/financials/cash-flow/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,886 basehttp "OPTIONS /api/v1/financials/cash-flow/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,909 basehttp "OPTIONS /api/v1/bi/trends/?days=30 HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,909 basehttp "OPTIONS /api/v1/bi/trends/?days=30 HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,947 basehttp "OPTIONS /api/v1/financials/loans/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,947 basehttp "OPTIONS /api/v1/financials/loans/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,948 basehttp "OPTIONS /api/v1/financials/transactions/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,948 basehttp "OPTIONS /api/v1/financials/transactions/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,959 basehttp "OPTIONS /api/v1/financials/petty-cash/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,960 basehttp "OPTIONS /api/v1/hr/payroll/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,959 basehttp "OPTIONS /api/v1/financials/petty-cash/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,960 basehttp "OPTIONS /api/v1/hr/payroll/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,980 basehttp "OPTIONS /api/v1/financials/invoices/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,980 basehttp "OPTIONS /api/v1/financials/invoices/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,989 basehttp "OPTIONS /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:44,989 basehttp "OPTIONS /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 0
+INFO 2026-05-29 15:22:45,055 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:22:45,069 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:22:45,069 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:22:45,055 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:22:45,127 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:22:45,127 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:22:45,231 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:22:45,231 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:22:45,312 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:22:45,312 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:22:45,463 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:22:45,511 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:22:45,463 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:22:45,511 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:22:45,528 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:22:45,554 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:22:45,528 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:22:45,554 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:22:45,664 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:22:45,664 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:22:45,746 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:22:45,746 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:22:45,827 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:22:45,838 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:22:45,758 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:22:45,827 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:22:45,838 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:22:45,758 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:22:45,964 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:22:45,964 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:22:45,975 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:22:45,975 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:22:45,991 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:22:45,991 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:22:46,061 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:22:46,061 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:22:46,082 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:22:46,082 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:22:46,075 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:22:46,075 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:22:46,185 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:22:46,185 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:23:37,217 basehttp "OPTIONS /api/v1/bi/top-products/?limit=10 HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,219 basehttp "OPTIONS /api/v1/bi/top-products/?limit=10 HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,219 basehttp "OPTIONS /api/v1/bi/top-products/?limit=10 HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,220 basehttp "OPTIONS /api/v1/bi/customer-insights/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,220 basehttp "OPTIONS /api/v1/bi/customer-insights/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,217 basehttp "OPTIONS /api/v1/bi/top-products/?limit=10 HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,219 basehttp "OPTIONS /api/v1/inventory/products/low-stock/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,247 basehttp "OPTIONS /api/v1/bi/customer-insights/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,247 basehttp "OPTIONS /api/v1/bi/customer-insights/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,219 basehttp "OPTIONS /api/v1/inventory/products/low-stock/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,249 basehttp "OPTIONS /api/v1/inventory/products/low-stock/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,249 basehttp "OPTIONS /api/v1/inventory/products/low-stock/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:37,298 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:23:37,298 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:23:37,302 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:23:37,302 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:23:37,428 basehttp "GET /api/v1/inventory/products/low-stock/ HTTP/1.1" 200 25
+INFO 2026-05-29 15:23:37,430 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:23:37,428 basehttp "GET /api/v1/inventory/products/low-stock/ HTTP/1.1" 200 25
+INFO 2026-05-29 15:23:37,430 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:23:37,435 basehttp "GET /api/v1/bi/customer-insights/ HTTP/1.1" 200 1063
+INFO 2026-05-29 15:23:37,462 basehttp "GET /api/v1/bi/top-products/?limit=10 HTTP/1.1" 200 450
+INFO 2026-05-29 15:23:37,435 basehttp "GET /api/v1/bi/customer-insights/ HTTP/1.1" 200 1063
+INFO 2026-05-29 15:23:37,462 basehttp "GET /api/v1/bi/top-products/?limit=10 HTTP/1.1" 200 450
+INFO 2026-05-29 15:23:37,525 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:23:37,525 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:23:37,570 basehttp "GET /api/v1/bi/top-products/?limit=10 HTTP/1.1" 200 450
+INFO 2026-05-29 15:23:37,570 basehttp "GET /api/v1/bi/top-products/?limit=10 HTTP/1.1" 200 450
+INFO 2026-05-29 15:23:37,573 basehttp "GET /api/v1/inventory/products/low-stock/ HTTP/1.1" 200 25
+INFO 2026-05-29 15:23:37,573 basehttp "GET /api/v1/inventory/products/low-stock/ HTTP/1.1" 200 25
+INFO 2026-05-29 15:23:37,591 basehttp "GET /api/v1/bi/customer-insights/ HTTP/1.1" 200 1063
+INFO 2026-05-29 15:23:37,591 basehttp "GET /api/v1/bi/customer-insights/ HTTP/1.1" 200 1063
+WARNING 2026-05-29 15:23:42,520 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 401 183
+WARNING 2026-05-29 15:23:42,520 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 401 183
+WARNING 2026-05-29 15:23:42,528 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 401 183
+WARNING 2026-05-29 15:23:42,528 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 401 183
+INFO 2026-05-29 15:23:42,616 basehttp "OPTIONS /api/v1/auth/refresh/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:42,616 basehttp "OPTIONS /api/v1/auth/refresh/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:23:42,671 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 200 483
+INFO 2026-05-29 15:23:42,671 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 200 483
+INFO 2026-05-29 15:23:42,718 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:23:42,718 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:23:42,902 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:23:42,902 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:23:42,905 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:23:42,923 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:23:42,905 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:23:43,285 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:23:43,285 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:23:43,272 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:23:43,272 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:23:42,923 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:23:43,398 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:23:43,398 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:23:43,423 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:23:43,423 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:23:43,649 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:23:43,649 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:23:43,663 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:23:43,663 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:23:43,699 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:23:43,699 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:23:43,752 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:23:43,752 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:23:43,779 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:23:43,779 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:23:43,857 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:23:44,004 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:23:43,857 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:23:44,023 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:23:44,023 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:23:44,004 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:23:44,023 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:23:44,023 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:23:44,098 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:23:44,098 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:23:44,183 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:23:44,183 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:23:44,188 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:23:44,188 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:23:44,275 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:23:44,275 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:23:44,326 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:23:44,326 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:24:02,361 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 15:24:02,361 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 808
+INFO 2026-05-29 15:24:05,243 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:24:05,243 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:24:05,269 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:24:05,269 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:24:05,301 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:24:05,301 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:24:05,331 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:24:05,331 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:24:12,322 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:24:12,322 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:24:12,369 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:24:12,369 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 52
+INFO 2026-05-29 15:24:12,488 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:24:12,493 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:24:12,488 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:24:12,508 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:24:12,493 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:24:12,508 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:24:12,580 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:24:12,580 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:24:12,627 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:24:12,627 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:24:12,675 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:24:12,675 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:24:12,725 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:24:12,725 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:24:12,751 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:24:12,751 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:24:12,764 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:24:12,764 basehttp "GET /api/v1/bi/trends/?days=30 HTTP/1.1" 200 2660
+INFO 2026-05-29 15:24:12,787 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:24:12,787 basehttp "GET /api/v1/bi/profit-loss/ HTTP/1.1" 200 583
+INFO 2026-05-29 15:24:12,842 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:24:12,842 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 473
+INFO 2026-05-29 15:24:12,889 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:24:12,889 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:24:12,923 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:24:12,923 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1962
+INFO 2026-05-29 15:24:12,960 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:24:12,960 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:24:12,969 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:24:12,969 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:24:12,979 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:24:13,002 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:24:13,002 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 1312
+INFO 2026-05-29 15:24:12,979 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 4536
+INFO 2026-05-29 15:24:13,186 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:24:13,187 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:24:13,186 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 3121
+INFO 2026-05-29 15:24:13,187 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:24:13,191 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:24:13,191 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 7831
+INFO 2026-05-29 15:24:28,700 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 498
+INFO 2026-05-29 15:24:28,700 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 498
+INFO 2026-05-29 15:24:28,767 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 498
+INFO 2026-05-29 15:24:28,767 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 498
+INFO 2026-05-29 15:25:11,202 basehttp "OPTIONS /api/v1/financials/budgets/1/ HTTP/1.1" 200 0
+INFO 2026-05-29 15:25:11,202 basehttp "OPTIONS /api/v1/financials/budgets/1/ HTTP/1.1" 200 0
+WARNING 2026-05-29 15:25:11,273 basehttp "PUT /api/v1/financials/budgets/1/ HTTP/1.1" 400 39
+WARNING 2026-05-29 15:25:11,273 basehttp "PUT /api/v1/financials/budgets/1/ HTTP/1.1" 400 39
+WARNING 2026-05-29 15:25:44,606 basehttp "PUT /api/v1/financials/budgets/1/ HTTP/1.1" 400 39
+WARNING 2026-05-29 15:25:44,606 basehttp "PUT /api/v1/financials/budgets/1/ HTTP/1.1" 400 39
+WARNING 2026-05-29 15:26:11,250 basehttp "PUT /api/v1/financials/budgets/1/ HTTP/1.1" 400 75
+WARNING 2026-05-29 15:26:11,250 basehttp "PUT /api/v1/financials/budgets/1/ HTTP/1.1" 400 75
+WARNING 2026-05-29 15:26:21,490 basehttp "PUT /api/v1/financials/budgets/1/ HTTP/1.1" 400 75
+WARNING 2026-05-29 15:26:21,490 basehttp "PUT /api/v1/financials/budgets/1/ HTTP/1.1" 400 75
+WARNING 2026-05-29 15:27:00,320 basehttp "POST /api/v1/financials/budgets/ HTTP/1.1" 400 75
+WARNING 2026-05-29 15:27:00,320 basehttp "POST /api/v1/financials/budgets/ HTTP/1.1" 400 75
+INFO 2026-05-29 15:35:24,847 basehttp "OPTIONS /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:24,847 basehttp "OPTIONS /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:24,880 basehttp "OPTIONS /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:24,880 basehttp "OPTIONS /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:25,103 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:35:25,103 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:35:25,151 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:35:25,151 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:35:25,115 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:35:25,221 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:35:25,221 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:35:25,249 basehttp "OPTIONS /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:25,249 basehttp "OPTIONS /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:25,115 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:35:25,397 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:35:25,397 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:35:25,458 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:35:25,458 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:35:25,495 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:35:25,495 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:35:25,578 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:35:25,578 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:35:25,604 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 3121
+INFO 2026-05-29 15:35:25,604 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 3121
+INFO 2026-05-29 15:35:25,789 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 3121
+INFO 2026-05-29 15:35:25,789 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 3121
+INFO 2026-05-29 15:35:47,610 basehttp "OPTIONS /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:47,610 basehttp "OPTIONS /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:47,611 basehttp "OPTIONS /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:47,611 basehttp "OPTIONS /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-05-29 15:35:47,666 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:35:47,666 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:35:47,753 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:35:47,753 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:36:05,161 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:36:05,161 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:36:05,170 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:36:05,170 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:36:05,240 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:36:05,240 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:36:05,348 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:36:05,353 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:36:05,348 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 52
+INFO 2026-05-29 15:36:05,359 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:36:05,359 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:36:05,353 basehttp "GET /api/v1/financials/transactions/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 4592
+INFO 2026-05-29 15:36:05,408 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:36:05,408 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 1312
+INFO 2026-05-29 15:36:05,591 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 3121
+INFO 2026-05-29 15:36:05,591 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 3121
+INFO 2026-05-29 15:36:05,669 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:36:05,669 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 4108
+INFO 2026-05-29 15:36:05,771 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 3121
+INFO 2026-05-29 15:36:05,771 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-05-29&end_date=2026-05-29&page_size=100 HTTP/1.1" 200 3121
+INFO 2026-05-29 15:36:30,007 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:36:30,007 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:36:30,078 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:36:30,078 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:36:30,250 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:36:30,250 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 2247
+INFO 2026-05-29 15:36:30,271 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392
+INFO 2026-05-29 15:36:30,271 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 2392

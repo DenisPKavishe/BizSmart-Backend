@@ -1,8 +1,10 @@
+# sales/views.py
+
 from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.db import transaction
-from django.db.models import Sum, Count, F
+from django.db.models import Sum, Count, F, Q, Prefetch
 from django.utils import timezone
 from datetime import timedelta
 from decimal import Decimal
@@ -23,39 +25,76 @@ from .permissions import (
 )
 
 
+# ==================== HELPER FUNCTIONS ====================
+def generate_invoice_number(business_id):
+    """Generate unique invoice number with lock to prevent race condition"""
+    from .models import Sale
+    from django.db import transaction as db_transaction
+    
+    with db_transaction.atomic():
+        today = timezone.now()
+        prefix = f"INV-{today.strftime('%Y%m%d')}"
+        
+        last_sale = Sale.objects.select_for_update().filter(
+            business_id=business_id,
+            invoice_number__startswith=prefix
+        ).order_by('-invoice_number').first()
+        
+        if last_sale and last_sale.invoice_number:
+            try:
+                last_num = int(last_sale.invoice_number.split('-')[-1])
+                new_num = last_num + 1
+            except (ValueError, IndexError):
+                new_num = 1
+        else:
+            new_num = 1
+        
+        return f"{prefix}-{new_num:04d}"
+
+
+def validate_discount(user, discount_percentage, discount_amount, subtotal):
+    """Validate discount based on user role"""
+    role = user.role.name.lower() if user.role else ''
+    
+    max_percentage = 100
+    max_amount = subtotal
+    
+    if role == 'cashier':
+        max_percentage = 10
+        max_amount = subtotal * Decimal('0.1')
+    elif role == 'general_manager':
+        max_percentage = 30
+        max_amount = subtotal * Decimal('0.3')
+    # Owner has no limits
+    
+    if discount_percentage > max_percentage:
+        raise ValueError(f'Discount cannot exceed {max_percentage}% for your role')
+    
+    if discount_amount > max_amount:
+        raise ValueError(f'Discount cannot exceed TZS {max_amount:,.2f} for your role')
+    
+    return True
+
+
 # ==================== CUSTOMERS ====================
 class CustomerListCreateView(generics.ListCreateAPIView):
-    """
-    List all customers or create a new customer.
-    
-    - View: Owner, Manager, Cashier, Accountant, Auditor
-    - Create/Edit: Owner, Manager, Cashier
-    """
     serializer_class = CustomerSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewSales(), IsAuditorSalesReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanManageCustomers(), IsAuditorSalesReadOnly()]
+        return [permissions.IsAuthenticated(), CanManageCustomers(), IsAuditorSalesReadOnly()]
     
     def get_queryset(self):
         if getattr(self, 'swagger_fake_view', False):
             return Customer.objects.none()
-        return Customer.objects.filter(business=self.request.user.business)
+        return Customer.objects.filter(business=self.request.user.business, is_active=True)
     
     def perform_create(self, serializer):
         serializer.save(business=self.request.user.business)
 
 
 class CustomerDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a customer.
-    
-    - View: Owner, Manager, Cashier, Accountant, Auditor
-    - Update: Owner, Manager, Cashier
-    - Delete: Owner only (or deactivate)
-    """
     serializer_class = CustomerSerializer
     
     def get_permissions(self):
@@ -63,29 +102,27 @@ class CustomerDetailView(generics.RetrieveUpdateDestroyAPIView):
             return [permissions.IsAuthenticated(), CanViewSales(), IsAuditorSalesReadOnly()]
         elif self.request.method in ['PUT', 'PATCH']:
             return [permissions.IsAuthenticated(), CanManageCustomers(), IsAuditorSalesReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
+        return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
     
     def get_queryset(self):
         return Customer.objects.filter(business=self.request.user.business)
     
     def destroy(self, request, *args, **kwargs):
+        """Soft delete - just deactivate instead of deleting"""
         customer = self.get_object()
+        
         if customer.sales.exists():
-            return Response({
-                'error': 'Cannot delete customer with existing sales.'
-            }, status=status.HTTP_400_BAD_REQUEST)
+            # Deactivate instead of delete
+            customer.is_active = False
+            customer.save()
+            return Response({'message': 'Customer deactivated successfully'})
+        
         customer.delete()
         return Response({'message': 'Customer deleted successfully'})
 
 
 # ==================== SALE ITEMS ====================
 class SaleItemListCreateView(generics.ListCreateAPIView):
-    """
-    List all sale items.
-    
-    Access: Owner, Manager, Accountant, Auditor, Cashier
-    """
     serializer_class = SaleItemSerializer
     
     def get_permissions(self):
@@ -103,19 +140,12 @@ class SaleItemListCreateView(generics.ListCreateAPIView):
 
 
 class SaleItemDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    Retrieve, update or delete a sale item.
-    
-    - View: Owner, Manager, Accountant, Auditor, Cashier
-    - Update/Delete: Owner, Manager only (with stock adjustments)
-    """
     serializer_class = SaleItemSerializer
     
     def get_permissions(self):
         if self.request.method == 'GET':
             return [permissions.IsAuthenticated(), CanViewSales(), IsAuditorSalesReadOnly()]
-        else:
-            return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
+        return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
     
     def get_queryset(self):
         return SaleItem.objects.filter(sale__business=self.request.user.business)
@@ -165,11 +195,6 @@ class SaleItemDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 # ==================== SALES ====================
 class SaleListCreateView(generics.ListAPIView):
-    """
-    List all sales.
-    
-    Access: Owner, Manager, Accountant, Auditor, Cashier
-    """
     serializer_class = SaleSerializer
     
     def get_permissions(self):
@@ -179,7 +204,14 @@ class SaleListCreateView(generics.ListAPIView):
         if getattr(self, 'swagger_fake_view', False):
             return Sale.objects.none()
         
-        queryset = Sale.objects.filter(business=self.request.user.business)
+        # Optimized with select_related and prefetch_related to prevent N+1 queries
+        queryset = Sale.objects.filter(
+            business=self.request.user.business
+        ).select_related(
+            'customer', 'created_by'
+        ).prefetch_related(
+            Prefetch('items', queryset=SaleItem.objects.select_related('product'))
+        )
         
         start_date = self.request.query_params.get('start_date')
         end_date = self.request.query_params.get('end_date')
@@ -201,11 +233,6 @@ class SaleListCreateView(generics.ListAPIView):
 
 
 class SaleDetailView(generics.RetrieveAPIView):
-    """
-    Retrieve sale details with all items.
-    
-    Access: Owner, Manager, Accountant, Auditor, Cashier
-    """
     serializer_class = SaleSerializer
     
     def get_permissions(self):
@@ -219,33 +246,16 @@ class SaleDetailView(generics.RetrieveAPIView):
         serializer = self.get_serializer(instance)
         data = serializer.data
         
-        items = SaleItem.objects.filter(sale=instance)
+        items = SaleItem.objects.filter(sale=instance).select_related('product')
         data['items'] = SaleItemSerializer(items, many=True).data
         
         return Response(data)
 
 
 class SalePartialUpdateView(APIView):
-    """
-    Partial update for sale - update status, payment, etc.
-    
-    Access: Owner, Manager only
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
     
-    @swagger_auto_schema(
-        request_body=openapi.Schema(
-            type=openapi.TYPE_OBJECT,
-            properties={
-                'amount_paid': openapi.Schema(type=openapi.TYPE_NUMBER, description='Update amount paid'),
-                'status': openapi.Schema(type=openapi.TYPE_STRING, description='Update status'),
-                'notes': openapi.Schema(type=openapi.TYPE_STRING, description='Update notes'),
-            }
-        ),
-        responses={200: 'Sale updated successfully'}
-    )
     @transaction.atomic
     def patch(self, request, pk):
         self.check_permissions(request)
@@ -279,7 +289,7 @@ class SalePartialUpdateView(APIView):
             sale.notes = request.data['notes']
             sale.save()
         
-        items = SaleItem.objects.filter(sale=sale)
+        items = SaleItem.objects.filter(sale=sale).select_related('product')
         data = SaleSerializer(sale).data
         data['items'] = SaleItemSerializer(items, many=True).data
         
@@ -290,113 +300,9 @@ class SalePartialUpdateView(APIView):
 
 
 class ProcessSaleView(APIView):
-    """
-    Process a complete sale with multiple items (POS)
-    
-    This is the main endpoint for creating sales. It automatically:
-    - Creates the sale record
-    - Creates sale items
-    - Reduces inventory stock
-    - Creates financial transaction
-    - Updates customer statistics
-    
-    Access: Owner, Manager, Cashier
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanProcessSale(), IsAuditorSalesReadOnly()]
     
-    @swagger_auto_schema(
-        request_body=openapi.Schema(
-            type=openapi.TYPE_OBJECT,
-            required=['items', 'amount_paid'],
-            properties={
-                'customer_id': openapi.Schema(
-                    type=openapi.TYPE_INTEGER, 
-                    description='ID of existing customer (optional)'
-                ),
-                'customer_name': openapi.Schema(
-                    type=openapi.TYPE_STRING, 
-                    description='Name of customer (creates new customer if not exists)'
-                ),
-                'customer_phone': openapi.Schema(
-                    type=openapi.TYPE_STRING, 
-                    description='Customer phone number'
-                ),
-                'items': openapi.Schema(
-                    type=openapi.TYPE_ARRAY,
-                    items=openapi.Schema(
-                        type=openapi.TYPE_OBJECT,
-                        properties={
-                            'product_id': openapi.Schema(
-                                type=openapi.TYPE_INTEGER, 
-                                description='ID of the product from inventory'
-                            ),
-                            'quantity': openapi.Schema(
-                                type=openapi.TYPE_INTEGER, 
-                                description='Quantity to purchase'
-                            ),
-                        },
-                        required=['product_id', 'quantity']
-                    ),
-                    description='Array of products being purchased'
-                ),
-                'discount_percentage': openapi.Schema(
-                    type=openapi.TYPE_NUMBER, 
-                    description='Discount percentage (0-100)',
-                    default=0
-                ),
-                'discount_amount': openapi.Schema(
-                    type=openapi.TYPE_NUMBER, 
-                    description='Discount amount in TZS',
-                    default=0
-                ),
-                'payment_method': openapi.Schema(
-                    type=openapi.TYPE_STRING, 
-                    enum=['cash', 'card', 'mpesa', 'tigo_pesa', 'airtel_money', 'bank_transfer', 'credit'],
-                    default='cash',
-                    description='Payment method'
-                ),
-                'amount_paid': openapi.Schema(
-                    type=openapi.TYPE_NUMBER, 
-                    description='Amount paid by customer in TZS'
-                ),
-                'notes': openapi.Schema(
-                    type=openapi.TYPE_STRING, 
-                    description='Additional notes for this sale'
-                ),
-            }
-        ),
-        responses={
-            201: openapi.Response(
-                description='Sale created successfully',
-                examples={
-                    'application/json': {
-                        'message': 'Sale processed successfully',
-                        'sale': {
-                            'id': 1,
-                            'invoice_number': 'INV-20260516-0001',
-                            'total_amount': '10000.00',
-                            'status': 'completed'
-                        },
-                        'items': [
-                            {
-                                'id': 1,
-                                'product_name': 'Organic Soap',
-                                'quantity': 2,
-                                'unit_price': '5000.00',
-                                'total_price': '10000.00'
-                            }
-                        ],
-                        'change_amount': 0
-                    }
-                }
-            ),
-            400: openapi.Response('Bad request - validation error'),
-            401: openapi.Response('Unauthorized'),
-            404: openapi.Response('Product not found'),
-        }
-    )
     @transaction.atomic
     def post(self, request):
         self.check_permissions(request)
@@ -411,14 +317,15 @@ class ProcessSaleView(APIView):
         customer = None
         if data.get('customer_id'):
             try:
-                customer = Customer.objects.get(id=data['customer_id'], business=business)
+                customer = Customer.objects.get(id=data['customer_id'], business=business, is_active=True)
             except Customer.DoesNotExist:
                 return Response({'error': 'Customer not found'}, status=404)
         elif data.get('customer_name'):
             customer = Customer.objects.create(
                 business=business,
                 name=data['customer_name'],
-                phone=data.get('customer_phone', '')
+                phone=data.get('customer_phone', ''),
+                is_active=True
             )
         
         # Validate items
@@ -426,14 +333,8 @@ class ProcessSaleView(APIView):
         if not items_data:
             return Response({'error': 'At least one item is required'}, status=400)
         
-        # Generate invoice number
-        today = timezone.now()
-        today_sales_count = Sale.objects.filter(
-            business=business,
-            sale_date__date=today.date()
-        ).count()
-        next_sequence = today_sales_count + 1
-        invoice_number = f"INV-{today.strftime('%Y%m%d')}-{next_sequence:04d}"
+        # Generate invoice number (fixed race condition)
+        invoice_number = generate_invoice_number(business.id)
         
         # Calculate totals and validate stock
         subtotal = Decimal('0')
@@ -447,7 +348,7 @@ class ProcessSaleView(APIView):
                 return Response({'error': 'Invalid product or quantity'}, status=400)
             
             try:
-                product = Product.objects.get(id=product_id, business=business)
+                product = Product.objects.get(id=product_id, business=business, is_active=True)
             except Product.DoesNotExist:
                 return Response({'error': f'Product {product_id} not found'}, status=404)
             
@@ -467,9 +368,15 @@ class ProcessSaleView(APIView):
                 'total_price': item_total
             })
         
-        # Calculate discounts
+        # Calculate discounts with role validation
         discount_percentage = Decimal(str(data.get('discount_percentage', 0)))
         discount_amount = Decimal(str(data.get('discount_amount', 0)))
+        
+        # Validate discount based on user role
+        try:
+            validate_discount(request.user, discount_percentage, discount_amount, subtotal)
+        except ValueError as e:
+            return Response({'error': str(e)}, status=400)
         
         if discount_percentage > 0 and discount_amount == 0:
             discount_amount = subtotal * (discount_percentage / 100)
@@ -569,18 +476,9 @@ class ProcessSaleView(APIView):
 
 
 class SaleReceiptView(APIView):
-    """
-    Get receipt data for printing.
-    
-    Access: Owner, Manager, Cashier, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewReceipt(), IsAuditorSalesReadOnly()]
     
-    @swagger_auto_schema(
-        responses={200: 'Receipt data', 404: 'Sale not found'}
-    )
     def get(self, request, pk):
         self.check_permissions(request)
         
@@ -589,7 +487,7 @@ class SaleReceiptView(APIView):
         except Sale.DoesNotExist:
             return Response({'error': 'Sale not found'}, status=404)
         
-        items = sale.items.all()
+        items = sale.items.select_related('product').all()
         
         receipt_data = {
             'business': {
@@ -632,232 +530,101 @@ class SaleReceiptView(APIView):
 
 
 # ==================== RETURNS ====================
-# ==================== RETURNS ====================
-
 class ReturnListCreateView(generics.ListCreateAPIView):
-    """
-    List all returns or create a new return.
-
-    GET:
-    - Owner
-    - Manager
-    - Accountant
-    - Auditor
-    - Cashier
-
-    POST:
-    - Owner
-    - Manager
-    - Cashier
-    """
-
     serializer_class = ReturnSerializer
 
     def get_permissions(self):
-
-        # VIEW RETURNS
-
         if self.request.method == 'GET':
-            return [
-                permissions.IsAuthenticated(),
-                CanViewSalesReports(),
-                IsAuditorSalesReadOnly()
-            ]
-
-        # CREATE RETURN
-
-        return [
-            permissions.IsAuthenticated(),
-            CanProcessReturn(),
-            IsAuditorSalesReadOnly()
-        ]
+            return [permissions.IsAuthenticated(), CanViewSalesReports(), IsAuditorSalesReadOnly()]
+        return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
 
     def get_queryset(self):
-
-        if getattr(
-            self,
-            'swagger_fake_view',
-            False
-        ):
+        if getattr(self, 'swagger_fake_view', False):
             return Return.objects.none()
-
-        return Return.objects.filter(
-            business=self.request.user.business
-        )
+        return Return.objects.filter(business=self.request.user.business)
 
     def perform_create(self, serializer):
-
         serializer.save(
             business=self.request.user.business,
             created_by=self.request.user
         )
 
 
-class ReturnDetailView(
-    generics.RetrieveUpdateDestroyAPIView
-):
-    """
-    Retrieve, update or delete a return.
-    """
-
+class ReturnDetailView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ReturnSerializer
 
     def get_permissions(self):
-
-        # VIEW RETURN
-
         if self.request.method == 'GET':
-            return [
-                permissions.IsAuthenticated(),
-                CanViewSalesReports(),
-                IsAuditorSalesReadOnly()
-            ]
-
-        # UPDATE / DELETE
-
-        return [
-            permissions.IsAuthenticated(),
-            CanProcessReturn(),
-            IsAuditorSalesReadOnly()
-        ]
+            return [permissions.IsAuthenticated(), CanViewSalesReports(), IsAuditorSalesReadOnly()]
+        return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
 
     def get_queryset(self):
+        return Return.objects.filter(business=self.request.user.business)
 
-        return Return.objects.filter(
-            business=self.request.user.business
-        )
 
 class ProcessReturnView(APIView):
-    """
-    Process a return/refund.
-
-    Access:
-    - Owner
-    - Manager
-    - Cashier
-    """
-
     def get_permissions(self):
-        return [
-            permissions.IsAuthenticated(),
-            CanProcessReturn(),
-            IsAuditorSalesReadOnly()
-        ]
-
-    @swagger_auto_schema(
-        request_body=openapi.Schema(
-            type=openapi.TYPE_OBJECT,
-            required=['sale_id'],
-            properties={
-                'sale_id': openapi.Schema(
-                    type=openapi.TYPE_INTEGER,
-                    description='ID of the sale'
-                ),
-
-                'sale_item_id': openapi.Schema(
-                    type=openapi.TYPE_INTEGER,
-                    description='ID of specific item to return'
-                ),
-
-                'quantity': openapi.Schema(
-                    type=openapi.TYPE_INTEGER,
-                    description='Quantity to return'
-                ),
-
-                'reason': openapi.Schema(
-                    type=openapi.TYPE_STRING,
-                    description='Reason for return'
-                ),
-
-                'notes': openapi.Schema(
-                    type=openapi.TYPE_STRING,
-                    description='Additional notes'
-                ),
-            }
-        ),
-
-        responses={
-            201: 'Return processed successfully'
-        }
-    )
+        return [permissions.IsAuthenticated(), CanProcessReturn(), IsAuditorSalesReadOnly()]
 
     @transaction.atomic
     def post(self, request):
-
         self.check_permissions(request)
 
         sale_id = request.data.get('sale_id')
-
-        sale_item_id = request.data.get(
-            'sale_item_id'
-        )
-
-        quantity = int(
-            request.data.get(
-                'quantity',
-                0
-            )
-        )
-
-        reason = request.data.get(
-            'reason',
-            'customer_request'
-        )
-
-        notes = request.data.get(
-            'notes',
-            ''
-        )
+        sale_item_id = request.data.get('sale_item_id')
+        quantity = int(request.data.get('quantity', 0))
+        reason = request.data.get('reason', 'customer_request')
+        notes = request.data.get('notes', '')
 
         try:
-            sale = Sale.objects.get(
-                id=sale_id,
-                business=request.user.business
-            )
-
+            sale = Sale.objects.get(id=sale_id, business=request.user.business)
         except Sale.DoesNotExist:
-            return Response(
-                {'error': 'Sale not found'},
-                status=404
-            )
+            return Response({'error': 'Sale not found'}, status=404)
 
         if sale.status == 'refunded':
-            return Response(
-                {'error': 'Sale already refunded'},
-                status=400
-            )
+            return Response({'error': 'Sale already refunded'}, status=400)
 
         if sale_item_id:
-
             try:
-                sale_item = SaleItem.objects.get(
-                    id=sale_item_id,
-                    sale=sale
-                )
-
+                sale_item = SaleItem.objects.get(id=sale_item_id, sale=sale)
             except SaleItem.DoesNotExist:
-                return Response(
-                    {'error': 'Sale item not found'},
-                    status=404
-                )
-
+                return Response({'error': 'Sale item not found'}, status=404)
         else:
             sale_item = sale.items.first()
-            quantity = sale_item.quantity
+            quantity = sale_item.quantity if sale_item else 0
+
+        if not sale_item:
+            return Response({'error': 'No items found for this sale'}, status=404)
+
+        # Check for existing return to prevent duplicates
+        existing_return = Return.objects.filter(
+            sale_item=sale_item,
+            sale=sale
+        ).exists()
+        
+        if existing_return:
+            return Response({
+                'error': 'This item has already been returned'
+            }, status=400)
+
+        # Check remaining quantity that can be returned
+        total_returned = Return.objects.filter(
+            sale_item=sale_item
+        ).aggregate(total=Sum('quantity_returned'))['total'] or 0
+        
+        available_for_return = sale_item.quantity - total_returned
+        
+        if quantity > available_for_return:
+            return Response({
+                'error': f'Only {available_for_return} units available for return'
+            }, status=400)
 
         if quantity > sale_item.quantity:
+            return Response({
+                'error': 'Return quantity exceeds sold quantity'
+            }, status=400)
 
-            return Response(
-                {
-                    'error':
-                    'Return quantity exceeds sold quantity'
-                },
-                status=400
-            )
-
-        refund_amount = (
-            sale_item.unit_price * quantity
-        ) - sale_item.discount_amount
+        refund_amount = (sale_item.unit_price * quantity) - sale_item.discount_amount
 
         return_obj = Return.objects.create(
             business=request.user.business,
@@ -870,19 +637,12 @@ class ProcessReturnView(APIView):
             created_by=request.user
         )
 
-        # RETURN STOCK TO INVENTORY
-
+        # Return stock to inventory
         from inventory.models import StockMovement
 
         product = sale_item.product
-
         product.quantity_on_hand += quantity
-
-        product.total_investment = (
-            product.buying_price *
-            product.quantity_on_hand
-        )
-
+        product.total_investment = product.buying_price * product.quantity_on_hand
         product.save()
 
         StockMovement.objects.create(
@@ -891,18 +651,14 @@ class ProcessReturnView(APIView):
             quantity=quantity,
             movement_type='RETURN_IN',
             unit_cost=product.buying_price,
-            total_cost=(
-                product.buying_price *
-                quantity
-            ),
+            total_cost=product.buying_price * quantity,
             reference_id=sale.invoice_number,
             reference_type='return',
             notes=f"Return from sale {sale.invoice_number}",
             created_by=request.user
         )
 
-        # CREATE FINANCIAL TRANSACTION
-
+        # Create financial transaction (refund/expense)
         Transaction.objects.create(
             business=request.user.business,
             created_by=request.user,
@@ -914,50 +670,23 @@ class ProcessReturnView(APIView):
             transaction_date=timezone.now().date()
         )
 
-        # UPDATE SALE STATUS
-
-        if (
-            sale_item.quantity == quantity
-            and
-            sale.items.count() == 1
-        ):
+        # Update sale status if fully returned
+        if sale_item.quantity == quantity and sale.items.count() == 1:
             sale.status = 'refunded'
             sale.save()
 
-        return Response(
-            {
-                'message':
-                'Return processed successfully',
-
-                'return':
-                ReturnSerializer(
-                    return_obj
-                ).data,
-
-                'refund_amount':
-                float(refund_amount)
-            },
-
-            status=status.HTTP_201_CREATED
-        )
+        return Response({
+            'message': 'Return processed successfully',
+            'return': ReturnSerializer(return_obj).data,
+            'refund_amount': float(refund_amount)
+        }, status=status.HTTP_201_CREATED)
 
 
 # ==================== SALES REPORTS ====================
 class DailySalesReportView(APIView):
-    """
-    Get daily sales report for the last N days.
-    
-    Access: Owner, Manager, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewSalesReports(), IsAuditorSalesReadOnly()]
     
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter('days', openapi.IN_QUERY, type=openapi.TYPE_INTEGER, description='Number of days', default=7)
-        ]
-    )
     def get(self, request):
         self.check_permissions(request)
         
@@ -970,7 +699,7 @@ class DailySalesReportView(APIView):
             sale_date__date__gte=start_date,
             sale_date__date__lte=end_date,
             status='completed'
-        )
+        ).prefetch_related('items')
         
         daily_data = []
         for i in range(days + 1):
@@ -1031,12 +760,6 @@ class DailySalesReportView(APIView):
 
 
 class TodaySalesView(APIView):
-    """
-    Quick view of today's sales.
-    
-    Access: Owner, Manager, Accountant, Auditor
-    """
-    
     def get_permissions(self):
         return [permissions.IsAuthenticated(), CanViewSalesReports(), IsAuditorSalesReadOnly()]
     
@@ -1049,7 +772,7 @@ class TodaySalesView(APIView):
             business=request.user.business,
             sale_date__date=today,
             status='completed'
-        )
+        ).prefetch_related('items')
         
         total_sales = sales.aggregate(Sum('total_amount'))['total_amount__sum'] or 0
         total_transactions = sales.count()

@@ -1,7 +1,10 @@
+# hr/models.py
+
 from django.db import models
 from django.conf import settings
 from core.models import Business, User, Role
 from decimal import Decimal
+from django.utils import timezone
 
 class Department(models.Model):
     """Department/Team within a business"""
@@ -9,6 +12,7 @@ class Department(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
     manager = models.ForeignKey('Employee', on_delete=models.SET_NULL, null=True, blank=True, related_name='managed_departments')
+    is_active = models.BooleanField(default=True)  # ADDED: Soft delete
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
@@ -33,7 +37,6 @@ class Employee(models.Model):
         ('intern', 'Intern'),
     ]
     
-    # Link to existing tables
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='employees')
     user = models.OneToOneField(
         User, 
@@ -61,6 +64,7 @@ class Employee(models.Model):
     employment_type = models.CharField(max_length=20, choices=EMPLOYMENT_TYPE, default='full_time')
     hire_date = models.DateField()
     termination_date = models.DateField(null=True, blank=True)
+    termination_reason = models.CharField(max_length=200, blank=True)  # ADDED
     is_active = models.BooleanField(default=True)
     
     # Commission settings
@@ -96,7 +100,6 @@ class Employee(models.Model):
                 username = f"{base_username}{counter}"
                 counter += 1
             
-            # Create user
             user = User.objects.create(
                 email=self.email,
                 username=username,
@@ -110,7 +113,6 @@ class Employee(models.Model):
             if password:
                 user.set_password(password)
             else:
-                # Generate random password
                 import secrets
                 import string
                 alphabet = string.ascii_letters + string.digits
@@ -121,6 +123,17 @@ class Employee(models.Model):
             self.save()
             return user, password
         return self.user, None
+    
+    def deactivate(self, reason=''):
+        """Soft delete employee"""
+        self.is_active = False
+        self.termination_date = timezone.now().date()
+        self.termination_reason = reason
+        self.save()
+        
+        if self.user:
+            self.user.is_active = False
+            self.user.save()
     
     class Meta:
         ordering = ['first_name', 'last_name']
@@ -134,7 +147,7 @@ class Salary(models.Model):
     # Base salary
     base_salary = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="Monthly base salary")
     
-    # Allowances (add to salary)
+    # Allowances
     housing_allowance = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     transport_allowance = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     meal_allowance = models.DecimalField(max_digits=15, decimal_places=2, default=0)
@@ -143,9 +156,9 @@ class Salary(models.Model):
     other_allowance = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     
     # Deductions
-    paye_tax = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="Pay As You Earn")
-    sdl = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="Skills Development Levy (3.5%)")
-    wcf = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="Workman's Compensation Fund")
+    paye_tax = models.DecimalField(max_digits=15, decimal_places=2, default=0)
+    sdl = models.DecimalField(max_digits=15, decimal_places=2, default=0)
+    wcf = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     pension_contribution = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     health_insurance = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     loan_deduction = models.DecimalField(max_digits=15, decimal_places=2, default=0)
@@ -216,7 +229,7 @@ class Payroll(models.Model):
     ]
     
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='payrolls')
-    month = models.IntegerField()  # 1-12
+    month = models.IntegerField()
     year = models.IntegerField()
     processed_date = models.DateTimeField(auto_now_add=True)
     processed_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='processed_payrolls')
@@ -229,7 +242,6 @@ class Payroll(models.Model):
     total_deductions = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     total_net_salary = models.DecimalField(max_digits=15, decimal_places=2, default=0)
     
-    # Link to Financials
     transaction = models.OneToOneField(
         'financials.Transaction',
         on_delete=models.SET_NULL,
@@ -282,3 +294,45 @@ class PayrollItem(models.Model):
     
     class Meta:
         unique_together = ['payroll', 'employee']
+
+
+# ==================== LEAVE MANAGEMENT (NEW FEATURE) ====================
+class LeaveType(models.Model):
+    """Types of leave (Annual, Sick, Casual, etc.)"""
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='leave_types')
+    name = models.CharField(max_length=100)
+    days_per_year = models.IntegerField(default=0)
+    is_paid = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.name
+
+
+class LeaveRequest(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('approved', 'Approved'),
+        ('rejected', 'Rejected'),
+        ('cancelled', 'Cancelled'),
+    ]
+    
+    employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='leave_requests')
+    leave_type = models.ForeignKey(LeaveType, on_delete=models.CASCADE)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    reason = models.TextField(blank=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
+    approved_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='approved_leaves')
+    approved_date = models.DateField(null=True, blank=True)
+    notes = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    @property
+    def days_requested(self):
+        delta = self.end_date - self.start_date
+        return delta.days + 1
+    
+    def __str__(self):
+        return f"{self.employee.full_name} - {self.leave_type.name} ({self.start_date} to {self.end_date})"

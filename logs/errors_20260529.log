@@ -1,0 +1,74 @@
+ERROR 2026-05-29 10:51:35,605 log Internal Server Error: /admin/inventory/product/add/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/contrib/admin/options.py", line 689, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1887, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1748, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1799, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/contrib/admin/options.py", line 1228, in save_model
+    obj.save()
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/models.py", line 81, in save
+    super().save(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 861, in save_base
+    pre_save.send(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/signals.py", line 15, in generate_product_barcode
+    instance.barcode = generate_barcode_for_product(instance)
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/barcode_generator.py", line 106, in generate_barcode_for_product
+    return generate_ean13(product.id, product.business_id)
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/barcode_generator.py", line 23, in generate_ean13
+    checksum = calculate_ean13_checksum(base)
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/barcode_generator.py", line 32, in calculate_ean13_checksum
+    digit = int(digit)
+ValueError: invalid literal for int() with base 10: 'N'
+ERROR 2026-05-29 10:51:35,629 basehttp "POST /admin/inventory/product/add/ HTTP/1.1" 500 158263
+ERROR 2026-05-29 15:11:19,145 log Internal Server Error: /api/v1/financials/budgets/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/contextlib.py", line 75, in inner
+    return func(*args, **kwds)
+  File "/Users/j/Desktop/BizSMART/Backend/financials/views.py", line 525, in perform_create
+    raise serializers.ValidationError({
+NameError: name 'serializers' is not defined
+ERROR 2026-05-29 15:11:19,166 basehttp "POST /api/v1/financials/budgets/ HTTP/1.1" 500 122739

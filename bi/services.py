@@ -1,20 +1,36 @@
+# bi/services.py
+
 from django.db.models import Sum, Count, Avg, Q, F
 from django.utils import timezone
+from django.core.cache import cache
 from datetime import datetime, timedelta
 from decimal import Decimal
+import json
 from core.models import Business
 from financials.models import Transaction
 from inventory.models import Product
 from sales.models import Sale, SaleItem, Customer
 from hr.models import Employee
+from .models import BIReportCache, BusinessInsight
 
 
 class BusinessIntelligenceService:
-    """Core BI logic for BizSmart"""
+    """Core BI logic for BizSmart with caching optimization"""
     
     def __init__(self, business):
         self.business = business
         self.today = timezone.now().date()
+        self.cache_timeout = 3600  # 1 hour cache
+    
+    def _get_cached_or_compute(self, cache_key, compute_func, *args, **kwargs):
+        """Helper to get cached data or compute and cache"""
+        cached_data = cache.get(cache_key)
+        if cached_data is not None:
+            return cached_data
+        
+        result = compute_func(*args, **kwargs)
+        cache.set(cache_key, result, self.cache_timeout)
+        return result
     
     def _calculate_percentage_change(self, current, previous):
         if previous == 0:
@@ -22,6 +38,10 @@ class BusinessIntelligenceService:
         return round(((current - previous) / previous * 100), 1)
     
     def _calculate_gross_margin(self, start_date, end_date):
+        cache_key = f"bi_gross_margin_{self.business.id}_{start_date}_{end_date}"
+        return self._get_cached_or_compute(cache_key, self._compute_gross_margin, start_date, end_date)
+    
+    def _compute_gross_margin(self, start_date, end_date):
         income = Transaction.objects.filter(
             business=self.business,
             type='income',
@@ -42,6 +62,10 @@ class BusinessIntelligenceService:
         return 0
     
     def _calculate_inventory_turnover(self):
+        cache_key = f"bi_inventory_turnover_{self.business.id}"
+        return self._get_cached_or_compute(cache_key, self._compute_inventory_turnover)
+    
+    def _compute_inventory_turnover(self):
         cogs = Transaction.objects.filter(
             business=self.business,
             type='expense',
@@ -57,11 +81,16 @@ class BusinessIntelligenceService:
         return 0
     
     def get_kpi_dashboard(self):
-        """Main KPI dashboard with all key metrics"""
+        """Main KPI dashboard with all key metrics (cached)"""
+        cache_key = f"bi_kpi_{self.business.id}_{self.today}"
+        return self._get_cached_or_compute(cache_key, self._compute_kpi_dashboard)
+    
+    def _compute_kpi_dashboard(self):
         current_month_start = self.today.replace(day=1)
         last_month_start = (current_month_start - timedelta(days=1)).replace(day=1)
         last_month_end = current_month_start - timedelta(days=1)
         
+        # Optimize with single queries using aggregations
         current_income = Transaction.objects.filter(
             business=self.business,
             type='income',
@@ -100,15 +129,16 @@ class BusinessIntelligenceService:
         gross_margin = self._calculate_gross_margin(current_month_start, self.today)
         net_margin = (current_profit / current_income * 100) if current_income > 0 else 0
         
-        inventory_value = Product.objects.filter(
+        # Optimized inventory query
+        inventory_agg = Product.objects.filter(
             business=self.business
-        ).aggregate(Sum('total_investment'))['total_investment__sum'] or Decimal('0')
+        ).aggregate(
+            total_value=Sum('total_investment'),
+            low_stock=Count('id', filter=Q(quantity_on_hand__lte=F('reorder_level'), is_active=True))
+        )
         
-        low_stock_count = Product.objects.filter(
-            business=self.business,
-            quantity_on_hand__lte=F('reorder_level'),
-            is_active=True
-        ).count()
+        inventory_value = inventory_agg['total_value'] or Decimal('0')
+        low_stock_count = inventory_agg['low_stock'] or 0
         
         total_sales = Sale.objects.filter(
             business=self.business,
@@ -175,31 +205,46 @@ class BusinessIntelligenceService:
         }
     
     def get_trends(self, days=30):
-        """Get sales and profit trends for last N days"""
+        """Get sales and profit trends for last N days (cached)"""
+        cache_key = f"bi_trends_{self.business.id}_{days}_{self.today}"
+        return self._get_cached_or_compute(cache_key, self._compute_trends, days)
+    
+    def _compute_trends(self, days):
         start_date = self.today - timedelta(days=days)
+        
+        # Optimize with single query using values and annotate
+        daily_transactions = Transaction.objects.filter(
+            business=self.business,
+            transaction_date__gte=start_date,
+            transaction_date__lte=self.today
+        ).values('transaction_date', 'type').annotate(
+            total=Sum('amount')
+        )
+        
+        # Process daily data
+        daily_data_dict = {}
+        for trans in daily_transactions:
+            date_str = trans['transaction_date'].isoformat()
+            if date_str not in daily_data_dict:
+                daily_data_dict[date_str] = {'revenue': 0, 'expenses': 0}
+            if trans['type'] == 'income':
+                daily_data_dict[date_str]['revenue'] = float(trans['total'])
+            else:
+                daily_data_dict[date_str]['expenses'] = float(trans['total'])
         
         daily_data = []
         for i in range(days + 1):
             date = start_date + timedelta(days=i)
-            day_income = Transaction.objects.filter(
-                business=self.business,
-                type='income',
-                transaction_date=date
-            ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-            
-            day_expense = Transaction.objects.filter(
-                business=self.business,
-                type='expense',
-                transaction_date=date
-            ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-            
+            date_str = date.isoformat()
+            data = daily_data_dict.get(date_str, {'revenue': 0, 'expenses': 0})
             daily_data.append({
-                'date': date.isoformat(),
-                'revenue': float(day_income),
-                'expenses': float(day_expense),
-                'profit': float(day_income - day_expense)
+                'date': date_str,
+                'revenue': data['revenue'],
+                'expenses': data['expenses'],
+                'profit': data['revenue'] - data['expenses']
             })
         
+        # Weekly data
         weekly_data = []
         for week in range(4):
             week_start = self.today - timedelta(days=7 * (week + 1))
@@ -216,6 +261,7 @@ class BusinessIntelligenceService:
                 'revenue': float(week_income)
             })
         
+        # Monthly data - last 6 months
         monthly_data = []
         for month in range(6):
             month_date = self.today.replace(day=1) - timedelta(days=30 * month)
@@ -239,6 +285,8 @@ class BusinessIntelligenceService:
                 'short_month': month_start.strftime('%b')
             })
         
+        monthly_data.reverse()  # Show oldest first
+        
         daily_revenues = [d['revenue'] for d in daily_data]
         
         return {
@@ -246,7 +294,7 @@ class BusinessIntelligenceService:
             'weekly': weekly_data,
             'monthly': monthly_data,
             'summary': {
-                'total_revenue_last_30_days': sum(daily_revenues),
+                'total_revenue_last_{days}_days': sum(daily_revenues),
                 'average_daily_revenue': sum(daily_revenues) / len(daily_revenues) if daily_revenues else 0,
                 'best_day': max(daily_data, key=lambda x: x['revenue']) if daily_data else None,
                 'worst_day': min(daily_data, key=lambda x: x['revenue']) if daily_data else None
@@ -254,7 +302,11 @@ class BusinessIntelligenceService:
         }
     
     def get_top_products(self, limit=10):
-        """Get best selling products"""
+        """Get best selling products (cached)"""
+        cache_key = f"bi_top_products_{self.business.id}_{limit}_{self.today}"
+        return self._get_cached_or_compute(cache_key, self._compute_top_products, limit)
+    
+    def _compute_top_products(self, limit):
         start_date = self.today - timedelta(days=30)
         
         top_products = SaleItem.objects.filter(
@@ -292,7 +344,11 @@ class BusinessIntelligenceService:
         return results
     
     def get_slow_moving_products(self, days=30):
-        """Get products that haven't sold well"""
+        """Get products that haven't sold well (cached)"""
+        cache_key = f"bi_slow_products_{self.business.id}_{days}_{self.today}"
+        return self._get_cached_or_compute(cache_key, self._compute_slow_moving_products, days)
+    
+    def _compute_slow_moving_products(self, days):
         start_date = self.today - timedelta(days=days)
         
         slow_products = Product.objects.filter(
@@ -332,7 +388,11 @@ class BusinessIntelligenceService:
         return results
     
     def get_customer_insights(self):
-        """Analyze customer behavior"""
+        """Analyze customer behavior (cached)"""
+        cache_key = f"bi_customer_insights_{self.business.id}_{self.today}"
+        return self._get_cached_or_compute(cache_key, self._compute_customer_insights)
+    
+    def _compute_customer_insights(self):
         customers = Customer.objects.filter(business=self.business)
         
         if not customers.exists():
@@ -372,7 +432,11 @@ class BusinessIntelligenceService:
         }
     
     def get_sales_forecast(self, days=30):
-        """Predict future sales based on historical data"""
+        """Predict future sales based on historical data (owner only)"""
+        cache_key = f"bi_forecast_{self.business.id}_{days}_{self.today}"
+        return self._get_cached_or_compute(cache_key, self._compute_sales_forecast, days)
+    
+    def _compute_sales_forecast(self, days):
         start_date = self.today - timedelta(days=90)
         
         daily_sales = Transaction.objects.filter(
@@ -441,12 +505,17 @@ class BusinessIntelligenceService:
         }
     
     def generate_insights(self):
-        """Generate actionable insights from data"""
+        """Generate actionable insights from data (cached daily)"""
+        cache_key = f"bi_insights_{self.business.id}_{self.today}"
+        return self._get_cached_or_compute(cache_key, self._compute_insights)
+    
+    def _compute_insights(self):
         insights = []
         current_month_start = self.today.replace(day=1)
         last_month_start = (current_month_start - timedelta(days=1)).replace(day=1)
         last_month_end = current_month_start - timedelta(days=1)
         
+        # Sales comparison
         current_sales = Transaction.objects.filter(
             business=self.business,
             type='income',
@@ -481,6 +550,7 @@ class BusinessIntelligenceService:
                 'metric_value': float(current_sales)
             })
         
+        # Low stock alert
         low_stock_products = Product.objects.filter(
             business=self.business,
             quantity_on_hand__lte=F('reorder_level'),
@@ -497,6 +567,7 @@ class BusinessIntelligenceService:
                 'metric_value': low_stock_products.count()
             })
         
+        # Top product
         top_products = self.get_top_products(limit=1)
         if top_products:
             top = top_products[0]
@@ -509,6 +580,7 @@ class BusinessIntelligenceService:
                 'metric_value': top['revenue']
             })
         
+        # New customers
         new_customers = Customer.objects.filter(
             business=self.business,
             created_at__gte=current_month_start
@@ -524,6 +596,7 @@ class BusinessIntelligenceService:
                 'metric_value': new_customers
             })
         
+        # Low profit margin
         gross_margin = self._calculate_gross_margin(current_month_start, self.today)
         if gross_margin < 30:
             insights.append({
@@ -538,7 +611,12 @@ class BusinessIntelligenceService:
         return insights
     
     def get_profit_loss(self, start_date, end_date):
-        """Generate Profit & Loss statement"""
+        """Generate Profit & Loss statement (cached)"""
+        cache_key = f"bi_profit_loss_{self.business.id}_{start_date}_{end_date}"
+        return self._get_cached_or_compute(cache_key, self._compute_profit_loss, start_date, end_date)
+    
+    def _compute_profit_loss(self, start_date, end_date):
+        # Optimize with single queries
         income = Transaction.objects.filter(
             business=self.business,
             type='income',

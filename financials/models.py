@@ -1,6 +1,10 @@
+# financials/models.py
+
 from django.db import models
 from django.conf import settings
-from core.models import Business  # Import Business model
+from django.utils import timezone
+from core.models import Business
+from decimal import Decimal
 
 class Transaction(models.Model):
     TYPE_CHOICES = [
@@ -45,14 +49,13 @@ class Transaction(models.Model):
         ('other', 'Other'),
     ]
     
-    # FIXED: Connect to Business model, not User
     business = models.ForeignKey(
-        Business,  # ← Changed from settings.AUTH_USER_MODEL
+        Business,
         on_delete=models.CASCADE,
         related_name='transactions'
     )
     created_by = models.ForeignKey(
-        settings.AUTH_USER_MODEL,  # Track which user created the transaction
+        settings.AUTH_USER_MODEL,
         on_delete=models.SET_NULL,
         null=True,
         related_name='created_transactions'
@@ -87,9 +90,8 @@ class Invoice(models.Model):
         ('cancelled', 'Cancelled'),
     ]
     
-    # FIXED: Connect to Business model
     business = models.ForeignKey(
-        Business,  # ← Changed from settings.AUTH_USER_MODEL
+        Business,
         on_delete=models.CASCADE,
         related_name='invoices'
     )
@@ -176,6 +178,31 @@ class Loan(models.Model):
         if self.principal_amount and self.amount_paid:
             return self.principal_amount - self.amount_paid
         return self.principal_amount or 0
+    
+    def record_payment(self, amount, interest_amount, payment_date, created_by):
+        """Record a loan payment with interest as expense"""
+        from .models import Transaction
+        
+        principal_amount = amount - interest_amount
+        
+        # Record interest as expense
+        if interest_amount > 0:
+            Transaction.objects.create(
+                business=self.business,
+                created_by=created_by,
+                type='expense',
+                cost_type='fixed',
+                category='loan_interest',
+                amount=interest_amount,
+                description=f"Interest payment for loan - {self.lender_name}",
+                transaction_date=payment_date
+            )
+        
+        # Update loan principal
+        self.amount_paid += principal_amount
+        self.save()
+        
+        return True
 
 
 class PettyCash(models.Model):
@@ -197,12 +224,33 @@ class PettyCash(models.Model):
     receipt_image = models.ImageField(upload_to='petty_cash/', blank=True, null=True)
     date = models.DateField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    
+    def save(self, *args, **kwargs):
+        """Auto-create transaction when petty cash is recorded"""
+        is_new = self.pk is None
+        
+        if not self.date:
+            self.date = timezone.now().date()
+        
+        super().save(*args, **kwargs)
+        
+        if is_new:
+            from .models import Transaction
+            Transaction.objects.create(
+                business=self.business,
+                created_by=self.created_by,
+                type='expense',
+                cost_type='variable',
+                category=self.category,
+                amount=self.amount,
+                description=f"Petty cash: {self.purpose}",
+                transaction_date=self.date
+            )
 
 
 class CashFlowForecast(models.Model):
-    # FIXED: Connect to Business model
     business = models.ForeignKey(
-        Business,  # ← Changed from settings.AUTH_USER_MODEL
+        Business,
         on_delete=models.CASCADE,
         related_name='cash_forecasts'
     )
@@ -220,14 +268,7 @@ class CashFlowForecast(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
-
-    # financials/models.py - Add these new models after your existing PettyCash model
-
 class Budget(models.Model):
-    """
-    Budget model for financial planning.
-    Tracks planned income and expenses for specific periods.
-    """
     PERIOD_CHOICES = [
         ('monthly', 'Monthly'),
         ('quarterly', 'Quarterly'),
@@ -266,20 +307,16 @@ class Budget(models.Model):
         unique_together = ['business', 'period', 'year', 'month', 'quarter']
     
     def __str__(self):
-        if self.period == 'monthly':
-            month_names = ['January', 'February', 'March', 'April', 'May', 'June',
-                          'July', 'August', 'September', 'October', 'November', 'December']
+        month_names = ['January', 'February', 'March', 'April', 'May', 'June',
+                      'July', 'August', 'September', 'October', 'November', 'December']
+        if self.period == 'monthly' and self.month:
             return f"{self.name} - {month_names[self.month - 1]} {self.year}"
-        elif self.period == 'quarterly':
+        elif self.period == 'quarterly' and self.quarter:
             return f"{self.name} - Q{self.quarter} {self.year}"
         return f"{self.name} - {self.year}"
 
 
 class BudgetItem(models.Model):
-    """
-    Individual line items within a budget.
-    Each item represents planned amount for a specific category.
-    """
     TYPE_CHOICES = [
         ('income', 'Income'),
         ('expense', 'Expense'),
@@ -290,7 +327,7 @@ class BudgetItem(models.Model):
         on_delete=models.CASCADE,
         related_name='items'
     )
-    category = models.CharField(max_length=50)  # Matches Transaction.CATEGORY_CHOICES
+    category = models.CharField(max_length=50)
     category_name = models.CharField(max_length=100)
     type = models.CharField(max_length=10, choices=TYPE_CHOICES)
     planned_amount = models.DecimalField(max_digits=15, decimal_places=2, default=0)

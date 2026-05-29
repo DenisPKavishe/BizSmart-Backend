@@ -1,3 +1,5 @@
+# inventory/models.py
+
 from django.db import models
 from django.conf import settings
 from core.models import Business
@@ -55,7 +57,7 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     
     # Pricing - with defaults
-    buying_price = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="Cost price per unit")
+    buying_price = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="Cost price per unit (Average cost)")
     selling_price = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="Selling price per unit")
     
     # Stock levels
@@ -68,15 +70,31 @@ class Product(models.Model):
     image = models.ImageField(upload_to='products/', blank=True, null=True)
     is_active = models.BooleanField(default=True)
     
-    # Tracking
-    total_investment = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="buying_price * quantity_on_hand")
+    # Tracking - Total investment based on AVERAGE COST
+    total_investment = models.DecimalField(max_digits=15, decimal_places=2, default=0, help_text="Average cost * quantity_on_hand")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
     def save(self, *args, **kwargs):
-        # Auto-calculate total investment
+        # Auto-calculate total investment based on current average cost
         self.total_investment = self.buying_price * self.quantity_on_hand
         super().save(*args, **kwargs)
+    
+    def update_average_cost(self, new_quantity, new_unit_cost):
+        """Update average cost using FIFO/Average Cost method"""
+        old_total_value = self.buying_price * self.quantity_on_hand
+        new_total_value = new_unit_cost * new_quantity
+        total_quantity = self.quantity_on_hand + new_quantity
+        
+        if total_quantity > 0:
+            new_average_cost = (old_total_value + new_total_value) / total_quantity
+            self.buying_price = new_average_cost
+            self.quantity_on_hand = total_quantity
+        else:
+            self.quantity_on_hand = total_quantity
+        
+        self.total_investment = self.buying_price * self.quantity_on_hand
+        self.save()
     
     @property
     def profit_per_unit(self):
@@ -93,6 +111,11 @@ class Product(models.Model):
     @property
     def is_low_stock(self):
         return self.quantity_on_hand <= self.reorder_level
+    
+    @property
+    def stock_value(self):
+        """Current stock value based on average cost"""
+        return self.quantity_on_hand * self.buying_price
     
     def __str__(self):
         return f"{self.name} ({self.sku}) - Stock: {self.quantity_on_hand} {self.unit}"
@@ -111,6 +134,7 @@ class StockMovement(models.Model):
         ('RETURN_IN', 'Return from Customer'),
         ('RETURN_OUT', 'Return to Supplier'),
         ('DAMAGED', 'Damaged/Lost'),
+        ('STOCK_TAKE', 'Stock Take Adjustment'),
     ]
     
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='stock_movements')
@@ -133,9 +157,6 @@ class StockMovement(models.Model):
     
     def save(self, *args, **kwargs):
         self.total_cost = self.quantity * self.unit_cost
-        # Store previous quantity
-        if self.product_id:
-            self.previous_quantity = self.product.quantity_on_hand
         super().save(*args, **kwargs)
     
     def __str__(self):
@@ -150,7 +171,7 @@ class PurchaseOrder(models.Model):
     STATUS_CHOICES = [
         ('draft', 'Draft'),
         ('sent', 'Sent to Supplier'),
-        ('received', 'Partially Received'),
+        ('partial', 'Partially Received'),
         ('completed', 'Completed'),
         ('cancelled', 'Cancelled'),
     ]
@@ -197,6 +218,10 @@ class PurchaseOrderItem(models.Model):
     @property
     def remaining_quantity(self):
         return self.quantity - self.quantity_received
+    
+    @property
+    def is_fully_received(self):
+        return self.quantity_received >= self.quantity
     
     def __str__(self):
         return f"{self.product.name} - {self.quantity} @ {self.unit_cost}"

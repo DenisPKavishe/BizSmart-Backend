@@ -1,14 +1,19 @@
+# bi/views.py
+
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from django.utils import timezone
+from django.core.cache import cache
 from datetime import timedelta
 from .services import BusinessIntelligenceService
 from .permissions import (
     CanViewBIDashboard, CanViewFinancialBI, CanViewInventoryBI,
     CanViewSalesBI, IsOwnerOnly
 )
+from .models import BusinessInsight
+from .serializers import InsightSerializer
 
 
 class KPIDashboardView(APIView):
@@ -35,6 +40,7 @@ class TrendAnalysisView(APIView):
     
     def get(self, request):
         days = int(request.query_params.get('days', 30))
+        days = min(days, 365)  # Limit to 365 days max
         service = BusinessIntelligenceService(request.user.business)
         data = service.get_trends(days)
         return Response(data)
@@ -50,6 +56,7 @@ class TopProductsView(APIView):
     
     def get(self, request):
         limit = int(request.query_params.get('limit', 10))
+        limit = min(limit, 50)  # Limit to 50 max
         service = BusinessIntelligenceService(request.user.business)
         data = service.get_top_products(limit)
         return Response({
@@ -68,6 +75,7 @@ class SlowMovingProductsView(APIView):
     
     def get(self, request):
         days = int(request.query_params.get('days', 30))
+        days = min(days, 180)  # Limit to 180 days max
         service = BusinessIntelligenceService(request.user.business)
         data = service.get_slow_moving_products(days)
         return Response({
@@ -100,6 +108,7 @@ class SalesForecastView(APIView):
     
     def get(self, request):
         days = int(request.query_params.get('days', 30))
+        days = min(days, 90)  # Limit forecast to 90 days max
         service = BusinessIntelligenceService(request.user.business)
         data = service.get_sales_forecast(days)
         return Response(data)
@@ -122,6 +131,24 @@ class InsightsView(APIView):
         })
 
 
+class MarkInsightReadView(APIView):
+    """
+    Mark an insight as read.
+    
+    Access: Owner, Manager, Accountant, Auditor
+    """
+    permission_classes = [IsAuthenticated, CanViewBIDashboard]
+    
+    def post(self, request, pk):
+        try:
+            insight = BusinessInsight.objects.get(pk=pk, business=request.user.business)
+            insight.is_read = True
+            insight.save()
+            return Response({'message': 'Insight marked as read'})
+        except BusinessInsight.DoesNotExist:
+            return Response({'error': 'Insight not found'}, status=404)
+
+
 class ProfitLossView(APIView):
     """
     Get Profit & Loss statement.
@@ -132,6 +159,7 @@ class ProfitLossView(APIView):
     
     def get(self, request):
         days = int(request.query_params.get('days', 30))
+        days = min(days, 365)  # Limit to 1 year max
         end_date = timezone.now().date()
         start_date = end_date - timedelta(days=days)
         
@@ -151,7 +179,7 @@ class ExecutiveDashboardView(APIView):
     def get(self, request):
         service = BusinessIntelligenceService(request.user.business)
         
-        # Get all BI data
+        # Get all BI data (cached individually)
         kpi = service.get_kpi_dashboard()
         trends = service.get_trends(30)
         top_products = service.get_top_products(5)
@@ -186,32 +214,25 @@ class InventoryAnalyticsView(APIView):
         top_products = service.get_top_products(10)
         slow_products = service.get_slow_moving_products(30)
         
-        # Calculate inventory turnover
+        # Calculate inventory summary
         from inventory.models import Product
         from django.db.models import Sum, F
         
-        total_inventory_value = Product.objects.filter(
+        inventory_agg = Product.objects.filter(
             business=request.user.business
-        ).aggregate(Sum('total_investment'))['total_investment__sum'] or 0
-        
-        low_stock_count = Product.objects.filter(
-            business=request.user.business,
-            quantity_on_hand__lte=F('reorder_level'),
-            is_active=True
-        ).count()
-        
-        out_of_stock_count = Product.objects.filter(
-            business=request.user.business,
-            quantity_on_hand=0,
-            is_active=True
-        ).count()
+        ).aggregate(
+            total_value=Sum('total_investment'),
+            low_stock=Sum(F('quantity_on_hand') <= F('reorder_level') and 1 or 0),
+            out_of_stock=Sum(F('quantity_on_hand') == 0 and 1 or 0),
+            total_products=Count('id', filter=Q(is_active=True))
+        )
         
         return Response({
             'inventory_summary': {
-                'total_value': float(total_inventory_value),
-                'low_stock_items': low_stock_count,
-                'out_of_stock_items': out_of_stock_count,
-                'total_products': Product.objects.filter(business=request.user.business, is_active=True).count()
+                'total_value': float(inventory_agg['total_value'] or 0),
+                'low_stock_items': inventory_agg['low_stock'] or 0,
+                'out_of_stock_items': inventory_agg['out_of_stock'] or 0,
+                'total_products': inventory_agg['total_products'] or 0
             },
             'top_products': top_products[:5],
             'slow_moving_products': slow_products[:5]
@@ -304,3 +325,33 @@ class SalesPerformanceView(APIView):
             'customer_insights': customers,
             'sales_by_weekday': weekday_data
         })
+
+
+class ClearCacheView(APIView):
+    """
+    Clear BI cache for the business.
+    
+    Access: Owner only
+    """
+    permission_classes = [IsAuthenticated, IsOwnerOnly]
+    
+    def post(self, request):
+        from django.core.cache import cache
+        # Clear all cache keys for this business
+        cache_keys = [
+            f"bi_kpi_{request.user.business.id}_*",
+            f"bi_trends_{request.user.business.id}_*",
+            f"bi_top_products_{request.user.business.id}_*",
+            f"bi_slow_products_{request.user.business.id}_*",
+            f"bi_customer_insights_{request.user.business.id}_*",
+            f"bi_forecast_{request.user.business.id}_*",
+            f"bi_insights_{request.user.business.id}_*",
+            f"bi_profit_loss_{request.user.business.id}_*",
+            f"bi_gross_margin_{request.user.business.id}_*",
+            f"bi_inventory_turnover_{request.user.business.id}_*",
+        ]
+        
+        for pattern in cache_keys:
+            cache.delete_pattern(pattern)
+        
+        return Response({'message': 'BI cache cleared successfully'})

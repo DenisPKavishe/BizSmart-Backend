@@ -1,8 +1,8 @@
+# financials/tax_calculator.py
+
 from decimal import Decimal
 
 class TaxCalculator:
-    """Tax calculator for Tanzanian SMEs"""
-    
     VAT_RATE = Decimal('0.18')
     SDL_RATE = Decimal('0.035')
     

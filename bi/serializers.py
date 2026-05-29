@@ -1,3 +1,5 @@
+# bi/serializers.py
+
 from rest_framework import serializers
 
 class KPIDashboardSerializer(serializers.Serializer):
@@ -48,12 +50,15 @@ class SalesForecastSerializer(serializers.Serializer):
 
 
 class InsightSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
     type = serializers.CharField()
     category = serializers.CharField()
     title = serializers.CharField()
     description = serializers.CharField()
     recommendation = serializers.CharField()
     metric_value = serializers.FloatField(allow_null=True)
+    created_at = serializers.DateTimeField()
+    is_read = serializers.BooleanField()
 
 
 class ProfitLossSerializer(serializers.Serializer):
