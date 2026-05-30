@@ -2,6 +2,7 @@
 
 from rest_framework import permissions
 
+
 class CanViewInventory(permissions.BasePermission):
     """Owner, Manager, Inventory Manager, Cashier, Auditor can view inventory"""
     
@@ -9,12 +10,12 @@ class CanViewInventory(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
-            return False
+        if not hasattr(request.user, 'role') or not request.user.role:
+            return request.user.is_superuser
         
         allowed_roles = ['owner', 'general_manager', 'inventory_manager', 'cashier', 'auditor']
         
-        return request.user.role.name in allowed_roles
+        return request.user.role.name in allowed_roles or request.user.is_superuser
 
 
 class CanManageInventory(permissions.BasePermission):
@@ -24,12 +25,12 @@ class CanManageInventory(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
-            return False
+        if not hasattr(request.user, 'role') or not request.user.role:
+            return request.user.is_superuser
         
         allowed_roles = ['owner', 'general_manager', 'inventory_manager']
         
-        return request.user.role.name in allowed_roles
+        return request.user.role.name in allowed_roles or request.user.is_superuser
 
 
 class CanDeleteInventory(permissions.BasePermission):
@@ -39,10 +40,10 @@ class CanDeleteInventory(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
-            return False
+        if not hasattr(request.user, 'role') or not request.user.role:
+            return request.user.is_superuser
         
-        return request.user.role.name == 'owner'
+        return request.user.role.name == 'owner' or request.user.is_superuser
 
 
 class CanAdjustStock(permissions.BasePermission):
@@ -52,12 +53,12 @@ class CanAdjustStock(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
-            return False
+        if not hasattr(request.user, 'role') or not request.user.role:
+            return request.user.is_superuser
         
         allowed_roles = ['owner', 'general_manager', 'inventory_manager']
         
-        return request.user.role.name in allowed_roles
+        return request.user.role.name in allowed_roles or request.user.is_superuser
 
 
 class CanViewSuppliers(permissions.BasePermission):
@@ -67,12 +68,12 @@ class CanViewSuppliers(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
-            return False
+        if not hasattr(request.user, 'role') or not request.user.role:
+            return request.user.is_superuser
         
         allowed_roles = ['owner', 'general_manager', 'inventory_manager', 'auditor']
         
-        return request.user.role.name in allowed_roles
+        return request.user.role.name in allowed_roles or request.user.is_superuser
 
 
 class CanManageSuppliers(permissions.BasePermission):
@@ -82,12 +83,12 @@ class CanManageSuppliers(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
-            return False
+        if not hasattr(request.user, 'role') or not request.user.role:
+            return request.user.is_superuser
         
         allowed_roles = ['owner', 'general_manager', 'inventory_manager']
         
-        return request.user.role.name in allowed_roles
+        return request.user.role.name in allowed_roles or request.user.is_superuser
 
 
 class CanViewCategories(permissions.BasePermission):
@@ -97,12 +98,12 @@ class CanViewCategories(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
-            return False
+        if not hasattr(request.user, 'role') or not request.user.role:
+            return request.user.is_superuser
         
         allowed_roles = ['owner', 'general_manager', 'inventory_manager', 'cashier', 'auditor']
         
-        return request.user.role.name in allowed_roles
+        return request.user.role.name in allowed_roles or request.user.is_superuser
 
 
 class CanManageCategories(permissions.BasePermission):
@@ -112,12 +113,12 @@ class CanManageCategories(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
-            return False
+        if not hasattr(request.user, 'role') or not request.user.role:
+            return request.user.is_superuser
         
         allowed_roles = ['owner', 'general_manager', 'inventory_manager']
         
-        return request.user.role.name in allowed_roles
+        return request.user.role.name in allowed_roles or request.user.is_superuser
 
 
 class IsAuditorInventoryReadOnly(permissions.BasePermission):
@@ -127,7 +128,7 @@ class IsAuditorInventoryReadOnly(permissions.BasePermission):
         if not request.user.is_authenticated:
             return False
         
-        if not request.user.role:
+        if not hasattr(request.user, 'role') or not request.user.role:
             return True
         
         if request.user.role.name == 'auditor':

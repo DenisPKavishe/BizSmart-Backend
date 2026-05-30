@@ -120,3 +120,16 @@ def generate_barcode_for_product(product, method='ean13'):
             return numeric_sku
         # Otherwise generate EAN-13
         return generate_ean13(product.id, business_id)
+
+
+def validate_barcode(barcode):
+    """Validate if barcode is in correct EAN-13 format"""
+    if not barcode or len(barcode) != 13:
+        return False
+    
+    if not barcode.isdigit():
+        return False
+    
+    # Validate checksum
+    checksum = calculate_ean13_checksum(barcode[:12])
+    return int(barcode[12]) == checksum

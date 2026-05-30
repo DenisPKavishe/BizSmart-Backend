@@ -13,7 +13,7 @@ from decimal import Decimal
 from core.models import Business
 from .models import Transaction, Invoice, InvoiceItem, Loan, PettyCash, CashFlowForecast, Budget, BudgetItem
 from .serializers import (
-    TransactionSerializer, InvoiceSerializer, LoanSerializer,
+    BudgetCreateWithItemsSerializer, BudgetDetailSerializer, TransactionSerializer, InvoiceSerializer, LoanSerializer,
     PettyCashSerializer, CashFlowForecastSerializer, BudgetSerializer,
     BudgetItemSerializer, BudgetItemCreateSerializer, BudgetSummarySerializer
 )
@@ -478,58 +478,22 @@ class ExportFinancialReportView(APIView):
             return Response(data)
 
 
-# ==================== BUDGET MANAGEMENT ====================
+# ==================== BUDGET MANAGEMENT ====================# financials/views.py - Badilisha BudgetListCreateView
+
+# financials/views.py - Simplified BudgetListCreateView
+
 class BudgetListCreateView(generics.ListCreateAPIView):
-    serializer_class = BudgetSerializer
-    
-    def get_permissions(self):
-        if self.request.method == 'GET':
-            return [permissions.IsAuthenticated(), CanViewBudgets()]
-        return [permissions.IsAuthenticated(), CanManageBudgets(), IsAuditorBudgetReadOnly()]
-    
+    serializer_class = BudgetCreateWithItemsSerializer
+
     def get_queryset(self):
-        if getattr(self, 'swagger_fake_view', False):
-            return Budget.objects.none()
-        
-        if self.request.user.is_authenticated and self.request.user.business:
-            queryset = Budget.objects.filter(business=self.request.user.business)
-            period = self.request.query_params.get('period')
-            year = self.request.query_params.get('year')
-            status = self.request.query_params.get('status')
-            if period:
-                queryset = queryset.filter(period=period)
-            if year:
-                queryset = queryset.filter(year=year)
-            if status:
-                queryset = queryset.filter(status=status)
-            return queryset
-        return Budget.objects.none()
-    
-    @transaction.atomic
-    def perform_create(self, serializer):
-        data = serializer.validated_data
-        period = data['period']
-        year = data['year']
-        month = data.get('month')
-        quarter = data.get('quarter')
-        
-        duplicate_exists = Budget.objects.filter(
-            business=self.request.user.business,
-            period=period,
-            year=year,
-            month=month if period == 'monthly' else None,
-            quarter=quarter if period == 'quarterly' else None
-        ).exists()
-        
-        if duplicate_exists:
-            raise serializers.ValidationError({
-                'error': 'A budget already exists for this period. Please edit existing budget or choose different period.'
-            })
-        
-        serializer.save(
-            business=self.request.user.business,
-            created_by=self.request.user
+        return Budget.objects.filter(
+            business=self.request.user.business
         )
+
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context['request'] = self.request
+        return context
 
 
 class BudgetDetailView(generics.RetrieveUpdateDestroyAPIView):

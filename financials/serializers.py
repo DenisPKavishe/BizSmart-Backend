@@ -58,6 +58,8 @@ class CashFlowForecastSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'created_at', 'closing_balance']
 
 
+# ==================== BUDGET SERIALIZERS ====================
+
 class BudgetItemSerializer(serializers.ModelSerializer):
     actual_amount = serializers.SerializerMethodField()
     variance = serializers.SerializerMethodField()
@@ -122,7 +124,56 @@ class BudgetItemSerializer(serializers.ModelSerializer):
         return 0
 
 
-class BudgetSerializer(serializers.ModelSerializer):
+class BudgetItemCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BudgetItem
+        fields = [
+            'id',
+            'category',
+            'category_name',
+            'type',
+            'planned_amount',
+            'notes'
+        ]
+
+class BudgetCreateWithItemsSerializer(serializers.ModelSerializer):
+    items = BudgetItemCreateSerializer(many=True)
+
+    class Meta:
+        model = Budget
+        fields = [
+            'id',
+            'name',
+            'period',
+            'year',
+            'month',
+            'quarter',
+            'status',
+            'notes',
+            'items'
+        ]
+
+    def create(self, validated_data):
+        items_data = validated_data.pop('items')
+
+        request = self.context['request']
+
+        budget = Budget.objects.create(
+            business=request.user.business,
+            created_by=request.user,
+            **validated_data
+        )
+
+        for item_data in items_data:
+            BudgetItem.objects.create(
+                budget=budget,
+                **item_data
+            )
+
+        return budget
+
+class BudgetDetailSerializer(serializers.ModelSerializer):
+    """Serializer for reading budget details with calculated fields"""
     items = BudgetItemSerializer(many=True, read_only=True)
     total_planned_income = serializers.SerializerMethodField()
     total_actual_income = serializers.SerializerMethodField()
@@ -149,8 +200,10 @@ class BudgetSerializer(serializers.ModelSerializer):
     
     def get_total_actual_income(self, obj):
         total = 0
+        serializer_context = {'request': self.context.get('request')}
         for item in obj.items.filter(type='income'):
-            total += BudgetItemSerializer(context=self.context).get_actual_amount(item)
+            item_serializer = BudgetItemSerializer(item, context=serializer_context)
+            total += item_serializer.get_actual_amount(item)
         return float(total)
     
     def get_total_planned_expenses(self, obj):
@@ -159,8 +212,10 @@ class BudgetSerializer(serializers.ModelSerializer):
     
     def get_total_actual_expenses(self, obj):
         total = 0
+        serializer_context = {'request': self.context.get('request')}
         for item in obj.items.filter(type='expense'):
-            total += BudgetItemSerializer(context=self.context).get_actual_amount(item)
+            item_serializer = BudgetItemSerializer(item, context=serializer_context)
+            total += item_serializer.get_actual_amount(item)
         return float(total)
     
     def get_planned_profit(self, obj):
@@ -168,17 +223,6 @@ class BudgetSerializer(serializers.ModelSerializer):
     
     def get_actual_profit(self, obj):
         return self.get_total_actual_income(obj) - self.get_total_actual_expenses(obj)
-    
-    def create(self, validated_data):
-        validated_data['business'] = self.context['request'].user.business
-        validated_data['created_by'] = self.context['request'].user
-        return super().create(validated_data)
-
-
-class BudgetItemCreateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = BudgetItem
-        fields = ['id', 'category', 'category_name', 'type', 'planned_amount', 'notes']
 
 
 class BudgetSummarySerializer(serializers.Serializer):
@@ -191,3 +235,7 @@ class BudgetSummarySerializer(serializers.Serializer):
     actual_profit = serializers.DecimalField(max_digits=15, decimal_places=2)
     variance = serializers.DecimalField(max_digits=15, decimal_places=2)
     variance_percentage = serializers.DecimalField(max_digits=5, decimal_places=2)
+
+
+# For backward compatibility
+BudgetSerializer = BudgetDetailSerializer

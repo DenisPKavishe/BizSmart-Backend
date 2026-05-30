@@ -10,7 +10,7 @@ class CategorySerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Category
-        fields = ['id', 'name', 'description', 'product_count', 'created_at']
+        fields = ['id', 'name', 'description', 'product_count', 'is_active', 'created_at']
         read_only_fields = ['id', 'created_at']
     
     def get_product_count(self, obj):
@@ -24,7 +24,7 @@ class SupplierSerializer(serializers.ModelSerializer):
     class Meta:
         model = Supplier
         fields = ['id', 'name', 'contact_person', 'phone', 'email', 'address', 'tax_id', 
-                  'product_count', 'total_purchase_orders', 'created_at']
+                  'product_count', 'total_purchase_orders', 'is_active', 'created_at']
         read_only_fields = ['id', 'created_at']
     
     def get_product_count(self, obj):
@@ -119,7 +119,7 @@ class PurchaseOrderSerializer(serializers.ModelSerializer):
 
 
 class CreatePurchaseOrderSerializer(serializers.ModelSerializer):
-    items = PurchaseOrderItemSerializer(many=True, required=False)
+    items = PurchaseOrderItemSerializer(many=True)
     
     class Meta:
         model = PurchaseOrder
@@ -129,15 +129,22 @@ class CreatePurchaseOrderSerializer(serializers.ModelSerializer):
         items_data = validated_data.pop('items', [])
         purchase_order = PurchaseOrder.objects.create(**validated_data)
         
+        subtotal = Decimal('0')
         for item_data in items_data:
-            PurchaseOrderItem.objects.create(
+            po_item = PurchaseOrderItem.objects.create(
                 purchase_order=purchase_order,
                 **item_data
             )
+            subtotal += po_item.total_cost
+        
+        purchase_order.subtotal = subtotal
+        purchase_order.total_amount = subtotal  # Add tax calculation if needed
+        purchase_order.save()
         
         return purchase_order
 
 
 class ReceiveItemSerializer(serializers.Serializer):
-    item_id = serializers.IntegerField()
-    quantity = serializers.IntegerField(min_value=1)
+    """Serializer for receiving purchase order items"""
+    item_id = serializers.IntegerField(help_text="ID of the purchase order item")
+    quantity = serializers.IntegerField(min_value=1, help_text="Quantity to receive")        

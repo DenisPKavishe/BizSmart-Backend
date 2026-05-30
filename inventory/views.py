@@ -20,7 +20,7 @@ from .permissions import (
     CanAdjustStock, CanViewSuppliers, CanManageSuppliers,
     CanViewCategories, CanManageCategories, IsAuditorInventoryReadOnly
 )
-from .barcode_generator import generate_barcode_for_product
+from .barcode_generator import generate_barcode_for_product, validate_barcode
 
 
 # ==================== CATEGORIES ====================
@@ -192,7 +192,7 @@ class ProductDetailView(generics.RetrieveUpdateDestroyAPIView):
         product = self.get_object()
         
         # Check if product has sales records
-        if product.sale_items.exists():
+        if hasattr(product, 'sale_items') and product.sale_items.exists():
             return Response({
                 'error': f'Cannot delete product "{product.name}" because it has sales records.'
             }, status=status.HTTP_400_BAD_REQUEST)

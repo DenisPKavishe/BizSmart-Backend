@@ -5,11 +5,13 @@ from django.conf import settings
 from core.models import Business
 from decimal import Decimal
 
+
 class Category(models.Model):
     """Product categories like 'Electronics', 'Clothing', 'Food'"""
     business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='categories')
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
+    is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
@@ -29,6 +31,7 @@ class Supplier(models.Model):
     email = models.EmailField(blank=True)
     address = models.TextField(blank=True)
     tax_id = models.CharField(max_length=100, blank=True, help_text="TIN or VAT number")
+    is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
