@@ -1,13 +1,22 @@
-from rest_framework import status
+from core.logging_utils import log_activity
 from rest_framework.decorators import api_view, permission_classes
-from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.conf import settings
-
+from rest_framework import viewsets, status
+from rest_framework.response import Response
+from rest_framework.decorators import action
+from rest_framework.views import APIView
+from django.db.models import Count, Q
+from django.utils import timezone
+from datetime import timedelta
+import csv
+from io import StringIO
+from django.http import HttpResponse
+from .models import AuditLog
+from .serializers import AuditLogSerializer
+from core.permissions import IsAuditorUserReadOnly
 from drf_spectacular.utils import extend_schema
-
 from .serializers import RegisterSerializer, LoginSerializer, UserSerializer
 from .permissions import (
     CanRegisterUsers,
@@ -53,7 +62,16 @@ class RegisterView(APIView):
         if serializer.is_valid():
             user = serializer.save()
             refresh = RefreshToken.for_user(user)
-            
+
+            log_activity(
+                request=request,
+                action='CREATE',
+                module='auth',
+                description=f"New user {user.email} registered",
+                details={'role': user.role.name if user.role else None}
+            )
+
+
             # Send welcome email
             password = request.data.get('password')
             EmailService.send_welcome_email(user, password)
@@ -89,6 +107,14 @@ class LoginView(APIView):
             user = serializer.validated_data['user']
             refresh = RefreshToken.for_user(user)
 
+            log_activity(
+                request=request,
+                action='LOGIN',
+                module='auth',
+                description=f"User {user.email} logged in",
+                details={'method': 'password'}
+            )
+
             return Response({
                 'message': 'Login successful',
                 'user': UserSerializer(user).data,
@@ -121,6 +147,13 @@ class LogoutView(APIView):
         responses={200: dict}
     )
     def post(self, request):
+        log_activity(
+            request=request,
+            action='LOGOUT',
+            module='auth',
+            description=f"User {request.user.email} logged out",
+            details={'method': 'token'}
+        )
         try:
             refresh_token = request.data.get('refresh')
             if refresh_token:
@@ -382,3 +415,189 @@ class PasswordResetConfirmView(APIView):
             return Response({
                 'error': 'Invalid or expired token'
             }, status=400)
+
+
+
+class AuditLogViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    ViewSet for viewing audit logs.
+    Only read-only access for auditors and admins.
+    """
+    serializer_class = AuditLogSerializer
+    permission_classes = [IsAuthenticated, IsAuditorUserReadOnly]
+    
+    def get_queryset(self):
+        queryset = AuditLog.objects.all()
+        
+        # Filter by business
+        if hasattr(self.request.user, 'business') and self.request.user.business:
+            queryset = queryset.filter(business=self.request.user.business)
+        else:
+            # Users without business see their own logs
+            queryset = queryset.filter(user=self.request.user)
+        
+        # Date filters
+        start_date = self.request.query_params.get('start_date')
+        end_date = self.request.query_params.get('end_date')
+        
+        if start_date:
+            queryset = queryset.filter(created_at__date__gte=start_date)
+        if end_date:
+            queryset = queryset.filter(created_at__date__lte=end_date)
+        
+        # Action filter
+        action = self.request.query_params.get('action')
+        if action:
+            queryset = queryset.filter(action=action.upper())
+        
+        # Module filter
+        module = self.request.query_params.get('module')
+        if module:
+            queryset = queryset.filter(module=module)
+        
+        # User filter (admin only)
+        user_id = self.request.query_params.get('user_id')
+        if user_id:
+            queryset = queryset.filter(user_id=user_id)
+        
+        return queryset
+    
+    @action(detail=False, methods=['get'])
+    def my_logs(self, request):
+        """Get logs for the current user"""
+        logs = AuditLog.objects.filter(user=request.user)
+        page = self.paginate_queryset(logs)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        serializer = self.get_serializer(logs, many=True)
+        return Response(serializer.data)
+
+
+class AuditLogStatsView(APIView):
+    """Get statistics for audit logs"""
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        # Base queryset
+        if hasattr(request.user, 'business') and request.user.business:
+            queryset = AuditLog.objects.filter(business=request.user.business)
+        else:
+            queryset = AuditLog.objects.filter(user=request.user)
+        
+        # Time periods
+        now = timezone.now()
+        today = now.date()
+        week_ago = now - timedelta(days=7)
+        month_ago = now - timedelta(days=30)
+        
+        stats = {
+            'total_logs': queryset.count(),
+            'today_logs': queryset.filter(created_at__date=today).count(),
+            'this_week_logs': queryset.filter(created_at__gte=week_ago).count(),
+            'this_month_logs': queryset.filter(created_at__gte=month_ago).count(),
+            'unique_users': queryset.values('user').distinct().count(),
+            'unique_actions': queryset.values('action').distinct().count(),
+        }
+        
+        # Top users
+        top_users = queryset.values('user__email', 'user__username')\
+            .annotate(count=Count('id'))\
+            .order_by('-count')[:5]
+        stats['top_users'] = [
+            {'username': u['user__username'] or u['user__email'], 'count': u['count']}
+            for u in top_users
+        ]
+        
+        # Top actions
+        top_actions = queryset.values('action')\
+            .annotate(count=Count('id'))\
+            .order_by('-count')[:5]
+        stats['top_actions'] = list(top_actions)
+        
+        # Top modules
+        top_modules = queryset.values('module')\
+            .annotate(count=Count('id'))\
+            .order_by('-count')[:5]
+        stats['top_modules'] = list(top_modules)
+        
+        # Daily activity (last 30 days)
+        from django.db.models.functions import TruncDate
+        daily_activity = queryset.filter(created_at__gte=month_ago)\
+            .annotate(date=TruncDate('created_at'))\
+            .values('date')\
+            .annotate(count=Count('id'))\
+            .order_by('date')
+        stats['daily_activity'] = list(daily_activity)
+        
+        return Response(stats)
+
+
+class AuditLogExportView(APIView):
+    """Export audit logs to CSV"""
+    permission_classes = [IsAuthenticated, IsAuditorUserReadOnly]
+    
+    def get(self, request):
+        # Get filtered queryset
+        if hasattr(request.user, 'business') and request.user.business:
+            queryset = AuditLog.objects.filter(business=request.user.business)
+        else:
+            queryset = AuditLog.objects.filter(user=request.user)
+        
+        # Apply filters
+        start_date = request.query_params.get('start_date')
+        end_date = request.query_params.get('end_date')
+        action = request.query_params.get('action')
+        module = request.query_params.get('module')
+        
+        if start_date:
+            queryset = queryset.filter(created_at__date__gte=start_date)
+        if end_date:
+            queryset = queryset.filter(created_at__date__lte=end_date)
+        if action:
+            queryset = queryset.filter(action=action.upper())
+        if module:
+            queryset = queryset.filter(module=module)
+        
+        # Create CSV response
+        response = HttpResponse(content_type='text/csv')
+        response['Content-Disposition'] = f'attachment; filename="audit-logs-{timezone.now().date()}.csv"'
+        
+        writer = csv.writer(response)
+        writer.writerow([
+            'ID', 'User', 'Action', 'Module', 'Description', 
+            'Details', 'IP Address', 'User Agent', 'Created At'
+        ])
+        
+        for log in queryset:
+            writer.writerow([
+                log.id,
+                log.user.email if log.user else 'Unknown',
+                log.get_action_display(),
+                log.get_module_display(),
+                log.description,
+                str(log.details),
+                log.ip_address,
+                log.user_agent[:100] if log.user_agent else '',
+                log.created_at.strftime('%Y-%m-%d %H:%M:%S'),
+            ])
+        
+        return response
+
+
+class AuditLogModulesView(APIView):
+    """Get list of available modules"""
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        modules = [{'value': choice[0], 'label': choice[1]} for choice in AuditLog.MODULE_CHOICES]
+        return Response(modules)
+
+
+class AuditLogActionsView(APIView):
+    """Get list of available actions"""
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        actions = [{'value': choice[0], 'label': choice[1]} for choice in AuditLog.ACTION_TYPES]
+        return Response(actions)            

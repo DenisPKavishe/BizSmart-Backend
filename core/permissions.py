@@ -51,8 +51,7 @@ class CanManageUsers(permissions.BasePermission):
             return False
         
         return request.user.role.name == 'owner'
-
-
+    
 class IsAuditorUserReadOnly(permissions.BasePermission):
     """Auditor can only view, not modify users"""
     
@@ -66,7 +65,17 @@ class IsAuditorUserReadOnly(permissions.BasePermission):
         if not request.user.role:
             return True
         
+        # Auditor can only read
         if request.user.role.name == 'auditor':
             return request.method in permissions.SAFE_METHODS
         
         return True
+    
+    def has_object_permission(self, request, view, obj):
+        if not request.user.is_authenticated:
+            return False
+        
+        if request.user.role and request.user.role.name == 'auditor':
+            return request.method in permissions.SAFE_METHODS
+        
+        return True    

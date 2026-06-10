@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.conf import settings
 
 class Role(models.Model):
     ROLE_CHOICES = [
@@ -83,10 +84,11 @@ class AuditLog(models.Model):
         ('sales', 'Sales'),
         ('hr', 'Human Resources'),
         ('bi', 'Business Intelligence'),
+        ('reports', 'Reports'),
     ]
     
-    business = models.ForeignKey(Business, on_delete=models.CASCADE, null=True, blank=True)
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='audit_logs')
+    business = models.ForeignKey('core.Business', on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, related_name='audit_logs')
     
     action = models.CharField(max_length=20, choices=ACTION_TYPES)
     module = models.CharField(max_length=20, choices=MODULE_CHOICES)
@@ -98,8 +100,16 @@ class AuditLog(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     
-    def __str__(self):
-        return f"{self.user} - {self.action} - {self.created_at}"
-    
     class Meta:
-        ordering = ['-created_at']    
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['-created_at']),
+            models.Index(fields=['user']),
+            models.Index(fields=['action']),
+            models.Index(fields=['module']),
+            models.Index(fields=['business']),
+        ]
+    
+    def __str__(self):
+        user_email = self.user.email if self.user else 'Unknown'
+        return f"{user_email} - {self.action} - {self.created_at}"

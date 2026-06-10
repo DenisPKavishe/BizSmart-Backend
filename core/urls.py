@@ -1,10 +1,15 @@
-from django.urls import path
+from django.urls import path,include
+from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
 from .views import (
-    RegisterView, LoginView, LogoutView, ProfileView,
+    AuditLogActionsView, AuditLogExportView, AuditLogModulesView, AuditLogStatsView, AuditLogViewSet, RegisterView, LoginView, LogoutView, ProfileView,
     UserListView, UserDetailView, public_test,
     PasswordResetRequestView, PasswordResetConfirmView
 )
+
+
+router = DefaultRouter()
+router.register(r'audit-logs', AuditLogViewSet, basename='audit-log')
 
 urlpatterns = [
     # Public test
@@ -24,4 +29,10 @@ urlpatterns = [
     # Password Reset
     path('password-reset/', PasswordResetRequestView.as_view(), name='password-reset'),
     path('password-reset/confirm/', PasswordResetConfirmView.as_view(), name='password-reset-confirm'),
+
+    path('', include(router.urls)),
+    path('audit-logs/stats/', AuditLogStatsView.as_view(), name='audit-log-stats'),
+    path('audit-logs/export/', AuditLogExportView.as_view(), name='audit-log-export'),
+    path('audit-logs/modules/', AuditLogModulesView.as_view(), name='audit-log-modules'),
+    path('audit-logs/actions/', AuditLogActionsView.as_view(), name='audit-log-actions'),
 ]

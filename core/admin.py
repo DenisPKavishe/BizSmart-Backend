@@ -136,16 +136,12 @@ except (ImportError, AlreadyRegistered):
     pass
 
 
-
-
-
 @admin.register(AuditLog)
 class AuditLogAdmin(admin.ModelAdmin):
-    list_display = ['created_at', 'user', 'action', 'module', 'description', 'ip_address']
+    list_display = ['id', 'user', 'action', 'module', 'description', 'ip_address', 'created_at']
     list_filter = ['action', 'module', 'created_at']
-    search_fields = ['user__email', 'description']
-    readonly_fields = ['created_at', 'user', 'action', 'module', 'description', 'details', 'ip_address', 'user_agent']
-    date_hierarchy = 'created_at'
+    search_fields = ['user__email', 'description', 'ip_address']
+    readonly_fields = ['id', 'created_at']
     
     def has_add_permission(self, request):
         return False

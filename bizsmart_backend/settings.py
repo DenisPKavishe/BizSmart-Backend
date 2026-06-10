@@ -61,8 +61,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    # 'core.middleware.RequestLoggingMiddleware',
-    # 'core.middleware.AuditLogMiddleware',
+    'core.middleware.RequestLoggingMiddleware',
+    'core.middleware.AuditLogMiddleware',
 ]
 
 ROOT_URLCONF = 'bizsmart_backend.urls'
