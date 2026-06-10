@@ -1826,3 +1826,1477 @@ INFO 2026-06-10 12:49:03,618 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 20
 INFO 2026-06-10 12:49:03,618 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
 INFO 2026-06-10 12:49:03,625 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
 INFO 2026-06-10 12:49:03,625 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 12:56:25,220 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 12:56:25,220 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 12:56:35,016 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 12:56:35,016 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 12:56:35,083 middleware ← GET /api/v1/auth/audit-logs/ | Status: 401 | Duration: 0.07s
+INFO 2026-06-10 12:56:35,083 middleware ← GET /api/v1/auth/audit-logs/ | Status: 401 | Duration: 0.07s
+WARNING 2026-06-10 12:56:35,088 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 401 183
+WARNING 2026-06-10 12:56:35,088 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 401 183
+INFO 2026-06-10 12:56:48,295 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 12:56:48,295 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 12:56:49,376 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.08s
+INFO 2026-06-10 12:56:49,376 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.08s
+INFO 2026-06-10 12:56:49,380 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 12:56:49,380 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 12:57:14,836 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 12:57:14,836 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 12:57:14,917 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 12:57:14,917 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 12:57:14,920 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 4373
+INFO 2026-06-10 12:57:14,920 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 4373
+INFO 2026-06-10 12:59:18,195 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 12:59:18,195 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 12:59:18,230 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.04s
+INFO 2026-06-10 12:59:18,230 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.04s
+WARNING 2026-06-10 12:59:18,232 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 12:59:18,232 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 13:33:44,164 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:44,164 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:44,201 middleware ← POST /api/v1/auth/login/ | Status: 401 | Duration: 0.04s
+INFO 2026-06-10 13:33:44,201 middleware ← POST /api/v1/auth/login/ | Status: 401 | Duration: 0.04s
+WARNING 2026-06-10 13:33:44,202 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:33:44,202 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+INFO 2026-06-10 13:33:44,238 basehttp "OPTIONS /api/v1/auth/refresh/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:33:44,238 basehttp "OPTIONS /api/v1/auth/refresh/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:33:44,241 middleware → POST /api/v1/auth/refresh/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:44,241 middleware → POST /api/v1/auth/refresh/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:44,259 middleware ← POST /api/v1/auth/refresh/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 13:33:44,259 middleware ← POST /api/v1/auth/refresh/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 13:33:44,260 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 200 483
+INFO 2026-06-10 13:33:44,260 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 200 483
+INFO 2026-06-10 13:33:44,267 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:44,267 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:45,282 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User admin@bizsmart.com logged in
+INFO 2026-06-10 13:33:45,282 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User admin@bizsmart.com logged in
+INFO 2026-06-10 13:33:45,292 logging_utils AUDIT: admin@bizsmart.com - CREATE - auth - POST /api/v1/auth/login/
+INFO 2026-06-10 13:33:45,292 logging_utils AUDIT: admin@bizsmart.com - CREATE - auth - POST /api/v1/auth/login/
+INFO 2026-06-10 13:33:45,295 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User logged in
+INFO 2026-06-10 13:33:45,295 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User logged in
+INFO 2026-06-10 13:33:45,296 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.03s
+INFO 2026-06-10 13:33:45,296 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.03s
+INFO 2026-06-10 13:33:45,297 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 13:33:45,297 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 13:33:46,681 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:46,681 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:46,687 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:46,687 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:46,841 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 13:33:46,841 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 13:33:46,851 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 13:33:46,855 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:46,855 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:46,851 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 13:33:46,855 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:33:46,855 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:33:46,865 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:33:46,865 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:33:46,881 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:46,881 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:46,975 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 13:33:46,975 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 13:33:46,978 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:33:46,978 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:33:46,997 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 13:33:46,997 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 13:33:47,005 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:33:47,005 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:33:53,995 middleware → GET /api/v1/audit/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:53,995 middleware → GET /api/v1/audit/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:53,999 middleware → GET /api/v1/audit/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:53,999 middleware → GET /api/v1/audit/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,114 middleware → GET /api/v1/audit/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,004 middleware → GET /api/v1/audit/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,004 middleware → GET /api/v1/audit/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,114 middleware → GET /api/v1/audit/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,332 middleware ← GET /api/v1/audit/audit-logs/modules/ | Status: 404 | Duration: 0.34s
+INFO 2026-06-10 13:33:54,332 middleware ← GET /api/v1/audit/audit-logs/modules/ | Status: 404 | Duration: 0.34s
+INFO 2026-06-10 13:33:54,334 middleware ← GET /api/v1/audit/audit-logs/actions/ | Status: 404 | Duration: 0.34s
+INFO 2026-06-10 13:33:54,334 middleware ← GET /api/v1/audit/audit-logs/actions/ | Status: 404 | Duration: 0.34s
+INFO 2026-06-10 13:33:54,337 middleware ← GET /api/v1/audit/audit-logs/ | Status: 404 | Duration: 0.33s
+WARNING 2026-06-10 13:33:54,339 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 3367
+WARNING 2026-06-10 13:33:54,339 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 3367
+INFO 2026-06-10 13:33:54,344 middleware ← GET /api/v1/audit/audit-logs/stats/ | Status: 404 | Duration: 0.23s
+INFO 2026-06-10 13:33:54,344 middleware ← GET /api/v1/audit/audit-logs/stats/ | Status: 404 | Duration: 0.23s
+INFO 2026-06-10 13:33:54,337 middleware ← GET /api/v1/audit/audit-logs/ | Status: 404 | Duration: 0.33s
+WARNING 2026-06-10 13:33:54,350 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 3367
+WARNING 2026-06-10 13:33:54,350 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 3367
+INFO 2026-06-10 13:33:54,355 middleware → GET /api/v1/audit/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,355 middleware → GET /api/v1/audit/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,350 middleware → GET /api/v1/audit/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,350 middleware → GET /api/v1/audit/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 13:33:54,360 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 3421
+WARNING 2026-06-10 13:33:54,357 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 3361
+INFO 2026-06-10 13:33:54,393 middleware ← GET /api/v1/audit/audit-logs/modules/ | Status: 404 | Duration: 0.04s
+INFO 2026-06-10 13:33:54,376 middleware → GET /api/v1/audit/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 13:33:54,360 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 3421
+WARNING 2026-06-10 13:33:54,357 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 3361
+INFO 2026-06-10 13:33:54,393 middleware ← GET /api/v1/audit/audit-logs/modules/ | Status: 404 | Duration: 0.04s
+INFO 2026-06-10 13:33:54,376 middleware → GET /api/v1/audit/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:33:54,401 middleware → GET /api/v1/audit/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 13:33:54,404 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 3367
+INFO 2026-06-10 13:33:54,401 middleware → GET /api/v1/audit/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 13:33:54,404 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 3367
+INFO 2026-06-10 13:33:54,414 middleware ← GET /api/v1/audit/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 13:33:54,414 middleware ← GET /api/v1/audit/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+WARNING 2026-06-10 13:33:54,433 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 3367
+WARNING 2026-06-10 13:33:54,433 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 3367
+INFO 2026-06-10 13:33:54,450 middleware ← GET /api/v1/audit/audit-logs/ | Status: 404 | Duration: 0.05s
+INFO 2026-06-10 13:33:54,450 middleware ← GET /api/v1/audit/audit-logs/ | Status: 404 | Duration: 0.05s
+WARNING 2026-06-10 13:33:54,453 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 3421
+INFO 2026-06-10 13:33:54,479 middleware ← GET /api/v1/audit/audit-logs/stats/ | Status: 404 | Duration: 0.10s
+WARNING 2026-06-10 13:33:54,453 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 3421
+INFO 2026-06-10 13:33:54,479 middleware ← GET /api/v1/audit/audit-logs/stats/ | Status: 404 | Duration: 0.10s
+WARNING 2026-06-10 13:33:54,481 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 3361
+WARNING 2026-06-10 13:33:54,481 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 3361
+INFO 2026-06-10 13:43:45,583 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:43:45,583 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:43:45,589 middleware ← GET /api/v1/auth/audit-logs/ | Status: 401 | Duration: 0.01s
+INFO 2026-06-10 13:43:45,589 middleware ← GET /api/v1/auth/audit-logs/ | Status: 401 | Duration: 0.01s
+WARNING 2026-06-10 13:43:45,590 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:43:45,590 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 401 183
+INFO 2026-06-10 13:43:46,808 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:43:46,808 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:43:46,809 middleware ← GET /api/v1/auth/audit-logs/ | Status: 401 | Duration: 0.00s
+INFO 2026-06-10 13:43:46,809 middleware ← GET /api/v1/auth/audit-logs/ | Status: 401 | Duration: 0.00s
+WARNING 2026-06-10 13:43:46,810 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:43:46,810 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 401 183
+INFO 2026-06-10 13:44:05,674 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:44:05,674 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:44:07,076 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.40s
+INFO 2026-06-10 13:44:07,076 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.40s
+INFO 2026-06-10 13:44:07,079 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 13:44:07,079 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 13:44:34,101 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:44:34,101 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:44:34,398 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 13:44:34,398 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 13:44:34,400 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 5394
+INFO 2026-06-10 13:44:34,400 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 5394
+INFO 2026-06-10 13:45:11,470 middleware → GET /api/v1/auth/audit-logs/2/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:11,470 middleware → GET /api/v1/auth/audit-logs/2/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:11,622 middleware ← GET /api/v1/auth/audit-logs/2/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 13:45:11,622 middleware ← GET /api/v1/auth/audit-logs/2/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 13:45:11,624 basehttp "GET /api/v1/auth/audit-logs/2/ HTTP/1.1" 200 547
+INFO 2026-06-10 13:45:11,624 basehttp "GET /api/v1/auth/audit-logs/2/ HTTP/1.1" 200 547
+INFO 2026-06-10 13:45:19,704 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:19,704 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:19,839 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.14s
+INFO 2026-06-10 13:45:19,839 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.14s
+WARNING 2026-06-10 13:45:19,842 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 13:45:19,842 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 13:45:29,908 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:29,908 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:30,043 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.13s
+INFO 2026-06-10 13:45:30,043 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.13s
+WARNING 2026-06-10 13:45:30,045 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 404 23
+WARNING 2026-06-10 13:45:30,045 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 404 23
+INFO 2026-06-10 13:45:39,151 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:39,151 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:39,171 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.02s
+INFO 2026-06-10 13:45:39,171 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.02s
+WARNING 2026-06-10 13:45:39,194 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+WARNING 2026-06-10 13:45:39,194 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 13:45:47,185 middleware → GET /api/v1/auth/audit-logs/my_logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:47,185 middleware → GET /api/v1/auth/audit-logs/my_logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:45:47,282 middleware ← GET /api/v1/auth/audit-logs/my_logs/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 13:45:47,282 middleware ← GET /api/v1/auth/audit-logs/my_logs/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 13:45:47,283 basehttp "GET /api/v1/auth/audit-logs/my_logs/ HTTP/1.1" 200 3220
+INFO 2026-06-10 13:45:47,283 basehttp "GET /api/v1/auth/audit-logs/my_logs/ HTTP/1.1" 200 3220
+INFO 2026-06-10 13:46:01,740 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:46:01,740 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 13:46:01,751 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.01s
+INFO 2026-06-10 13:46:01,751 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.01s
+WARNING 2026-06-10 13:46:01,753 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 13:46:01,753 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 13:59:05,771 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 13:59:05,771 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 13:59:26,039 basehttp "OPTIONS /api/v1/auth/users/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:59:26,040 basehttp "OPTIONS /api/v1/hr/employees/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:59:26,039 basehttp "OPTIONS /api/v1/auth/users/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:59:26,047 basehttp "OPTIONS /api/v1/hr/employees/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:59:26,040 basehttp "OPTIONS /api/v1/hr/employees/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:59:26,050 basehttp "OPTIONS /api/v1/auth/users/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:59:26,047 basehttp "OPTIONS /api/v1/hr/employees/ HTTP/1.1" 200 0
+INFO 2026-06-10 13:59:26,050 basehttp "OPTIONS /api/v1/auth/users/ HTTP/1.1" 200 0
+WARNING 2026-06-10 13:59:26,145 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:59:26,155 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:59:26,167 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:59:26,167 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:59:26,145 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:59:26,155 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:59:26,188 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 401 183
+WARNING 2026-06-10 13:59:26,188 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 401 183
+INFO 2026-06-10 13:59:26,284 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 200 483
+INFO 2026-06-10 13:59:26,284 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 200 483
+INFO 2026-06-10 13:59:26,367 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 13:59:26,367 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 13:59:26,497 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:59:26,497 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:59:26,545 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 13:59:26,545 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 13:59:26,561 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 13:59:26,561 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+WARNING 2026-06-10 13:59:29,704 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8115
+WARNING 2026-06-10 13:59:29,704 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8115
+WARNING 2026-06-10 13:59:29,771 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8055
+WARNING 2026-06-10 13:59:29,771 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8055
+WARNING 2026-06-10 13:59:29,795 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8115
+WARNING 2026-06-10 13:59:29,795 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8115
+WARNING 2026-06-10 13:59:29,839 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8061
+WARNING 2026-06-10 13:59:29,839 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8061
+WARNING 2026-06-10 13:59:29,894 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8055
+WARNING 2026-06-10 13:59:29,894 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8055
+WARNING 2026-06-10 13:59:29,901 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8061
+WARNING 2026-06-10 13:59:29,903 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8061
+WARNING 2026-06-10 13:59:29,901 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8061
+WARNING 2026-06-10 13:59:29,903 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8061
+WARNING 2026-06-10 13:59:29,941 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8061
+WARNING 2026-06-10 13:59:29,941 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8061
+INFO 2026-06-10 14:02:48,006 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:02:48,006 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:02:49,478 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:02:49,478 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:02:57,726 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:02:57,726 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:02:59,435 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:02:59,435 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:03:05,309 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:03:05,309 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:03:05,382 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:03:05,382 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+WARNING 2026-06-10 14:03:12,195 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8225
+WARNING 2026-06-10 14:03:12,195 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8225
+WARNING 2026-06-10 14:03:12,200 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8165
+WARNING 2026-06-10 14:03:12,200 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8165
+WARNING 2026-06-10 14:03:12,206 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:03:12,206 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:03:12,211 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:03:12,277 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8225
+WARNING 2026-06-10 14:03:12,320 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:03:12,211 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:03:12,277 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8225
+WARNING 2026-06-10 14:03:12,320 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:03:12,346 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:03:12,346 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:03:12,352 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8165
+WARNING 2026-06-10 14:03:12,352 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8165
+INFO 2026-06-10 14:04:01,840 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:04:01,840 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:04:03,238 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:04:03,238 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:04:29,844 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:04:29,844 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:04:29,884 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:04:29,884 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+WARNING 2026-06-10 14:04:31,662 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8165
+WARNING 2026-06-10 14:04:31,663 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:04:31,662 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8165
+WARNING 2026-06-10 14:04:31,666 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:04:31,666 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:04:31,663 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:04:31,671 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8225
+WARNING 2026-06-10 14:04:31,671 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8225
+WARNING 2026-06-10 14:04:31,823 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:04:31,827 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:04:31,823 basehttp "GET /api/v1/audit/audit-logs/modules/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:04:31,827 basehttp "GET /api/v1/audit/audit-logs/actions/ HTTP/1.1" 404 8171
+WARNING 2026-06-10 14:04:31,888 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8225
+WARNING 2026-06-10 14:04:31,888 basehttp "GET /api/v1/audit/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 8225
+WARNING 2026-06-10 14:04:31,905 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8165
+WARNING 2026-06-10 14:04:31,905 basehttp "GET /api/v1/audit/audit-logs/stats/ HTTP/1.1" 404 8165
+INFO 2026-06-10 14:10:52,418 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:10:52,418 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:10:54,348 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:10:54,348 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:12:36,767 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:12:36,767 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:12:38,435 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:12:38,435 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:13:13,236 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:13:13,236 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:13:14,727 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:13:14,727 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:14:07,584 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:14:07,584 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:14:36,744 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-06-10 14:14:36,744 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/settings.py changed, reloading.
+INFO 2026-06-10 14:14:38,550 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:14:38,550 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:15:10,477 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:15:10,477 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:15:11,518 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:15:11,518 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:15:35,338 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:15:35,338 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:15:35,433 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:15:35,433 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:15:35,436 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 14:15:35,436 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 14:15:35,901 middleware → GET /api/schema/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:15:35,901 middleware → GET /api/schema/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:15:36,694 middleware ← GET /api/schema/ | Status: 200 | Duration: 0.79s
+INFO 2026-06-10 14:15:36,694 middleware ← GET /api/schema/ | Status: 200 | Duration: 0.79s
+INFO 2026-06-10 14:15:36,696 basehttp "GET /api/schema/ HTTP/1.1" 200 431494
+INFO 2026-06-10 14:15:36,696 basehttp "GET /api/schema/ HTTP/1.1" 200 431494
+INFO 2026-06-10 14:16:39,763 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:16:39,763 autoreload /Users/j/Desktop/BizSMART/Backend/bizsmart_backend/urls.py changed, reloading.
+INFO 2026-06-10 14:16:42,350 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:16:42,350 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:16:45,298 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:16:45,298 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:16:45,435 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 14:16:45,435 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 14:16:45,453 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 14:16:45,453 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 14:16:45,941 middleware → GET /api/schema/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:16:45,941 middleware → GET /api/schema/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:16:46,802 middleware ← GET /api/schema/ | Status: 200 | Duration: 0.86s
+INFO 2026-06-10 14:16:46,802 middleware ← GET /api/schema/ | Status: 200 | Duration: 0.86s
+INFO 2026-06-10 14:16:46,804 basehttp "GET /api/schema/ HTTP/1.1" 200 405995
+INFO 2026-06-10 14:16:46,804 basehttp "GET /api/schema/ HTTP/1.1" 200 405995
+INFO 2026-06-10 14:17:47,074 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:17:47,074 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:17:47,109 middleware ← GET /api/v1/auth/profile/ | Status: 401 | Duration: 0.03s
+INFO 2026-06-10 14:17:47,109 middleware ← GET /api/v1/auth/profile/ | Status: 401 | Duration: 0.03s
+WARNING 2026-06-10 14:17:47,114 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+WARNING 2026-06-10 14:17:47,114 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+INFO 2026-06-10 14:17:47,128 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:17:47,131 middleware → POST /api/v1/auth/refresh/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:17:47,128 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:17:47,131 middleware → POST /api/v1/auth/refresh/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:17:47,142 middleware ← GET /api/v1/auth/profile/ | Status: 401 | Duration: 0.01s
+INFO 2026-06-10 14:17:47,142 middleware ← GET /api/v1/auth/profile/ | Status: 401 | Duration: 0.01s
+WARNING 2026-06-10 14:17:47,147 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+WARNING 2026-06-10 14:17:47,147 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+INFO 2026-06-10 14:17:47,179 middleware ← POST /api/v1/auth/refresh/ | Status: 401 | Duration: 0.05s
+INFO 2026-06-10 14:17:47,179 middleware ← POST /api/v1/auth/refresh/ | Status: 401 | Duration: 0.05s
+WARNING 2026-06-10 14:17:47,184 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 401 58
+WARNING 2026-06-10 14:17:47,184 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 401 58
+INFO 2026-06-10 14:18:10,554 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:10,554 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:11,533 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 0.98s
+INFO 2026-06-10 14:18:11,533 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 0.98s
+INFO 2026-06-10 14:18:11,534 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:18:11,534 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:18:12,673 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:12,673 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:12,685 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:12,685 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:12,747 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:18:12,747 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:18:12,763 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 14:18:12,763 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 14:18:12,764 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:12,768 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:12,764 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:12,769 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:12,769 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:12,768 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:12,779 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:12,779 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:12,892 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 14:18:12,892 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 14:18:12,894 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:12,894 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:12,910 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 14:18:12,910 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 14:18:12,912 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:12,912 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:16,667 basehttp "OPTIONS /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,667 basehttp "OPTIONS /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,672 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,672 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,673 basehttp "OPTIONS /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,673 basehttp "OPTIONS /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,679 basehttp "OPTIONS /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,679 basehttp "OPTIONS /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,677 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,677 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,695 basehttp "OPTIONS /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,695 basehttp "OPTIONS /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,695 basehttp "OPTIONS /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,705 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,705 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,674 basehttp "OPTIONS /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,674 basehttp "OPTIONS /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,707 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,707 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,702 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,695 basehttp "OPTIONS /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:18:16,722 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,702 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,722 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,757 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.05s
+INFO 2026-06-10 14:18:16,764 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:18:16,757 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.05s
+INFO 2026-06-10 14:18:16,764 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.06s
+WARNING 2026-06-10 14:18:16,774 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:16,774 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:16,776 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:16,776 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:16,782 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,782 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,790 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,790 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,804 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.10s
+INFO 2026-06-10 14:18:16,804 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.10s
+INFO 2026-06-10 14:18:16,813 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,813 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 14:18:16,818 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:16,818 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:16,853 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.07s
+INFO 2026-06-10 14:18:16,854 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:18:16,853 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.07s
+INFO 2026-06-10 14:18:16,854 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.06s
+WARNING 2026-06-10 14:18:16,880 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:16,880 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:16,890 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:16,895 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.08s
+WARNING 2026-06-10 14:18:16,890 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:16,895 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.08s
+WARNING 2026-06-10 14:18:16,912 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:16,912 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:16,934 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 14:18:16,934 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 14:18:16,935 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5445
+INFO 2026-06-10 14:18:16,935 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5445
+INFO 2026-06-10 14:18:16,939 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:16,939 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:17,025 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:18:17,025 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:18:17,027 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5445
+INFO 2026-06-10 14:18:17,027 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5445
+INFO 2026-06-10 14:18:24,541 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:24,543 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:24,541 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:24,543 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:24,576 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:18:24,576 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:18:24,589 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 14:18:24,589 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 14:18:24,595 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:24,595 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:24,595 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:24,595 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:24,596 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:24,622 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:24,596 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:24,622 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:24,666 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:18:24,666 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:18:24,667 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:24,667 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:24,678 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 14:18:24,678 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 14:18:24,679 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:24,679 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:18:26,704 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,706 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,707 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,708 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,704 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,706 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,707 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,708 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,762 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:18:26,764 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:18:26,762 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:18:26,769 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:18:26,764 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+WARNING 2026-06-10 14:18:26,781 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:26,769 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.06s
+WARNING 2026-06-10 14:18:26,781 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:26,799 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,799 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 14:18:26,807 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:26,807 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:26,810 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,810 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,816 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 14:18:26,821 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:26,821 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:26,816 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,862 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.05s
+INFO 2026-06-10 14:18:26,862 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.05s
+WARNING 2026-06-10 14:18:26,869 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:26,869 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:26,874 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.08s
+INFO 2026-06-10 14:18:26,874 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.08s
+WARNING 2026-06-10 14:18:26,890 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:26,892 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.08s
+WARNING 2026-06-10 14:18:26,890 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:26,892 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.08s
+WARNING 2026-06-10 14:18:26,909 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:18:26,909 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:18:26,935 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.23s
+INFO 2026-06-10 14:18:26,935 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.23s
+INFO 2026-06-10 14:18:26,938 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5445
+INFO 2026-06-10 14:18:26,938 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5445
+INFO 2026-06-10 14:18:26,972 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:26,972 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:18:27,197 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.23s
+INFO 2026-06-10 14:18:27,197 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.23s
+INFO 2026-06-10 14:18:27,204 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5445
+INFO 2026-06-10 14:18:27,204 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5445
+INFO 2026-06-10 14:19:17,544 basehttp "OPTIONS /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 200 0
+INFO 2026-06-10 14:19:17,544 basehttp "OPTIONS /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 200 0
+INFO 2026-06-10 14:19:17,547 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:19:17,547 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:19:17,549 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+INFO 2026-06-10 14:19:17,549 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+WARNING 2026-06-10 14:19:17,550 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+WARNING 2026-06-10 14:19:17,550 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+INFO 2026-06-10 14:20:35,777 basehttp "OPTIONS /api/v1/inventory/categories/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:20:35,779 basehttp "OPTIONS /api/v1/inventory/categories/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:20:35,777 basehttp "OPTIONS /api/v1/inventory/categories/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:20:35,779 basehttp "OPTIONS /api/v1/inventory/categories/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:20:35,782 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:35,782 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:35,809 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:20:35,809 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:20:35,815 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:35,815 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:35,824 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:35,824 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:35,869 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:35,869 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:35,888 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 14:20:35,888 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 14:20:35,903 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:20:35,903 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:20:35,906 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:35,906 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:35,930 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:35,930 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:35,946 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:35,946 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:35,969 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 14:20:35,969 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 14:20:35,972 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:35,972 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:42,493 middleware → POST /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:42,493 middleware → POST /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:42,536 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/categories/
+INFO 2026-06-10 14:20:42,536 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/categories/
+INFO 2026-06-10 14:20:42,536 middleware ← POST /api/v1/inventory/categories/ | Status: 201 | Duration: 0.04s
+INFO 2026-06-10 14:20:42,536 middleware ← POST /api/v1/inventory/categories/ | Status: 201 | Duration: 0.04s
+INFO 2026-06-10 14:20:42,538 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 201 126
+INFO 2026-06-10 14:20:42,538 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 201 126
+INFO 2026-06-10 14:20:42,551 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:42,551 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:42,588 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 14:20:42,588 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 14:20:42,591 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 178
+INFO 2026-06-10 14:20:42,591 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 178
+INFO 2026-06-10 14:20:42,599 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:42,599 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:42,626 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:20:42,626 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:20:42,629 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:42,629 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:20:47,082 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,082 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,087 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,087 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,126 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,126 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,137 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,137 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,162 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.08s
+INFO 2026-06-10 14:20:47,162 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.08s
+WARNING 2026-06-10 14:20:47,168 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:20:47,168 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:20:47,172 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,172 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,189 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.11s
+INFO 2026-06-10 14:20:47,195 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:20:47,189 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.11s
+INFO 2026-06-10 14:20:47,195 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.06s
+WARNING 2026-06-10 14:20:47,212 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:20:47,212 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:20:47,223 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:20:47,230 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+WARNING 2026-06-10 14:20:47,223 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:20:47,230 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:20:47,255 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,255 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,232 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 14:20:47,264 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:20:47,232 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 14:20:47,264 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:20:47,305 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.05s
+INFO 2026-06-10 14:20:47,305 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.05s
+WARNING 2026-06-10 14:20:47,309 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:20:47,309 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:20:47,323 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.09s
+INFO 2026-06-10 14:20:47,323 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.09s
+WARNING 2026-06-10 14:20:47,325 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:20:47,325 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:20:47,337 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 14:20:47,337 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 14:20:47,342 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,342 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:20:47,347 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5462
+INFO 2026-06-10 14:20:47,347 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5462
+INFO 2026-06-10 14:20:47,422 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 14:20:47,422 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 14:20:47,423 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5462
+INFO 2026-06-10 14:20:47,423 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5462
+INFO 2026-06-10 14:21:01,432 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:01,432 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:01,466 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:01,466 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:01,469 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 178
+INFO 2026-06-10 14:21:01,469 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 178
+INFO 2026-06-10 14:21:01,477 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:01,477 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:01,487 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:01,487 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:01,514 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:01,514 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:01,520 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 14:21:01,520 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 14:21:01,521 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:21:01,529 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 178
+INFO 2026-06-10 14:21:01,529 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 178
+INFO 2026-06-10 14:21:01,521 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:21:01,538 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:01,538 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:01,567 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:01,567 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:01,570 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:21:01,570 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:21:05,342 basehttp "OPTIONS /api/v1/inventory/categories/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:21:05,342 basehttp "OPTIONS /api/v1/inventory/categories/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:21:05,347 middleware → DELETE /api/v1/inventory/categories/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:05,347 middleware → DELETE /api/v1/inventory/categories/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:05,376 logging_utils AUDIT: admin@bizsmart.com - DELETE - inventory - DELETE /api/v1/inventory/categories/1/
+INFO 2026-06-10 14:21:05,376 logging_utils AUDIT: admin@bizsmart.com - DELETE - inventory - DELETE /api/v1/inventory/categories/1/
+INFO 2026-06-10 14:21:05,377 middleware ← DELETE /api/v1/inventory/categories/1/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:05,377 middleware ← DELETE /api/v1/inventory/categories/1/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:05,378 basehttp "DELETE /api/v1/inventory/categories/1/ HTTP/1.1" 200 47
+INFO 2026-06-10 14:21:05,378 basehttp "DELETE /api/v1/inventory/categories/1/ HTTP/1.1" 200 47
+INFO 2026-06-10 14:21:05,393 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:05,393 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:05,422 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:05,422 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:05,424 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:21:05,424 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:21:05,431 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:05,431 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:05,461 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:05,461 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 14:21:05,463 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:21:05,463 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 14:21:11,255 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,261 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,263 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,255 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,265 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,261 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,263 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,265 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,325 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:21:11,325 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:21:11,329 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.07s
+INFO 2026-06-10 14:21:11,329 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.07s
+INFO 2026-06-10 14:21:11,335 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,335 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+WARNING 2026-06-10 14:21:11,348 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:11,337 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:11,348 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:11,337 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:11,364 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,367 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.10s
+INFO 2026-06-10 14:21:11,364 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,367 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.10s
+WARNING 2026-06-10 14:21:11,393 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:11,393 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:11,400 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,400 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,408 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.07s
+INFO 2026-06-10 14:21:11,408 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.07s
+WARNING 2026-06-10 14:21:11,423 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:11,423 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:11,452 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.09s
+INFO 2026-06-10 14:21:11,452 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.09s
+WARNING 2026-06-10 14:21:11,463 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:11,466 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.07s
+WARNING 2026-06-10 14:21:11,463 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:11,466 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.07s
+WARNING 2026-06-10 14:21:11,478 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:11,478 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:11,482 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 14:21:11,482 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 14:21:11,485 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5477
+INFO 2026-06-10 14:21:11,485 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5477
+INFO 2026-06-10 14:21:11,519 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,519 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:11,597 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 14:21:11,597 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 14:21:11,599 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5477
+INFO 2026-06-10 14:21:11,599 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5477
+INFO 2026-06-10 14:21:37,826 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:37,828 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:37,829 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:37,829 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:37,826 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:37,828 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:37,829 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:37,829 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:21:37,863 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.04s
+INFO 2026-06-10 14:21:37,863 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.04s
+WARNING 2026-06-10 14:21:37,871 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:37,871 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:37,879 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.05s
+INFO 2026-06-10 14:21:37,879 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.05s
+WARNING 2026-06-10 14:21:37,887 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:37,887 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:37,892 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+INFO 2026-06-10 14:21:37,892 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.06s
+WARNING 2026-06-10 14:21:37,897 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:21:37,897 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:21:37,948 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 14:21:37,948 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 14:21:37,950 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5477
+INFO 2026-06-10 14:21:37,950 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5477
+INFO 2026-06-10 14:22:58,786 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:22:58,786 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:22:59,812 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.03s
+INFO 2026-06-10 14:22:59,812 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.03s
+INFO 2026-06-10 14:22:59,814 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:22:59,814 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:23:25,067 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:23:25,067 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:23:25,118 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.05s
+INFO 2026-06-10 14:23:25,118 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.05s
+WARNING 2026-06-10 14:23:25,122 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:23:25,122 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:23:33,627 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:23:33,627 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:23:33,659 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.03s
+INFO 2026-06-10 14:23:33,659 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 404 | Duration: 0.03s
+WARNING 2026-06-10 14:23:33,660 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:23:33,660 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:23:41,190 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:23:41,190 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:23:41,209 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.02s
+INFO 2026-06-10 14:23:41,209 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.02s
+WARNING 2026-06-10 14:23:41,211 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:23:41,211 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:23:52,173 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:23:52,173 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:23:52,192 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.02s
+INFO 2026-06-10 14:23:52,192 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.02s
+WARNING 2026-06-10 14:23:52,194 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:23:52,194 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:24:06,796 middleware → GET /api/v1/auth/audit-logs/my_logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:24:06,796 middleware → GET /api/v1/auth/audit-logs/my_logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:24:06,893 middleware ← GET /api/v1/auth/audit-logs/my_logs/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 14:24:06,893 middleware ← GET /api/v1/auth/audit-logs/my_logs/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 14:24:06,894 basehttp "GET /api/v1/auth/audit-logs/my_logs/ HTTP/1.1" 200 4305
+INFO 2026-06-10 14:24:06,894 basehttp "GET /api/v1/auth/audit-logs/my_logs/ HTTP/1.1" 200 4305
+INFO 2026-06-10 14:34:52,454 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 14:34:52,454 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 14:34:54,562 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:34:54,562 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:35:24,319 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:35:24,319 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:35:24,532 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.21s
+INFO 2026-06-10 14:35:24,532 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 404 | Duration: 0.21s
+WARNING 2026-06-10 14:35:24,540 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:35:24,540 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:35:37,593 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:35:37,593 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:35:37,620 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.03s
+INFO 2026-06-10 14:35:37,620 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.03s
+WARNING 2026-06-10 14:35:37,632 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:35:37,632 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:35:42,318 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:35:42,318 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:35:42,420 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 14:35:42,420 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 14:35:42,421 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 14:35:42,421 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 14:35:42,787 middleware → GET /api/schema/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:35:42,787 middleware → GET /api/schema/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:35:43,627 middleware ← GET /api/schema/ | Status: 200 | Duration: 0.84s
+INFO 2026-06-10 14:35:43,627 middleware ← GET /api/schema/ | Status: 200 | Duration: 0.84s
+INFO 2026-06-10 14:35:43,631 basehttp "GET /api/schema/ HTTP/1.1" 200 405995
+INFO 2026-06-10 14:35:43,631 basehttp "GET /api/schema/ HTTP/1.1" 200 405995
+INFO 2026-06-10 14:36:22,708 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:36:22,708 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:36:23,796 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.09s
+INFO 2026-06-10 14:36:23,796 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.09s
+INFO 2026-06-10 14:36:23,798 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:36:23,798 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:36:49,226 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:36:49,226 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:36:49,264 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.04s
+INFO 2026-06-10 14:36:49,264 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.04s
+WARNING 2026-06-10 14:36:49,267 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:36:49,267 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:37:45,896 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 14:37:45,896 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 14:37:47,517 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:37:47,517 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:38:01,003 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:38:01,003 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:38:23,842 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:38:23,842 middleware → GET /api/docs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:38:24,049 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 14:38:24,049 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 14:38:24,053 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 14:38:24,053 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 14:38:24,488 middleware → GET /api/schema/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:38:24,488 middleware → GET /api/schema/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:38:25,453 middleware ← GET /api/schema/ | Status: 200 | Duration: 0.96s
+INFO 2026-06-10 14:38:25,453 middleware ← GET /api/schema/ | Status: 200 | Duration: 0.96s
+INFO 2026-06-10 14:38:25,455 basehttp "GET /api/schema/ HTTP/1.1" 200 405995
+INFO 2026-06-10 14:38:25,455 basehttp "GET /api/schema/ HTTP/1.1" 200 405995
+INFO 2026-06-10 14:38:41,316 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:38:41,316 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:38:42,522 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.21s
+INFO 2026-06-10 14:38:42,522 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.21s
+INFO 2026-06-10 14:38:42,523 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:38:42,523 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:39:10,538 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:39:10,538 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:39:10,549 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.01s
+INFO 2026-06-10 14:39:10,549 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.01s
+WARNING 2026-06-10 14:39:10,553 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:39:10,553 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:40:47,096 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:40:47,096 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:40:48,851 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:40:48,851 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:41:27,993 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:41:27,993 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:41:28,150 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.16s
+INFO 2026-06-10 14:41:28,150 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.16s
+WARNING 2026-06-10 14:41:28,155 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:41:28,155 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:42:39,876 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:42:39,876 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:42:41,262 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User admin@bizsmart.com logged in
+INFO 2026-06-10 14:42:41,262 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User admin@bizsmart.com logged in
+INFO 2026-06-10 14:42:41,274 logging_utils AUDIT: admin@bizsmart.com - CREATE - auth - POST /api/v1/auth/login/
+INFO 2026-06-10 14:42:41,274 logging_utils AUDIT: admin@bizsmart.com - CREATE - auth - POST /api/v1/auth/login/
+INFO 2026-06-10 14:42:41,278 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User logged in
+INFO 2026-06-10 14:42:41,278 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User logged in
+INFO 2026-06-10 14:42:41,278 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.40s
+INFO 2026-06-10 14:42:41,278 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.40s
+INFO 2026-06-10 14:42:41,280 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:42:41,280 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:43:29,580 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:43:29,580 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:43:29,590 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.01s
+INFO 2026-06-10 14:43:29,590 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.01s
+WARNING 2026-06-10 14:43:29,592 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:43:29,592 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:44:21,315 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:44:21,315 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:44:21,394 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 14:44:21,394 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 14:44:21,397 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 5325
+INFO 2026-06-10 14:44:21,397 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 5325
+INFO 2026-06-10 14:45:45,643 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:45:45,643 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:45:47,465 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:45:47,465 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:45:58,323 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:45:58,323 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:46:00,613 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:46:00,613 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:47:25,661 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 14:47:25,661 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 14:47:27,116 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:47:27,116 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:48:56,245 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:48:56,245 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:48:57,748 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:48:57,748 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:49:36,520 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:49:36,520 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:49:39,465 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:49:39,465 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:51:30,604 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 14:51:30,604 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 14:51:33,121 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:51:33,121 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:51:51,967 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:51:51,967 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:51:53,600 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:51:53,600 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:52:32,145 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:52:32,145 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:52:33,475 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User admin@bizsmart.com logged in
+INFO 2026-06-10 14:52:33,475 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User admin@bizsmart.com logged in
+INFO 2026-06-10 14:52:33,489 logging_utils AUDIT: admin@bizsmart.com - CREATE - auth - POST /api/v1/auth/login/
+INFO 2026-06-10 14:52:33,489 logging_utils AUDIT: admin@bizsmart.com - CREATE - auth - POST /api/v1/auth/login/
+INFO 2026-06-10 14:52:33,492 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User logged in
+INFO 2026-06-10 14:52:33,492 logging_utils AUDIT: admin@bizsmart.com - LOGIN - auth - User logged in
+INFO 2026-06-10 14:52:33,492 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.35s
+INFO 2026-06-10 14:52:33,492 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.35s
+INFO 2026-06-10 14:52:33,495 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:52:33,495 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 14:53:08,606 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:53:08,606 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:53:08,698 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.09s
+INFO 2026-06-10 14:53:08,698 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 404 | Duration: 0.09s
+WARNING 2026-06-10 14:53:08,702 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+WARNING 2026-06-10 14:53:08,702 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 404 23
+INFO 2026-06-10 14:53:41,605 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:53:41,605 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:53:41,665 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 14:53:41,665 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 14:53:41,667 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 5302
+INFO 2026-06-10 14:53:41,667 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 5302
+INFO 2026-06-10 14:55:01,990 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:55:01,990 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:55:04,134 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:55:04,134 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:55:29,857 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:55:29,857 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:55:29,912 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 14:55:29,912 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 14:55:29,914 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 14:55:29,914 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 14:55:45,437 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:55:45,437 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:55:45,439 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 401 | Duration: 0.00s
+INFO 2026-06-10 14:55:45,439 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 401 | Duration: 0.00s
+WARNING 2026-06-10 14:55:45,443 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 401 183
+WARNING 2026-06-10 14:55:45,443 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 401 183
+INFO 2026-06-10 14:56:15,352 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:15,352 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:15,439 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:56:15,439 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:56:15,442 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 14:56:15,442 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 14:56:27,498 basehttp "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:56:27,499 basehttp "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:56:27,499 basehttp "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:56:27,498 basehttp "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2026-06-10 14:56:27,502 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,502 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,503 middleware ← GET /api/v1/auth/profile/ | Status: 401 | Duration: 0.00s
+INFO 2026-06-10 14:56:27,503 middleware ← GET /api/v1/auth/profile/ | Status: 401 | Duration: 0.00s
+WARNING 2026-06-10 14:56:27,508 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+WARNING 2026-06-10 14:56:27,508 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+INFO 2026-06-10 14:56:27,516 middleware → POST /api/v1/auth/refresh/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,516 middleware → POST /api/v1/auth/refresh/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,520 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,520 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,528 middleware ← GET /api/v1/auth/profile/ | Status: 401 | Duration: 0.01s
+INFO 2026-06-10 14:56:27,528 middleware ← GET /api/v1/auth/profile/ | Status: 401 | Duration: 0.01s
+WARNING 2026-06-10 14:56:27,532 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+WARNING 2026-06-10 14:56:27,532 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 401 183
+INFO 2026-06-10 14:56:27,574 middleware ← POST /api/v1/auth/refresh/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 14:56:27,574 middleware ← POST /api/v1/auth/refresh/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 14:56:27,575 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 200 483
+INFO 2026-06-10 14:56:27,575 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 200 483
+INFO 2026-06-10 14:56:27,589 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,589 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,613 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 14:56:27,613 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 14:56:27,620 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:56:27,620 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:56:27,655 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,655 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:27,724 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:56:27,724 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:56:27,726 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:56:27,726 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 14:56:38,202 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,202 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,235 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,235 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,238 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,238 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,264 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,264 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,288 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:56:38,288 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:56:38,302 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 14:56:38,302 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 14:56:38,307 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:56:38,319 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,307 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:56:38,319 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,341 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 14:56:38,341 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 14:56:38,352 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,352 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,391 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:56:38,391 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:56:38,397 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 14:56:38,397 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 14:56:38,402 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 14:56:38,402 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 14:56:38,409 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,409 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,474 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 14:56:38,474 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 14:56:38,486 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 14:56:38,486 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 14:56:38,489 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 14:56:38,489 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 14:56:38,521 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 14:56:38,521 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 14:56:38,523 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 14:56:38,523 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 14:56:38,540 middleware ← GET /api/v1/auth/audit-logs/ | Status: 404 | Duration: 0.30s
+INFO 2026-06-10 14:56:38,540 middleware ← GET /api/v1/auth/audit-logs/ | Status: 404 | Duration: 0.30s
+WARNING 2026-06-10 14:56:38,541 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 7634
+WARNING 2026-06-10 14:56:38,541 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 7634
+INFO 2026-06-10 14:56:38,545 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,545 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:56:38,580 middleware ← GET /api/v1/auth/audit-logs/ | Status: 404 | Duration: 0.03s
+INFO 2026-06-10 14:56:38,580 middleware ← GET /api/v1/auth/audit-logs/ | Status: 404 | Duration: 0.03s
+WARNING 2026-06-10 14:56:38,581 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 7634
+WARNING 2026-06-10 14:56:38,581 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 404 7634
+INFO 2026-06-10 14:57:11,306 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:57:11,306 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:57:11,308 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+INFO 2026-06-10 14:57:11,308 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+WARNING 2026-06-10 14:57:11,309 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+WARNING 2026-06-10 14:57:11,309 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+INFO 2026-06-10 14:57:41,207 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:57:41,207 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:57:41,224 middleware ← GET /api/v1/auth/audit-logs/ | Status: 404 | Duration: 0.02s
+INFO 2026-06-10 14:57:41,224 middleware ← GET /api/v1/auth/audit-logs/ | Status: 404 | Duration: 0.02s
+WARNING 2026-06-10 14:57:41,225 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 404 7556
+WARNING 2026-06-10 14:57:41,225 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 404 7556
+INFO 2026-06-10 14:58:40,973 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:58:40,973 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:58:41,044 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:58:41,044 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 14:58:41,048 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 14:58:41,048 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 14:59:41,813 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:59:41,813 autoreload /Users/j/Desktop/BizSMART/Backend/core/urls.py changed, reloading.
+INFO 2026-06-10 14:59:44,010 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:59:44,010 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 14:59:50,426 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:59:50,426 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 14:59:50,513 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:59:50,513 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 14:59:50,515 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 14:59:50,515 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:00:00,820 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:00,820 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:00,931 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 15:00:00,931 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 15:00:00,932 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 5302
+INFO 2026-06-10 15:00:00,932 basehttp "GET /api/v1/auth/audit-logs/ HTTP/1.1" 200 5302
+INFO 2026-06-10 15:00:12,894 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:12,894 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:13,021 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 15:00:13,021 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 15:00:13,023 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 200 3231
+INFO 2026-06-10 15:00:13,023 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 200 3231
+INFO 2026-06-10 15:00:19,452 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:19,452 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:19,509 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 15:00:19,509 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 15:00:19,514 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 15:00:19,514 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 15:00:19,520 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:19,520 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:19,632 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 15:00:19,632 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 15:00:19,635 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 15:00:19,635 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 268
+INFO 2026-06-10 15:00:21,283 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,285 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,283 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,287 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,285 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,288 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,287 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,288 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,338 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:00:21,338 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:00:21,352 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:00:21,355 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,357 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:00:21,352 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:00:21,355 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,357 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:00:21,421 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:00:21,426 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,421 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:00:21,443 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:00:21,451 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 15:00:21,426 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,443 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:00:21,451 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 15:00:21,468 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:00:21,485 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.20s
+INFO 2026-06-10 15:00:21,468 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:00:21,485 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.20s
+INFO 2026-06-10 15:00:21,489 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:00:21,496 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:00:21,496 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:00:21,489 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:00:21,504 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,514 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,514 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,504 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:21,566 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 15:00:21,566 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 15:00:21,573 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:00:21,573 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:00:21,722 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 15:00:21,722 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 15:00:21,727 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 15:00:21,730 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:00:21,727 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 15:00:21,730 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:00:21,748 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:00:21,748 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:00:39,438 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:39,438 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:00:39,439 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+INFO 2026-06-10 15:00:39,439 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+WARNING 2026-06-10 15:00:39,509 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+WARNING 2026-06-10 15:00:39,509 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+INFO 2026-06-10 15:01:10,376 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:10,408 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:10,408 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:10,409 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:10,376 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:10,413 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=2026-06-10&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 15:01:10,409 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:10,413 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=2026-06-10&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 15:01:10,424 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:10,424 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:10,449 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 15:01:10,449 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 15:01:10,463 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:01:10,463 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:01:10,467 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:01:10,467 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:01:10,480 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:01:10,480 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:01:10,510 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:01:10,510 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:01:10,523 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:01:10,523 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:01:10,562 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 15:01:10,562 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 15:01:10,564 basehttp "GET /api/v1/auth/audit-logs/?start_date=2026-06-10&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5363
+INFO 2026-06-10 15:01:10,564 basehttp "GET /api/v1/auth/audit-logs/?start_date=2026-06-10&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5363
+INFO 2026-06-10 15:01:13,706 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:13,706 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:13,710 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:13,710 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:13,715 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=2026-06-10&end_date=2026-06-10&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 15:01:13,715 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=2026-06-10&end_date=2026-06-10&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 15:01:13,734 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:13,734 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:13,712 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:13,712 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:13,783 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 15:01:13,783 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 15:01:13,786 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:01:13,786 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:01:13,791 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 15:01:13,791 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 15:01:13,811 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:01:13,811 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:01:13,815 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:01:13,815 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:01:13,816 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:01:13,816 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:01:13,878 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 15:01:13,878 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 15:01:13,879 basehttp "GET /api/v1/auth/audit-logs/?start_date=2026-06-10&end_date=2026-06-10&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5373
+INFO 2026-06-10 15:01:13,879 basehttp "GET /api/v1/auth/audit-logs/?start_date=2026-06-10&end_date=2026-06-10&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5373
+INFO 2026-06-10 15:01:15,814 basehttp "OPTIONS /api/v1/auth/audit-logs/export/?start_date=2026-06-10&end_date=2026-06-10&action=&module=&format=csv HTTP/1.1" 200 0
+INFO 2026-06-10 15:01:15,814 basehttp "OPTIONS /api/v1/auth/audit-logs/export/?start_date=2026-06-10&end_date=2026-06-10&action=&module=&format=csv HTTP/1.1" 200 0
+INFO 2026-06-10 15:01:15,817 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:15,817 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:01:15,818 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+INFO 2026-06-10 15:01:15,818 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+WARNING 2026-06-10 15:01:15,819 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=2026-06-10&end_date=2026-06-10&action=&module=&format=csv HTTP/1.1" 404 23
+WARNING 2026-06-10 15:01:15,819 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=2026-06-10&end_date=2026-06-10&action=&module=&format=csv HTTP/1.1" 404 23
+INFO 2026-06-10 15:03:44,234 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 15:03:44,234 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 15:03:46,564 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 15:03:46,564 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 15:04:46,680 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:46,680 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:46,680 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:46,680 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:46,758 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 15:04:46,758 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 15:04:46,762 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:04:46,762 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:04:46,787 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:04:46,787 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:04:46,801 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:46,820 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:04:46,820 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:04:46,832 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:46,832 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:46,801 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:46,873 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 15:04:46,873 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 15:04:46,878 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:04:46,878 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:04:46,892 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:04:46,892 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:04:46,895 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:04:46,895 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:04:48,080 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,080 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,091 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,091 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,094 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,094 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,102 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,102 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,111 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 15:04:48,111 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 15:04:48,124 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:04:48,124 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:04:48,129 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,129 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,143 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:04:48,143 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:04:48,160 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:04:48,160 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:04:48,166 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,166 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,183 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:04:48,183 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:04:48,194 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:04:48,194 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:04:48,206 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:04:48,206 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:04:48,212 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:04:48,212 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:04:48,233 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,233 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,255 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 15:04:48,255 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 15:04:48,258 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:04:48,258 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:04:48,267 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,267 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:48,285 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 15:04:48,285 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 15:04:48,308 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:04:48,308 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:04:48,389 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 15:04:48,389 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 15:04:48,390 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:04:48,390 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:04:48,440 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 15:04:48,440 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 15:04:48,442 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:04:48,442 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:04:50,414 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:50,414 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:04:50,416 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+INFO 2026-06-10 15:04:50,416 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+WARNING 2026-06-10 15:04:50,420 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+WARNING 2026-06-10 15:04:50,420 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+INFO 2026-06-10 15:05:42,289 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 15:05:42,289 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 15:05:44,027 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 15:05:44,027 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 15:05:55,122 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:05:55,122 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:05:55,254 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 15:05:55,254 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 15:05:55,256 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 200 3231
+INFO 2026-06-10 15:05:55,256 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 200 3231
+INFO 2026-06-10 15:06:33,689 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:33,689 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:33,692 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:33,692 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:33,758 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:06:33,758 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:06:33,760 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:06:33,760 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:06:33,763 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:33,763 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:33,848 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 15:06:33,848 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 15:06:33,855 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:06:33,855 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:06:33,857 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:06:33,857 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:06:33,862 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:06:33,862 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:06:33,864 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:33,864 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:33,877 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.01s
+INFO 2026-06-10 15:06:33,877 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.01s
+INFO 2026-06-10 15:06:33,879 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:06:33,879 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:06:34,844 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,844 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,846 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,846 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,865 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,865 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,877 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,877 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,915 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:06:34,915 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:06:34,920 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:06:34,920 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:06:34,924 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,924 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,925 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:06:34,925 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:06:34,931 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:06:34,931 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:06:34,940 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,940 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:34,966 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 15:06:34,966 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 15:06:34,970 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:06:34,970 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:06:34,980 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 15:06:34,980 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 15:06:34,989 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:06:34,989 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:06:35,030 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 15:06:35,030 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 15:06:35,039 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:35,039 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:35,063 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:06:35,063 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:06:35,101 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 15:06:35,101 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 15:06:35,105 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:06:35,105 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:06:35,109 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:06:35,109 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:06:35,107 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:06:35,107 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:06:35,120 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:35,120 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:35,229 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 15:06:35,229 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 15:06:35,232 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:06:35,232 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:06:37,223 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:37,223 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:06:37,226 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+INFO 2026-06-10 15:06:37,226 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+WARNING 2026-06-10 15:06:37,229 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+WARNING 2026-06-10 15:06:37,229 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+INFO 2026-06-10 15:08:14,362 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 15:08:14,362 autoreload /Users/j/Desktop/BizSMART/Backend/core/views.py changed, reloading.
+INFO 2026-06-10 15:08:16,059 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 15:08:16,059 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 15:08:33,373 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:08:33,373 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:08:33,453 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 401 | Duration: 0.08s
+INFO 2026-06-10 15:08:33,453 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 401 | Duration: 0.08s
+WARNING 2026-06-10 15:08:33,457 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 401 183
+WARNING 2026-06-10 15:08:33,457 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 401 183
+INFO 2026-06-10 15:08:51,907 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:08:51,907 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:08:51,910 middleware ← POST /api/v1/auth/login/ | Status: 401 | Duration: 0.00s
+INFO 2026-06-10 15:08:51,910 middleware ← POST /api/v1/auth/login/ | Status: 401 | Duration: 0.00s
+WARNING 2026-06-10 15:08:51,911 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+WARNING 2026-06-10 15:08:51,911 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+INFO 2026-06-10 15:09:09,370 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:09,370 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:10,658 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.29s
+INFO 2026-06-10 15:09:10,658 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 1.29s
+INFO 2026-06-10 15:09:10,659 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 15:09:10,659 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 15:09:37,390 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:37,390 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:37,480 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:09:37,480 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:09:37,482 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 200 3237
+INFO 2026-06-10 15:09:37,482 basehttp "GET /api/v1/auth/audit-logs/export/ HTTP/1.1" 200 3237
+INFO 2026-06-10 15:09:45,451 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:45,451 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:45,452 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:45,452 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:45,543 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:09:45,544 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:09:45,543 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:09:45,551 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:09:45,551 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:09:45,544 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:09:45,556 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:45,556 middleware → GET /api/v1/hr/employees/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:45,577 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:09:45,577 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:09:45,583 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:45,583 middleware → GET /api/v1/auth/users/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:45,672 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 15:09:45,672 middleware ← GET /api/v1/hr/employees/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 15:09:45,674 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:09:45,674 basehttp "GET /api/v1/hr/employees/ HTTP/1.1" 200 52
+INFO 2026-06-10 15:09:45,690 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 15:09:45,690 middleware ← GET /api/v1/auth/users/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 15:09:45,692 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:09:45,692 basehttp "GET /api/v1/auth/users/ HTTP/1.1" 200 548
+INFO 2026-06-10 15:09:46,862 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,865 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,866 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,862 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,868 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,868 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,865 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,866 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,911 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:09:46,911 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:09:46,915 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:09:46,915 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 15:09:46,919 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:09:46,919 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:09:46,925 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,925 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,934 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:09:46,934 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:09:46,947 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,947 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,968 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:09:46,968 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:09:46,975 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,975 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:46,996 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:09:46,996 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:09:47,017 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:09:47,017 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 15:09:47,021 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:09:47,021 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 15:09:47,030 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:09:47,030 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 15:09:47,048 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:09:47,048 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 15:09:47,069 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:09:47,069 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 15:09:47,074 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:09:47,074 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 15:09:47,163 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 15:09:47,163 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 15:09:47,171 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:47,171 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:47,173 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:09:47,173 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:09:47,313 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 15:09:47,313 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 15:09:47,315 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:09:47,315 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5353
+INFO 2026-06-10 15:09:49,865 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:49,865 middleware → GET /api/v1/auth/audit-logs/export/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 15:09:49,867 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+INFO 2026-06-10 15:09:49,867 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
+WARNING 2026-06-10 15:09:49,869 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+WARNING 2026-06-10 15:09:49,869 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23

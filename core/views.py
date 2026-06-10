@@ -417,12 +417,8 @@ class PasswordResetConfirmView(APIView):
             }, status=400)
 
 
-
 class AuditLogViewSet(viewsets.ReadOnlyModelViewSet):
-    """
-    ViewSet for viewing audit logs.
-    Only read-only access for auditors and admins.
-    """
+    """ViewSet for viewing audit logs"""
     serializer_class = AuditLogSerializer
     permission_classes = [IsAuthenticated, IsAuditorUserReadOnly]
     
@@ -433,7 +429,6 @@ class AuditLogViewSet(viewsets.ReadOnlyModelViewSet):
         if hasattr(self.request.user, 'business') and self.request.user.business:
             queryset = queryset.filter(business=self.request.user.business)
         else:
-            # Users without business see their own logs
             queryset = queryset.filter(user=self.request.user)
         
         # Date filters
@@ -455,35 +450,22 @@ class AuditLogViewSet(viewsets.ReadOnlyModelViewSet):
         if module:
             queryset = queryset.filter(module=module)
         
-        # User filter (admin only)
+        # User filter
         user_id = self.request.query_params.get('user_id')
         if user_id:
             queryset = queryset.filter(user_id=user_id)
         
         return queryset
-    
-    @action(detail=False, methods=['get'])
-    def my_logs(self, request):
-        """Get logs for the current user"""
-        logs = AuditLog.objects.filter(user=request.user)
-        page = self.paginate_queryset(logs)
-        if page is not None:
-            serializer = self.get_serializer(page, many=True)
-            return self.get_paginated_response(serializer.data)
-        serializer = self.get_serializer(logs, many=True)
-        return Response(serializer.data)
-
 
 class AuditLogStatsView(APIView):
     """Get statistics for audit logs"""
     permission_classes = [IsAuthenticated]
     
     def get(self, request):
-        # Base queryset
-        if hasattr(request.user, 'business') and request.user.business:
-            queryset = AuditLog.objects.filter(business=request.user.business)
-        else:
-            queryset = AuditLog.objects.filter(user=request.user)
+        print("=== Stats endpoint called ===")
+        
+        # Get all audit logs
+        queryset = AuditLog.objects.all()
         
         # Time periods
         now = timezone.now()
@@ -491,84 +473,84 @@ class AuditLogStatsView(APIView):
         week_ago = now - timedelta(days=7)
         month_ago = now - timedelta(days=30)
         
-        stats = {
-            'total_logs': queryset.count(),
-            'today_logs': queryset.filter(created_at__date=today).count(),
-            'this_week_logs': queryset.filter(created_at__gte=week_ago).count(),
-            'this_month_logs': queryset.filter(created_at__gte=month_ago).count(),
-            'unique_users': queryset.values('user').distinct().count(),
-            'unique_actions': queryset.values('action').distinct().count(),
-        }
+        # Calculate stats
+        total_logs = queryset.count()
+        today_logs = queryset.filter(created_at__date=today).count()
+        this_week_logs = queryset.filter(created_at__gte=week_ago).count()
+        this_month_logs = queryset.filter(created_at__gte=month_ago).count()
+        unique_users = queryset.values('user').distinct().count()
+        unique_actions = queryset.values('action').distinct().count()
+        
+        print(f"Stats: total={total_logs}, today={today_logs}")
         
         # Top users
         top_users = queryset.values('user__email', 'user__username')\
             .annotate(count=Count('id'))\
             .order_by('-count')[:5]
-        stats['top_users'] = [
-            {'username': u['user__username'] or u['user__email'], 'count': u['count']}
-            for u in top_users
-        ]
+        
+        top_users_list = []
+        for u in top_users:
+            username = u.get('user__username') or u.get('user__email') or 'Unknown'
+            top_users_list.append({
+                'username': username,
+                'count': u['count']
+            })
         
         # Top actions
         top_actions = queryset.values('action')\
             .annotate(count=Count('id'))\
             .order_by('-count')[:5]
-        stats['top_actions'] = list(top_actions)
         
-        # Top modules
-        top_modules = queryset.values('module')\
-            .annotate(count=Count('id'))\
-            .order_by('-count')[:5]
-        stats['top_modules'] = list(top_modules)
+        top_actions_list = []
+        for a in top_actions:
+            top_actions_list.append({
+                'action': a['action'],
+                'count': a['count']
+            })
         
-        # Daily activity (last 30 days)
-        from django.db.models.functions import TruncDate
-        daily_activity = queryset.filter(created_at__gte=month_ago)\
-            .annotate(date=TruncDate('created_at'))\
-            .values('date')\
-            .annotate(count=Count('id'))\
-            .order_by('date')
-        stats['daily_activity'] = list(daily_activity)
+        stats = {
+            'total_logs': total_logs,
+            'today_logs': today_logs,
+            'this_week_logs': this_week_logs,
+            'this_month_logs': this_month_logs,
+            'unique_users': unique_users,
+            'unique_actions': unique_actions,
+            'top_users': top_users_list,
+            'top_actions': top_actions_list,
+        }
         
         return Response(stats)
 
 
 class AuditLogExportView(APIView):
-    """Export audit logs to CSV"""
-    permission_classes = [IsAuthenticated, IsAuditorUserReadOnly]
+    """Export all audit logs to CSV - Simple version"""
+    permission_classes = [IsAuthenticated]
     
     def get(self, request):
-        # Get filtered queryset
-        if hasattr(request.user, 'business') and request.user.business:
-            queryset = AuditLog.objects.filter(business=request.user.business)
-        else:
-            queryset = AuditLog.objects.filter(user=request.user)
+        print("=== Exporting all audit logs ===")
         
-        # Apply filters
-        start_date = request.query_params.get('start_date')
-        end_date = request.query_params.get('end_date')
-        action = request.query_params.get('action')
-        module = request.query_params.get('module')
-        
-        if start_date:
-            queryset = queryset.filter(created_at__date__gte=start_date)
-        if end_date:
-            queryset = queryset.filter(created_at__date__lte=end_date)
-        if action:
-            queryset = queryset.filter(action=action.upper())
-        if module:
-            queryset = queryset.filter(module=module)
+        # Get ALL audit logs (no filters)
+        queryset = AuditLog.objects.all().order_by('-created_at')
         
         # Create CSV response
         response = HttpResponse(content_type='text/csv')
-        response['Content-Disposition'] = f'attachment; filename="audit-logs-{timezone.now().date()}.csv"'
+        response['Content-Disposition'] = f'attachment; filename="all-audit-logs-{timezone.now().date()}.csv"'
         
         writer = csv.writer(response)
+        
+        # Write headers
         writer.writerow([
-            'ID', 'User', 'Action', 'Module', 'Description', 
-            'Details', 'IP Address', 'User Agent', 'Created At'
+            'ID', 
+            'User Email', 
+            'Action', 
+            'Module', 
+            'Description', 
+            'Details', 
+            'IP Address',
+            'Created At'
         ])
         
+        # Write data rows
         for log in queryset:
             writer.writerow([
                 log.id,
@@ -577,10 +559,11 @@ class AuditLogExportView(APIView):
                 log.get_module_display(),
                 log.description,
                 str(log.details),
-                log.ip_address,
-                log.user_agent[:100] if log.user_agent else '',
+                log.ip_address or 'Unknown',
                 log.created_at.strftime('%Y-%m-%d %H:%M:%S'),
             ])
+        
+        print(f"Exported {queryset.count()} audit logs")
         
         return response
 
@@ -590,7 +573,15 @@ class AuditLogModulesView(APIView):
     permission_classes = [IsAuthenticated]
     
     def get(self, request):
-        modules = [{'value': choice[0], 'label': choice[1]} for choice in AuditLog.MODULE_CHOICES]
+        modules = [
+            {'value': 'auth', 'label': 'Authentication'},
+            {'value': 'financials', 'label': 'Financials'},
+            {'value': 'inventory', 'label': 'Inventory'},
+            {'value': 'sales', 'label': 'Sales'},
+            {'value': 'hr', 'label': 'Human Resources'},
+            {'value': 'bi', 'label': 'Business Intelligence'},
+            {'value': 'reports', 'label': 'Reports'},
+        ]
         return Response(modules)
 
 
@@ -599,5 +590,14 @@ class AuditLogActionsView(APIView):
     permission_classes = [IsAuthenticated]
     
     def get(self, request):
-        actions = [{'value': choice[0], 'label': choice[1]} for choice in AuditLog.ACTION_TYPES]
-        return Response(actions)            
+        actions = [
+            {'value': 'CREATE', 'label': 'Create'},
+            {'value': 'READ', 'label': 'Read'},
+            {'value': 'UPDATE', 'label': 'Update'},
+            {'value': 'DELETE', 'label': 'Delete'},
+            {'value': 'LOGIN', 'label': 'Login'},
+            {'value': 'LOGOUT', 'label': 'Logout'},
+            {'value': 'EXPORT', 'label': 'Export'},
+            {'value': 'IMPORT', 'label': 'Import'},
+        ]
+        return Response(actions)

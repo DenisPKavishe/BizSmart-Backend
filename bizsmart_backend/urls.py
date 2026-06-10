@@ -72,6 +72,7 @@ urlpatterns = [
     # Business Intelligence APIs
     # =========================
     path('api/v1/bi/', include('bi.urls')),
+
 ]
 
 # =========================
