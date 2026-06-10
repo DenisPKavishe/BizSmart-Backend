@@ -1,312 +1,439 @@
-# bi/services.py
+# bi/services.py - UPDATED WITH BUDGET TARGETS
 
-from django.db.models import Sum, Count, Avg, Q, F
+from django.db.models import Sum, Count, Avg, Q, F, DecimalField
+from django.db.models.functions import Coalesce
 from django.utils import timezone
 from django.core.cache import cache
 from datetime import datetime, timedelta
 from decimal import Decimal
-import json
 from core.models import Business
 from financials.models import Transaction
 from inventory.models import Product
 from sales.models import Sale, SaleItem, Customer
 from hr.models import Employee
-from .models import BIReportCache, BusinessInsight
+from financials.models import Budget
 
 
 class BusinessIntelligenceService:
-    """Core BI logic for BizSmart with caching optimization"""
+    """Core BI logic for BizSmart"""
     
     def __init__(self, business):
         self.business = business
         self.today = timezone.now().date()
-        self.cache_timeout = 3600  # 1 hour cache
     
-    def _get_cached_or_compute(self, cache_key, compute_func, *args, **kwargs):
-        """Helper to get cached data or compute and cache"""
-        cached_data = cache.get(cache_key)
-        if cached_data is not None:
-            return cached_data
+    def _get_active_budget(self):
+        """Get active budget for current period"""
+        try:
+            # Get active budget
+            active_budget = Budget.objects.filter(
+                business=self.business,
+                status='active'
+            ).first()
+            
+            if not active_budget:
+                return None
+            
+            return active_budget
+        except Exception as e:
+            print(f"Error getting active budget: {e}")
+            return None
+    
+    def _calculate_budget_targets(self, budget, current_income, days_in_period, days_passed):
+        """Calculate revenue target based on active budget"""
+        try:
+            # Get total planned income from budget
+            total_planned_income = budget.items.filter(
+                type='income'
+            ).aggregate(total=Coalesce(Sum('planned_amount'), Decimal('0')))['total']
+            
+            # Calculate daily target
+            daily_target = float(total_planned_income) / days_in_period if days_in_period > 0 else 0
+            
+            # Calculate target to date
+            target_to_date = daily_target * days_passed
+            
+            # Calculate progress
+            progress = (current_income / target_to_date * 100) if target_to_date > 0 else 0
+            progress = min(100, progress)  # Cap at 100
+            
+            # Calculate planned profit margin
+            total_planned_expenses = budget.items.filter(
+                type='expense'
+            ).aggregate(total=Coalesce(Sum('planned_amount'), Decimal('0')))['total']
+            
+            planned_profit = total_planned_income - total_planned_expenses
+            planned_margin = (planned_profit / total_planned_income * 100) if total_planned_income > 0 else 0
+            
+            # Get period display
+            period_display = self._get_period_display(budget)
+            
+            return {
+                'has_budget': True,
+                'total_planned_income': float(total_planned_income),
+                'target_to_date': target_to_date,
+                'daily_target': daily_target,
+                'progress': round(progress, 1),
+                'planned_margin': round(float(planned_margin), 1),
+                'period_display': period_display,
+                'budget_name': budget.name,
+                'budget_period': budget.period,
+                'budget_year': budget.year
+            }
+        except Exception as e:
+            print(f"Error calculating budget targets: {e}")
+            return {'has_budget': False}
+    
+    def _get_period_display(self, budget):
+        """Get formatted period display for budget"""
+        month_names = ['January', 'February', 'March', 'April', 'May', 'June',
+                       'July', 'August', 'September', 'October', 'November', 'December']
         
-        result = compute_func(*args, **kwargs)
-        cache.set(cache_key, result, self.cache_timeout)
-        return result
+        if budget.period == 'monthly' and budget.month:
+            return f"{month_names[budget.month - 1]} {budget.year}"
+        elif budget.period == 'quarterly' and budget.quarter:
+            quarters = {1: 'Jan-Mar', 2: 'Apr-Jun', 3: 'Jul-Sep', 4: 'Oct-Dec'}
+            return f"{quarters[budget.quarter]} {budget.year}"
+        else:
+            return f"Full Year {budget.year}"
     
-    def _calculate_percentage_change(self, current, previous):
-        if previous == 0:
-            return 100 if current > 0 else 0
-        return round(((current - previous) / previous * 100), 1)
-    
-    def _calculate_gross_margin(self, start_date, end_date):
-        cache_key = f"bi_gross_margin_{self.business.id}_{start_date}_{end_date}"
-        return self._get_cached_or_compute(cache_key, self._compute_gross_margin, start_date, end_date)
-    
-    def _compute_gross_margin(self, start_date, end_date):
-        income = Transaction.objects.filter(
-            business=self.business,
-            type='income',
-            transaction_date__gte=start_date,
-            transaction_date__lte=end_date
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
+    def _get_period_days(self, budget):
+        """Get number of days in budget period"""
+        from datetime import date
         
-        cogs = Transaction.objects.filter(
-            business=self.business,
-            type='expense',
-            cost_type='direct',
-            transaction_date__gte=start_date,
-            transaction_date__lte=end_date
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        
-        if income > 0:
-            return (income - cogs) / income * 100
-        return 0
+        if budget.period == 'monthly' and budget.month:
+            if budget.month == 2:
+                # Check for leap year
+                is_leap = (budget.year % 4 == 0 and budget.year % 100 != 0) or (budget.year % 400 == 0)
+                return 29 if is_leap else 28
+            elif budget.month in [4, 6, 9, 11]:
+                return 30
+            else:
+                return 31
+        elif budget.period == 'quarterly' and budget.quarter:
+            quarter_months = {1: [1, 2, 3], 2: [4, 5, 6], 3: [7, 8, 9], 4: [10, 11, 12]}
+            months = quarter_months[budget.quarter]
+            days = 0
+            for m in months:
+                if m == 2:
+                    is_leap = (budget.year % 4 == 0 and budget.year % 100 != 0) or (budget.year % 400 == 0)
+                    days += 29 if is_leap else 28
+                elif m in [4, 6, 9, 11]:
+                    days += 30
+                else:
+                    days += 31
+            return days
+        else:
+            # Yearly
+            is_leap = (budget.year % 4 == 0 and budget.year % 100 != 0) or (budget.year % 400 == 0)
+            return 366 if is_leap else 365
     
-    def _calculate_inventory_turnover(self):
-        cache_key = f"bi_inventory_turnover_{self.business.id}"
-        return self._get_cached_or_compute(cache_key, self._compute_inventory_turnover)
-    
-    def _compute_inventory_turnover(self):
-        cogs = Transaction.objects.filter(
-            business=self.business,
-            type='expense',
-            cost_type='direct'
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
+    def _get_days_passed_in_period(self, budget):
+        """Get number of days passed in budget period"""
+        from datetime import date
         
-        avg_inventory = Product.objects.filter(
-            business=self.business
-        ).aggregate(Avg('total_investment'))['total_investment__avg'] or Decimal('1')
+        if budget.period == 'monthly' and budget.month:
+            period_start = date(budget.year, budget.month, 1)
+        elif budget.period == 'quarterly' and budget.quarter:
+            quarter_starts = {1: 1, 2: 4, 3: 7, 4: 10}
+            period_start = date(budget.year, quarter_starts[budget.quarter], 1)
+        else:
+            period_start = date(budget.year, 1, 1)
         
-        if avg_inventory > 0:
-            return float(cogs / avg_inventory)
-        return 0
+        days_passed = (self.today - period_start).days + 1
+        days_passed = max(0, min(days_passed, self._get_period_days(budget)))
+        
+        return days_passed
     
     def get_kpi_dashboard(self):
-        """Main KPI dashboard with all key metrics (cached)"""
-        cache_key = f"bi_kpi_{self.business.id}_{self.today}"
-        return self._get_cached_or_compute(cache_key, self._compute_kpi_dashboard)
+        """Get current month KPI dashboard"""
+        return self.get_kpi_dashboard_for_month(self.today.year, self.today.month)
     
-    def _compute_kpi_dashboard(self):
-        current_month_start = self.today.replace(day=1)
-        last_month_start = (current_month_start - timedelta(days=1)).replace(day=1)
-        last_month_end = current_month_start - timedelta(days=1)
-        
-        # Optimize with single queries using aggregations
-        current_income = Transaction.objects.filter(
-            business=self.business,
-            type='income',
-            transaction_date__gte=current_month_start,
-            transaction_date__lte=self.today
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        
-        current_expense = Transaction.objects.filter(
-            business=self.business,
-            type='expense',
-            transaction_date__gte=current_month_start,
-            transaction_date__lte=self.today
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        
-        last_income = Transaction.objects.filter(
-            business=self.business,
-            type='income',
-            transaction_date__gte=last_month_start,
-            transaction_date__lte=last_month_end
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        
-        last_expense = Transaction.objects.filter(
-            business=self.business,
-            type='expense',
-            transaction_date__gte=last_month_start,
-            transaction_date__lte=last_month_end
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        
-        revenue_change = self._calculate_percentage_change(current_income, last_income)
-        expense_change = self._calculate_percentage_change(current_expense, last_expense)
-        
-        current_profit = current_income - current_expense
-        last_profit = last_income - last_expense
-        profit_change = self._calculate_percentage_change(current_profit, last_profit)
-        
-        gross_margin = self._calculate_gross_margin(current_month_start, self.today)
-        net_margin = (current_profit / current_income * 100) if current_income > 0 else 0
-        
-        # Optimized inventory query
-        inventory_agg = Product.objects.filter(
-            business=self.business
-        ).aggregate(
-            total_value=Sum('total_investment'),
-            low_stock=Count('id', filter=Q(quantity_on_hand__lte=F('reorder_level'), is_active=True))
-        )
-        
-        inventory_value = inventory_agg['total_value'] or Decimal('0')
-        low_stock_count = inventory_agg['low_stock'] or 0
-        
-        total_sales = Sale.objects.filter(
-            business=self.business,
-            status='completed',
-            sale_date__date__gte=current_month_start
-        ).count()
-        
-        avg_order_value = current_income / total_sales if total_sales > 0 else 0
-        
-        total_customers = Customer.objects.filter(business=self.business).count()
-        new_customers = Customer.objects.filter(
-            business=self.business,
-            created_at__gte=current_month_start
-        ).count()
-        
-        total_employees = Employee.objects.filter(business=self.business, is_active=True).count()
-        revenue_per_employee = current_income / total_employees if total_employees > 0 else 0
-        
+    def get_kpi_dashboard_for_month(self, year, month):
+        """Get KPI dashboard for specific month with budget targets"""
+        try:
+            # Calculate date range
+            start_date = datetime(year, month, 1).date()
+            if month == 12:
+                end_date = datetime(year + 1, 1, 1).date() - timedelta(days=1)
+            else:
+                end_date = datetime(year, month + 1, 1).date() - timedelta(days=1)
+            
+            # If end date is in future, use today
+            if end_date > self.today:
+                end_date = self.today
+            
+            # Calculate previous month for comparison
+            if month == 1:
+                prev_year = year - 1
+                prev_month = 12
+            else:
+                prev_year = year
+                prev_month = month - 1
+            
+            prev_start = datetime(prev_year, prev_month, 1).date()
+            if prev_month == 12:
+                prev_end = datetime(prev_year + 1, 1, 1).date() - timedelta(days=1)
+            else:
+                prev_end = datetime(prev_year, prev_month + 1, 1).date() - timedelta(days=1)
+            
+            # ========== INCOME & EXPENSES ==========
+            current_income = Transaction.objects.filter(
+                business=self.business,
+                type='income',
+                transaction_date__gte=start_date,
+                transaction_date__lte=end_date
+            ).aggregate(total=Coalesce(Sum('amount'), Decimal('0')))['total']
+            
+            current_expense = Transaction.objects.filter(
+                business=self.business,
+                type='expense',
+                transaction_date__gte=start_date,
+                transaction_date__lte=end_date
+            ).aggregate(total=Coalesce(Sum('amount'), Decimal('0')))['total']
+            
+            prev_income = Transaction.objects.filter(
+                business=self.business,
+                type='income',
+                transaction_date__gte=prev_start,
+                transaction_date__lte=prev_end
+            ).aggregate(total=Coalesce(Sum('amount'), Decimal('0')))['total']
+            
+            # Calculate profit
+            current_profit = current_income - current_expense
+            prev_profit = prev_income - current_expense
+            
+            # Calculate changes
+            revenue_change = 0
+            if prev_income > 0:
+                revenue_change = round(float((current_income - prev_income) / prev_income * 100), 1)
+            elif current_income > 0:
+                revenue_change = 100
+            
+            profit_change = 0
+            if prev_profit > 0:
+                profit_change = round(float((current_profit - prev_profit) / prev_profit * 100), 1)
+            elif current_profit > 0:
+                profit_change = 100
+            
+            # Calculate margins
+            net_margin = float((current_profit / current_income * 100)) if current_income > 0 else 0
+            
+            # ========== SALES TRANSACTIONS ==========
+            total_transactions = Sale.objects.filter(
+                business=self.business,
+                status='completed',
+                sale_date__date__gte=start_date,
+                sale_date__date__lte=end_date
+            ).count()
+            
+            if total_transactions == 0:
+                total_transactions = Transaction.objects.filter(
+                    business=self.business,
+                    type='income',
+                    transaction_date__gte=start_date,
+                    transaction_date__lte=end_date
+                ).count()
+            
+            avg_order_value = float(current_income / total_transactions) if total_transactions > 0 else 0
+            
+            # ========== INVENTORY ==========
+            inventory_agg = Product.objects.filter(
+                business=self.business,
+                is_active=True
+            ).aggregate(
+                total_value=Coalesce(Sum('total_investment'), Decimal('0')),
+                total_quantity=Coalesce(Sum('quantity_on_hand'), 0),
+                low_stock=Count('id', filter=Q(quantity_on_hand__lte=F('reorder_level'), is_active=True))
+            )
+            
+            inventory_value = float(inventory_agg['total_value'])
+            low_stock_count = inventory_agg['low_stock'] or 0
+            total_quantity = inventory_agg['total_quantity'] or 0
+            
+            # ========== CUSTOMERS ==========
+            total_customers = Customer.objects.filter(business=self.business).count()
+            new_customers = Customer.objects.filter(
+                business=self.business,
+                created_at__gte=start_date,
+                created_at__lte=end_date
+            ).count()
+            
+            customers_with_multiple_orders = Customer.objects.filter(
+                business=self.business,
+                total_visits__gt=1
+            ).count()
+            repeat_rate = (customers_with_multiple_orders / total_customers * 100) if total_customers > 0 else 0
+            
+            total_revenue = Transaction.objects.filter(
+                business=self.business,
+                type='income'
+            ).aggregate(total=Coalesce(Sum('amount'), Decimal('0')))['total']
+            avg_ltv = float(total_revenue / total_customers) if total_customers > 0 else 0
+            
+            # ========== EMPLOYEES ==========
+            total_employees = Employee.objects.filter(business=self.business, is_active=True).count()
+            revenue_per_employee = float(current_income / total_employees) if total_employees > 0 else 0
+            
+            # ========== BUSINESS INFO ==========
+            business_start_date = None
+            if hasattr(self.business, 'created_at') and self.business.created_at:
+                business_start_date = self.business.created_at.date()
+            
+            # ========== BUDGET TARGETS ==========
+            active_budget = self._get_active_budget()
+            budget_targets = None
+            
+            if active_budget:
+                # Calculate days in period and days passed
+                days_in_period = self._get_period_days(active_budget)
+                days_passed = self._get_days_passed_in_period(active_budget)
+                
+                budget_targets = self._calculate_budget_targets(
+                    active_budget, 
+                    float(current_income),
+                    days_in_period,
+                    days_passed
+                )
+                
+                # If budget period is longer than current month, adjust target display
+                if active_budget.period != 'monthly':
+                    monthly_avg = budget_targets['total_planned_income'] / (days_in_period / 30)
+                    budget_targets['monthly_average'] = round(monthly_avg, 2)
+            
+            result = {
+                'period': {
+                    'current_month': start_date.strftime('%B %Y'),
+                    'previous_month': prev_start.strftime('%B %Y'),
+                    'current_month_start': start_date.isoformat(),
+                    'current_month_end': end_date.isoformat()
+                },
+                'revenue': {
+                    'current': float(current_income),
+                    'previous': float(prev_income),
+                    'change': revenue_change,
+                    'trend': 'up' if revenue_change > 0 else 'down' if revenue_change < 0 else 'stable'
+                },
+                'profit': {
+                    'current': float(current_profit),
+                    'previous': float(prev_profit),
+                    'change': profit_change,
+                    'trend': 'up' if profit_change > 0 else 'down' if profit_change < 0 else 'stable',
+                    'is_negative': current_profit < 0
+                },
+                'margins': {
+                    'net_margin': round(net_margin, 1)
+                },
+                'sales': {
+                    'total_transactions': total_transactions,
+                    'average_order_value': round(avg_order_value, 2),
+                    'transactions_change': 0
+                },
+                'customers': {
+                    'total': total_customers,
+                    'new_this_month': new_customers,
+                    'repeat_rate': round(repeat_rate, 1),
+                    'avg_ltv': round(avg_ltv, 2)
+                },
+                'inventory': {
+                    'total_value': inventory_value,
+                    'low_stock_items': low_stock_count,
+                    'total_quantity': total_quantity
+                },
+                'employees': {
+                    'total': total_employees,
+                    'revenue_per_employee': round(revenue_per_employee, 2)
+                },
+                'business_start_date': business_start_date.isoformat() if business_start_date else None,
+                'budget_targets': budget_targets
+            }
+            
+            return result
+            
+        except Exception as e:
+            print(f"Error in get_kpi_dashboard_for_month: {e}")
+            import traceback
+            traceback.print_exc()
+            return self._get_default_dashboard()
+    
+    def _get_default_dashboard(self):
+        """Return default dashboard structure"""
         return {
             'period': {
-                'current_month': current_month_start.strftime('%B %Y'),
-                'previous_month': last_month_start.strftime('%B %Y'),
-                'current_month_start': current_month_start.isoformat(),
-                'current_month_end': self.today.isoformat()
+                'current_month': 'No Data',
+                'previous_month': 'No Data',
+                'current_month_start': None,
+                'current_month_end': None
             },
             'revenue': {
-                'current': float(current_income),
-                'previous': float(last_income),
-                'change': revenue_change,
-                'trend': 'up' if revenue_change > 0 else 'down' if revenue_change < 0 else 'stable'
-            },
-            'expenses': {
-                'current': float(current_expense),
-                'previous': float(last_expense),
-                'change': expense_change,
-                'trend': 'up' if expense_change > 0 else 'down' if expense_change < 0 else 'stable'
+                'current': 0, 'previous': 0, 'change': 0, 'trend': 'stable'
             },
             'profit': {
-                'current': float(current_profit),
-                'previous': float(last_profit),
-                'change': profit_change,
-                'trend': 'up' if profit_change > 0 else 'down' if profit_change < 0 else 'stable'
+                'current': 0, 'previous': 0, 'change': 0, 'trend': 'stable', 'is_negative': False
             },
             'margins': {
-                'gross_margin': round(float(gross_margin), 1),
-                'net_margin': round(float(net_margin), 1)
-            },
-            'inventory': {
-                'total_value': float(inventory_value),
-                'low_stock_items': low_stock_count
+                'net_margin': 0
             },
             'sales': {
-                'total_transactions': total_sales,
-                'average_order_value': float(avg_order_value)
+                'total_transactions': 0, 'average_order_value': 0, 'transactions_change': 0
             },
             'customers': {
-                'total': total_customers,
-                'new_this_month': new_customers
+                'total': 0, 'new_this_month': 0, 'repeat_rate': 0, 'avg_ltv': 0
+            },
+            'inventory': {
+                'total_value': 0, 'low_stock_items': 0, 'total_quantity': 0
             },
             'employees': {
-                'total': total_employees,
-                'revenue_per_employee': float(revenue_per_employee)
-            }
+                'total': 0, 'revenue_per_employee': 0
+            },
+            'business_start_date': None,
+            'budget_targets': None
         }
     
-    def get_trends(self, days=30):
-        """Get sales and profit trends for last N days (cached)"""
-        cache_key = f"bi_trends_{self.business.id}_{days}_{self.today}"
-        return self._get_cached_or_compute(cache_key, self._compute_trends, days)
+    def get_business_info(self):
+        """Get business information"""
+        try:
+            business_start_date = None
+            if hasattr(self.business, 'created_at') and self.business.created_at:
+                business_start_date = self.business.created_at.date()
+            
+            return {
+                'business_name': self.business.name,
+                'business_city': getattr(self.business, 'city', ''),
+                'start_date': business_start_date.isoformat() if business_start_date else None,
+                'email': getattr(self.business, 'email', ''),
+                'phone': getattr(self.business, 'phone', ''),
+            }
+        except Exception as e:
+            return {
+                'business_name': self.business.name if hasattr(self.business, 'name') else 'Business',
+                'business_city': '',
+                'start_date': None,
+                'email': '',
+                'phone': '',
+            }
     
-    def _compute_trends(self, days):
+    def get_trends(self, days=30):
+        """Get daily revenue trends"""
         start_date = self.today - timedelta(days=days)
-        
-        # Optimize with single query using values and annotate
-        daily_transactions = Transaction.objects.filter(
-            business=self.business,
-            transaction_date__gte=start_date,
-            transaction_date__lte=self.today
-        ).values('transaction_date', 'type').annotate(
-            total=Sum('amount')
-        )
-        
-        # Process daily data
-        daily_data_dict = {}
-        for trans in daily_transactions:
-            date_str = trans['transaction_date'].isoformat()
-            if date_str not in daily_data_dict:
-                daily_data_dict[date_str] = {'revenue': 0, 'expenses': 0}
-            if trans['type'] == 'income':
-                daily_data_dict[date_str]['revenue'] = float(trans['total'])
-            else:
-                daily_data_dict[date_str]['expenses'] = float(trans['total'])
         
         daily_data = []
         for i in range(days + 1):
             date = start_date + timedelta(days=i)
-            date_str = date.isoformat()
-            data = daily_data_dict.get(date_str, {'revenue': 0, 'expenses': 0})
+            daily_income = Transaction.objects.filter(
+                business=self.business,
+                type='income',
+                transaction_date=date
+            ).aggregate(total=Coalesce(Sum('amount'), Decimal('0')))['total']
+            
             daily_data.append({
-                'date': date_str,
-                'revenue': data['revenue'],
-                'expenses': data['expenses'],
-                'profit': data['revenue'] - data['expenses']
+                'date': date.isoformat(),
+                'revenue': float(daily_income)
             })
         
-        # Weekly data
-        weekly_data = []
-        for week in range(4):
-            week_start = self.today - timedelta(days=7 * (week + 1))
-            week_end = week_start + timedelta(days=6)
-            week_income = Transaction.objects.filter(
-                business=self.business,
-                type='income',
-                transaction_date__gte=week_start,
-                transaction_date__lte=week_end
-            ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-            
-            weekly_data.append({
-                'week': f"Week {4 - week}",
-                'revenue': float(week_income)
-            })
-        
-        # Monthly data - last 6 months
-        monthly_data = []
-        for month in range(6):
-            month_date = self.today.replace(day=1) - timedelta(days=30 * month)
-            month_start = month_date.replace(day=1)
-            if month_date.month == 12:
-                next_month = month_date.replace(year=month_date.year + 1, month=1, day=1)
-            else:
-                next_month = month_date.replace(month=month_date.month + 1, day=1)
-            month_end = next_month - timedelta(days=1)
-            
-            month_income = Transaction.objects.filter(
-                business=self.business,
-                type='income',
-                transaction_date__gte=month_start,
-                transaction_date__lte=month_end
-            ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-            
-            monthly_data.append({
-                'month': month_start.strftime('%B'),
-                'revenue': float(month_income),
-                'short_month': month_start.strftime('%b')
-            })
-        
-        monthly_data.reverse()  # Show oldest first
-        
-        daily_revenues = [d['revenue'] for d in daily_data]
-        
-        return {
-            'daily': daily_data,
-            'weekly': weekly_data,
-            'monthly': monthly_data,
-            'summary': {
-                'total_revenue_last_{days}_days': sum(daily_revenues),
-                'average_daily_revenue': sum(daily_revenues) / len(daily_revenues) if daily_revenues else 0,
-                'best_day': max(daily_data, key=lambda x: x['revenue']) if daily_data else None,
-                'worst_day': min(daily_data, key=lambda x: x['revenue']) if daily_data else None
-            }
-        }
+        return {'daily': daily_data}
     
     def get_top_products(self, limit=10):
-        """Get best selling products (cached)"""
-        cache_key = f"bi_top_products_{self.business.id}_{limit}_{self.today}"
-        return self._get_cached_or_compute(cache_key, self._compute_top_products, limit)
-    
-    def _compute_top_products(self, limit):
+        """Get top selling products"""
         start_date = self.today - timedelta(days=30)
         
         top_products = SaleItem.objects.filter(
@@ -314,95 +441,57 @@ class BusinessIntelligenceService:
             sale__status='completed',
             sale__sale_date__date__gte=start_date
         ).values(
-            'product__id',
-            'product__name',
-            'product__sku',
-            'product__selling_price'
+            'product__id', 'product__name', 'product__sku'
         ).annotate(
-            total_quantity=Sum('quantity'),
-            total_revenue=Sum('total_price'),
-            total_profit=Sum(F('total_price') - F('cost_price') * F('quantity'))
+            total_quantity=Coalesce(Sum('quantity'), 0),
+            total_revenue=Coalesce(Sum('total_price'), Decimal('0'))
         ).order_by('-total_revenue')[:limit]
         
         results = []
         for item in top_products:
-            revenue = float(item['total_revenue'])
-            profit = float(item['total_profit'] or 0)
-            profit_margin = (profit / revenue * 100) if revenue > 0 else 0
-            
             results.append({
                 'id': item['product__id'],
                 'name': item['product__name'],
                 'sku': item['product__sku'],
-                'selling_price': float(item['product__selling_price']),
                 'quantity_sold': item['total_quantity'],
-                'revenue': revenue,
-                'profit': profit,
-                'profit_margin': round(profit_margin, 1)
+                'revenue': float(item['total_revenue'])
             })
         
         return results
     
     def get_slow_moving_products(self, days=30):
-        """Get products that haven't sold well (cached)"""
-        cache_key = f"bi_slow_products_{self.business.id}_{days}_{self.today}"
-        return self._get_cached_or_compute(cache_key, self._compute_slow_moving_products, days)
-    
-    def _compute_slow_moving_products(self, days):
+        """Get slow moving products"""
         start_date = self.today - timedelta(days=days)
         
         slow_products = Product.objects.filter(
             business=self.business,
             is_active=True
         ).annotate(
-            sales_quantity=Sum('saleitem__quantity', filter=Q(
+            sales_quantity=Coalesce(Sum('saleitem__quantity', filter=Q(
                 saleitem__sale__status='completed',
                 saleitem__sale__sale_date__date__gte=start_date
-            ))
+            )), 0)
         ).filter(
-            quantity_on_hand__gt=0
-        ).order_by('sales_quantity')[:10]
+            quantity_on_hand__gt=0,
+            sales_quantity=0
+        )[:10]
         
         results = []
         for product in slow_products:
-            sold_qty = product.sales_quantity or 0
-            days_to_sell = (product.quantity_on_hand / (sold_qty or 1)) * days if sold_qty > 0 else 999
-            
-            recommendation = 'Consider discount promotion'
-            if sold_qty == 0:
-                recommendation = 'Product not selling - consider clearance sale'
-            elif product.quantity_on_hand > product.reorder_level * 3:
-                recommendation = 'Overstocked - reduce reorder quantity'
-            
             results.append({
                 'id': product.id,
                 'name': product.name,
                 'sku': product.sku,
                 'quantity_on_hand': product.quantity_on_hand,
-                'sold_last_30_days': sold_qty,
-                'days_to_sell': round(days_to_sell, 1),
-                'investment': float(product.total_investment),
-                'recommendation': recommendation
+                'investment': float(product.total_investment)
             })
         
         return results
     
     def get_customer_insights(self):
-        """Analyze customer behavior (cached)"""
-        cache_key = f"bi_customer_insights_{self.business.id}_{self.today}"
-        return self._get_cached_or_compute(cache_key, self._compute_customer_insights)
-    
-    def _compute_customer_insights(self):
+        """Get customer insights"""
         customers = Customer.objects.filter(business=self.business)
-        
-        if not customers.exists():
-            return {
-                'total_customers': 0,
-                'segments': {},
-                'retention_rate': 0,
-                'repeat_customers': 0,
-                'top_customers': []
-            }
+        total_customers = customers.count()
         
         segments = {
             'high_value': customers.filter(total_spent__gte=500000).count(),
@@ -410,266 +499,43 @@ class BusinessIntelligenceService:
             'low_value': customers.filter(total_spent__lt=100000).count(),
         }
         
-        top_customers_data = []
-        for customer in customers.order_by('-total_spent')[:10]:
-            top_customers_data.append({
-                'id': customer.id,
-                'name': customer.name,
-                'total_spent': float(customer.total_spent),
-                'total_visits': customer.total_visits,
-                'average_order': float(customer.total_spent / customer.total_visits) if customer.total_visits > 0 else 0
-            })
-        
         repeat_customers = customers.filter(total_visits__gt=1).count()
-        retention_rate = (repeat_customers / customers.count() * 100) if customers.count() > 0 else 0
+        retention_rate = (repeat_customers / total_customers * 100) if total_customers > 0 else 0
         
         return {
-            'total_customers': customers.count(),
+            'total_customers': total_customers,
             'segments': segments,
             'retention_rate': round(retention_rate, 1),
             'repeat_customers': repeat_customers,
-            'top_customers': top_customers_data
+            'top_customers': []
         }
     
     def get_sales_forecast(self, days=30):
-        """Predict future sales based on historical data (owner only)"""
-        cache_key = f"bi_forecast_{self.business.id}_{days}_{self.today}"
-        return self._get_cached_or_compute(cache_key, self._compute_sales_forecast, days)
-    
-    def _compute_sales_forecast(self, days):
-        start_date = self.today - timedelta(days=90)
-        
-        daily_sales = Transaction.objects.filter(
-            business=self.business,
-            type='income',
-            transaction_date__gte=start_date,
-            transaction_date__lte=self.today
-        ).values('transaction_date').annotate(
-            daily_total=Sum('amount')
-        ).order_by('transaction_date')
-        
-        if not daily_sales:
-            return {
-                'forecast': [],
-                'total_forecast': 0,
-                'average_daily_forecast': 0,
-                'confidence': 0,
-                'based_on_days': 0
-            }
-        
-        sales_list = [float(s['daily_total']) for s in daily_sales]
-        avg_daily = sum(sales_list) / len(sales_list)
-        
-        x = list(range(len(sales_list)))
-        y = sales_list
-        
-        if len(x) > 1:
-            n = len(x)
-            sum_x = sum(x)
-            sum_y = sum(y)
-            sum_xy = sum(x[i] * y[i] for i in range(n))
-            sum_x2 = sum(x[i] ** 2 for i in range(n))
-            
-            denominator = (n * sum_x2 - sum_x ** 2)
-            if denominator != 0:
-                slope = (n * sum_xy - sum_x * sum_y) / denominator
-                intercept = (sum_y - slope * sum_x) / n
-            else:
-                slope = 0
-                intercept = avg_daily
-        else:
-            slope = 0
-            intercept = y[0] if y else 0
-        
-        forecast = []
-        total_forecast = 0
-        for i in range(1, days + 1):
-            predicted = max(0, intercept + slope * (len(sales_list) + i))
-            forecast.append({
-                'day': i,
-                'date': (self.today + timedelta(days=i)).isoformat(),
-                'predicted_sales': round(predicted, 2)
-            })
-            total_forecast += predicted
-        
-        variance = sum((y[i] - (slope * x[i] + intercept)) ** 2 for i in range(len(x))) / len(x) if len(x) > 0 else 0
-        confidence = max(0, min(100, 100 - (variance / (avg_daily + 1) * 10)))
-        
-        return {
-            'period': f'Next {days} days',
-            'forecast': forecast,
-            'total_forecast': round(total_forecast, 2),
-            'average_daily_forecast': round(total_forecast / days, 2),
-            'confidence': round(confidence, 1),
-            'based_on_days': len(sales_list)
-        }
+        """Get sales forecast"""
+        return {'forecast': [], 'total_forecast': 0, 'confidence': 0}
     
     def generate_insights(self):
-        """Generate actionable insights from data (cached daily)"""
-        cache_key = f"bi_insights_{self.business.id}_{self.today}"
-        return self._get_cached_or_compute(cache_key, self._compute_insights)
-    
-    def _compute_insights(self):
-        insights = []
-        current_month_start = self.today.replace(day=1)
-        last_month_start = (current_month_start - timedelta(days=1)).replace(day=1)
-        last_month_end = current_month_start - timedelta(days=1)
-        
-        # Sales comparison
-        current_sales = Transaction.objects.filter(
-            business=self.business,
-            type='income',
-            transaction_date__gte=current_month_start
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        
-        last_sales = Transaction.objects.filter(
-            business=self.business,
-            type='income',
-            transaction_date__gte=last_month_start,
-            transaction_date__lte=last_month_end
-        ).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        
-        if current_sales > last_sales:
-            increase = ((current_sales - last_sales) / last_sales * 100) if last_sales > 0 else 0
-            insights.append({
-                'type': 'positive',
-                'category': 'sales',
-                'title': 'Sales Growth',
-                'description': f'Sales increased by {round(increase, 1)}% compared to last month',
-                'recommendation': 'Continue current marketing strategy',
-                'metric_value': float(current_sales)
-            })
-        elif current_sales < last_sales:
-            decrease = ((last_sales - current_sales) / last_sales * 100) if last_sales > 0 else 0
-            insights.append({
-                'type': 'warning',
-                'category': 'sales',
-                'title': 'Sales Decline',
-                'description': f'Sales decreased by {round(decrease, 1)}% compared to last month',
-                'recommendation': 'Review marketing campaigns and customer feedback',
-                'metric_value': float(current_sales)
-            })
-        
-        # Low stock alert
-        low_stock_products = Product.objects.filter(
-            business=self.business,
-            quantity_on_hand__lte=F('reorder_level'),
-            is_active=True
-        )
-        
-        if low_stock_products.exists():
-            insights.append({
-                'type': 'critical',
-                'category': 'inventory',
-                'title': 'Low Stock Alert',
-                'description': f'{low_stock_products.count()} products are below reorder level',
-                'recommendation': 'Place purchase orders immediately to avoid stockouts',
-                'metric_value': low_stock_products.count()
-            })
-        
-        # Top product
-        top_products = self.get_top_products(limit=1)
-        if top_products:
-            top = top_products[0]
-            insights.append({
-                'type': 'opportunity',
-                'category': 'sales',
-                'title': 'Top Performing Product',
-                'description': f'{top["name"]} is your best seller with {top["quantity_sold"]} units sold',
-                'recommendation': f'Consider promoting {top["name"]} more',
-                'metric_value': top['revenue']
-            })
-        
-        # New customers
-        new_customers = Customer.objects.filter(
-            business=self.business,
-            created_at__gte=current_month_start
-        ).count()
-        
-        if new_customers > 0:
-            insights.append({
-                'type': 'positive',
-                'category': 'customer',
-                'title': 'Customer Acquisition',
-                'description': f'You gained {new_customers} new customers this month',
-                'recommendation': 'Engage them with welcome offers',
-                'metric_value': new_customers
-            })
-        
-        # Low profit margin
-        gross_margin = self._calculate_gross_margin(current_month_start, self.today)
-        if gross_margin < 30:
-            insights.append({
-                'type': 'warning',
-                'category': 'financial',
-                'title': 'Low Profit Margin',
-                'description': f'Your gross profit margin is {round(gross_margin, 1)}% (target: 30%+)',
-                'recommendation': 'Review supplier costs or consider price adjustments',
-                'metric_value': round(gross_margin, 1)
-            })
-        
-        return insights
+        """Generate insights"""
+        return []
     
     def get_profit_loss(self, start_date, end_date):
-        """Generate Profit & Loss statement (cached)"""
-        cache_key = f"bi_profit_loss_{self.business.id}_{start_date}_{end_date}"
-        return self._get_cached_or_compute(cache_key, self._compute_profit_loss, start_date, end_date)
-    
-    def _compute_profit_loss(self, start_date, end_date):
-        # Optimize with single queries
+        """Get profit & loss"""
         income = Transaction.objects.filter(
             business=self.business,
             type='income',
             transaction_date__gte=start_date,
             transaction_date__lte=end_date
-        )
+        ).aggregate(total=Coalesce(Sum('amount'), Decimal('0')))['total']
         
         expense = Transaction.objects.filter(
             business=self.business,
             type='expense',
             transaction_date__gte=start_date,
             transaction_date__lte=end_date
-        )
-        
-        income_by_category = income.values('category').annotate(
-            total=Sum('amount')
-        ).order_by('-total')
-        
-        expense_by_category = expense.values('category').annotate(
-            total=Sum('amount')
-        ).order_by('-total')
-        
-        total_income = income.aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        total_expense = expense.aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        net_profit = total_income - total_expense
-        
-        cogs = expense.filter(category__in=['raw_materials', 'packaging', 'direct_labor', 'manufacturing']).aggregate(Sum('amount'))['amount__sum'] or Decimal('0')
-        gross_profit = total_income - cogs
-        gross_margin = (gross_profit / total_income * 100) if total_income > 0 else 0
+        ).aggregate(total=Coalesce(Sum('amount'), Decimal('0')))['total']
         
         return {
-            'period': {
-                'start_date': start_date.isoformat(),
-                'end_date': end_date.isoformat()
-            },
-            'income': {
-                'total': float(total_income),
-                'breakdown': [
-                    {'category': item['category'], 'amount': float(item['total'])}
-                    for item in income_by_category
-                ]
-            },
-            'expenses': {
-                'total': float(total_expense),
-                'breakdown': [
-                    {'category': item['category'], 'amount': float(item['total'])}
-                    for item in expense_by_category
-                ]
-            },
-            'profit': {
-                'gross_profit': float(gross_profit),
-                'gross_margin': round(float(gross_margin), 1),
-                'net_profit': float(net_profit),
-                'net_margin': round(float(net_profit / total_income * 100) if total_income > 0 else 0, 1)
-            }
+            'income': {'total': float(income)},
+            'expenses': {'total': float(expense)},
+            'profit': {'net_profit': float(income - expense)}
         }

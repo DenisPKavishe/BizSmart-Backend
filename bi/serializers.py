@@ -1,7 +1,46 @@
 # bi/serializers.py
 
 from rest_framework import serializers
+from .models import BusinessInsight, BusinessGoal, DashboardWidget
 
+
+class InsightSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BusinessInsight
+        fields = ['id', 'insight_type', 'category', 'title', 'description', 
+                  'recommendation', 'metric_value', 'is_read', 'created_at']
+        read_only_fields = ['id', 'created_at']
+
+
+class GoalSerializer(serializers.ModelSerializer):
+    progress_percentage = serializers.SerializerMethodField()
+    remaining_amount = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = BusinessGoal
+        fields = ['id', 'name', 'description', 'category', 'target_amount', 
+                  'current_amount', 'progress_percentage', 'remaining_amount',
+                  'start_date', 'target_date', 'is_completed']
+        read_only_fields = ['id', 'created_at', 'updated_at']
+    
+    def get_progress_percentage(self, obj):
+        if obj.target_amount > 0:
+            return min(100, float((obj.current_amount / obj.target_amount) * 100))
+        return 0
+    
+    def get_remaining_amount(self, obj):
+        return float(obj.target_amount - obj.current_amount)
+
+
+class DashboardWidgetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DashboardWidget
+        fields = ['id', 'widget_type', 'title', 'config', 'position', 
+                  'is_visible', 'width', 'height']
+        read_only_fields = ['id', 'created_at', 'updated_at']
+
+
+# Dashboard Response Serializers
 class KPIDashboardSerializer(serializers.Serializer):
     period = serializers.DictField()
     revenue = serializers.DictField()
@@ -49,20 +88,23 @@ class SalesForecastSerializer(serializers.Serializer):
     based_on_days = serializers.IntegerField()
 
 
-class InsightSerializer(serializers.Serializer):
-    id = serializers.IntegerField()
-    type = serializers.CharField()
-    category = serializers.CharField()
-    title = serializers.CharField()
-    description = serializers.CharField()
-    recommendation = serializers.CharField()
-    metric_value = serializers.FloatField(allow_null=True)
-    created_at = serializers.DateTimeField()
-    is_read = serializers.BooleanField()
-
-
 class ProfitLossSerializer(serializers.Serializer):
     period = serializers.DictField()
     income = serializers.DictField()
     expenses = serializers.DictField()
     profit = serializers.DictField()
+
+
+class InventoryAnalyticsSerializer(serializers.Serializer):
+    inventory_summary = serializers.DictField()
+    top_products = serializers.ListField()
+    slow_moving_products = serializers.ListField()
+    stock_status = serializers.DictField()
+
+
+class HRAnalyticsSerializer(serializers.Serializer):
+    employee_summary = serializers.DictField()
+    department_distribution = serializers.ListField()
+    attendance_rate = serializers.FloatField()
+    upcoming_leave = serializers.ListField()
+    payroll_summary = serializers.DictField()

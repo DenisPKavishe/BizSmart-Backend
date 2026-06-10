@@ -60,6 +60,8 @@ class CashFlowForecastSerializer(serializers.ModelSerializer):
 
 # ==================== BUDGET SERIALIZERS ====================
 
+# financials/serializers.py - Replace the entire BudgetItemSerializer
+
 class BudgetItemSerializer(serializers.ModelSerializer):
     actual_amount = serializers.SerializerMethodField()
     variance = serializers.SerializerMethodField()
@@ -76,7 +78,7 @@ class BudgetItemSerializer(serializers.ModelSerializer):
     def get_actual_amount(self, obj):
         request = self.context.get('request')
         if not request:
-            return 0
+            return 0.0
         
         budget = obj.budget
         from datetime import datetime
@@ -100,7 +102,7 @@ class BudgetItemSerializer(serializers.ModelSerializer):
         cached = cache.get(cache_key)
         
         if cached is not None:
-            return cached
+            return float(cached)
         
         actual = Transaction.objects.filter(
             business=request.user.business,
@@ -109,19 +111,23 @@ class BudgetItemSerializer(serializers.ModelSerializer):
             transaction_date__lt=end_date
         ).aggregate(total=models.Sum('amount'))['total'] or 0
         
-        cache.set(cache_key, float(actual), 3600)
+        # Convert to float
+        actual_float = float(actual)
+        cache.set(cache_key, actual_float, 3600)
         
-        return float(actual)
+        return actual_float
     
     def get_variance(self, obj):
         actual = self.get_actual_amount(obj)
-        return float(actual - obj.planned_amount)
+        planned = float(obj.planned_amount) if obj.planned_amount else 0.0
+        return actual - planned
     
     def get_variance_percentage(self, obj):
-        if obj.planned_amount > 0:
+        planned = float(obj.planned_amount) if obj.planned_amount else 0.0
+        if planned > 0:
             actual = self.get_actual_amount(obj)
-            return float(((actual - obj.planned_amount) / obj.planned_amount) * 100)
-        return 0
+            return ((actual - planned) / planned) * 100
+        return 0.0
 
 
 class BudgetItemCreateSerializer(serializers.ModelSerializer):
