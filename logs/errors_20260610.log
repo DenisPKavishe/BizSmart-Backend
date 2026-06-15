@@ -1,0 +1,213 @@
+ERROR 2026-06-10 17:03:20,166 log Internal Server Error: /api/v1/inventory/categories/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: inventory_category.business_id, inventory_category.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/views.py", line 47, in perform_create
+    serializer.save(business=self.request.user.business)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/query.py", line 1810, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: inventory_category.business_id, inventory_category.name
+ERROR 2026-06-10 17:03:20,220 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506
+ERROR 2026-06-10 17:03:32,499 log Internal Server Error: /api/v1/inventory/categories/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: inventory_category.business_id, inventory_category.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/views.py", line 47, in perform_create
+    serializer.save(business=self.request.user.business)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/query.py", line 1810, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: inventory_category.business_id, inventory_category.name
+ERROR 2026-06-10 17:03:32,506 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506
+ERROR 2026-06-10 17:04:34,031 log Internal Server Error: /api/v1/inventory/categories/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: inventory_category.business_id, inventory_category.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/views.py", line 47, in perform_create
+    serializer.save(business=self.request.user.business)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/query.py", line 1810, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: inventory_category.business_id, inventory_category.name
+ERROR 2026-06-10 17:04:34,037 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506

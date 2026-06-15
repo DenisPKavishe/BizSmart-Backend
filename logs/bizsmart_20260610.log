@@ -3300,3 +3300,1665 @@ INFO 2026-06-10 15:09:49,867 middleware ← GET /api/v1/auth/audit-logs/export/ 
 INFO 2026-06-10 15:09:49,867 middleware ← GET /api/v1/auth/audit-logs/export/ | Status: 404 | Duration: 0.00s
 WARNING 2026-06-10 15:09:49,869 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
 WARNING 2026-06-10 15:09:49,869 basehttp "GET /api/v1/auth/audit-logs/export/?start_date=&end_date=&action=&module=&format=csv HTTP/1.1" 404 23
+INFO 2026-06-10 16:58:47,770 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 16:58:47,770 autoreload Watching for file changes with StatReloader
+INFO 2026-06-10 17:00:42,005 basehttp "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:00:42,005 basehttp "OPTIONS /api/v1/auth/login/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:00:42,014 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:00:42,014 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:00:42,050 middleware ← POST /api/v1/auth/login/ | Status: 401 | Duration: 0.04s
+INFO 2026-06-10 17:00:42,050 middleware ← POST /api/v1/auth/login/ | Status: 401 | Duration: 0.04s
+WARNING 2026-06-10 17:00:42,054 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+WARNING 2026-06-10 17:00:42,054 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 183
+INFO 2026-06-10 17:00:42,061 basehttp "OPTIONS /api/v1/auth/refresh/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:00:42,061 basehttp "OPTIONS /api/v1/auth/refresh/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:00:42,065 middleware → POST /api/v1/auth/refresh/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:00:42,065 middleware → POST /api/v1/auth/refresh/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:00:42,093 middleware ← POST /api/v1/auth/refresh/ | Status: 401 | Duration: 0.03s
+INFO 2026-06-10 17:00:42,093 middleware ← POST /api/v1/auth/refresh/ | Status: 401 | Duration: 0.03s
+WARNING 2026-06-10 17:00:42,094 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 401 58
+WARNING 2026-06-10 17:00:42,094 basehttp "POST /api/v1/auth/refresh/ HTTP/1.1" 401 58
+INFO 2026-06-10 17:00:56,736 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:00:56,736 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:00:57,701 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 0.96s
+INFO 2026-06-10 17:00:57,701 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 0.96s
+INFO 2026-06-10 17:00:57,702 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 17:00:57,702 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 788
+INFO 2026-06-10 17:01:03,232 basehttp "OPTIONS /api/v1/inventory/products/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:01:03,235 basehttp "OPTIONS /api/v1/sales/customers/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:01:03,246 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:01:03,246 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:01:03,257 basehttp "OPTIONS /api/v1/inventory/products/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:01:03,257 basehttp "OPTIONS /api/v1/inventory/products/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:01:03,235 basehttp "OPTIONS /api/v1/sales/customers/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:01:03,232 basehttp "OPTIONS /api/v1/inventory/products/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:01:03,277 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:01:03,277 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:01:03,277 basehttp "OPTIONS /api/v1/sales/customers/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:01:03,277 basehttp "OPTIONS /api/v1/sales/customers/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:01:03,324 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:01:03,324 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:01:03,326 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:01:03,326 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:01:03,329 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:01:03,329 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:01:03,353 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:01:03,353 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:01:03,358 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:01:03,358 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:01:03,363 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:01:03,363 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:01:03,387 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:01:03,387 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:01:03,388 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:01:03,388 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:01:03,423 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:01:03,423 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:01:03,425 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:01:03,425 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:13,623 basehttp "OPTIONS /api/v1/inventory/categories/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:03:13,623 basehttp "OPTIONS /api/v1/inventory/categories/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:03:13,623 basehttp "OPTIONS /api/v1/inventory/categories/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:03:13,623 basehttp "OPTIONS /api/v1/inventory/categories/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:03:13,630 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:13,630 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:13,663 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:03:13,663 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:03:13,666 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:13,666 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:13,675 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:13,675 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:13,681 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:13,681 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:13,708 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:03:13,708 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:03:13,710 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:13,710 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:13,738 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:03:13,738 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:03:13,739 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:13,739 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:13,750 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:13,750 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:13,765 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:03:13,765 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:03:13,767 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:13,767 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:19,960 middleware → POST /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:19,960 middleware → POST /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:20,218 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/categories/
+INFO 2026-06-10 17:03:20,218 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/categories/
+INFO 2026-06-10 17:03:20,219 middleware ← POST /api/v1/inventory/categories/ | Status: 500 | Duration: 0.26s
+INFO 2026-06-10 17:03:20,219 middleware ← POST /api/v1/inventory/categories/ | Status: 500 | Duration: 0.26s
+ERROR 2026-06-10 17:03:20,220 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506
+ERROR 2026-06-10 17:03:20,220 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506
+INFO 2026-06-10 17:03:32,381 middleware → POST /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:32,381 middleware → POST /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:32,503 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/categories/
+INFO 2026-06-10 17:03:32,503 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/categories/
+INFO 2026-06-10 17:03:32,504 middleware ← POST /api/v1/inventory/categories/ | Status: 500 | Duration: 0.12s
+INFO 2026-06-10 17:03:32,504 middleware ← POST /api/v1/inventory/categories/ | Status: 500 | Duration: 0.12s
+ERROR 2026-06-10 17:03:32,506 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506
+ERROR 2026-06-10 17:03:32,506 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506
+INFO 2026-06-10 17:03:57,397 basehttp "OPTIONS /api/v1/inventory/suppliers/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:03:57,397 basehttp "OPTIONS /api/v1/inventory/suppliers/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:03:57,400 basehttp "OPTIONS /api/v1/inventory/suppliers/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:03:57,400 basehttp "OPTIONS /api/v1/inventory/suppliers/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:03:57,403 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:57,403 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:57,446 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:03:57,446 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:03:57,453 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:57,453 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:57,458 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:57,458 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:57,470 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:57,470 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:57,541 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:03:57,541 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:03:57,553 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:57,553 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:57,555 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:03:57,555 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:03:57,558 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:57,558 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:57,563 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:57,563 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:03:57,642 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:03:57,642 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:03:57,644 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:03:57,644 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:24,033 middleware → POST /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:24,033 middleware → POST /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:24,055 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/suppliers/
+INFO 2026-06-10 17:04:24,055 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/suppliers/
+INFO 2026-06-10 17:04:24,055 middleware ← POST /api/v1/inventory/suppliers/ | Status: 201 | Duration: 0.02s
+INFO 2026-06-10 17:04:24,055 middleware ← POST /api/v1/inventory/suppliers/ | Status: 201 | Duration: 0.02s
+INFO 2026-06-10 17:04:24,057 basehttp "POST /api/v1/inventory/suppliers/ HTTP/1.1" 201 239
+INFO 2026-06-10 17:04:24,057 basehttp "POST /api/v1/inventory/suppliers/ HTTP/1.1" 201 239
+INFO 2026-06-10 17:04:24,065 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:24,065 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:24,148 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:04:24,148 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:04:24,153 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:24,153 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:24,160 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:24,160 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:24,197 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:04:24,197 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:04:24,203 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:24,203 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:28,332 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:28,332 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:28,352 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:04:28,352 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:04:28,354 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:28,354 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:28,362 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:28,362 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:28,390 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:28,390 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:28,403 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:04:28,403 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:04:28,410 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:28,410 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:28,453 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:04:28,453 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:04:28,463 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:28,463 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:28,474 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:28,474 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:28,490 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.01s
+INFO 2026-06-10 17:04:28,490 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.01s
+INFO 2026-06-10 17:04:28,498 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:28,498 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:33,908 middleware → POST /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:33,908 middleware → POST /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:34,036 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/categories/
+INFO 2026-06-10 17:04:34,036 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/categories/
+INFO 2026-06-10 17:04:34,036 middleware ← POST /api/v1/inventory/categories/ | Status: 500 | Duration: 0.13s
+INFO 2026-06-10 17:04:34,036 middleware ← POST /api/v1/inventory/categories/ | Status: 500 | Duration: 0.13s
+ERROR 2026-06-10 17:04:34,037 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506
+ERROR 2026-06-10 17:04:34,037 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208506
+INFO 2026-06-10 17:04:39,286 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,288 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,288 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,289 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,286 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,289 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,427 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:04:39,433 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:04:39,427 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:04:39,433 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:04:39,442 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:39,442 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:39,468 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,451 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:39,451 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:39,468 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,489 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,508 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:04:39,508 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:04:39,489 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,542 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,542 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:39,551 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:39,551 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:39,619 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:04:39,619 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:04:39,626 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:04:39,626 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:04:39,628 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:39,628 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:39,634 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:39,634 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:39,639 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:04:39,639 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:04:39,643 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:39,643 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:40,875 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:40,875 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:40,898 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:04:40,898 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:04:40,899 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:40,899 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:40,906 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:40,906 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:40,926 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:40,926 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:40,980 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:04:40,980 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:04:40,983 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:04:40,983 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:04:40,984 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:40,984 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:40,992 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:40,992 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 291
+INFO 2026-06-10 17:04:41,010 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:41,010 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:41,044 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:04:41,044 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:04:41,047 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:41,047 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:47,271 basehttp "OPTIONS /api/v1/inventory/suppliers/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:04:47,271 basehttp "OPTIONS /api/v1/inventory/suppliers/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:04:47,278 middleware → DELETE /api/v1/inventory/suppliers/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:47,278 middleware → DELETE /api/v1/inventory/suppliers/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:47,320 logging_utils AUDIT: admin@bizsmart.com - DELETE - inventory - DELETE /api/v1/inventory/suppliers/1/
+INFO 2026-06-10 17:04:47,320 logging_utils AUDIT: admin@bizsmart.com - DELETE - inventory - DELETE /api/v1/inventory/suppliers/1/
+INFO 2026-06-10 17:04:47,322 middleware ← DELETE /api/v1/inventory/suppliers/1/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:04:47,322 middleware ← DELETE /api/v1/inventory/suppliers/1/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:04:47,325 basehttp "DELETE /api/v1/inventory/suppliers/1/ HTTP/1.1" 200 47
+INFO 2026-06-10 17:04:47,325 basehttp "DELETE /api/v1/inventory/suppliers/1/ HTTP/1.1" 200 47
+INFO 2026-06-10 17:04:47,351 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:47,351 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:47,400 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:04:47,400 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:04:47,407 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:47,407 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:47,416 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:47,416 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:47,487 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:04:47,487 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:04:47,493 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:47,493 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,226 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,227 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,228 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,226 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,227 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,228 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,265 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:04:50,265 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:04:50,271 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,271 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,278 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,278 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,316 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:04:50,316 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:04:50,317 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,317 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,323 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,323 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,349 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:04:50,349 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:04:50,351 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,351 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,371 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,371 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:04:50,391 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:04:50,391 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:04:50,394 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,394 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,463 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:04:50,463 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:04:50,472 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,474 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:04:50,472 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,474 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:04:50,484 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:04:50,484 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:31,842 middleware → POST /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:31,842 middleware → POST /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:31,900 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/products/
+INFO 2026-06-10 17:05:31,900 logging_utils AUDIT: admin@bizsmart.com - CREATE - inventory - POST /api/v1/inventory/products/
+INFO 2026-06-10 17:05:31,901 middleware ← POST /api/v1/inventory/products/ | Status: 201 | Duration: 0.06s
+INFO 2026-06-10 17:05:31,901 middleware ← POST /api/v1/inventory/products/ | Status: 201 | Duration: 0.06s
+INFO 2026-06-10 17:05:31,905 basehttp "POST /api/v1/inventory/products/ HTTP/1.1" 201 511
+INFO 2026-06-10 17:05:31,905 basehttp "POST /api/v1/inventory/products/ HTTP/1.1" 201 511
+INFO 2026-06-10 17:05:31,933 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:31,933 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:31,948 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:31,948 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:31,957 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:31,957 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:32,097 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:05:32,097 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:05:32,103 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:05:32,103 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:05:32,109 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:32,109 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:32,115 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:32,115 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:32,148 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:05:32,148 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:05:32,158 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 563
+INFO 2026-06-10 17:05:32,158 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 563
+INFO 2026-06-10 17:05:37,775 basehttp "OPTIONS /api/v1/inventory/products/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:05:37,775 basehttp "OPTIONS /api/v1/inventory/products/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:05:37,777 middleware → DELETE /api/v1/inventory/products/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:37,777 middleware → DELETE /api/v1/inventory/products/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:37,797 logging_utils AUDIT: admin@bizsmart.com - DELETE - inventory - DELETE /api/v1/inventory/products/1/
+INFO 2026-06-10 17:05:37,797 logging_utils AUDIT: admin@bizsmart.com - DELETE - inventory - DELETE /api/v1/inventory/products/1/
+INFO 2026-06-10 17:05:37,798 middleware ← DELETE /api/v1/inventory/products/1/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:05:37,798 middleware ← DELETE /api/v1/inventory/products/1/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:05:37,801 basehttp "DELETE /api/v1/inventory/products/1/ HTTP/1.1" 200 74
+INFO 2026-06-10 17:05:37,801 basehttp "DELETE /api/v1/inventory/products/1/ HTTP/1.1" 200 74
+INFO 2026-06-10 17:05:37,814 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:37,814 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:37,828 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:37,828 middleware → GET /api/v1/inventory/suppliers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:37,831 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:37,831 middleware → GET /api/v1/inventory/categories/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:37,941 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:05:37,941 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:05:37,950 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:37,954 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:05:37,954 middleware ← GET /api/v1/inventory/suppliers/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:05:37,950 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:37,967 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:37,967 basehttp "GET /api/v1/inventory/suppliers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:37,960 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:05:37,960 middleware ← GET /api/v1/inventory/categories/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:05:37,977 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:37,977 basehttp "GET /api/v1/inventory/categories/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:48,916 basehttp "OPTIONS /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:05:48,916 basehttp "OPTIONS /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:05:48,916 basehttp "OPTIONS /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:05:48,916 basehttp "OPTIONS /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:05:48,920 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:48,920 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:48,934 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.01s
+INFO 2026-06-10 17:05:48,934 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.01s
+INFO 2026-06-10 17:05:48,936 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:48,936 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:49,009 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:49,009 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:05:49,042 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:05:49,042 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:05:49,045 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:05:49,045 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:06,042 basehttp "OPTIONS /api/v1/financials/transactions/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:06,042 basehttp "OPTIONS /api/v1/financials/transactions/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:06,056 middleware → POST /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:06,056 middleware → POST /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:06,090 logging_utils AUDIT: admin@bizsmart.com - CREATE - financials - POST /api/v1/financials/transactions/
+INFO 2026-06-10 17:06:06,090 logging_utils AUDIT: admin@bizsmart.com - CREATE - financials - POST /api/v1/financials/transactions/
+INFO 2026-06-10 17:06:06,090 middleware ← POST /api/v1/financials/transactions/ | Status: 201 | Duration: 0.03s
+INFO 2026-06-10 17:06:06,090 middleware ← POST /api/v1/financials/transactions/ | Status: 201 | Duration: 0.03s
+INFO 2026-06-10 17:06:06,093 basehttp "POST /api/v1/financials/transactions/ HTTP/1.1" 201 422
+INFO 2026-06-10 17:06:06,093 basehttp "POST /api/v1/financials/transactions/ HTTP/1.1" 201 422
+INFO 2026-06-10 17:06:06,111 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:06,111 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:06,179 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:06:06,179 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:06:06,181 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 474
+INFO 2026-06-10 17:06:06,181 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 474
+INFO 2026-06-10 17:06:14,041 basehttp "OPTIONS /api/v1/financials/transactions/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:14,041 basehttp "OPTIONS /api/v1/financials/transactions/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:14,044 middleware → DELETE /api/v1/financials/transactions/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:14,044 middleware → DELETE /api/v1/financials/transactions/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:14,068 logging_utils AUDIT: admin@bizsmart.com - DELETE - financials - DELETE /api/v1/financials/transactions/1/
+INFO 2026-06-10 17:06:14,068 logging_utils AUDIT: admin@bizsmart.com - DELETE - financials - DELETE /api/v1/financials/transactions/1/
+INFO 2026-06-10 17:06:14,069 middleware ← DELETE /api/v1/financials/transactions/1/ | Status: 204 | Duration: 0.02s
+INFO 2026-06-10 17:06:14,069 middleware ← DELETE /api/v1/financials/transactions/1/ | Status: 204 | Duration: 0.02s
+INFO 2026-06-10 17:06:14,071 basehttp "DELETE /api/v1/financials/transactions/1/ HTTP/1.1" 204 0
+INFO 2026-06-10 17:06:14,071 basehttp "DELETE /api/v1/financials/transactions/1/ HTTP/1.1" 204 0
+INFO 2026-06-10 17:06:14,085 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:14,085 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:14,138 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:06:14,138 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:06:14,145 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:14,145 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:22,602 basehttp "OPTIONS /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,602 basehttp "OPTIONS /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,608 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,608 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,612 basehttp "OPTIONS /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,612 basehttp "OPTIONS /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,614 basehttp "OPTIONS /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,614 basehttp "OPTIONS /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,615 basehttp "OPTIONS /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,615 basehttp "OPTIONS /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,613 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,613 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,642 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,642 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,629 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,629 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,639 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,639 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,663 basehttp "OPTIONS /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,663 basehttp "OPTIONS /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,614 basehttp "OPTIONS /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,614 basehttp "OPTIONS /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:22,674 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,674 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,700 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:06:22,700 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:06:22,717 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:06:22,717 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:06:22,719 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:06:22,719 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:06:22,724 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:06:22,724 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:06:22,729 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,729 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,742 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,746 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:06:22,746 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:06:22,742 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,746 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:06:22,746 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:06:22,759 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:06:22,759 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:06:22,765 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 17:06:22,765 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 17:06:22,774 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,774 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,815 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:06:22,815 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:06:22,820 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:06:22,820 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:06:22,874 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 17:06:22,874 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 17:06:22,884 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5739
+INFO 2026-06-10 17:06:22,897 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,884 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5739
+INFO 2026-06-10 17:06:22,897 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:22,954 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.18s
+INFO 2026-06-10 17:06:22,954 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.18s
+INFO 2026-06-10 17:06:22,977 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 17:06:22,977 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 17:06:23,047 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:06:23,047 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:06:23,058 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5739
+INFO 2026-06-10 17:06:23,058 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5739
+INFO 2026-06-10 17:06:53,407 basehttp "OPTIONS /api/v1/sales/items/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:53,407 basehttp "OPTIONS /api/v1/sales/items/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:53,407 basehttp "OPTIONS /api/v1/sales/items/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:53,407 basehttp "OPTIONS /api/v1/sales/items/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:06:53,413 middleware → GET /api/v1/sales/items/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:53,413 middleware → GET /api/v1/sales/items/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:53,443 middleware ← GET /api/v1/sales/items/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:06:53,443 middleware ← GET /api/v1/sales/items/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:06:53,445 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:53,445 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:53,448 middleware → GET /api/v1/sales/items/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:53,448 middleware → GET /api/v1/sales/items/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:53,501 middleware ← GET /api/v1/sales/items/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:06:53,501 middleware ← GET /api/v1/sales/items/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:06:53,510 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:53,510 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:59,947 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:59,947 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:59,961 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.01s
+INFO 2026-06-10 17:06:59,961 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.01s
+INFO 2026-06-10 17:06:59,962 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:59,962 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:06:59,969 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:06:59,969 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:07:00,049 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:07:00,049 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:07:00,053 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:07:00,053 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:07:17,165 middleware → POST /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:07:17,165 middleware → POST /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:07:17,185 logging_utils AUDIT: admin@bizsmart.com - CREATE - sales - POST /api/v1/sales/customers/
+INFO 2026-06-10 17:07:17,185 logging_utils AUDIT: admin@bizsmart.com - CREATE - sales - POST /api/v1/sales/customers/
+INFO 2026-06-10 17:07:17,186 middleware ← POST /api/v1/sales/customers/ | Status: 400 | Duration: 0.02s
+INFO 2026-06-10 17:07:17,186 middleware ← POST /api/v1/sales/customers/ | Status: 400 | Duration: 0.02s
+WARNING 2026-06-10 17:07:17,190 basehttp "POST /api/v1/sales/customers/ HTTP/1.1" 400 40
+WARNING 2026-06-10 17:07:17,190 basehttp "POST /api/v1/sales/customers/ HTTP/1.1" 400 40
+INFO 2026-06-10 17:07:24,745 middleware → POST /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:07:24,745 middleware → POST /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:07:24,767 logging_utils AUDIT: admin@bizsmart.com - CREATE - sales - POST /api/v1/sales/customers/
+INFO 2026-06-10 17:07:24,767 logging_utils AUDIT: admin@bizsmart.com - CREATE - sales - POST /api/v1/sales/customers/
+INFO 2026-06-10 17:07:24,767 middleware ← POST /api/v1/sales/customers/ | Status: 400 | Duration: 0.02s
+INFO 2026-06-10 17:07:24,767 middleware ← POST /api/v1/sales/customers/ | Status: 400 | Duration: 0.02s
+WARNING 2026-06-10 17:07:24,768 basehttp "POST /api/v1/sales/customers/ HTTP/1.1" 400 40
+WARNING 2026-06-10 17:07:24,768 basehttp "POST /api/v1/sales/customers/ HTTP/1.1" 400 40
+INFO 2026-06-10 17:08:08,513 middleware → GET /admin/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:08,513 middleware → GET /admin/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:09,072 middleware ← GET /admin/ | Status: 200 | Duration: 0.61s
+INFO 2026-06-10 17:08:09,072 middleware ← GET /admin/ | Status: 200 | Duration: 0.61s
+INFO 2026-06-10 17:08:09,074 basehttp "GET /admin/ HTTP/1.1" 200 20437
+INFO 2026-06-10 17:08:09,074 basehttp "GET /admin/ HTTP/1.1" 200 20437
+INFO 2026-06-10 17:08:09,446 middleware → GET /favicon.ico | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:09,446 middleware → GET /favicon.ico | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:09,462 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.03s
+INFO 2026-06-10 17:08:09,462 middleware ← GET /favicon.ico | Status: 404 | Duration: 0.03s
+WARNING 2026-06-10 17:08:09,465 basehttp "GET /favicon.ico HTTP/1.1" 404 3304
+WARNING 2026-06-10 17:08:09,465 basehttp "GET /favicon.ico HTTP/1.1" 404 3304
+INFO 2026-06-10 17:08:26,585 middleware → GET /admin/sales/customer/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:26,585 middleware → GET /admin/sales/customer/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:26,672 middleware ← GET /admin/sales/customer/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:08:26,672 middleware ← GET /admin/sales/customer/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:08:26,674 basehttp "GET /admin/sales/customer/ HTTP/1.1" 200 17632
+INFO 2026-06-10 17:08:26,674 basehttp "GET /admin/sales/customer/ HTTP/1.1" 200 17632
+INFO 2026-06-10 17:08:26,789 middleware → GET /admin/jsi18n/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:26,789 middleware → GET /admin/jsi18n/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:26,800 middleware ← GET /admin/jsi18n/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:08:26,800 middleware ← GET /admin/jsi18n/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:08:26,802 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-06-10 17:08:26,802 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-06-10 17:08:28,735 middleware → GET /admin/sales/customer/add/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:28,735 middleware → GET /admin/sales/customer/add/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:28,837 middleware ← GET /admin/sales/customer/add/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:08:28,837 middleware ← GET /admin/sales/customer/add/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:08:28,839 basehttp "GET /admin/sales/customer/add/ HTTP/1.1" 200 22250
+INFO 2026-06-10 17:08:28,839 basehttp "GET /admin/sales/customer/add/ HTTP/1.1" 200 22250
+INFO 2026-06-10 17:08:28,889 middleware → GET /admin/jsi18n/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:28,889 middleware → GET /admin/jsi18n/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:28,893 middleware ← GET /admin/jsi18n/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:08:28,893 middleware ← GET /admin/jsi18n/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:08:28,895 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-06-10 17:08:28,895 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-06-10 17:08:45,647 middleware → POST /admin/sales/customer/add/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:45,647 middleware → POST /admin/sales/customer/add/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:45,676 logging_utils AUDIT: admin@bizsmart.com - CREATE - auth - POST /admin/sales/customer/add/
+INFO 2026-06-10 17:08:45,676 logging_utils AUDIT: admin@bizsmart.com - CREATE - auth - POST /admin/sales/customer/add/
+INFO 2026-06-10 17:08:45,677 middleware ← POST /admin/sales/customer/add/ | Status: 302 | Duration: 0.04s
+INFO 2026-06-10 17:08:45,677 middleware ← POST /admin/sales/customer/add/ | Status: 302 | Duration: 0.04s
+INFO 2026-06-10 17:08:45,681 basehttp "POST /admin/sales/customer/add/ HTTP/1.1" 302 0
+INFO 2026-06-10 17:08:45,681 basehttp "POST /admin/sales/customer/add/ HTTP/1.1" 302 0
+INFO 2026-06-10 17:08:45,708 middleware → GET /admin/sales/customer/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:45,708 middleware → GET /admin/sales/customer/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:45,787 middleware ← GET /admin/sales/customer/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:08:45,787 middleware ← GET /admin/sales/customer/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:08:45,789 basehttp "GET /admin/sales/customer/ HTTP/1.1" 200 20178
+INFO 2026-06-10 17:08:45,789 basehttp "GET /admin/sales/customer/ HTTP/1.1" 200 20178
+INFO 2026-06-10 17:08:45,852 middleware → GET /admin/jsi18n/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:45,852 middleware → GET /admin/jsi18n/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:08:45,857 middleware ← GET /admin/jsi18n/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:08:45,857 middleware ← GET /admin/jsi18n/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:08:45,864 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-06-10 17:08:45,864 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3343
+INFO 2026-06-10 17:08:54,031 middleware → GET /api/v1/sales/items/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:08:54,031 middleware → GET /api/v1/sales/items/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:08:54,049 middleware ← GET /api/v1/sales/items/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:08:54,049 middleware ← GET /api/v1/sales/items/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:08:54,054 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:08:54,054 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:08:54,058 middleware → GET /api/v1/sales/items/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:08:54,058 middleware → GET /api/v1/sales/items/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:08:54,080 middleware ← GET /api/v1/sales/items/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:08:54,080 middleware ← GET /api/v1/sales/items/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:08:54,083 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:08:54,083 basehttp "GET /api/v1/sales/items/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:08:55,179 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:08:55,179 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:08:55,218 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:08:55,218 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:08:55,222 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:08:55,222 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:08:55,228 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:08:55,228 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:08:55,264 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:08:55,264 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:08:55,279 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:08:55,279 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:09:16,909 middleware → GET /admin/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:09:16,909 middleware → GET /admin/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:09:17,014 middleware ← GET /admin/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:09:17,014 middleware ← GET /admin/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:09:17,016 basehttp "GET /admin/ HTTP/1.1" 200 20723
+INFO 2026-06-10 17:09:17,016 basehttp "GET /admin/ HTTP/1.1" 200 20723
+INFO 2026-06-10 17:09:21,731 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:09:21,731 middleware → GET /api/docs/ | User: admin@bizsmart.com | IP: 127.0.0.1
+INFO 2026-06-10 17:09:21,798 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:09:21,798 middleware ← GET /api/docs/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:09:21,800 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 17:09:21,800 basehttp "GET /api/docs/ HTTP/1.1" 200 4645
+INFO 2026-06-10 17:09:40,374 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,374 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,376 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,376 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,378 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,378 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,387 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,387 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,452 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:09:40,452 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:09:40,455 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:09:40,455 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:09:40,461 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,461 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,516 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:09:40,516 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:09:40,518 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:09:40,518 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:09:40,528 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,528 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,539 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:09:40,539 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:09:40,543 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:09:40,543 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:09:40,574 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:09:40,574 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:09:40,592 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.20s
+INFO 2026-06-10 17:09:40,595 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:09:40,592 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.20s
+INFO 2026-06-10 17:09:40,595 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:09:40,638 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 17:09:40,638 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 17:09:40,644 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,644 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,672 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.29s
+INFO 2026-06-10 17:09:40,672 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.29s
+INFO 2026-06-10 17:09:40,677 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5780
+INFO 2026-06-10 17:09:40,677 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5780
+INFO 2026-06-10 17:09:40,688 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,688 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:09:40,755 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:09:40,755 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:09:40,790 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 17:09:40,790 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 304
+INFO 2026-06-10 17:09:40,797 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:09:40,797 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:09:40,800 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5780
+INFO 2026-06-10 17:09:40,800 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5780
+INFO 2026-06-10 17:10:04,854 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:04,854 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:04,872 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:10:04,872 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:10:04,874 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:10:04,874 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:10:04,890 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:04,890 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:04,926 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:10:04,926 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:10:04,928 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:10:04,928 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:10:09,114 basehttp "OPTIONS /api/v1/sales/customers/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:10:09,114 basehttp "OPTIONS /api/v1/sales/customers/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:10:09,120 middleware → PUT /api/v1/sales/customers/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:09,120 middleware → PUT /api/v1/sales/customers/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:09,142 logging_utils AUDIT: admin@bizsmart.com - UPDATE - sales - PUT /api/v1/sales/customers/1/
+INFO 2026-06-10 17:10:09,142 logging_utils AUDIT: admin@bizsmart.com - UPDATE - sales - PUT /api/v1/sales/customers/1/
+INFO 2026-06-10 17:10:09,143 middleware ← PUT /api/v1/sales/customers/1/ | Status: 400 | Duration: 0.02s
+INFO 2026-06-10 17:10:09,143 middleware ← PUT /api/v1/sales/customers/1/ | Status: 400 | Duration: 0.02s
+WARNING 2026-06-10 17:10:09,144 basehttp "PUT /api/v1/sales/customers/1/ HTTP/1.1" 400 40
+WARNING 2026-06-10 17:10:09,144 basehttp "PUT /api/v1/sales/customers/1/ HTTP/1.1" 400 40
+INFO 2026-06-10 17:10:19,589 middleware → PUT /api/v1/sales/customers/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:19,589 middleware → PUT /api/v1/sales/customers/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:19,609 logging_utils AUDIT: admin@bizsmart.com - UPDATE - sales - PUT /api/v1/sales/customers/1/
+INFO 2026-06-10 17:10:19,609 logging_utils AUDIT: admin@bizsmart.com - UPDATE - sales - PUT /api/v1/sales/customers/1/
+INFO 2026-06-10 17:10:19,610 middleware ← PUT /api/v1/sales/customers/1/ | Status: 400 | Duration: 0.02s
+INFO 2026-06-10 17:10:19,610 middleware ← PUT /api/v1/sales/customers/1/ | Status: 400 | Duration: 0.02s
+WARNING 2026-06-10 17:10:19,614 basehttp "PUT /api/v1/sales/customers/1/ HTTP/1.1" 400 40
+WARNING 2026-06-10 17:10:19,614 basehttp "PUT /api/v1/sales/customers/1/ HTTP/1.1" 400 40
+INFO 2026-06-10 17:10:27,325 middleware → PUT /api/v1/sales/customers/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:27,325 middleware → PUT /api/v1/sales/customers/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:27,348 logging_utils AUDIT: admin@bizsmart.com - UPDATE - sales - PUT /api/v1/sales/customers/1/
+INFO 2026-06-10 17:10:27,348 logging_utils AUDIT: admin@bizsmart.com - UPDATE - sales - PUT /api/v1/sales/customers/1/
+INFO 2026-06-10 17:10:27,350 middleware ← PUT /api/v1/sales/customers/1/ | Status: 400 | Duration: 0.02s
+INFO 2026-06-10 17:10:27,350 middleware ← PUT /api/v1/sales/customers/1/ | Status: 400 | Duration: 0.02s
+WARNING 2026-06-10 17:10:27,353 basehttp "PUT /api/v1/sales/customers/1/ HTTP/1.1" 400 40
+WARNING 2026-06-10 17:10:27,353 basehttp "PUT /api/v1/sales/customers/1/ HTTP/1.1" 400 40
+INFO 2026-06-10 17:10:47,892 basehttp "OPTIONS /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:10:47,893 basehttp "OPTIONS /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:10:47,893 basehttp "OPTIONS /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:10:47,899 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:47,899 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:47,892 basehttp "OPTIONS /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:10:47,925 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:10:47,925 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:10:47,927 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:10:47,927 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:10:47,931 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:47,931 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:10:47,964 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:10:47,964 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:10:47,967 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:10:47,967 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:11:06,346 basehttp "OPTIONS /api/v1/financials/petty-cash/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:11:06,346 basehttp "OPTIONS /api/v1/financials/petty-cash/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:11:06,349 middleware → POST /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:06,349 middleware → POST /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:06,384 logging_utils AUDIT: admin@bizsmart.com - CREATE - financials - POST /api/v1/financials/petty-cash/
+INFO 2026-06-10 17:11:06,384 logging_utils AUDIT: admin@bizsmart.com - CREATE - financials - POST /api/v1/financials/petty-cash/
+INFO 2026-06-10 17:11:06,386 middleware ← POST /api/v1/financials/petty-cash/ | Status: 201 | Duration: 0.04s
+INFO 2026-06-10 17:11:06,386 middleware ← POST /api/v1/financials/petty-cash/ | Status: 201 | Duration: 0.04s
+INFO 2026-06-10 17:11:06,389 basehttp "POST /api/v1/financials/petty-cash/ HTTP/1.1" 201 222
+INFO 2026-06-10 17:11:06,389 basehttp "POST /api/v1/financials/petty-cash/ HTTP/1.1" 201 222
+INFO 2026-06-10 17:11:06,403 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:06,403 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:06,440 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:11:06,440 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:11:06,442 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 274
+INFO 2026-06-10 17:11:06,442 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 274
+INFO 2026-06-10 17:11:13,399 basehttp "OPTIONS /api/v1/financials/petty-cash/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:11:13,399 basehttp "OPTIONS /api/v1/financials/petty-cash/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:11:13,401 middleware → DELETE /api/v1/financials/petty-cash/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:13,401 middleware → DELETE /api/v1/financials/petty-cash/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:13,421 logging_utils AUDIT: admin@bizsmart.com - DELETE - financials - DELETE /api/v1/financials/petty-cash/1/
+INFO 2026-06-10 17:11:13,421 logging_utils AUDIT: admin@bizsmart.com - DELETE - financials - DELETE /api/v1/financials/petty-cash/1/
+INFO 2026-06-10 17:11:13,422 middleware ← DELETE /api/v1/financials/petty-cash/1/ | Status: 204 | Duration: 0.02s
+INFO 2026-06-10 17:11:13,422 middleware ← DELETE /api/v1/financials/petty-cash/1/ | Status: 204 | Duration: 0.02s
+INFO 2026-06-10 17:11:13,424 basehttp "DELETE /api/v1/financials/petty-cash/1/ HTTP/1.1" 204 0
+INFO 2026-06-10 17:11:13,424 basehttp "DELETE /api/v1/financials/petty-cash/1/ HTTP/1.1" 204 0
+INFO 2026-06-10 17:11:13,435 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:13,435 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:13,455 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:11:13,455 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:11:13,459 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:11:13,459 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:11:20,514 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 0
+INFO 2026-06-10 17:11:20,514 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 0
+INFO 2026-06-10 17:11:20,515 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 0
+INFO 2026-06-10 17:11:20,515 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 0
+INFO 2026-06-10 17:11:20,518 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:20,518 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:20,534 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:11:20,534 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:11:20,557 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 52
+INFO 2026-06-10 17:11:20,557 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 52
+INFO 2026-06-10 17:11:20,577 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:20,577 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:11:20,629 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:11:20,629 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:11:20,632 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 52
+INFO 2026-06-10 17:11:20,632 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 52
+INFO 2026-06-10 17:12:00,805 basehttp "OPTIONS /api/v1/financials/budgets/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:12:00,805 basehttp "OPTIONS /api/v1/financials/budgets/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:12:00,808 middleware → POST /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:12:00,808 middleware → POST /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:12:00,836 logging_utils AUDIT: admin@bizsmart.com - CREATE - financials - POST /api/v1/financials/budgets/
+INFO 2026-06-10 17:12:00,836 logging_utils AUDIT: admin@bizsmart.com - CREATE - financials - POST /api/v1/financials/budgets/
+INFO 2026-06-10 17:12:00,837 middleware ← POST /api/v1/financials/budgets/ | Status: 201 | Duration: 0.03s
+INFO 2026-06-10 17:12:00,837 middleware ← POST /api/v1/financials/budgets/ | Status: 201 | Duration: 0.03s
+INFO 2026-06-10 17:12:00,838 basehttp "POST /api/v1/financials/budgets/ HTTP/1.1" 201 258
+INFO 2026-06-10 17:12:00,838 basehttp "POST /api/v1/financials/budgets/ HTTP/1.1" 201 258
+INFO 2026-06-10 17:12:00,844 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:12:00,844 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:12:00,894 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:12:00,894 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:12:00,897 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 310
+INFO 2026-06-10 17:12:00,897 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 310
+INFO 2026-06-10 17:12:29,364 basehttp "OPTIONS /api/v1/financials/budgets/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:12:29,364 basehttp "OPTIONS /api/v1/financials/budgets/1/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:12:29,369 middleware → PATCH /api/v1/financials/budgets/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:12:29,369 middleware → PATCH /api/v1/financials/budgets/1/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:12:29,422 logging_utils AUDIT: admin@bizsmart.com - UPDATE - financials - PATCH /api/v1/financials/budgets/1/
+INFO 2026-06-10 17:12:29,422 logging_utils AUDIT: admin@bizsmart.com - UPDATE - financials - PATCH /api/v1/financials/budgets/1/
+INFO 2026-06-10 17:12:29,422 middleware ← PATCH /api/v1/financials/budgets/1/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:12:29,422 middleware ← PATCH /api/v1/financials/budgets/1/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:12:29,423 basehttp "PATCH /api/v1/financials/budgets/1/ HTTP/1.1" 200 782
+INFO 2026-06-10 17:12:29,423 basehttp "PATCH /api/v1/financials/budgets/1/ HTTP/1.1" 200 782
+INFO 2026-06-10 17:12:29,429 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:12:29,429 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:12:29,459 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:12:29,459 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:12:29,461 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 310
+INFO 2026-06-10 17:12:29,461 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:04,105 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,105 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,105 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,105 basehttp "OPTIONS /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,114 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,114 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,154 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:13:04,154 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:13:04,155 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:04,155 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:04,189 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,189 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,205 basehttp "OPTIONS /api/v1/financials/cash-flow/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,205 basehttp "OPTIONS /api/v1/financials/cash-flow/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,211 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,213 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,213 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,226 basehttp "OPTIONS /api/v1/financials/loans/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,226 basehttp "OPTIONS /api/v1/financials/loans/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,251 basehttp "OPTIONS /api/v1/financials/invoices/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,251 basehttp "OPTIONS /api/v1/financials/invoices/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,226 basehttp "OPTIONS /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,226 basehttp "OPTIONS /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,238 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,238 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,211 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,264 basehttp "OPTIONS /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,273 basehttp "OPTIONS /api/v1/hr/payroll/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,273 basehttp "OPTIONS /api/v1/hr/payroll/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,264 basehttp "OPTIONS /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 0
+INFO 2026-06-10 17:13:04,296 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,296 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,305 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,305 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,381 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:13:04,381 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:13:04,408 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.20s
+INFO 2026-06-10 17:13:04,406 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:13:04,411 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 519
+INFO 2026-06-10 17:13:04,418 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.18s
+INFO 2026-06-10 17:13:04,418 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.18s
+INFO 2026-06-10 17:13:04,406 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:13:04,411 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 519
+INFO 2026-06-10 17:13:04,427 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:04,442 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,408 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.20s
+INFO 2026-06-10 17:13:04,446 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:13:04,427 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:04,459 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:13:04,442 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,446 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:13:04,464 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,464 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,459 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:13:04,504 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.20s
+INFO 2026-06-10 17:13:04,508 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,511 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,504 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.20s
+INFO 2026-06-10 17:13:04,514 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 88
+INFO 2026-06-10 17:13:04,514 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 88
+INFO 2026-06-10 17:13:04,508 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,560 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,560 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,511 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,480 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,480 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,610 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1986
+INFO 2026-06-10 17:13:04,610 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1986
+INFO 2026-06-10 17:13:04,614 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,614 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,722 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.28s
+INFO 2026-06-10 17:13:04,722 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.28s
+INFO 2026-06-10 17:13:04,728 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,728 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,740 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.26s
+INFO 2026-06-10 17:13:04,740 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.26s
+INFO 2026-06-10 17:13:04,752 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 17:13:04,752 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 17:13:04,743 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,743 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,767 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,767 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,773 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,773 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,777 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,777 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,761 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.25s
+INFO 2026-06-10 17:13:04,783 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,761 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.25s
+INFO 2026-06-10 17:13:04,802 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 17:13:04,783 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,814 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:13:04,814 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:13:04,841 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,863 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.25s
+INFO 2026-06-10 17:13:04,841 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,863 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.25s
+INFO 2026-06-10 17:13:04,802 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 17:13:04,933 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,937 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:13:04,937 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:13:04,933 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,946 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,947 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 519
+INFO 2026-06-10 17:13:04,965 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:04,946 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:04,947 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 519
+INFO 2026-06-10 17:13:04,965 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:05,015 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:05,015 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:05,022 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:13:05,022 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:13:05,040 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.26s
+INFO 2026-06-10 17:13:05,040 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.26s
+INFO 2026-06-10 17:13:05,057 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:05,027 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:05,027 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:05,067 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 88
+INFO 2026-06-10 17:13:05,057 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:05,087 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 17:13:05,087 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 17:13:05,067 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 88
+INFO 2026-06-10 17:13:05,099 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1986
+INFO 2026-06-10 17:13:05,099 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1986
+INFO 2026-06-10 17:13:05,148 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:13:05,148 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:13:05,161 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:13:05,161 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:13:05,163 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:05,163 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:05,169 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:05,169 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:05,180 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:13:05,180 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:13:05,182 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:05,182 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:17,117 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:17,117 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:17,141 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:13:17,141 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:13:17,143 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:17,143 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:17,155 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:17,155 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:17,186 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:13:17,186 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:13:17,188 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:17,188 basehttp "GET /api/v1/financials/budgets/?year=2026 HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:25,614 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,614 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,661 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:13:25,661 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:13:25,666 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:25,666 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:25,693 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,693 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,702 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,704 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,708 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,711 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,715 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,702 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,704 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,708 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,711 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,715 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,767 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:13:25,767 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:13:25,828 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 519
+INFO 2026-06-10 17:13:25,828 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 519
+INFO 2026-06-10 17:13:25,851 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,854 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:13:25,851 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,860 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:13:25,854 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:13:25,860 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:13:25,895 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:25,902 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:13:25,895 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:25,902 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:13:25,920 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:13:25,929 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:25,930 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,920 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:13:25,929 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:13:25,930 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,948 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,951 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 17:13:25,951 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 88
+INFO 2026-06-10 17:13:25,952 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:13:25,948 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,951 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.24s
+INFO 2026-06-10 17:13:25,951 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 88
+INFO 2026-06-10 17:13:25,952 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:13:25,984 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,984 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,986 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1986
+INFO 2026-06-10 17:13:25,986 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1986
+INFO 2026-06-10 17:13:25,999 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:25,999 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,008 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,012 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:13:26,008 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,012 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:13:26,050 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,050 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,062 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:13:26,066 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,069 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:13:26,062 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:13:26,066 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,069 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:13:26,080 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,080 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,097 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,097 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,087 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:13:26,087 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:13:26,116 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:13:26,116 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:13:26,121 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 519
+INFO 2026-06-10 17:13:26,121 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 519
+INFO 2026-06-10 17:13:26,141 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,141 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,138 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:13:26,138 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:13:26,243 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,243 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,219 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,219 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,145 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,257 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,145 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,262 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,262 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,257 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,293 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,293 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,338 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.27s
+INFO 2026-06-10 17:13:26,338 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.27s
+INFO 2026-06-10 17:13:26,343 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:13:26,343 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:13:26,349 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:13:26,349 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:13:26,373 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,373 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:13:26,351 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,351 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,399 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.18s
+INFO 2026-06-10 17:13:26,399 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.18s
+INFO 2026-06-10 17:13:26,401 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1986
+INFO 2026-06-10 17:13:26,401 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1986
+INFO 2026-06-10 17:13:26,406 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:13:26,406 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:13:26,413 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,413 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,503 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:13:26,503 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:13:26,513 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.42s
+INFO 2026-06-10 17:13:26,513 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.42s
+INFO 2026-06-10 17:13:26,522 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,527 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:13:26,527 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:13:26,528 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 88
+INFO 2026-06-10 17:13:26,528 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 88
+INFO 2026-06-10 17:13:26,522 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,535 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:13:26,535 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:00,999 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:00,999 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:01,047 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:14:01,047 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:14:01,050 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:01,050 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:01,084 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:01,084 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:01,109 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:14:01,109 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:14:01,111 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:01,111 basehttp "GET /api/v1/financials/petty-cash/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:06,894 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:06,894 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:06,910 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:14:06,910 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:14:06,912 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 519
+INFO 2026-06-10 17:14:06,912 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 519
+INFO 2026-06-10 17:14:06,989 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:06,989 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:07,042 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:14:07,042 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:14:07,046 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 519
+INFO 2026-06-10 17:14:07,046 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 519
+INFO 2026-06-10 17:14:10,795 basehttp "OPTIONS /api/v1/financials/transactions/2/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:10,795 basehttp "OPTIONS /api/v1/financials/transactions/2/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:10,799 middleware → DELETE /api/v1/financials/transactions/2/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:10,799 middleware → DELETE /api/v1/financials/transactions/2/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:10,821 logging_utils AUDIT: admin@bizsmart.com - DELETE - financials - DELETE /api/v1/financials/transactions/2/
+INFO 2026-06-10 17:14:10,821 logging_utils AUDIT: admin@bizsmart.com - DELETE - financials - DELETE /api/v1/financials/transactions/2/
+INFO 2026-06-10 17:14:10,823 middleware ← DELETE /api/v1/financials/transactions/2/ | Status: 204 | Duration: 0.02s
+INFO 2026-06-10 17:14:10,823 middleware ← DELETE /api/v1/financials/transactions/2/ | Status: 204 | Duration: 0.02s
+INFO 2026-06-10 17:14:10,825 basehttp "DELETE /api/v1/financials/transactions/2/ HTTP/1.1" 204 0
+INFO 2026-06-10 17:14:10,825 basehttp "DELETE /api/v1/financials/transactions/2/ HTTP/1.1" 204 0
+INFO 2026-06-10 17:14:10,835 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:10,835 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:10,954 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:14:10,954 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:14:10,955 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:10,955 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:14,951 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:14,951 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:14,993 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:14:14,993 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:14:14,997 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:14:14,997 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:14:15,018 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,020 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,018 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,025 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,035 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,034 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,024 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,035 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,025 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,020 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,034 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,024 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,140 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:14:15,140 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:14:15,149 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:14:15,149 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:14:15,152 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:14:15,161 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:14:15,170 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:14:15,179 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1681
+INFO 2026-06-10 17:14:15,180 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,152 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:14:15,182 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:14:15,161 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:14:15,170 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:14:15,212 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:14:15,212 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:14:15,179 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1681
+INFO 2026-06-10 17:14:15,195 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:14:15,216 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,208 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,182 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:14:15,180 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,224 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,195 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:14:15,216 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,208 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,232 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 77
+INFO 2026-06-10 17:14:15,224 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,236 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,240 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,240 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,249 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,236 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,232 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 77
+INFO 2026-06-10 17:14:15,249 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,274 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,274 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,338 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:14:15,341 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:14:15,345 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:14:15,338 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:14:15,341 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:14:15,345 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:14:15,366 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,366 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,357 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:14:15,368 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,349 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:14:15,359 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,357 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:14:15,376 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,368 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,349 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:14:15,359 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,376 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,393 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:14:15,393 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:14:15,397 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1681
+INFO 2026-06-10 17:14:15,401 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,401 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,471 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,471 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,412 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,412 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,484 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,484 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,399 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,397 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1681
+INFO 2026-06-10 17:14:15,399 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,509 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,514 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,509 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,514 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,544 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:14:15,544 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:14:15,569 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:14:15,569 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:14:15,577 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 77
+INFO 2026-06-10 17:14:15,577 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 200 77
+INFO 2026-06-10 17:14:15,581 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,581 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:15,611 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,611 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,653 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.18s
+INFO 2026-06-10 17:14:15,653 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.18s
+INFO 2026-06-10 17:14:15,655 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,655 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,672 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 17:14:15,672 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 17:14:15,682 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:14:15,700 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:14:15,704 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:14:15,704 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:14:15,700 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:14:15,682 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:14:15,736 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,736 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,741 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,741 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,754 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:14:15,754 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:14:15,780 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:15,780 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:26,049 basehttp "OPTIONS /api/v1/bi/dashboard/available-months/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:26,049 basehttp "OPTIONS /api/v1/bi/dashboard/available-months/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:26,051 middleware → GET /api/v1/bi/dashboard/available-months/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,051 middleware → GET /api/v1/bi/dashboard/available-months/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,123 middleware ← GET /api/v1/bi/dashboard/available-months/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:14:26,123 middleware ← GET /api/v1/bi/dashboard/available-months/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:14:26,125 basehttp "GET /api/v1/bi/dashboard/available-months/ HTTP/1.1" 200 116
+INFO 2026-06-10 17:14:26,125 basehttp "GET /api/v1/bi/dashboard/available-months/ HTTP/1.1" 200 116
+INFO 2026-06-10 17:14:26,132 middleware → GET /api/v1/bi/dashboard/available-months/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,132 middleware → GET /api/v1/bi/dashboard/available-months/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,176 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-31&end_date=2026-06-29&page_size=500 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:26,178 middleware ← GET /api/v1/bi/dashboard/available-months/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:14:26,176 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-05-31&end_date=2026-06-29&page_size=500 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:26,178 middleware ← GET /api/v1/bi/dashboard/available-months/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:14:26,180 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,180 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,192 basehttp "GET /api/v1/bi/dashboard/available-months/ HTTP/1.1" 200 116
+INFO 2026-06-10 17:14:26,192 basehttp "GET /api/v1/bi/dashboard/available-months/ HTTP/1.1" 200 116
+INFO 2026-06-10 17:14:26,222 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:14:26,222 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:14:26,225 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-31&end_date=2026-06-29&page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:26,225 basehttp "GET /api/v1/sales/sales/?start_date=2026-05-31&end_date=2026-06-29&page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:26,238 basehttp "OPTIONS /api/v1/bi/sales/top-products/?limit=10 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:26,238 basehttp "OPTIONS /api/v1/bi/sales/top-products/?limit=10 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:26,243 middleware → GET /api/v1/bi/sales/top-products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,243 middleware → GET /api/v1/bi/sales/top-products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,262 middleware ← GET /api/v1/bi/sales/top-products/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:14:26,262 middleware ← GET /api/v1/bi/sales/top-products/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:14:26,265 basehttp "GET /api/v1/bi/sales/top-products/?limit=10 HTTP/1.1" 200 29
+INFO 2026-06-10 17:14:26,265 basehttp "GET /api/v1/bi/sales/top-products/?limit=10 HTTP/1.1" 200 29
+INFO 2026-06-10 17:14:26,281 basehttp "OPTIONS /api/v1/bi/trends/?days=180 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:26,281 basehttp "OPTIONS /api/v1/bi/trends/?days=180 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:26,285 middleware → GET /api/v1/bi/trends/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,285 middleware → GET /api/v1/bi/trends/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:26,721 middleware ← GET /api/v1/bi/trends/ | Status: 200 | Duration: 0.44s
+INFO 2026-06-10 17:14:26,721 middleware ← GET /api/v1/bi/trends/ | Status: 200 | Duration: 0.44s
+INFO 2026-06-10 17:14:26,725 basehttp "GET /api/v1/bi/trends/?days=180 HTTP/1.1" 200 6527
+INFO 2026-06-10 17:14:26,725 basehttp "GET /api/v1/bi/trends/?days=180 HTTP/1.1" 200 6527
+INFO 2026-06-10 17:14:39,620 basehttp "OPTIONS /api/v1/sales/returns/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:39,620 basehttp "OPTIONS /api/v1/sales/returns/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:39,626 basehttp "OPTIONS /api/v1/sales/returns/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:39,626 basehttp "OPTIONS /api/v1/sales/returns/?page=1&page_size=20 HTTP/1.1" 200 0
+INFO 2026-06-10 17:14:39,628 middleware → GET /api/v1/sales/returns/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:39,628 middleware → GET /api/v1/sales/returns/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:39,653 middleware ← GET /api/v1/sales/returns/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:14:39,653 middleware ← GET /api/v1/sales/returns/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:14:39,656 basehttp "GET /api/v1/sales/returns/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:39,656 basehttp "GET /api/v1/sales/returns/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:39,667 middleware → GET /api/v1/sales/returns/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:39,667 middleware → GET /api/v1/sales/returns/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:14:39,690 middleware ← GET /api/v1/sales/returns/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:14:39,690 middleware ← GET /api/v1/sales/returns/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:14:39,695 basehttp "GET /api/v1/sales/returns/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:14:39,695 basehttp "GET /api/v1/sales/returns/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:15:07,005 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:07,005 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:07,983 middleware ← POST /api/v1/auth/login/ | Status: 401 | Duration: 0.98s
+INFO 2026-06-10 17:15:07,983 middleware ← POST /api/v1/auth/login/ | Status: 401 | Duration: 0.98s
+WARNING 2026-06-10 17:15:07,986 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 50
+WARNING 2026-06-10 17:15:07,986 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 401 50
+INFO 2026-06-10 17:15:26,268 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:26,268 middleware → POST /api/v1/auth/login/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:27,233 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 0.97s
+INFO 2026-06-10 17:15:27,233 middleware ← POST /api/v1/auth/login/ | Status: 200 | Duration: 0.97s
+INFO 2026-06-10 17:15:27,234 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-06-10 17:15:27,234 basehttp "POST /api/v1/auth/login/ HTTP/1.1" 200 797
+INFO 2026-06-10 17:15:29,794 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,794 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,795 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,795 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,814 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,814 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,820 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,820 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,852 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:15:29,852 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:15:29,856 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:15:29,864 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,856 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:15:29,875 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:15:29,864 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,875 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:15:29,905 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:15:29,905 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:15:29,916 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,916 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,918 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:15:29,918 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:15:29,941 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:15:29,941 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:15:29,977 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:15:29,968 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:15:29,968 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:15:29,982 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:29,987 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:15:29,987 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:15:29,977 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.16s
+INFO 2026-06-10 17:15:29,982 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:30,001 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:15:30,001 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:15:30,002 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:15:30,002 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:15:30,015 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5747
+INFO 2026-06-10 17:15:30,015 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5747
+INFO 2026-06-10 17:15:30,021 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:30,021 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:15:30,052 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:15:30,052 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:15:30,086 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:15:30,086 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:15:30,143 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:15:30,143 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:15:30,145 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5747
+INFO 2026-06-10 17:15:30,145 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5747
+INFO 2026-06-10 17:16:02,373 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:02,378 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:02,378 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:02,373 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:02,385 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=auth&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:02,385 basehttp "OPTIONS /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=auth&page=1&page_size=50 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:02,376 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:02,376 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:02,395 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:02,395 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:02,436 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:16:02,436 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:16:02,446 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:16:02,447 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:16:02,447 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:16:02,446 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:16:02,520 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:02,520 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:02,567 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:16:02,567 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:16:02,570 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:16:02,570 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:16:02,590 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:16:02,590 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:16:02,592 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=auth&page=1&page_size=50 HTTP/1.1" 200 5272
+INFO 2026-06-10 17:16:02,592 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=auth&page=1&page_size=50 HTTP/1.1" 200 5272
+INFO 2026-06-10 17:16:12,117 basehttp "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:12,117 basehttp "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:12,118 basehttp "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:12,122 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:12,118 basehttp "OPTIONS /api/v1/auth/profile/ HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:12,122 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:12,159 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:16:12,159 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:16:12,163 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:12,163 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-06-10 17:16:12,163 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-06-10 17:16:12,163 middleware → GET /api/v1/auth/profile/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:12,204 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:16:12,204 middleware ← GET /api/v1/auth/profile/ | Status: 200 | Duration: 0.04s
+INFO 2026-06-10 17:16:12,215 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-06-10 17:16:12,215 basehttp "GET /api/v1/auth/profile/ HTTP/1.1" 200 277
+INFO 2026-06-10 17:16:17,058 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,058 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,090 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:16:17,090 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:16:17,095 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:16:17,095 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:16:17,139 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,139 middleware → GET /api/v1/financials/budgets/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,144 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,144 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,149 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,154 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,154 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,149 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,156 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,156 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,158 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,158 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,209 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 403 | Duration: 0.05s
+INFO 2026-06-10 17:16:17,209 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 403 | Duration: 0.05s
+WARNING 2026-06-10 17:16:17,212 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 403 63
+WARNING 2026-06-10 17:16:17,212 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 403 63
+INFO 2026-06-10 17:16:17,220 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,220 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,378 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:16:17,378 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:16:17,382 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,382 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,418 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,418 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,439 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:16:17,439 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:16:17,453 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,453 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,458 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,458 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,551 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.41s
+INFO 2026-06-10 17:16:17,551 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.41s
+INFO 2026-06-10 17:16:17,569 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.42s
+INFO 2026-06-10 17:16:17,569 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.42s
+INFO 2026-06-10 17:16:17,574 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,578 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.43s
+INFO 2026-06-10 17:16:17,581 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1681
+INFO 2026-06-10 17:16:17,574 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,578 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.43s
+INFO 2026-06-10 17:16:17,581 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1681
+INFO 2026-06-10 17:16:17,592 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.45s
+INFO 2026-06-10 17:16:17,592 middleware ← GET /api/v1/financials/budgets/ | Status: 200 | Duration: 0.45s
+INFO 2026-06-10 17:16:17,598 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:17,605 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,605 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:16:17,598 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:17,608 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,605 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,605 basehttp "GET /api/v1/financials/budgets/?year=2026&status=active&period=monthly HTTP/1.1" 200 310
+INFO 2026-06-10 17:16:17,608 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,615 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,615 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,631 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,631 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,679 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:16:17,679 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:16:17,695 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.28s
+INFO 2026-06-10 17:16:17,695 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.28s
+INFO 2026-06-10 17:16:17,698 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,698 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,704 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,704 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,709 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,709 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,716 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,716 middleware → GET /api/v1/bi/financial/profit-loss/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,738 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 403 | Duration: 0.02s
+INFO 2026-06-10 17:16:17,738 middleware ← GET /api/v1/bi/financial/profit-loss/ | Status: 403 | Duration: 0.02s
+WARNING 2026-06-10 17:16:17,741 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 403 63
+WARNING 2026-06-10 17:16:17,741 basehttp "GET /api/v1/bi/financial/profit-loss/ HTTP/1.1" 403 63
+INFO 2026-06-10 17:16:17,745 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,745 middleware → GET /api/v1/financials/cash-flow/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,754 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:16:17,754 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:16:17,766 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:17,766 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:17,771 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,771 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,779 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:16:17,779 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.17s
+INFO 2026-06-10 17:16:17,791 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:16:17,791 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.19s
+INFO 2026-06-10 17:16:17,791 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:16:17,794 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,794 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,801 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,791 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:16:17,801 middleware → GET /api/v1/financials/loans/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,814 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,814 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,851 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:16:17,851 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:16:17,865 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:16:17,865 middleware ← GET /api/v1/financials/loans/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:16:17,868 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,868 basehttp "GET /api/v1/financials/loans/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,877 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,877 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,877 basehttp "GET /api/v1/financials/transactions/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:17,912 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:16:17,912 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:16:17,949 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:16:17,952 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,877 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,952 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:16:17,949 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:16:17,952 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:17,952 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:16:18,042 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 17:16:18,059 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:18,066 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,042 middleware ← GET /api/v1/financials/cash-flow/ | Status: 200 | Duration: 0.30s
+INFO 2026-06-10 17:16:18,059 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:18,066 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,094 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:16:18,094 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.14s
+INFO 2026-06-10 17:16:18,119 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:18,119 basehttp "GET /api/v1/financials/invoices/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:18,124 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,124 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,129 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1681
+INFO 2026-06-10 17:16:18,129 basehttp "GET /api/v1/financials/cash-flow/ HTTP/1.1" 200 1681
+INFO 2026-06-10 17:16:18,132 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,132 middleware → GET /api/v1/auth/audit-logs/actions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,144 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.27s
+INFO 2026-06-10 17:16:18,144 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.27s
+INFO 2026-06-10 17:16:18,158 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,158 middleware → GET /api/v1/auth/audit-logs/modules/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,170 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:18,170 basehttp "GET /api/v1/financials/petty-cash/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:18,175 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,185 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:16:18,185 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.12s
+INFO 2026-06-10 17:16:18,189 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:18,175 middleware → GET /api/v1/auth/audit-logs/stats/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,199 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.57s
+INFO 2026-06-10 17:16:18,189 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:18,199 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.57s
+INFO 2026-06-10 17:16:18,215 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:16:18,215 middleware ← GET /api/v1/auth/audit-logs/modules/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:16:18,217 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5747
+INFO 2026-06-10 17:16:18,217 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5747
+INFO 2026-06-10 17:16:18,225 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,225 middleware → GET /api/v1/auth/audit-logs/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:18,235 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:16:18,235 basehttp "GET /api/v1/auth/audit-logs/modules/ HTTP/1.1" 200 289
+INFO 2026-06-10 17:16:18,282 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:16:18,282 middleware ← GET /api/v1/auth/audit-logs/actions/ | Status: 200 | Duration: 0.15s
+INFO 2026-06-10 17:16:18,314 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:18,314 basehttp "GET /api/v1/auth/audit-logs/actions/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:18,333 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:16:18,333 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:16:18,352 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:18,352 basehttp "GET /api/v1/sales/sales/?page_size=500 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:18,385 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:16:18,385 middleware ← GET /api/v1/auth/audit-logs/stats/ | Status: 200 | Duration: 0.21s
+INFO 2026-06-10 17:16:18,398 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:16:18,398 basehttp "GET /api/v1/auth/audit-logs/stats/ HTTP/1.1" 200 334
+INFO 2026-06-10 17:16:18,443 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:16:18,443 middleware ← GET /api/v1/auth/audit-logs/ | Status: 200 | Duration: 0.22s
+INFO 2026-06-10 17:16:18,451 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5747
+INFO 2026-06-10 17:16:18,451 basehttp "GET /api/v1/auth/audit-logs/?start_date=&end_date=&action=&module=&page=1&page_size=50 HTTP/1.1" 200 5747
+INFO 2026-06-10 17:16:24,813 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,813 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,821 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,821 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,821 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,821 basehttp "OPTIONS /api/v1/sales/sales/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,825 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,825 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,829 basehttp "OPTIONS /api/v1/financials/petty-cash/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,830 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,850 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,853 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,845 basehttp "OPTIONS /api/v1/financials/petty-cash/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,829 basehttp "OPTIONS /api/v1/financials/petty-cash/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,863 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:16:24,830 basehttp "OPTIONS /api/v1/financials/transactions/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,850 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,853 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,845 basehttp "OPTIONS /api/v1/financials/petty-cash/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:24,863 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:16:24,869 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,869 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,891 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,891 middleware → GET /api/v1/hr/payroll/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,896 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:24,896 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:24,949 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:16:24,952 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:16:24,952 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:16:24,949 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:16:24,958 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:16:24,958 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.11s
+INFO 2026-06-10 17:16:24,976 basehttp "GET /api/v1/sales/sales/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:24,976 basehttp "GET /api/v1/sales/sales/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:24,960 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:24,960 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:24,981 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,971 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:16:24,971 middleware ← GET /api/v1/hr/payroll/ | Status: 200 | Duration: 0.08s
+INFO 2026-06-10 17:16:24,986 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,986 middleware → GET /api/v1/financials/petty-cash/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,981 middleware → GET /api/v1/sales/sales/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:24,963 basehttp "GET /api/v1/financials/transactions/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,024 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,024 basehttp "GET /api/v1/hr/payroll/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:24,963 basehttp "GET /api/v1/financials/transactions/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,064 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:25,064 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:25,083 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:16:25,083 middleware ← GET /api/v1/financials/petty-cash/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:16:25,101 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,112 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:16:25,116 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:16:25,101 basehttp "GET /api/v1/financials/petty-cash/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,112 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.05s
+INFO 2026-06-10 17:16:25,116 middleware ← GET /api/v1/sales/sales/ | Status: 200 | Duration: 0.13s
+INFO 2026-06-10 17:16:25,121 basehttp "GET /api/v1/financials/transactions/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,121 basehttp "GET /api/v1/financials/transactions/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,137 basehttp "GET /api/v1/sales/sales/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,137 basehttp "GET /api/v1/sales/sales/?start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,145 basehttp "OPTIONS /api/v1/financials/invoices/?status=paid&start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:25,145 basehttp "OPTIONS /api/v1/financials/invoices/?status=paid&start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:25,149 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:25,149 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:25,157 basehttp "OPTIONS /api/v1/financials/invoices/?status=paid&start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:25,157 basehttp "OPTIONS /api/v1/financials/invoices/?status=paid&start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:25,183 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:16:25,183 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.03s
+INFO 2026-06-10 17:16:25,185 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,185 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,240 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:25,240 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:25,262 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:16:25,262 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:16:25,265 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:25,265 basehttp "GET /api/v1/financials/invoices/?status=paid&start_date=2026-06-10&end_date=2026-06-10&page_size=100 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:29,674 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:29,674 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:29,689 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:16:29,689 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.02s
+INFO 2026-06-10 17:16:29,691 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:29,691 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:29,695 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:29,695 middleware → GET /api/v1/financials/transactions/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:29,768 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:16:29,768 middleware ← GET /api/v1/financials/transactions/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:16:29,773 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:29,773 basehttp "GET /api/v1/financials/transactions/?page=1&page_size=20 HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,073 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,080 basehttp "OPTIONS /api/v1/financials/invoices/?page=1&page_size=20&status=&start_date=&end_date= HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:33,080 basehttp "OPTIONS /api/v1/financials/invoices/?page=1&page_size=20&status=&start_date=&end_date= HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:33,073 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,087 basehttp "OPTIONS /api/v1/financials/invoices/?page=1&page_size=20&status=&start_date=&end_date= HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:33,084 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,089 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,089 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,084 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,087 basehttp "OPTIONS /api/v1/financials/invoices/?page=1&page_size=20&status=&start_date=&end_date= HTTP/1.1" 200 0
+INFO 2026-06-10 17:16:33,152 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:16:33,154 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:16:33,152 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:16:33,154 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.07s
+INFO 2026-06-10 17:16:33,168 basehttp "GET /api/v1/financials/invoices/?page=1&page_size=20&status=&start_date=&end_date= HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,168 basehttp "GET /api/v1/financials/invoices/?page=1&page_size=20&status=&start_date=&end_date= HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,160 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:16:33,160 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:16:33,171 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,171 middleware → GET /api/v1/financials/invoices/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,166 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,166 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,173 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,173 middleware → GET /api/v1/inventory/products/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,175 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:33,175 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:33,227 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,227 middleware → GET /api/v1/sales/customers/ | User: Anonymous | IP: 127.0.0.1
+INFO 2026-06-10 17:16:33,264 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:16:33,264 middleware ← GET /api/v1/inventory/products/ | Status: 200 | Duration: 0.09s
+INFO 2026-06-10 17:16:33,266 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,274 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:16:33,266 basehttp "GET /api/v1/inventory/products/ HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,274 middleware ← GET /api/v1/financials/invoices/ | Status: 200 | Duration: 0.10s
+INFO 2026-06-10 17:16:33,282 basehttp "GET /api/v1/financials/invoices/?page=1&page_size=20&status=&start_date=&end_date= HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,282 basehttp "GET /api/v1/financials/invoices/?page=1&page_size=20&status=&start_date=&end_date= HTTP/1.1" 200 52
+INFO 2026-06-10 17:16:33,291 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:16:33,291 middleware ← GET /api/v1/sales/customers/ | Status: 200 | Duration: 0.06s
+INFO 2026-06-10 17:16:33,294 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283
+INFO 2026-06-10 17:16:33,294 basehttp "GET /api/v1/sales/customers/ HTTP/1.1" 200 283

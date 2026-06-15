@@ -1,0 +1,455 @@
+ERROR 2026-06-11 11:16:38,195 log Internal Server Error: /api/v1/inventory/categories/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.IntegrityError: UNIQUE constraint failed: inventory_category.business_id, inventory_category.name
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/generics.py", line 246, in post
+    return self.create(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "/Users/j/Desktop/BizSMART/Backend/inventory/views.py", line 47, in perform_create
+    serializer.save(business=self.request.user.business)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/query.py", line 660, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/query.py", line 1810, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.IntegrityError: UNIQUE constraint failed: inventory_category.business_id, inventory_category.name
+ERROR 2026-06-11 11:16:38,247 basehttp "POST /api/v1/inventory/categories/ HTTP/1.1" 500 208582
+ERROR 2026-06-11 12:33:06,792 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:33:07,170 basehttp "GET /api/schema/ HTTP/1.1" 500 124990
+ERROR 2026-06-11 12:33:08,139 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:33:08,188 basehttp "GET /api/schema/ HTTP/1.1" 500 124990
+ERROR 2026-06-11 12:33:21,116 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:33:21,170 basehttp "GET /api/schema/ HTTP/1.1" 500 124990
+ERROR 2026-06-11 12:33:22,748 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:33:22,771 basehttp "GET /api/schema/ HTTP/1.1" 500 124990
+ERROR 2026-06-11 12:33:47,939 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:33:48,010 basehttp "GET /api/schema/ HTTP/1.1" 500 124990
+ERROR 2026-06-11 12:33:48,362 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:33:48,368 basehttp "GET /api/schema/ HTTP/1.1" 500 124990
+ERROR 2026-06-11 12:33:53,517 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:33:53,520 basehttp "GET /api/schema/ HTTP/1.1" 500 125264
+ERROR 2026-06-11 12:33:54,075 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:33:54,092 basehttp "GET /api/schema/ HTTP/1.1" 500 125264
+ERROR 2026-06-11 12:34:10,047 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:34:10,052 basehttp "GET /api/schema/ HTTP/1.1" 500 124974
+ERROR 2026-06-11 12:46:51,846 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:46:51,849 basehttp "GET /api/schema/ HTTP/1.1" 500 124974
+ERROR 2026-06-11 12:56:05,877 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:56:05,880 basehttp "GET /api/schema/ HTTP/1.1" 500 124990
+ERROR 2026-06-11 12:56:06,047 log Internal Server Error: /api/schema/
+Traceback (most recent call last):
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/decorators/csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 84, in get
+    return self._get_schema_response(request)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/views.py", line 92, in _get_schema_response
+    data=generator.get_schema(request=request, public=self.serve_public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 287, in get_schema
+    paths=self.parse(request, public),
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 208, in parse
+    endpoints = self._get_paths_and_endpoints()
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 198, in _get_paths_and_endpoints
+    view = self.create_view(callback, method)
+  File "/Users/j/Desktop/BizSMART/Backend/biz/lib/python3.8/site-packages/drf_spectacular/generators.py", line 149, in create_view
+    action = getattr(view, view.action)
+AttributeError: 'AuditLogViewSet' object has no attribute 'my_logs'
+ERROR 2026-06-11 12:56:06,049 basehttp "GET /api/schema/ HTTP/1.1" 500 124990

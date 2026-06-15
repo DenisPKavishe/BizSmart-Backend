@@ -1,5 +1,5 @@
 from core.logging_utils import log_activity
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.conf import settings
@@ -456,6 +456,17 @@ class AuditLogViewSet(viewsets.ReadOnlyModelViewSet):
             queryset = queryset.filter(user_id=user_id)
         
         return queryset
+    
+    @action(detail=False, methods=['get'], url_path='my-logs')
+    def my_logs(self, request):
+        """Get audit logs for the current user"""
+        queryset = self.get_queryset()
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
 
 class AuditLogStatsView(APIView):
     """Get statistics for audit logs"""
